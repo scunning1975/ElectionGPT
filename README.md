@@ -54,6 +54,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Special thanks to Jared Black and Coco Sun for their tireless work on this project. We also appreciate the valuable input from our readers and colleagues.
 
----
-
-Stay tuned for updates as we continue to refine our approach and explore the exciting potential of AI-driven election forecasting!
