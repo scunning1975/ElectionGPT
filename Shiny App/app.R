@@ -494,16 +494,13 @@ ui <- dashboardPage(
       column(
         width = 12,
         bsButton("map", 
-                 label = "STATE LEVEL OUTCOME", 
-                 icon = icon("map-marker"), 
+                 label = "STATE LEVEL", 
                  style = "success"),
         bsButton("trend", 
-                 label = "NATIONAL LEVEL OUTCOME", 
-                 icon = icon("chart-bar"), 
+                 label = "NATIONAL LEVEL", 
                  style = "success"),
         bsButton("about", 
                  label = "ABOUT", 
-                 icon = icon("gears"), 
                  style = "success")
       )
     ),
@@ -595,17 +592,18 @@ ui <- dashboardPage(
           ),
           fluidRow(
             column(12,
-                   div(style="text-align: center;",
+                   div(style="text-align: center; padding-left: 115px;",
                        imageOutput("home_img", width = "50%", height = "auto")
                    )
             )
           )
         )
+        )
       )
     )
   )
 ) 
-)
+
 
 
 server <- function(input, output, session) {
@@ -1006,7 +1004,7 @@ server <- function(input, output, session) {
   })
   
   
-  # Time Trend - 2 ------Discard------------------------------------------------------------
+  # UI Time Trend - 2 ------Discard------------------------------------------------------------
   output$box_pat6 <- renderUI({
     div(
       style = "position: relative; backgroundColor: #ecf0f5",
@@ -1027,7 +1025,7 @@ server <- function(input, output, session) {
     )
   })
   
-  # Time Trend - 3 ------------------------------------------------------------------
+  # UI Time Trend - 3 ------------------------------------------------------------------
   output$box_pat7 <- renderUI({
     div(
       style = "position: relative; backgroundColor: #ecf0f5",
@@ -1036,7 +1034,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 320,
         tabPanel(
-          title = "Projected Democrat Electoral College Votes"
+          title = "Average Electoral Votes"
         ),
         withSpinner(
           plotlyOutput("distPlot", height = 230),
@@ -1048,7 +1046,7 @@ server <- function(input, output, session) {
     )
   })
   
-  # Time Trend - 4 ------------------------------------------------------------------
+  # UI Time Trend - 4 ------------------------------------------------------------------
   output$box_pat8 <- renderUI({
     div(
       style = "position: relative; backgroundColor: #ecf0f5",
@@ -1057,7 +1055,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 320,
         tabPanel(
-          title = " Projected Democrat Electoral College Victory Likelihood"
+          title = " Average Democrat Victory "
         ),
         withSpinner(
           plotlyOutput("distPlot2", height = 230),
@@ -1112,6 +1110,8 @@ server <- function(input, output, session) {
     
   })
   
+  # UI Image
+
   
   #         Output
   #-------Map 1 Anonymous
@@ -1340,8 +1340,47 @@ server <- function(input, output, session) {
                 tickmode = "linear",
                 tick0 = 0,
                 dtick = 0.2
+              ),
+              shapes = list(
+              list(
+                type = "rect",
+                fillcolor = "rgba(205, 12, 24, 0.2)", # Light red fill for 140-270
+                line = list(color = "rgba(205, 12, 24, 0)"), # No border
+                x0 = min(Count_data()$Date), x1 = max(Count_data()$Date),
+                y0 =0, y1 = 0.5
+              ),
+              list(
+                type = "rect",
+                fillcolor = "rgba(22, 96, 167, 0.2)", # Light blue fill for 270-400
+                line = list(color = "rgba(22, 96, 167, 0)"), # No border
+                x0 = min(Count_data()$Date), x1 = max(Count_data()$Date),
+                y0 = 0.5, y1 = 1
+              ),
+              list(
+                type = "line",
+                x0 = min(Count_data()$Date), x1 = max(Count_data()$Date),
+                y0 = 0.5, y1 = 0.5,
+                line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
               )
             )
+    ) %>%
+      layout(annotations = list(
+        list(
+          x = min(Count_data()$Date) + 5,
+          y = 0.65,
+          text = "Democrat Win",
+          showarrow = FALSE,
+          font = list(size = 12, weight = "bold", color = "rgb(22, 96, 167)"),
+          showgrid = FALSE
+        ),
+        list(
+          x = min(Count_data()$Date) + 5,
+          y = 0.4,
+          text = "Republican Win",
+          showarrow = FALSE,
+          font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
+        )
+      ))
         }
         fig  # Return the plotly figure
       }
@@ -1361,7 +1400,7 @@ server <- function(input, output, session) {
       title = NULL,
       xaxis = list(title = "Date",
                    showgrid = TRUE),
-      yaxis = list(title = "Proj Democrat Win Votes", 
+      yaxis = list(title = "Votes", 
                    range = c(140, 400),
                    showgrid = FALSE),
       shapes = list(
@@ -1384,12 +1423,6 @@ server <- function(input, output, session) {
           x0 = min(Votes_final()$Date), x1 = max(Votes_final()$Date),
           y0 = 270, y1 = 270,
           line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
-        ),
-        list(
-          type = "line",
-          x0 = as.Date("2024-08-19"), x1 = as.Date("2024-08-19"),  # Vertical line for DNC
-          y0 = 140, y1 = 400,
-          line = list(color = "rgb(0, 0, 0)", width = 2)
         )
       )
     ) %>%
@@ -1408,13 +1441,6 @@ server <- function(input, output, session) {
         text = "Republican Win",
         showarrow = FALSE,
         font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
-      ),
-      list(
-        x = as.Date("2024-08-20"),  # Position DNC label to the right of the vertical line
-        y = 160,                    # Position within the light red area
-        text = "DNC",
-        showarrow = FALSE,
-        font = list(size = 12, weight = "bold", color = "rgb(0, 0, 0)")
       )
     ))
 })
@@ -1432,7 +1458,7 @@ server <- function(input, output, session) {
         title = NULL,
         xaxis = list(title = "Date",
                      showgrid = TRUE),
-        yaxis = list(title = "Proj Democrat Win Percent", 
+        yaxis = list(title = "Percent", 
                      range = c(0.3, 0.7),
                      showgrid = FALSE),
         shapes = list(
@@ -1455,12 +1481,6 @@ server <- function(input, output, session) {
             x0 = min(Votes_final()$Date), x1 = max(Votes_final()$Date),
             y0 = 0.5, y1 = 0.5,
             line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
-          ),
-          list(
-            type = "line",
-            x0 = as.Date("2024-08-19"), x1 = as.Date("2024-08-19"),  # Vertical line for DNC
-            y0 = 0.3, y1 = 0.7,
-            line = list(color = "rgb(0, 0, 0)", width = 2)
           )
         )
       ) %>%
@@ -1479,13 +1499,6 @@ server <- function(input, output, session) {
           text = "Republican Win",
           showarrow = FALSE,
           font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
-        ),
-        list(
-          x = as.Date("2024-08-20"),  # Position DNC label to the right of the vertical line
-          y = 0.3,                    # Position within the light red area
-          text = "DNC",
-          showarrow = FALSE,
-          font = list(size = 12, weight = "bold", color = "rgb(0, 0, 0)")
         )
       ))
   })
@@ -1503,6 +1516,12 @@ server <- function(input, output, session) {
     Table2_votes_percent()
   }, server = FALSE)
   
+  
+  # Image in About----------------------------------------------------------
+  
+  output$home_img <- renderImage({
+    list(src = "www/Jared_Image2.png", contentType = 'image/png')
+  }, deleteFile = FALSE)
 
   
 }
