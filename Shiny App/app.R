@@ -338,12 +338,21 @@ color_for_1 <- pal[8]  # Close to red
 color_for_0 <- pal[1]  # Close to blue
 
 
-pal2<- pnw_palette("Moth",5)
-color_plot6_Repub <- pal2[3]
+pal2<- pnw_palette("Moth",12)
+color_for_low1 <- pal2[7]
 
-pal3<- pnw_palette("Sunset",5)
-color_plot6_Demo <- pal3[1]
+pal3<- pnw_palette("Shuksan2",5)
+color_for_low0 <- pal3[2]
 
+
+
+custom_colorscale <- list(
+  list(0, "#DD4124"),       # Red at the low end (0) (Democrats)
+  list(0.25, color_for_low1),    # Lighter red between 0 and 0.5
+  list(0.5, "#ffe6e6"),     # Very light red/pink at the middle (0.5)
+  list(0.75, color_for_low0),    # Lighter blue between 0.5 and 1
+  list(1, "#00496F")        # Blue at the high end (1) (Republicans)
+)
 #data
 #function 1 state unique label
 state_group <- extended_data %>%
@@ -1149,6 +1158,7 @@ server <- function(input, output, session) {
   
   
   #-------Map 2 BBC
+
   
   # Render the Plotly map #1
   output$box_map_BBC <- renderPlotly ({
@@ -1166,16 +1176,23 @@ server <- function(input, output, session) {
     fig <- plot_geo(USA_map_BBC(), locationmode = 'USA-states', marker = list(line = l)
     )
     fig <- fig %>% add_trace(
-      z = ~party_numeric,  # Map the party numeric variable (0 or 1)
+      z = ~Percent_byState_Demo,  # Map the party numeric variable (0 or 1)
       text = ~hover,       # Hover text with details
       locations = ~state,  # State abbreviations
-      color = ~party_numeric, # Color based on the party
-      colors = c(color_for_0, color_for_1),
-      showscale = FALSE
+      color = ~Percent_byState_Demo,
+      colorscale = custom_colorscale,
+      showscale = TRUE
     )
     
     
-    fig <- fig %>% colorbar(title = "Party", tickvals = c(0, 1), ticktext = c("Democratic", "Republican"))
+      fig <- fig %>% colorbar(
+      title = "Probability",
+      thickness = 15,       # Adjust thickness
+      len = 0.8,            # Adjust length
+      tickvals = c(0, 0.25, 0.5, 0.75, 1),  # Set specific tick values
+      ticktext = c("0", "25%", "50%", "45%", "100%")  # Labels for ticks
+    )
+    
     
     fig <- fig %>% layout(
       geo = g
