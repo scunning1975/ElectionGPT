@@ -64,7 +64,8 @@ melted_data<-data%>%
     Type= Voice# Renaming 'State' to 'state'
   )%>%
   mutate(party = ifelse(value ==1, "Republican", "Democratic")) %>%
-  mutate(Type = ifelse(Type == "direct", "Direct", Type))
+  mutate(Type = ifelse(Type == "direct", "Direct", Type)) %>%
+  mutate(Type = ifelse(Type == "Direct", "Anonymous", Type))
 
 # 3.1 2024-8-19 data has duplicates when retry to append the data
 data_0819_msnbc <- melted_data %>%
@@ -141,7 +142,7 @@ subdata2 <- melted_data %>%
     .groups = 'drop'
   )  %>% 
   mutate(Percent_byState_chr=sprintf("%1.2f%%", 100*Percent_byState))%>% 
-  mutate(Percent_byState_Demo=1-Percent_byState)%>% 
+  mutate(Percent_byState_Demo=round(1-Percent_byState, digits=3))%>% 
   mutate(Percent_byState_chr_Demo=sprintf("%1.2f%%", 100*Percent_byState_Demo))
 
 
@@ -337,16 +338,16 @@ pal <- pnw_palette(name = "Bay", n = 16, type = "continuous")
 color_for_1 <- pal[16]  # Close to red
 color_for_0 <- pal[1]  # Close to blue
 
+
+#pal2<- pnw_palette("Moth",12)
+#color_for_low1 <- pal2[6]
+
+#pal4<-pnw_palette(name = "Bay", n = 16, type = "continuous")
+#color_for_low0 <- pal4[5]
+
+
 pal2<-pnw_palette(name = "Bay", n = 16, type = "continuous")
 color_for_low1 <- pal2[13]
-
-pal4<-pnw_palette(name = "Bay", n = 16, type = "continuous")
-color_for_low0 <- pal4[5]
-
-
-
-pal2<- pnw_palette("Moth",12)
-color_for_low1 <- pal2[6]
 
 
 pal3<- pnw_palette("Shuksan2",5)
@@ -355,6 +356,8 @@ color_for_low0 <- pal3[2]
 
 pal5 <- pnw_palette("Winter",100)
 color_for_05 <- pal5[97]
+
+
 
 
 custom_colorscale <- list(
@@ -453,11 +456,11 @@ ui <- dashboardPage(
         "VOICE",
         tabName = "voice",
         icon = icon("user-md"),
-        checkboxGroupInput(
+        radioButtons(
           inputId = "voicechoice",
           label = "VOICECHOICE",
           choices = voice_group$Type,
-          selected = "Direct"
+          selected = "Anonymous" 
         )
       ),
       br(),
@@ -477,22 +480,9 @@ ui <- dashboardPage(
         ),
         dateInput("date", "DAYS TO FIRST PREDICTION (USE SINGLE DATE TO PLOT MAP):",   
                   value = "2024-08-13"),
-        dateRangeInput("date2", "START DATE TO END DATE ((USE SINGLE DATE TO PLOT MAP):",   
+        dateRangeInput("date2", "START DATE TO END DATE ((USE DATE RANGE FOR STATE TREND PLOT):",   
                        start = "2024-08-13",
                        end   = Sys.Date() )
-      ),
-      br(),
-      br(),
-      menuItem(
-        "PARTY",
-        tabName = "Party",
-        icon = icon("male"),
-        radioButtons(
-          inputId = "partychoice",
-          label = "PARTYCHOICE",
-          choices = party_group$party,
-          selected = "Republican"
-        )
       )
     )
   ),
@@ -606,8 +596,8 @@ ui <- dashboardPage(
                  # style="float:right"/>','<p style="color:black"></p>'),
                  h4(p("About the Author")),
                  h5(p("Scott Cunningham is the Ben H. Williams Professor of Economics at Baylor University.  He specializes in a range of topics in applied microeconomics, such as mental illness, drug policy and sex work."),
-                    p("Jared Black"),
-                    p("Coco Mingrun Sun")
+                    p("Jared Black is a PhD candidate in the Health Service Research program at Baylor University. His research focuses on the healthcare administration and drug policy."),
+                    p("Coco Mingrun Sun is a PhD candidate in the Health Service Research program at Baylor University. Her research interests span the intersection of technology, healthcare, and household finance.")
                  )
           ),
           fluidRow(
@@ -754,7 +744,7 @@ server <- function(input, output, session) {
   USA_map_Anonymous <- reactive({
     req(input$date)
     #req(input$USMap_state)
-    filter(extended_data, Type=="Direct") %>%
+    filter(extended_data, Type=="Anonymous") %>%
       filter(Date %in% input$date)%>%
       #filter(StateFull %in% input$USMap_state)%>%
       mutate(party_numeric= ifelse(Predicted_party == "Republican", 1, 0))%>%
@@ -763,8 +753,8 @@ server <- function(input, output, session) {
                            "State:", StateFull, "<br>",
                            "Date:", Date, "<br>",
                            "Type:", Type, "<br>",
-                           "Winner:", Predicted_party,"<br>",
-                           "Percent",Percent_byState_chr_Demo))
+                           "Democrat Win Chance",Percent_byState_chr_Demo,"<br>",
+                           "Winner:", Predicted_party))
   })
   
   
@@ -785,8 +775,8 @@ server <- function(input, output, session) {
                            "State:", StateFull, "<br>",
                            "Date:", Date, "<br>",
                            "Type:", Type, "<br>",
-                           "Winner:", Predicted_party,"<br>",
-                           "Democrat Win Chance",Percent_byState_chr_Demo))
+                           "Democrat Win Chance",Percent_byState_chr_Demo,"<br>",
+                           "Winner:", Predicted_party))
   })
   
   # UI - Map - 3 ----------------------------------------------------------
@@ -804,8 +794,8 @@ server <- function(input, output, session) {
                            "State:", StateFull, "<br>",
                            "Date:", Date, "<br>",
                            "Type:", Type, "<br>",
-                           "Predicted Party:", Predicted_party,"<br>",
-                           "Percent",Percent_byState_chr))
+                           "Democrat Win Chance",Percent_byState_chr_Demo,"<br>",
+                           "Winner:", Predicted_party))
   })
   
   # UI - Map - 4 ----------------------------------------------------------
@@ -823,8 +813,8 @@ server <- function(input, output, session) {
                            "State:", StateFull, "<br>",
                            "Date:", Date, "<br>",
                            "Type:", Type, "<br>",
-                           "Predicted Party:", Predicted_party,"<br>",
-                           "Percent",Percent_byState_chr))
+                           "Democrat Win Chance",Percent_byState_chr_Demo,"<br>",
+                           "Winner:", Predicted_party))
   })
   
   
@@ -924,7 +914,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 320,
         tabPanel(
-          title = "United States Map Projected Anonymous"
+          title = paste("United States Map Anonymous", input$date)
         ),
         withSpinner(
           plotlyOutput("box_map_anonymous", height = 230),
@@ -947,7 +937,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 320,
         tabPanel(
-          title = "United States Map Projected BBC"
+          title = paste("United States Map BBC", input$date)
         ),
         withSpinner(
           plotlyOutput("box_map_BBC", height = 230),
@@ -968,7 +958,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 320,
         tabPanel(
-          title = "United States Map Projected Fox"
+          title = paste("United States Map Fox", input$date)
         ),
         withSpinner(
           plotlyOutput("box_map_Fox", height = 230),
@@ -989,7 +979,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 320,
         tabPanel(
-          title = "United States Map Projected MSNBC"
+          title = paste("United States Map MSNBC", input$date)
         ),
         withSpinner(
           plotlyOutput("box_map_MSNBC", height = 230),
@@ -1033,7 +1023,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 320,
         tabPanel(
-          title = "State Projected Democrat Electoral College Victory Likelihood"
+          title = "State Average Democrat Victory "
         ),
         withSpinner(
           plotlyOutput("plot_state", height = 230),
@@ -1073,7 +1063,7 @@ server <- function(input, output, session) {
       tabBox(
         id = "box_pat",
         width = NULL,
-        height = 320,
+        height = 320, 
         tabPanel(
           title = " Average Democrat Victory "
         ),
@@ -1095,7 +1085,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 400,
         tabPanel(
-          title = "Projected Votes"
+          title = "Average Votes"
           ),
           withSpinner(
             DT::dataTableOutput("table1_votes", height = 300),
@@ -1117,7 +1107,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 400,
         tabPanel(
-          title = "Projected Win Likelihood"
+          title = " Win Likelihood"
         ),
         withSpinner(
           DT::dataTableOutput("table2_votes_percent", height = 300),
@@ -1151,12 +1141,25 @@ server <- function(input, output, session) {
     fig <- plot_geo(USA_map_Anonymous(), locationmode = 'USA-states', marker = list(line = l)
     )
     fig <- fig %>% add_trace(
-      z = ~party_numeric,  # Map the party numeric variable (0 or 1)
+      z = ~Percent_byState_Demo,  
       text = ~hover,       # Hover text with details
       locations = ~state,  # State abbreviations
-      color = ~party_numeric, # Color based on the party
-      colors = c(color_for_0, color_for_1),
-      showscale = FALSE
+      color = ~Percent_byState_Demo,
+      colorscale = custom_colorscale,
+      showscale = TRUE,
+      hoverinfo = 'text' 
+    )
+    
+    
+    fig <- fig %>% colorbar(
+      title = "Probability",
+      thickness = 15,       # Adjust thickness
+      len = 0.8,            # Adjust length
+      tickvals = c(0, 0.25, 0.5, 0.75, 1),
+      cmin = 0,  # Ensure the minimum value is fixed to 0
+      cmax = 1,  # Ensure the maximum value is fixed to 1
+      ticks = "outside", # Set specific tick values
+      ticktext = c("0", "25%", "50%", "75%", "100%")  # Labels for ticks
     )
     
     
@@ -1187,12 +1190,13 @@ server <- function(input, output, session) {
     fig <- plot_geo(USA_map_BBC(), locationmode = 'USA-states', marker = list(line = l)
     )
     fig <- fig %>% add_trace(
-      z = ~Percent_byState_Demo,  # Map the party numeric variable (0 or 1)
+      z = ~Percent_byState_Demo,  
       text = ~hover,       # Hover text with details
       locations = ~state,  # State abbreviations
       color = ~Percent_byState_Demo,
       colorscale = custom_colorscale,
-      showscale = TRUE
+      showscale = TRUE,
+      hoverinfo = 'text' 
     )
     
     
@@ -1200,8 +1204,11 @@ server <- function(input, output, session) {
       title = "Probability",
       thickness = 15,       # Adjust thickness
       len = 0.8,            # Adjust length
-      tickvals = c(0, 0.25, 0.5, 0.75, 1),  # Set specific tick values
-      ticktext = c("0", "25%", "50%", "45%", "100%")  # Labels for ticks
+      tickvals = c(0, 0.25, 0.5, 0.75, 1), 
+      ticks = "outside", # Set specific tick values
+      cmin = 0,  # Ensure the minimum value is fixed to 0
+      cmax = 1,  # Ensure the maximum value is fixed to 1
+      ticktext = c("0", "25%", "50%", "75%", "100%")  # Labels for ticks
     )
     
     
@@ -1230,12 +1237,25 @@ server <- function(input, output, session) {
     fig <- plot_geo(USA_map_Fox(), locationmode = 'USA-states', marker = list(line = l)
     )
     fig <- fig %>% add_trace(
-      z = ~party_numeric,  # Map the party numeric variable (0 or 1)
+      z = ~Percent_byState_Demo,  
       text = ~hover,       # Hover text with details
       locations = ~state,  # State abbreviations
-      color = ~party_numeric, # Color based on the party
-      colors = c(color_for_0, color_for_1),
-      showscale = FALSE# Democratic = blue, Republican = red
+      color = ~Percent_byState_Demo,
+      colorscale = custom_colorscale,
+      showscale = TRUE,
+      hoverinfo = 'text' 
+    )
+    
+    
+    fig <- fig %>% colorbar(
+      title = "Probability",
+      thickness = 15,       # Adjust thickness
+      len = 0.8,            # Adjust length
+      tickvals = c(0, 0.25, 0.5, 0.75, 1),
+      ticks = "outside", # Set specific tick values
+      cmin = 0,  # Ensure the minimum value is fixed to 0
+      cmax = 1,  # Ensure the maximum value is fixed to 1
+      ticktext = c("0", "25%", "50%", "75%", "100%")  # Labels for ticks
     )
     
     
@@ -1263,16 +1283,27 @@ server <- function(input, output, session) {
     fig <- plot_geo(USA_map_MSNBC(), locationmode = 'USA-states', marker = list(line = l)
     )
     fig <- fig %>% add_trace(
-      z = ~party_numeric,  # Map the party numeric variable (0 or 1)
+      z = ~Percent_byState_Demo,  
       text = ~hover,       # Hover text with details
       locations = ~state,  # State abbreviations
-      color = ~party_numeric, # Color based on the party
-      colors = c(color_for_0, color_for_1),
-      showscale = FALSE
+      color = ~Percent_byState_Demo,
+      colorscale = custom_colorscale,
+      showscale = TRUE,
+      hoverinfo = 'text' 
     )
     
     
-    fig <- fig %>% colorbar(title = "Party", tickvals = c(0, 1), ticktext = c("Democratic", "Republican"))
+    fig <- fig %>% colorbar(
+      title = "Probability",
+      thickness = 15,       # Adjust thickness
+      len = 0.8,            # Adjust length
+      tickvals = c(0, 0.25, 0.5, 0.75, 1),  
+      ticks = "outside", # Set specific tick values
+      cmin = 0,  # Ensure the minimum value is fixed to 0
+      cmax = 1,  # Ensure the maximum value is fixed to 1
+      ticktext = c("0", "25%", "50%", "75%", "100%")  # Labels for ticks
+    )
+    
     
     fig <- fig %>% layout(
       geo = g
@@ -1287,16 +1318,16 @@ server <- function(input, output, session) {
     input$date2
     #input$confirm
     
-    fig <- plot_ly(Count_data_4Voice(), x = ~Count_data_4Voice()$Date, y = ~avg_Direct, name = 'Proj Anonymous', type = 'scatter', mode = 'lines',
+    fig <- plot_ly(Count_data_4Voice(), x = ~Count_data_4Voice()$Date, y = ~avg_Direct, name = 'Anonymous', type = 'scatter', mode = 'lines',
                    line = list(color = 'rgb(205, 12, 24)', width = 4)) 
-    fig <- fig %>% add_trace(y = ~avg_BBC, name = 'Proj BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
-    fig <- fig %>% add_trace(y = ~avg_Fox, name = 'ProjFox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
-    fig <- fig %>% add_trace(y = ~avg_MSNBC, name = 'Proj MSNBC', line = list(color = 'rgb(22, 96, 167)', width =4 , dash = 'dot')) %>%
+    fig <- fig %>% add_trace(y = ~avg_BBC, name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
+    fig <- fig %>% add_trace(y = ~avg_Fox, name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
+    fig <- fig %>% add_trace(y = ~avg_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width =4 , dash = 'dot')) %>%
       layout(
         title = NULL,
         xaxis = list(title = "Date",
                      showgrid = FALSE),
-        yaxis = list(title = "Proj Democrat Win Percent", 
+        yaxis = list(title = "Percent", 
                      range = c(0.4, 0.6),
                      showgrid = FALSE),
         shapes = list(
@@ -1359,7 +1390,7 @@ server <- function(input, output, session) {
                            showline = FALSE),
               #tickformat = "%b %d, %Y"),
               yaxis = list(
-                title = "Proj Democrat Win Percent",
+                title = "Percent",
                 showline = TRUE,
                 showgrid = FALSE,
                 showticklabels = TRUE,
@@ -1419,11 +1450,11 @@ server <- function(input, output, session) {
     input$date2
     #input$confirm
     
-  fig <- plot_ly(Votes_final(), x = ~Date, y = ~Votes_Direct, name = 'Proj Anonymous', type = 'scatter', mode = 'lines',
+  fig <- plot_ly(Votes_final(), x = ~Date, y = ~Votes_Anonymous, name = 'Anonymous', type = 'scatter', mode = 'lines',
                  line = list(color = 'rgb(205, 12, 24)', width = 4)) 
-  fig <- fig %>% add_trace(y = ~Votes_BBC, name = 'Proj BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
-  fig <- fig %>% add_trace(y = ~Votes_Fox, name = 'Proj Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
-  fig <- fig %>% add_trace(y = ~Votes_MSNBC, name = 'Proj MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) %>%
+  fig <- fig %>% add_trace(y = ~Votes_BBC, name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
+  fig <- fig %>% add_trace(y = ~Votes_Fox, name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
+  fig <- fig %>% add_trace(y = ~Votes_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) %>%
     layout(
       title = NULL,
       xaxis = list(title = "Date",
@@ -1477,11 +1508,11 @@ server <- function(input, output, session) {
     input$date2
     #input$confirm
     
-    fig <- plot_ly(Votes_final(), x = ~Date, y = ~Votes_Percent_Direct, name = 'Proj Anonymous', type = 'scatter', mode = 'lines',
+    fig <- plot_ly(Votes_final(), x = ~Date, y = ~Votes_Percent_Anonymous, name = 'Anonymous', type = 'scatter', mode = 'lines',
                    line = list(color = 'rgb(205, 12, 24)', width = 4)) 
-    fig <- fig %>% add_trace(y = ~Votes_Percent_BBC, name = 'Proj BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
-    fig <- fig %>% add_trace(y = ~Votes_Percent_Fox, name = 'Proj Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
-    fig <- fig %>% add_trace(y = ~Votes_Percent_MSNBC, name = 'Proj MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) %>%
+    fig <- fig %>% add_trace(y = ~Votes_Percent_BBC, name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
+    fig <- fig %>% add_trace(y = ~Votes_Percent_Fox, name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
+    fig <- fig %>% add_trace(y = ~Votes_Percent_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) %>%
       layout(
         title = NULL,
         xaxis = list(title = "Date",
