@@ -333,23 +333,34 @@ trial_votes_reshape <-average_votes_reshape%>%
 
 
 #------color
-pal <- pnw_palette(name = "Bay", n = 8, type = "continuous")
-color_for_1 <- pal[8]  # Close to red
+pal <- pnw_palette(name = "Bay", n = 16, type = "continuous")
+color_for_1 <- pal[16]  # Close to red
 color_for_0 <- pal[1]  # Close to blue
+
+pal2<-pnw_palette(name = "Bay", n = 16, type = "continuous")
+color_for_low1 <- pal2[13]
+
+pal4<-pnw_palette(name = "Bay", n = 16, type = "continuous")
+color_for_low0 <- pal4[5]
+
 
 
 pal2<- pnw_palette("Moth",12)
-color_for_low1 <- pal2[7]
+color_for_low1 <- pal2[6]
+
 
 pal3<- pnw_palette("Shuksan2",5)
 color_for_low0 <- pal3[2]
 
 
+pal5 <- pnw_palette("Winter",100)
+color_for_05 <- pal5[97]
+
 
 custom_colorscale <- list(
   list(0, "#DD4124"),       # Red at the low end (0) (Democrats)
   list(0.25, color_for_low1),    # Lighter red between 0 and 0.5
-  list(0.5, "#ffe6e6"),     # Very light red/pink at the middle (0.5)
+  list(0.5, color_for_05),     # Very light red/pink at the middle (0.5) "#ffe6e6"
   list(0.75, color_for_low0),    # Lighter blue between 0.5 and 1
   list(1, "#00496F")        # Blue at the high end (1) (Republicans)
 )
@@ -752,8 +763,8 @@ server <- function(input, output, session) {
                            "State:", StateFull, "<br>",
                            "Date:", Date, "<br>",
                            "Type:", Type, "<br>",
-                           "Predicted Party:", Predicted_party,"<br>",
-                           "Percent",Percent_byState_chr))
+                           "Winner:", Predicted_party,"<br>",
+                           "Percent",Percent_byState_chr_Demo))
   })
   
   
@@ -774,8 +785,8 @@ server <- function(input, output, session) {
                            "State:", StateFull, "<br>",
                            "Date:", Date, "<br>",
                            "Type:", Type, "<br>",
-                           "Predicted Party:", Predicted_party,"<br>",
-                           "Percent",Percent_byState_chr))
+                           "Winner:", Predicted_party,"<br>",
+                           "Democrat Win Chance",Percent_byState_chr_Demo))
   })
   
   # UI - Map - 3 ----------------------------------------------------------
