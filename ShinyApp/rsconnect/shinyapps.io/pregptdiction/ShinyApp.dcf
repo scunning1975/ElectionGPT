@@ -1,0 +1,12 @@
+name: ShinyApp
+title: ShinyApp
+username: pregptdiction
+account: pregptdiction
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 12599110
+bundleId: 9064156
+url: https://pregptdiction.shinyapps.io/ShinyApp/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
