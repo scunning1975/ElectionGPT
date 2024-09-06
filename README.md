@@ -38,6 +38,13 @@ The project will present two main types of visualizations:
 
 2. Map of the United States: A visual representation of daily changes in state predictions across the four distinct voices, helping to interpret variations and understand potential causes.
 
+## Shiny App 
+
+For more informaton about the project, please visit our shiny app.
+
+https://pregptdiction.shinyapps.io/ElectionGPT/
+
+
 ## References
 
 Pham (r) and Cunningham (r) (2024), "Can BaseGPT be Used for Forecasting without Additional Optimizatoin?" https://arxiv.org/abs/2404.07396
