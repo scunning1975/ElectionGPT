@@ -55,14 +55,15 @@ library(zoo)
 library(rsconnect)
 
 
-data<-read_csv("panel_election_results_state.csv",show_col_types = FALSE)
+data<-read_csv("panel_election_results_state_final_fixed.csv",show_col_types = FALSE)
+#data<-read_csv("panel_election_results_state.csv",show_col_types = FALSE)
 
 
 rsconnect::setAccountInfo(name='pregptdiction',
                           token='8AF4A8FFA3DE9C3227A9308BB61CB584',
                           secret='TVVaFnWHhaU7l/TUKn3zZyju6dbpXJULIa0QfP9J')
 
-rsconnect :: deployApp(server="shinyapps.io",appName = "ElectionGPT2",forceUpdate = TRUE)
+#rsconnect :: deployApp(server="shinyapps.io",appName = "ElectionGPT2",forceUpdate = TRUE)
 
 # 2 change the variable name and assigned the predicted party based on the result
 melted_data<-data%>%
@@ -73,6 +74,7 @@ melted_data<-data%>%
   )%>%
   mutate(party = ifelse(value ==1, "Republican", "Democratic")) %>%
   mutate(Type = ifelse(Type == "direct", "Direct", Type)) %>%
+  mutate(Date = as.Date(Date, format = "%m/%d/%y")) %>%
   mutate(Type = ifelse(Type == "Direct", "Anonymous", Type))
 
 # 3.1 2024-8-19 data has duplicates when retry to append the data
@@ -142,7 +144,9 @@ sub2 <-subdata1 %>%
 # Creating the second subset with state-specific totals and proportions
 # ******************Percent_byState variable used for state-level time series 
 subdata2 <- melted_data %>%
-  group_by(Date, Type, state) %>%
+  mutate(StateFull = state.name[match(state, state.abb)])%>%
+  mutate(StateFull = ifelse(state == "DC", "District of Columbia", StateFull))%>%
+  group_by(Date, Type, state, StateFull) %>%
   summarise(
     Percent_byState = mean(value, na.rm = TRUE),
     TotalTrial_byState = n(),
@@ -154,7 +158,7 @@ subdata2 <- melted_data %>%
   mutate(Percent_byState_Demo=round(1-Percent_byState, digits=3))%>% 
   mutate(Percent_byState_chr_Demo=sprintf("%1.2f%%", 100*Percent_byState_Demo))
 
-
+#View(subdata2)
 # Creating the second subset with state-specific totals,showing total trial for specific day with value 1 or 2
 subdata3 <- melted_data %>%
   mutate(StateFull = state.name[match(state, state.abb)]) %>%
@@ -177,9 +181,11 @@ extended_data <- melted_data %>%
   mutate(Date=as.Date(Date)) %>%
   mutate(year = as.numeric(format(as.Date(Date), "%Y")))%>%
   mutate(abb=state)%>%
-  mutate(Predicted_party=ifelse(Percent_byState>=0.5, "Republican", "Democratic")) 
+  mutate(Predicted_party=ifelse(Percent_byState>=0.5, "Republican", "Democratic")) %>%
+  select(-StateFull.y) %>%
+  rename(
+         StateFull=StateFull.x) 
 
-head(extended_data)
 
 extended_data2<-extended_data%>%
   select(Date,Type,party,StateFull,state,Percent_byState_Demo,Percent_byState_chr_Demo,Percent_byStateParty,Predicted_party)%>%
@@ -406,7 +412,7 @@ custom_colorscale <- list(
 )
 #data
 #function 1 state unique label
-state_group <- extended_data2 %>%
+state_group <- subdata2 %>%
   select(StateFull) %>%
   arrange(StateFull) %>%
   distinct()
@@ -1401,7 +1407,7 @@ server <- function(input, output, session) {
     #input$partychoice
     
     isolate({
-      if (length(Count_data()$party) ==0) {
+      if (length(Count_data()$Predicted_party) ==0) {
         fig <- ggplotly(
           ggplot(data.frame(x = 1), aes(x = x)) +
             ggtitle("No party fits selected characteristics. \nPlease modify selections.") +
