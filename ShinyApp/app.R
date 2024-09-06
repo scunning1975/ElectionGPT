@@ -55,9 +55,9 @@ library(zoo)
 library(rsconnect)
 
 
-data<-read_csv("panel_election_results_state_final_fixed.csv",show_col_types = FALSE)
+#data<-read_csv("panel_election_results_state_final_fixed.csv",show_col_types = FALSE)
 #data<-read_csv("panel_election_results_state.csv",show_col_types = FALSE)
-
+data<-read_csv("election_panel_dataset.csv",show_col_types = FALSE)
 
 rsconnect::setAccountInfo(name='pregptdiction',
                           token='8AF4A8FFA3DE9C3227A9308BB61CB584',
@@ -107,6 +107,7 @@ electoral_votes <- data.frame(
 # 5 merage data
 melted_data<-melted_data%>%
   left_join(electoral_votes, by ="state")
+
 
 # For calculation
 # 
@@ -158,7 +159,6 @@ subdata2 <- melted_data %>%
   mutate(Percent_byState_Demo=round(1-Percent_byState, digits=3))%>% 
   mutate(Percent_byState_chr_Demo=sprintf("%1.2f%%", 100*Percent_byState_Demo))
 
-#View(subdata2)
 # Creating the second subset with state-specific totals,showing total trial for specific day with value 1 or 2
 subdata3 <- melted_data %>%
   mutate(StateFull = state.name[match(state, state.abb)]) %>%
