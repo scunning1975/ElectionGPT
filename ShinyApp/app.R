@@ -586,9 +586,10 @@ ui <- dashboardPage(
                        start = "2024-08-13",
                        end   = Sys.Date() )
       )
+      )
     )
-  )),
-  
+    ),
+
   dashboardBody(
     tags$head(
       tags$link(
@@ -629,6 +630,7 @@ ui <- dashboardPage(
         id = "map_panel", 
         column(
           width = 12,
+          introBox(data.step = 4, data.intro = intro$text[4],
           uiOutput("box_pat6")
         ),
         column(
@@ -654,19 +656,23 @@ ui <- dashboardPage(
         div(
           id = "trend_panel", 
           column(
+            style = "padding-left: 50px",
             width = 6,
             uiOutput("box_pat7")
         ),
         column(
+          style = "padding-right: 50px;",
           width = 6,
           uiOutput("box_pat8")
         ),
         column(
           width = 6,
+          style = "padding-left: 50px;",
           uiOutput("box_table1")
         ),
         column(
           width = 6,
+          style = "padding-right: 50px;",
           uiOutput("box_table2")
         )
       ),
@@ -730,8 +736,7 @@ ui <- dashboardPage(
     )
   )
 ) 
-)
-
+))
 
 
 server <- function(input, output, session) {
