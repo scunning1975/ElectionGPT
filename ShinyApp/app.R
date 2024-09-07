@@ -525,14 +525,16 @@ ui <- dashboardPage(
   
   dashboardSidebar(
     width = 300,
-    introBox(data.step = 3, data.intro = intro$text[3], 
+    introBox(data.step = 2, data.intro = intro$text[2], 
     div(class = "inlay", style = "height:15px;width:100%;background-color: #ecf0f5;"),
     sidebarMenu(
+      introBox(data.step = 4, data.intro = intro$text[4], # intro tour
       div(id = "sidebar_button",
           bsButton(inputId = "confirm", 
                    label = "START EXPLORE", 
                    icon = icon("play-circle"), 
                    style = "danger")
+      )
       ),
       div(class = "inlay", style = "height:15px;width:100%;background-color: #ecf0f5;"),
       menuItem(
@@ -619,7 +621,7 @@ ui <- dashboardPage(
         bsButton("about", 
                  label = "ABOUT", 
                  style = "success"),
-        data.step = 2, data.intro = intro$text[2])
+        data.step = 1, data.intro = intro$text[1])
       )
     ),
     
@@ -630,8 +632,9 @@ ui <- dashboardPage(
         id = "map_panel", 
         column(
           width = 12,
-          introBox(data.step = 4, data.intro = intro$text[4],
+          introBox(data.step = 3, data.intro = intro$text[3],
           uiOutput("box_pat6")
+          )
         ),
         column(
           width = 6,
@@ -736,7 +739,8 @@ ui <- dashboardPage(
     )
   )
 ) 
-))
+)
+
 
 
 server <- function(input, output, session) {
