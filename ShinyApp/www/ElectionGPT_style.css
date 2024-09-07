@@ -3,7 +3,7 @@
     font-family: inherit;
     padding: 5px 12px;
     height: 55px;
-    min-width: 30%;
+    min-width: 33.33%;
     margin: 0px 10px 14px 20px;
     text-align: center;
     color: white;
@@ -25,7 +25,7 @@
     font-family: inherit;
     padding: 5px 12px;
     height: 55px;
-    min-width: 30%;
+    min-width: 33.33%;
     margin: 0px 10px 14px 20px;
     text-align: center;
     color: white;
@@ -72,7 +72,7 @@
     align-items: center;
     display: block;
     margin: 0 auto;
-    background: #d1351b;
+    background: #281da7;
     color: white;
     min-width: 25%;
     border-color: white
@@ -140,7 +140,7 @@ section.sidebar .shiny-bound-input.action-button, section.sidebar .shiny-bound-i
      height:10px; 
 }
 .bg-black {
-    background-color: #727477 !important;
+    background-color: #777472 !important;
     height: 55px;
     line-height:55px;
 
@@ -179,18 +179,18 @@ section.sidebar .shiny-bound-input.action-button, section.sidebar .shiny-bound-i
      color:#ffffff;
 }
  .modal-dialog{
-     max-width:1000px;
+     max-width:1200px;
      border-radius: 5px;
      border: 2px solid white; 
 }
  .modal-body{
-     max-height:700px;
+     max-height:900px;
      align-content:center;
      border: 2px solid white;
      border-radius: 5px;
 }
  .modal-sm {
-     max-width:1200px; 
+     max-width:1400px; 
      align-content:center;
      border-radius: 5px;
      border: 2px solid white;
@@ -286,4 +286,3 @@ section.sidebar .shiny-bound-input.action-button, section.sidebar .shiny-bound-i
 .shiny-output-error:before { 
     visibility: hidden; 
 }
- 

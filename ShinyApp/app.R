@@ -59,11 +59,12 @@ library(rsconnect)
 #data<-read_csv("panel_election_results_state.csv",show_col_types = FALSE)
 data<-read_csv("election_panel_dataset.csv",show_col_types = FALSE)
 
+
 rsconnect::setAccountInfo(name='pregptdiction',
                           token='8AF4A8FFA3DE9C3227A9308BB61CB584',
                           secret='TVVaFnWHhaU7l/TUKn3zZyju6dbpXJULIa0QfP9J')
 
-#rsconnect :: deployApp(server="shinyapps.io",appName = "ElectionGPT2",forceUpdate = TRUE)
+#rsconnect :: deployApp(server="shinyapps.io",appName = "Shiny2",forceUpdate = TRUE)
 
 # 2 change the variable name and assigned the predicted party based on the result
 melted_data<-data%>%
@@ -369,7 +370,22 @@ trial_votes_reshape <-average_votes_reshape%>%
   arrange(Date) 
 #*******************************************************************
 
-  
+#-------------import expert data
+expert <-read_csv("Expert_Opinions.csv",show_col_types = FALSE)
+
+expert_data<-expert%>%
+  rename(
+  Date = date,  # Renaming 'Result' to 'value'
+)%>%
+  mutate(Date = as.Date(Date, format = "%m/%d/%y")) %>%
+  mutate(Silver = round(Silver/100,digit=2)) %>%
+  mutate(Times = round(Times/100,digit=2)) %>%
+  mutate(party="Democratic")
+
+expert_all<-average_votes_percent_reshape%>%
+  filter(party=="Democratic") %>%
+  left_join(expert_data,by=c("Date","party"))
+           
 
 #------------Data  process done
 
@@ -437,6 +453,8 @@ distinct <- filtered_data %>%
 
 
 
+steps<-read_csv2("help.csv",show_col_types = FALSE)
+intro <- read_csv2("intro.csv",show_col_types = FALSE)
 
 
 # FLUID DESIGN FUNCTION ---------------------------------------------------
@@ -464,9 +482,50 @@ ui <- dashboardPage(
   skin = "red",
   title = "Presidential Election",
   
-  dashboardHeader(title = "Election GPT"),
+  # HEADER ------------------------------------------------------------------
+    
+  dashboardHeader(
+    title = span("Election GPT"),
+    titleWidth = 300,
+    dropdownMenu(
+      type = "notifications", 
+      headerText = strong("HELP"), 
+      icon = icon("question"), 
+      badgeStatus = NULL,
+      notificationItem(
+        text = "1: Select the states for which you want to see the winning probability for each party.",
+        icon = icon("spinner")
+      ),
+      notificationItem(
+        text = "2: Choose the reporting voice to generate election-result stories.",
+        icon = icon("user-md")
+      ),
+      notificationItem(
+        text = "3: Select a single date for the map and use a date range for the state average Democratic victory graph.",
+        icon = icon("calendar")
+      )
+    ),
+    tags$li(
+      a(
+        strong("ABOUT ElectionGPT"),
+        height = 40,
+        href = "https://github.com/ceefluz/radar/blob/master/README.md",  # Make sure this link is correct
+        title = "",
+        target = "_blank"
+      ),
+      class = "dropdown"
+    )
+  ),
+
+  
+# SIDEBAR -----------------------------------------------------------------
+  
+  
+  
+  
   dashboardSidebar(
     width = 300,
+    introBox(data.step = 3, data.intro = intro$text[3], 
     div(class = "inlay", style = "height:15px;width:100%;background-color: #ecf0f5;"),
     sidebarMenu(
       div(id = "sidebar_button",
@@ -528,7 +587,7 @@ ui <- dashboardPage(
                        end   = Sys.Date() )
       )
     )
-  ),
+  )),
   
   dashboardBody(
     tags$head(
@@ -546,15 +605,20 @@ ui <- dashboardPage(
     fluidRow(
       column(
         width = 12,
+        introBox(
         bsButton("map", 
                  label = "STATE LEVEL", 
                  style = "success"),
         bsButton("trend", 
                  label = "NATIONAL LEVEL", 
                  style = "success"),
+        bsButton("expert", 
+                 label = "EXPERT COMPARISON", 
+                 style = "success"),
         bsButton("about", 
                  label = "ABOUT", 
-                 style = "success")
+                 style = "success"),
+        data.step = 2, data.intro = intro$text[2])
       )
     ),
     
@@ -607,12 +671,24 @@ ui <- dashboardPage(
         )
       ),
       
+      
+      fluidRow(
+        div(
+          id = "expert_panel", 
+          column(
+            width = 12,
+            style = "padding-left: 50px; padding-right: 50px;",
+            uiOutput("box_pat9")
+          )
+        ),
+        
+        
       fluidRow(
         div(
           id="about_panel",
           column(
             width=6,
-            style = "padding-left: 50px;", 
+            style = "padding-left: 60px;", 
             h4(p("About the Project")),
             h5(p("The project began as an attempt to combine our interest in artificial intelligence, focusing on its predictive power and potential to shape the future.")),
             h5(p("Step 1: Pull 100 news stories from Event Registry: API Search for news stories related to the prompt: “2024 US presidential election”."),
@@ -654,15 +730,38 @@ ui <- dashboardPage(
     )
   )
 ) 
+)
 
 
 
 server <- function(input, output, session) {
   
+  #####UI general 
+  #show intro modal
+  observeEvent("", {
+    showModal(modalDialog(
+      includeHTML("www/intro_text.html"),
+      easyClose = TRUE,
+      footer = tagList(
+        actionButton(inputId = "intro", label = "INTRODUCTION TOUR", icon = icon("info-circle"))
+      )
+    ))
+  })
+  
+  observeEvent(input$intro,{
+    removeModal()
+  })
+  
+  # show intro tour
+  observeEvent(input$intro,
+               introjs(session, options = list("nextLabel" = "Continue",
+                                               "prevLabel" = "Previous",
+                                               "doneLabel" = "Alright. Let's go"))
+  )
   
   update_all <- function(x) {
     updateSelectInput(session, "tab",
-                      choices = c("", "Maps", "Trends", "About"),
+                      choices = c("", "Maps", "Trends", "Experts", "About"),
                       label = "",
                       selected = x
     )
@@ -675,6 +774,9 @@ server <- function(input, output, session) {
   })
   observeEvent(input$trend, {
     update_all("Trends")
+  })
+  observeEvent(input$expert, {
+    update_all("Experts")
   })
   observeEvent(input$diagnostics, {
     update_all("About")
@@ -723,7 +825,7 @@ server <- function(input, output, session) {
     show("map_panel")
     hide("trend_panel")
     hide("about_panel")
-    #hide("outcome_panel")
+    hide("expert_panel")
   }, once = TRUE)
   
   
@@ -736,13 +838,19 @@ server <- function(input, output, session) {
   observeEvent(input$trend, {
     show("trend_panel")
     hide("about_panel")
-    #hide("outcome_panel")
+    hide("expert_panel")
+    hide("map_panel")
+  })
+  observeEvent(input$expert, {
+    show("expert_panel")
+    hide("about_panel")
+    hide("trend_panel")
     hide("map_panel")
   })
   observeEvent(input$about, {
     show("about_panel")
     hide("trend_panel")
-    #hide("outcome_panel")
+    hide("expert_panel")
     hide("map_panel")
   })
   
@@ -761,6 +869,13 @@ server <- function(input, output, session) {
     })
     updateButton(session, "trend", style = {
       if (x == "Trends") {
+        paste("warning")
+      } else {
+        paste("success")
+      }
+    })
+    updateButton(session, "expert", style = {
+      if (x == "Experts") {
         paste("warning")
       } else {
         paste("success")
@@ -944,7 +1059,14 @@ server <- function(input, output, session) {
   })
  
   
-
+  # UI Expert Date
+  Expert_Data <- reactive({
+    #req(input$TimeseriesVoices) 
+    req(input$date2)
+    filter(expert_all,Date >= input$date2[1] & Date <= input$date2[2])
+  })
+  
+#-------------------------------------------------------------------------------
   # Render UI -Map 1
   
   output$box_pat <- renderUI({
@@ -1163,6 +1285,27 @@ server <- function(input, output, session) {
   
   # UI Image
 
+  
+  # UI 9 -----Expert
+  output$box_pat9 <- renderUI({
+    div(
+      style = "position: relative; backgroundColor: #ecf0f5",
+      tabBox(
+        id = "box_pat",
+        width = NULL,
+        height = 320, 
+        tabPanel(
+          title = " Average Democrat Victory With Expert Opinions "
+        ),
+        withSpinner(
+          plotlyOutput("distPlot3", height = 230),
+          type = 4,
+          color = "#d33724", 
+          size = 0.7 
+        )
+      )
+    )
+  })
   
   #         Output
   #-------Map 1 Anonymous
@@ -1623,6 +1766,67 @@ server <- function(input, output, session) {
     list(src = "www/Jared_Image2.png", contentType = 'image/png')
   }, deleteFile = FALSE)
 
+  
+  # Expert graph
+  output$distPlot3 <- renderPlotly({
+    input$date2
+    #input$confirm
+    
+    fig <- plot_ly(Expert_Data(), x = ~Date, y = ~Votes_Percent_Anonymous, name = 'Anonymous', type = 'scatter', mode = 'lines',
+                   line = list(color = 'rgb(205, 12, 24)', width = 4)) 
+    fig <- fig %>% add_trace(y = ~Votes_Percent_BBC, name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
+    fig <- fig %>% add_trace(y = ~Votes_Percent_Fox, name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
+    fig <- fig %>% add_trace(y = ~Votes_Percent_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) 
+    fig <- fig %>% add_trace(y = ~Silver, name = 'Nate Silver', line = list(color = 'green', width = 4, dash = 'lines')) 
+    fig <- fig %>% add_trace(y = ~Times, name = 'New York Times', line = list(color = 'purple', width = 4, dash = 'lines')) %>%
+      layout(
+        title = NULL,
+        xaxis = list(title = "Date",
+                     showgrid = TRUE),
+        yaxis = list(title = "Percent", 
+                     range = c(0.3, 0.7),
+                     showgrid = FALSE),
+        shapes = list(
+          list(
+            type = "rect",
+            fillcolor = "rgba(205, 12, 24, 0.2)", # Light red fill for 140-270
+            line = list(color = "rgba(205, 12, 24, 0)"), # No border
+            x0 = min(Expert_Data()$Date), x1 = max(Expert_Data()$Date),
+            y0 =0.3, y1 = 0.5
+          ),
+          list(
+            type = "rect",
+            fillcolor = "rgba(22, 96, 167, 0.2)", # Light blue fill for 270-400
+            line = list(color = "rgba(22, 96, 167, 0)"), # No border
+            x0 = min(Expert_Data()$Date), x1 = max(Expert_Data()$Date),
+            y0 = 0.5, y1 = 0.7
+          ),
+          list(
+            type = "line",
+            x0 = min(Expert_Data()$Date), x1 = max(Expert_Data()$Date),
+            y0 = 0.5, y1 = 0.5,
+            line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
+          )
+        )
+      ) %>%
+      layout(annotations = list(
+        list(
+          x = min(Expert_Data()$Date) + 5,
+          y = 0.65,
+          text = "Democrat Win",
+          showarrow = FALSE,
+          font = list(size = 12, weight = "bold", color = "rgb(22, 96, 167)"),
+          showgrid = FALSE
+        ),
+        list(
+          x = min(Expert_Data()$Date) + 5,
+          y = 0.4,
+          text = "Republican Win",
+          showarrow = FALSE,
+          font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
+        )
+      ))
+  })
   
 }
 
