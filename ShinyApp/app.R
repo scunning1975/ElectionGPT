@@ -688,6 +688,11 @@ ui <- dashboardPage(
             width = 12,
             style = "padding-left: 50px; padding-right: 50px;",
             uiOutput("box_pat9")
+          ),
+          column(
+            width = 12,
+            style = "padding-left: 50px; padding-right: 50px;",
+            uiOutput("box_table3")
           )
         ),
         
@@ -1052,7 +1057,7 @@ server <- function(input, output, session) {
   # UI Table 2 average votes perentage
   Table2_votes_percent <-reactive({
     #filter(average_votes,Type %in%  input$box_table1)
-    
+      
     datatable(
       average_votes_percent, 
       rownames = FALSE, 
@@ -1067,6 +1072,39 @@ server <- function(input, output, session) {
     
   })
  
+  
+  # UI Table 3 with expert
+  Table3<-reactive({
+    #filter(average_votes,Type %in%  input$box_table1)
+    expert_all_rename<-expert_all%>%
+      rename(
+        Anonymous=Votes_Percent_Anonymous,
+        BBC=Votes_Percent_BBC,
+        Fox=Votes_Percent_Fox,
+        MSNBC=Votes_Percent_MSNBC,
+        "Nate Sliver"=Silver,
+        "New York Times"=Times
+      ) %>%
+      mutate(Anonymous=round(Anonymous,digits=2)) %>%
+      mutate(BBC=round(BBC,digits=2)) %>%
+      mutate(Fox=round(Fox,digits=2)) %>%
+      mutate(MSNBC=round(MSNBC,digits=2)) 
+    
+    datatable(
+      expert_all_rename, 
+      rownames = FALSE, 
+      extensions = "Buttons",
+      options = list(
+        dom = 'Bfrtp',
+        buttons = c('csv', 'excel', 'pdf'),
+        style = "bootstrap",
+        lengthMenu = c(seq(10, 150, 10))
+      )
+    )
+    
+  })
+  
+  
   
   # UI Expert Date
   Expert_Data <- reactive({
@@ -1292,7 +1330,28 @@ server <- function(input, output, session) {
     
   })
   
-  # UI Image
+  # UI Table 3 with expert
+  output$box_table3 <- renderUI({
+    div(
+      style = "position: relative",
+      tabBox(
+        id = "box_table3",
+        width = NULL,
+        height = 550,
+        tabPanel(
+          title = " Win Likelihood By Voice and Expert"
+        ),
+        withSpinner(
+          DT::dataTableOutput("table3", height = 500),
+          type = 4,
+          color = "#d33724",
+          size = 0.7
+        )
+      )
+    )
+    
+  })
+  
 
   
   # UI 9 -----Expert
@@ -1300,7 +1359,7 @@ server <- function(input, output, session) {
     div(
       style = "position: relative; backgroundColor: #ecf0f5",
       tabBox(
-        id = "box_pat",
+        id = "box_table",
         width = NULL,
         height = 320, 
         tabPanel(
@@ -1767,6 +1826,14 @@ server <- function(input, output, session) {
 
     Table2_votes_percent()
   }, server = FALSE)
+  
+  
+  # Table 3
+  output$table3<- DT::renderDataTable({
+    
+    Table3()
+  }, server = FALSE)
+  
   
   
   # Image in About----------------------------------------------------------
