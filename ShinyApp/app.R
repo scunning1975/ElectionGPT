@@ -192,6 +192,13 @@ extended_data2<-extended_data%>%
   select(Date,Type,party,StateFull,state,Percent_byState_Demo,Percent_byState_chr_Demo,Percent_byStateParty,Predicted_party)%>%
   distinct(Date,Type,party,StateFull,state,Percent_byState_Demo,Percent_byState_chr_Demo,Percent_byStateParty,Predicted_party)
 
+
+#extended_data2_check<-melted_data%>%
+  #filter(Type=="Fox")%>%
+  #filter(state=="NC")%>%
+  #filter(Date=="2024-8-20")
+
+#View(extended_data2_check)
 # Create the dc_data with DC information for each Date and Type
 dates <-unique(extended_data2$Date)
 
@@ -509,12 +516,12 @@ ui <- dashboardPage(
       a(
         strong("ABOUT ElectionGPT"),
         height = 40,
-        href = "https://github.com/ceefluz/radar/blob/master/README.md",  # Make sure this link is correct
+        href = "https://github.com/scunning1975/ElectionGPT/blob/main/README.md",  # Make sure this link is correct
         title = "",
         target = "_blank"
       ),
       class = "dropdown"
-    )
+    ) 
   ),
 
   
@@ -1853,8 +1860,8 @@ server <- function(input, output, session) {
     fig <- fig %>% add_trace(y = ~Votes_Percent_BBC, name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
     fig <- fig %>% add_trace(y = ~Votes_Percent_Fox, name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
     fig <- fig %>% add_trace(y = ~Votes_Percent_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) 
-    fig <- fig %>% add_trace(y = ~Silver, name = 'Nate Silver', line = list(color = 'green', width = 4, dash = 'lines')) 
-    fig <- fig %>% add_trace(y = ~Times, name = 'New York Times', line = list(color = 'purple', width = 4, dash = 'lines')) %>%
+    fig <- fig %>% add_trace(y = ~Silver, name = 'Nate Silver', line = list(color = 'orange', width = 4, dash = 'lines')) 
+    fig <- fig %>% add_trace(y = ~Times, name = 'New York Times', line = list(color = 'lightgreen', width = 4, dash = 'lines')) %>%
       layout(
         title = NULL,
         xaxis = list(title = "Date",

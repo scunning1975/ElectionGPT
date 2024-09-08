@@ -46,6 +46,18 @@ For more informaton about the project, please visit our shiny app.
 
 https://pregptdiction.shinyapps.io/ElectionGPT/
 
+## Thank you
+This dashboard was built using R Gallary demo built by Christian Luz (https://shiny.posit.co/r/gallery/life-sciences/hospital-data-antimicrobial/) and many great tools in the R ecosystem. Thanks to all of the developers of these open source packages:
+
+- [shiny]
+- [shinydashboard]
+- [plotly]
+- [tidyverse]
+- [shinycssloaders]
+- [DT]
+
+...and many more. 
+
 
 ## References
 
