@@ -55,6 +55,47 @@ library(zoo)
 library(rsconnect)
 
 
+# download automate process
+
+
+library(httr)
+
+#Step 1
+download_panel_data <- function() {
+  url <- "https://raw.githubusercontent.com/scunning1975/KamalaGPT/main/news_data/election_news/panelel-ection_results_state.csv"
+  destfile <- "/Users/sunmingrun/Documents/GitHub/ElectionGPT/ShinyApp/panel_data.csv"
+
+  GET(url, write_disk(destfile, overwrite = TRUE))
+}
+
+#Step 2: Use Git to add, commit, and push changes to GitHub
+push_to_github <- function() {
+  # Navigate to your local GitHub repository
+  setwd("/Users/sunmingrun/Documents/GitHub/ElectionGPT/ShinyApp")
+  
+  # Add the updated files to the staging area
+  system("git add .")  # Add all changed files, or you can specify the specific file: system('git add path_to_file')
+                   
+  # Commit the changes with a message
+  system("git commit -m 'Automated update of panel_data.csv'")
+  
+  # Push the changes to GitHub
+  system("git push origin main")
+  
+  message("Changes pushed to GitHub successfully.")
+}
+
+# Step 3: Automate the process by running both functions
+automate_process <- function() {
+  download_panel_data()
+  push_to_github()
+}
+
+# Run the entire process
+automate_process()
+
+
+
 #data<-read_csv("panel_election_results_state_final_fixed.csv",show_col_types = FALSE)
 #data<-read_csv("panel_election_results_state.csv",show_col_types = FALSE)
 data<-read_csv("election_panel_dataset.csv",show_col_types = FALSE)
@@ -192,6 +233,13 @@ extended_data2<-extended_data%>%
   select(Date,Type,party,StateFull,state,Percent_byState_Demo,Percent_byState_chr_Demo,Percent_byStateParty,Predicted_party)%>%
   distinct(Date,Type,party,StateFull,state,Percent_byState_Demo,Percent_byState_chr_Demo,Percent_byStateParty,Predicted_party)
 
+
+#extended_data2_check<-melted_data%>%
+  #filter(Type=="Fox")%>%
+  #filter(state=="NC")%>%
+  #filter(Date=="2024-8-20")
+
+#View(extended_data2_check)
 # Create the dc_data with DC information for each Date and Type
 dates <-unique(extended_data2$Date)
 
@@ -509,12 +557,12 @@ ui <- dashboardPage(
       a(
         strong("ABOUT ElectionGPT"),
         height = 40,
-        href = "https://github.com/ceefluz/radar/blob/master/README.md",  # Make sure this link is correct
+        href = "https://github.com/scunning1975/ElectionGPT/blob/main/README.md",  # Make sure this link is correct
         title = "",
         target = "_blank"
       ),
       class = "dropdown"
-    )
+    ) 
   ),
 
   
@@ -1853,8 +1901,8 @@ server <- function(input, output, session) {
     fig <- fig %>% add_trace(y = ~Votes_Percent_BBC, name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
     fig <- fig %>% add_trace(y = ~Votes_Percent_Fox, name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
     fig <- fig %>% add_trace(y = ~Votes_Percent_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) 
-    fig <- fig %>% add_trace(y = ~Silver, name = 'Nate Silver', line = list(color = 'green', width = 4, dash = 'lines')) 
-    fig <- fig %>% add_trace(y = ~Times, name = 'New York Times', line = list(color = 'purple', width = 4, dash = 'lines')) %>%
+    fig <- fig %>% add_trace(y = ~Silver, name = 'Nate Silver', line = list(color = 'orange', width = 4, dash = 'lines')) 
+    fig <- fig %>% add_trace(y = ~Times, name = 'New York Times', line = list(color = 'lightgreen', width = 4, dash = 'lines')) %>%
       layout(
         title = NULL,
         xaxis = list(title = "Date",
