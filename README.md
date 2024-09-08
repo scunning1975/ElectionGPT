@@ -1,5 +1,7 @@
 # ElectionGPT
 
+![Election Prediction](./ShinyApp/images/StateLevel.png)
+
 ElectionGPT is a forecasting experiment designed to predict the outcomes of the 2024 U.S. Presidential Election using narrative-driven predictions with ChatGPT-4o-mini. This project, developed by Scott Cunningham (Baylor University), Jared Black (Baylor University) and Coco Sun (Baylor University), leverages innovative methods to simulate election forecasting through distinct narrative voices.
 
 ## Project Overview
@@ -40,9 +42,7 @@ The project will present two main types of visualizations:
 
 ## Shiny App 
 
-For more informaton about the project, please visit our shiny app.
-
-![Election Prediction](./ShinyApp/images/StateLevel.png)
+For more informaton about the project, please visit our shiny app. 
 
 https://pregptdiction.shinyapps.io/ElectionGPT/
 
