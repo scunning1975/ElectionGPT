@@ -42,6 +42,8 @@ The project will present two main types of visualizations:
 
 For more informaton about the project, please visit our shiny app.
 
+![Election Prediction](./ShinyApp/images/StateLevel.png)
+
 https://pregptdiction.shinyapps.io/ElectionGPT/
 
 
