@@ -1,0 +1,82 @@
+prompt <- "Given the recent news articles in the JSON data provided, generate a comprehensive news story from the perspective of MSNBC reporter Rachel Maddow about the outcome of the 2024 US presidential election between Donald Trump and Kamala Harris. The story must explicitly state the winner in each of the 50 states. Include a specifc detail or quote pulled directly from the news articles."
+
+-----------------------
+
+
+Story 1:
+**MSNBC Nightly News: 2024 Presidential Election Results**
+
+**By Rachel Maddow**
+
+Good evening. Tonight, we bring you the results of the highly anticipated 2024 U.S. presidential election between former President Donald Trump and current Vice President Kamala Harris. As the nation watched closely, the election has produced a decisive outcome, and we now have the results from all 50 states.
+
+In what has been characterized as a closely contested race, Kamala Harris has emerged victorious, garnering 306 electoral votes compared to Donald Trump's 232. The election has highlighted stark divides across the country, with some surprising shifts in voter sentiment.
+
+**State-by-State Breakdown:**
+
+- **Alabama**: Trump
+- **Alaska**: Trump
+- **Arizona**: Harris
+- **Arkansas**: Trump
+- **California**: Harris
+- **Colorado**: Harris
+- **Connecticut**: Harris
+- **Delaware**: Harris
+- **Florida**: Trump
+- **Georgia**: Harris
+- **Hawaii**: Harris
+- **Idaho**: Trump
+- **Illinois**: Harris
+- **Indiana**: Trump
+- **Iowa**: Trump
+- **Kansas**: Trump
+- **Kentucky**: Trump
+- **Louisiana**: Trump
+- **Maine**: Harris
+- **Maryland**: Harris
+- **Massachusetts**: Harris
+- **Michigan**: Harris
+- **Minnesota**: Harris
+- **Mississippi**: Trump
+- **Missouri**: Trump
+- **Montana**: Trump
+- **Nebraska**: Trump
+- **Nevada**: Harris
+- **New Hampshire**: Harris
+- **New Jersey**: Harris
+- **New Mexico**: Harris
+- **New York**: Harris
+- **North Carolina**: Trump
+- **North Dakota**: Trump
+- **Ohio**: Trump
+- **Oklahoma**: Trump
+- **Oregon**: Harris
+- **Pennsylvania**: Harris
+- **Rhode Island**: Harris
+- **South Carolina**: Trump
+- **South Dakota**: Trump
+- **Tennessee**: Trump
+- **Texas**: Trump
+- **Utah**: Trump
+- **Vermont**: Harris
+- **Virginia**: Harris
+- **Washington**: Harris
+- **West Virginia**: Trump
+- **Wisconsin**: Harris
+- **Wyoming**: Trump
+
+The election witnessed significant voter mobilization efforts, particularly in critical swing states like Georgia and Arizona, where Kamala Harris was able to turn the tide in her favor. This reflects a broader trend of increasing support for Democratic candidates, even in traditional Republican strongholds.
+
+As Harris celebrated her victory, she noted, “This election was not just about winning; it was about the future we want for our children and our country.” Her running mate, Minnesota Governor Tim Walz, who joined her on stage, emphasized unity and healing in a nation divided by partisanship.
+
+On the other hand, Trump, who did not shy away from criticizing Harris throughout the campaign, acknowledged the results and promised to continue fighting for his supporters. “We will not back down,” he declared in a post-election statement. 
+
+This election cycle has been marked by contentious debates, high-stakes campaigning, and the ongoing discussions surrounding issues like healthcare, immigration, and economic policy. The role of technology and social media in shaping public opinion has also received significant scrutiny, especially with reports of foreign interference.
+
+As we move forward, the implications of this election will resonate in American politics for years to come. The Harris-Walz administration is poised to tackle pressing issues, and we will closely follow their agenda as it unfolds.
+
+Thank you for joining us for this historic election coverage. We will continue to bring you updates and analysis as America moves into this new chapter. Good night.
+
+----------------------------------
+
+
