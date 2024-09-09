@@ -5,6 +5,7 @@ library(dplyr)
 library(fs)
 library(lubridate)
 library(stringr)
+library(tibble)
 
 # Function to process a single file
 process_single_file <- function(file_path) {

@@ -1,4 +1,40 @@
-append_to_panel_dataset <- function(base_path, existing_panel_file, kamala_panel_file) {
+# Load required libraries
+library(readxl)
+library(dplyr)
+library(tidyr)
+library(lubridate)
+library(stringr)
+library(purrr)
+library(readr)
+library(fs)
+library(git2r)
+
+# Function to handle Git operations
+git_push_changes <- function(repo_path, file_path, commit_message) {
+  tryCatch({
+    # Open the repository
+    repo <- repository(repo_path)
+    
+    # Pull the latest changes
+    pull(repo)
+    
+    # Stage the file
+    add(repo, file_path)
+    
+    # Commit the changes
+    commit(repo, message = commit_message)
+    
+    # Push the changes
+    push(repo)
+    
+    cat("Changes successfully pushed to GitHub\n")
+  }, error = function(e) {
+    cat("Error in Git operations:", conditionMessage(e), "\n")
+    cat("You may need to push changes manually.\n")
+  })
+}
+
+append_to_panel_dataset <- function(base_path, panel_file) {
   # Get today's date
   today <- Sys.Date()
   
@@ -42,7 +78,7 @@ append_to_panel_dataset <- function(base_path, existing_panel_file, kamala_panel
   }
   
   # Read existing panel data
-  existing_panel_data <- read_csv(existing_panel_file)
+  existing_panel_data <- read_csv(panel_file)
   
   # Check for duplicates
   new_panel_data <- new_panel_data %>%
@@ -57,32 +93,26 @@ append_to_panel_dataset <- function(base_path, existing_panel_file, kamala_panel
   # Combine existing and new data
   updated_panel_data <- bind_rows(existing_panel_data, new_panel_data)
   
-  # Save the updated panel dataset, overwriting the existing files
-  write_csv(updated_panel_data, existing_panel_file)
-  write_csv(updated_panel_data, kamala_panel_file)
+  # Save the updated panel dataset, overwriting the existing file
+  write_csv(updated_panel_data, panel_file)
   
-  cat("Panel dataset updated and saved as:", existing_panel_file, "\n")
-  cat("Panel dataset also saved as:", kamala_panel_file, "\n")
+  cat("Panel dataset updated and saved as:", panel_file, "\n")
   cat("Total rows in updated panel:", nrow(updated_panel_data), "\n")
   cat("New unique rows added:", nrow(new_panel_data), "\n")
   
   # Push changes to GitHub
-  repo <- repository("/Users/jaredblack/GitHub/ElectionGPT")
-  add(repo, existing_panel_file)
-  commit(repo, message = paste("Updated panel dataset -", Sys.Date()))
-  push(repo)
-  
-  cat("Changes pushed to GitHub\n")
+  repo_path <- "/Users/jaredblack/GitHub/ElectionGPT"
+  commit_message <- paste("Updated panel dataset -", Sys.Date())
+  git_push_changes(repo_path, panel_file, commit_message)
   
   return(updated_panel_data)
 }
 
 # Example usage
 base_path <- "/Users/jaredblack/GitHub/ElectionGPT/data/processed"
-existing_panel_file <- "/Users/jaredblack/GitHub/ElectionGPT/data/panel_election_results_state.csv"
-kamala_panel_file <- "/Users/jaredblack/KamalaGPT/news_data/election_news/panel_election_results_state.csv"
+panel_file <- "/Users/jaredblack/GitHub/ElectionGPT/data/panel_election_results_state.csv"
 
-result <- append_to_panel_dataset(base_path, existing_panel_file, kamala_panel_file)
+result <- append_to_panel_dataset(base_path, panel_file)
 
 if (is.null(result)) {
   cat("No updates were made to the panel dataset.\n")
