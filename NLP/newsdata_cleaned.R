@@ -9,4 +9,4 @@ data_cleaned <-data %>%
 
 #View(data_cleaned)
 
-write_csv(newsdata_cleaned,"news_data.csv")
+write_csv(data_cleaned,"newsdata_cleaned.csv")
