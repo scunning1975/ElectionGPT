@@ -1914,7 +1914,7 @@ server <- function(input, output, session) {
     fig <- fig %>% add_trace(y = ~Votes_Percent_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) 
     fig <- fig %>% add_trace(y = ~Silver, name = 'Nate Silver', line = list(color = 'orange', width = 4, dash = 'lines')) 
     fig <- fig %>% add_trace(y = ~Times, name = 'New York Times', line = list(color = 'lightgreen', width = 4, dash = 'lines')) %>%
-      fig <- fig %>% add_trace(y = ~Times, name = 'Economist', line = list(color = 'black', width = 4, dash = 'dot')) %>%
+      fig <- fig %>% add_trace(y = ~Times, name = 'Economist', line = list(color = 'black', width = 4, dash = 'dot'))
       layout(
         title = NULL,
         xaxis = list(title = "Date",
