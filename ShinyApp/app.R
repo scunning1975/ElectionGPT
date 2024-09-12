@@ -595,7 +595,7 @@ ui <- dashboardPage(
       br(),
       br(),
       menuItem(
-        "YEAR",
+        "Date",
         tabName = "year",
         icon = icon("calendar"),
         sliderInput(
@@ -730,7 +730,7 @@ ui <- dashboardPage(
             style = "padding-left: 60px;", 
             h4(p("About the Project")),
             h5(p("The project began as an attempt to combine our interest in artificial intelligence, focusing on its predictive power and potential to shape the future.")),
-            h5(p("Step 1: Pull 100 news stories from Event Registry: API Search for news stories related to the prompt: “2024 US presidential election”."),
+            h5(p("Step 1: Pull 100 news stories from Event Registry: API Search for news stories related to the prompt: “2024 US presidential election”. Each date corresponds to a 1am CST newspaper article pull on that date.For example, on September 10th, we pulled the data at 1am CST and therefore the news refers is up to the 9th."),
                p("Step 2: Feed stories to Chat-GPT in 4 distinct voices：Four characters, each representing different perspectives, will generate 100 stories:"),
                h6(p("• Voice 1: Anonymous/Direct truthful reporter"),
                   p("• Voice 2: Fox Reporter Bret Baier"),
@@ -1279,7 +1279,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 320,
         tabPanel(
-          title = "Average Electoral Votes"
+          title = "Average Electoral College (EC) Votes"
         ),
         withSpinner(
           plotlyOutput("distPlot", height = 230),
@@ -1300,7 +1300,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 320, 
         tabPanel(
-          title = " Average Percent of Democrat Electory Votes"
+          title = "Average Harris Electoral College Votes Out of 538"
         ),
         withSpinner(
           plotlyOutput("distPlot2", height = 230),
@@ -1320,7 +1320,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 400,
         tabPanel(
-          title = "Average Democrat Electory Votes"
+          title = "Average Electoral College Votes"
           ),
           withSpinner(
             DT::dataTableOutput("table1_votes", height = 300),
@@ -1342,7 +1342,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 400,
         tabPanel(
-          title = "Percent of Democrat Electory Votes"
+          title = "Average Harris Electoral College Votes Out of 538"
         ),
         withSpinner(
           DT::dataTableOutput("table2_votes_percent", height = 300),
