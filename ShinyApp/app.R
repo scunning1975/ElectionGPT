@@ -438,6 +438,7 @@ expert_data<-expert%>%
   mutate(Date = as.Date(Date, format = "%m/%d/%y")) %>%
   mutate(Silver = round(Silver/100,digit=2)) %>%
   mutate(Times = round(Times/100,digit=2)) %>%
+  mutate(Economist = round(Economist/100,digit=2)) %>%
   mutate(party="Democratic")
 
 expert_all<-average_votes_percent_reshape%>%
@@ -1353,7 +1354,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 400,
         tabPanel(
-          title = "Average Electory Votes"
+          title = "Average Democrat Electory Votes"
           ),
           withSpinner(
             DT::dataTableOutput("table1_votes", height = 300),
@@ -1375,7 +1376,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 400,
         tabPanel(
-          title = "Percent of Electory Votes"
+          title = "Percent of Democrat Electory Votes"
         ),
         withSpinner(
           DT::dataTableOutput("table2_votes_percent", height = 300),
@@ -1397,7 +1398,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 550,
         tabPanel(
-          title = " Percent of Electory Votes By Voice and Expert"
+          title = " Percent of Democrat Electory Votes By Voice and Expert"
         ),
         withSpinner(
           DT::dataTableOutput("table3", height = 500),
@@ -1421,7 +1422,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 320, 
         tabPanel(
-          title = " Average Democrat Victory With Expert Opinions "
+          title = " Average Percent of Democrat Electory Votes With Expert Opinions "
         ),
         withSpinner(
           plotlyOutput("distPlot3", height = 230),
@@ -1913,6 +1914,7 @@ server <- function(input, output, session) {
     fig <- fig %>% add_trace(y = ~Votes_Percent_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) 
     fig <- fig %>% add_trace(y = ~Silver, name = 'Nate Silver', line = list(color = 'orange', width = 4, dash = 'lines')) 
     fig <- fig %>% add_trace(y = ~Times, name = 'New York Times', line = list(color = 'lightgreen', width = 4, dash = 'lines')) %>%
+      fig <- fig %>% add_trace(y = ~Times, name = 'Economist', line = list(color = 'black', width = 4, dash = 'dot')) %>%
       layout(
         title = NULL,
         xaxis = list(title = "Date",
