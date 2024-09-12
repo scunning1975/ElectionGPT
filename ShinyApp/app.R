@@ -60,40 +60,6 @@ library(rsconnect)
 
 library(httr)
 
-#Step 1
-download_panel_data <- function() {
-  url <- "https://raw.githubusercontent.com/scunning1975/KamalaGPT/main/news_data/election_news/panelel-ection_results_state.csv"
-  destfile <- "/Users/sunmingrun/Documents/GitHub/ElectionGPT/ShinyApp/panel_data.csv"
-
-  GET(url, write_disk(destfile, overwrite = TRUE))
-}
-
-#Step 2: Use Git to add, commit, and push changes to GitHub
-push_to_github <- function() {
-  # Navigate to your local GitHub repository
-  setwd("/Users/sunmingrun/Documents/GitHub/ElectionGPT/ShinyApp")
-  
-  # Add the updated files to the staging area
-  system("git add .")  # Add all changed files, or you can specify the specific file: system('git add path_to_file')
-                   
-  # Commit the changes with a message
-  system("git commit -m 'Automated update of panel_data.csv'")
-  
-  # Push the changes to GitHub
-  system("git push origin main")
-  
-  message("Changes pushed to GitHub successfully.")
-}
-
-# Step 3: Automate the process by running both functions
-automate_process <- function() {
-  download_panel_data()
-  push_to_github()
-}
-
-# Run the entire process
-automate_process()
-
 
 
 #data<-read_csv("panel_election_results_state_final_fixed.csv",show_col_types = FALSE)
@@ -429,7 +395,7 @@ trial_votes_reshape <-average_votes_reshape%>%
 #*******************************************************************
 
 #-------------import expert data
-expert <-read_csv("Expert_Opinions 2.csv",show_col_types = FALSE)
+expert <-read_csv("Expert_Opinions.csv",show_col_types = FALSE)
 
 expert_data<-expert%>%
   rename(
@@ -438,7 +404,7 @@ expert_data<-expert%>%
   mutate(Date = as.Date(Date, format = "%m/%d/%y")) %>%
   mutate(Silver = round(Silver/100,digit=2)) %>%
   mutate(Times = round(Times/100,digit=2)) %>%
-  #mutate(Economist = round(Economist/100,digit=2)) %>%
+  mutate(Economist = round(Economist/100,digit=2)) %>%
   mutate(party="Democratic")
 
 expert_all<-average_votes_percent_reshape%>%
@@ -1334,7 +1300,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 320, 
         tabPanel(
-          title = " Average Democrat Victory "
+          title = " Average Percent of Democrat Electory Votes"
         ),
         withSpinner(
           plotlyOutput("distPlot2", height = 230),
@@ -1817,9 +1783,6 @@ server <- function(input, output, session) {
   
   output$distPlot2 <- renderPlotly({
     input$date2
-    Expert_Data()$Silver[is.na(Expert_Data()$Silver)] <- 0
-    Expert_Data()$Economist[is.na(Expert_Data()$Economist)] <- 0
-    Expert_Data()$Times[is.na(Expert_Data()$Times)] <- 0
     #input$confirm
     
     fig <- plot_ly(Votes_final(), x = ~Date, y = ~Votes_Percent_Anonymous, name = 'Anonymous', type = 'scatter', mode = 'lines',
@@ -1917,7 +1880,7 @@ server <- function(input, output, session) {
     fig <- fig %>% add_trace(y = ~Votes_Percent_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) 
     fig <- fig %>% add_trace(y = ~Silver, name = 'Nate Silver', line = list(color = 'orange', width = 4, dash = 'lines')) 
     fig <- fig %>% add_trace(y = ~Times, name = 'New York Times', line = list(color = 'lightgreen', width = 4, dash = 'lines'))
-    #fig <- fig %>% add_trace(y = ~Times, name = 'Economist', line = list(color = 'black', width = 4, dash = 'dot'))
+    fig <- fig %>% add_trace(y = ~Times, name = 'Economist', line = list(color = 'purple', width = 4, dash = 'dot')) %>%
       layout(
         title = NULL,
         xaxis = list(title = "Date",
