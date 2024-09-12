@@ -98,7 +98,7 @@ automate_process()
 
 #data<-read_csv("panel_election_results_state_final_fixed.csv",show_col_types = FALSE)
 #data<-read_csv("panel_election_results_state.csv",show_col_types = FALSE)
-data<-read_csv("election_panel_dataset.csv",show_col_types = FALSE)
+data<-read_csv("panel_election_results_state.csv",show_col_types = FALSE)
 
 
 rsconnect::setAccountInfo(name='pregptdiction',
@@ -319,6 +319,16 @@ subdata3_1<-melted_data %>%
     .groups = 'drop'
   ) 
 
+subdata3_1_for_sentiment<-melted_data %>%
+  group_by(Type, Trial, Date,party) %>%
+  summarise(
+    Number_Repub_Win = n(),
+    votes_party =sum(Electoral_Votes),
+    .groups = 'drop'
+  ) %>% filter(party=="Democratic") %>%
+  mutate(percent_by_trail=votes_party/538)
+
+#write.csv(subdata3_1_for_sentiment, "/Users/sunmingrun/Documents/GitHub/KamalaGPT/data/subdata3_1_for_sentiment.csv", row.names = FALSE)
 
 subdata3_1_2<-melted_data %>%
   group_by(Type, Date, party) %>%
@@ -419,7 +429,7 @@ trial_votes_reshape <-average_votes_reshape%>%
 #*******************************************************************
 
 #-------------import expert data
-expert <-read_csv("Expert_Opinions.csv",show_col_types = FALSE)
+expert <-read_csv("expert_combined_panel.csv",show_col_types = FALSE)
 
 expert_data<-expert%>%
   rename(
@@ -1343,7 +1353,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 400,
         tabPanel(
-          title = "Average Votes"
+          title = "Average Electory Votes"
           ),
           withSpinner(
             DT::dataTableOutput("table1_votes", height = 300),
@@ -1365,7 +1375,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 400,
         tabPanel(
-          title = " Win Likelihood"
+          title = "Percent of Electory Votes"
         ),
         withSpinner(
           DT::dataTableOutput("table2_votes_percent", height = 300),
@@ -1387,7 +1397,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 550,
         tabPanel(
-          title = " Win Likelihood By Voice and Expert"
+          title = " Percent of Electory Votes By Voice and Expert"
         ),
         withSpinner(
           DT::dataTableOutput("table3", height = 500),
