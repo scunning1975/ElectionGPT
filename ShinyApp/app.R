@@ -438,7 +438,7 @@ expert_data<-expert%>%
   mutate(Date = as.Date(Date, format = "%m/%d/%y")) %>%
   mutate(Silver = round(Silver/100,digit=2)) %>%
   mutate(Times = round(Times/100,digit=2)) %>%
-  mutate(Economist = round(Economist/100,digit=2)) %>%
+  #mutate(Economist = round(Economist/100,digit=2)) %>%
   mutate(party="Democratic")
 
 expert_all<-average_votes_percent_reshape%>%
