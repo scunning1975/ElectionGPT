@@ -429,7 +429,7 @@ trial_votes_reshape <-average_votes_reshape%>%
 #*******************************************************************
 
 #-------------import expert data
-expert <-read_csv("Expert_Opinions.csv",show_col_types = FALSE)
+expert <-read_csv("Expert_Opinions 2.csv",show_col_types = FALSE)
 
 expert_data<-expert%>%
   rename(
