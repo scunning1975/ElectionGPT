@@ -77,7 +77,7 @@ push_to_github <- function() {
   system("git add .")  # Add all changed files, or you can specify the specific file: system('git add path_to_file')
   
   # Commit the changes with a message
-  system("git commit -m 'Automated update of panel_data.csv'")
+  system("git commit -m 'Automated update of Shiny file'")
   
   # Push the changes to GitHub
   system("git push origin main")
