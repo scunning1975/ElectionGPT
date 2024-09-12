@@ -1912,9 +1912,20 @@ server <- function(input, output, session) {
     fig <- fig %>% add_trace(y = ~Votes_Percent_BBC, name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
     fig <- fig %>% add_trace(y = ~Votes_Percent_Fox, name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
     fig <- fig %>% add_trace(y = ~Votes_Percent_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) 
-    fig <- fig %>% add_trace(y = ~Silver, name = 'Nate Silver', line = list(color = 'orange', width = 4, dash = 'lines')) 
-    fig <- fig %>% add_trace(y = ~Times, name = 'New York Times', line = list(color = 'lightgreen', width = 4, dash = 'lines'))
-    fig <- fig %>% add_trace(y = ~Times, name = 'Economist', line = list(color = 'black', width = 4, dash = 'dot'))
+    # Check for missing Silver data
+    if (!all(is.na(Expert_Data()$Silver))) {
+      fig <- fig %>% add_trace(y = ~Silver, name = 'Nate Silver', line = list(color = 'orange', width = 4, dash = 'lines'))
+    }
+    
+    # Check for missing Times data
+    if (!all(is.na(Expert_Data()$Times))) {
+      fig <- fig %>% add_trace(y = ~Times, name = 'New York Times', line = list(color = 'lightgreen', width = 4, dash = 'lines'))
+    }
+    
+    # Check for missing Economist data
+    if (!all(is.na(Expert_Data()$Economist))) {
+      fig <- fig %>% add_trace(y = ~Economist, name = 'Economist', line = list(color = 'black', width = 4, dash = 'dot'))
+    }
       layout(
         title = NULL,
         xaxis = list(title = "Date",
