@@ -43,10 +43,10 @@ server <- function(input, output, session) {
   
   election_data <- reactive({
     file_path <- switch(input$data_source,
-                        "Direct" = "/Users/jaredblack/GitHub/ElectionGPT/data/fine-tuned_direct_election_results.csv",
-                        "Fox" = "/Users/jaredblack/GitHub/ElectionGPT/data/fine-tuned_Fox_election_results.csv",
-                        "MSNBC" = "/Users/jaredblack/GitHub/ElectionGPT/data/fine-tuned_MSNBC_election_results.csv",
-                        "BBC" = "/Users/jaredblack/GitHub/ElectionGPT/data/fine-tuned_BBC_election_results.csv")
+                        "Direct" = "/Users/jaredblack/GitHub/ElectionGPT/data/fine-tuned_results/fine-tuned_direct_election_results.csv",
+                        "Fox" = "/Users/jaredblack/GitHub/ElectionGPT/data/fine-tuned_results/fine-tuned_Fox_election_results.csv",
+                        "MSNBC" = "/Users/jaredblack/GitHub/ElectionGPT/data/fine-tuned_results/fine-tuned_MSNBC_election_results.csv",
+                        "BBC" = "/Users/jaredblack/GitHub/ElectionGPT/data/fine-tuned_results/fine-tuned_BBC_election_results.csv")
     
     read_election_data(file_path) %>%
       left_join(electoral_votes, by = "state")

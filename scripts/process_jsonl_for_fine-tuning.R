@@ -2,11 +2,8 @@ library(jsonlite)
 library(glue)
 library(purrr)
 
-# Set the directory path
-dir_path <- "/Users/jaredblack/GitHub/ElectionGPT/data/news"
-
-# Get all .jsonl files in the directory
-jsonl_files <- list.files(dir_path, pattern = "\\.jsonl$", full.names = TRUE)
+# Set the file path
+file_path <- "/Users/jaredblack/GitHub/ElectionGPT/data/news/combined_news_data.jsonl"
 
 # Function to safely parse JSON
 safe_fromJSON <- function(json_string) {
@@ -16,12 +13,10 @@ safe_fromJSON <- function(json_string) {
   )
 }
 
-# Function to process each file
+# Function to process the file
 process_file <- function(file_path) {
   # Read the file line by line
-  con <- file(file_path, "r")
-  lines <- readLines(con)
-  close(con)
+  lines <- readLines(file_path)
   
   # Process each line
   formatted_data <- map(lines, function(line) {
@@ -37,7 +32,7 @@ process_file <- function(file_path) {
           content = "You are a helpful assistant that provides information about elections and political news."
         ),
         list(
-          role = "user",
+          role = "human",
           content = glue("Summarize this news article: {article$title}")
         ),
         list(
@@ -51,26 +46,26 @@ process_file <- function(file_path) {
   # Remove NULL entries
   formatted_data <- compact(formatted_data)
   
-  # Convert to JSON
-  json_data <- sapply(formatted_data, toJSON, auto_unbox = TRUE)
-  
   # Create the new file name
-  new_file_name <- file.path(dir_path, glue("formatted_{basename(file_path)}"))
+  new_file_name <- gsub("\\.jsonl$", "_formatted.jsonl", file_path)
   
   # Write the formatted data to the new file
-  writeLines(json_data, con = new_file_name)
+  con <- file(new_file_name, "w")
+  for (item in formatted_data) {
+    writeLines(toJSON(item, auto_unbox = TRUE), con)
+  }
+  close(con)
   
   cat(glue("Processed: {basename(file_path)} -> {basename(new_file_name)}\n"))
-  cat(glue("Number of examples created: {length(json_data)}\n"))
+  cat(glue("Number of examples created: {length(formatted_data)}\n"))
   
   # Print first formatted item
-  if (length(json_data) > 0) {
+  if (length(formatted_data) > 0) {
     cat("First formatted item:\n")
-    cat(json_data[1], "\n")
+    cat(toJSON(formatted_data[[1]], auto_unbox = TRUE, pretty = TRUE), "\n")
   }
 }
 
-# Process all files
-lapply(jsonl_files, process_file)
-
-cat("All files have been processed.\n")
+# Process the file
+process_file(file_path)
+cat("File has been processed.\n")
