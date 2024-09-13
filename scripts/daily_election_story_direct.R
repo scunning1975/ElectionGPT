@@ -25,6 +25,7 @@ news_content <- load_newest_news_file(save_directory)
 
 # Define the prompt
 prompt <- "Given the recent news articles in the JSON data provided, generate a short news story from the perspective of a trustworthy independent reporter about the outcome of the 2024 US presidential election between Donald Trump and Kamala Harris. The story must explicitly state the winner in each of the 50 states.  Include a specifc detail or quote pulled directly from the news articles."
+# Consider randomizing the order of the candidate names in the prompt
 
 # Prepare the news content for API input
 news_content_text <- toJSON(news_content)

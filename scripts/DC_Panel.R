@@ -7,32 +7,6 @@ library(stringr)
 library(purrr)
 library(readr)
 library(fs)
-library(git2r)
-
-# Function to handle Git operations
-git_push_changes <- function(repo_path, file_path, commit_message) {
-  tryCatch({
-    # Open the repository
-    repo <- repository(repo_path)
-    
-    # Pull the latest changes
-    pull(repo)
-    
-    # Stage the file
-    add(repo, file_path)
-    
-    # Commit the changes
-    commit(repo, message = commit_message)
-    
-    # Push the changes
-    push(repo)
-    
-    cat("Changes successfully pushed to GitHub\n")
-  }, error = function(e) {
-    cat("Error in Git operations:", conditionMessage(e), "\n")
-    cat("You may need to push changes manually.\n")
-  })
-}
 
 append_to_panel_dataset <- function(base_path, panel_file) {
   # Get today's date
@@ -100,20 +74,13 @@ append_to_panel_dataset <- function(base_path, panel_file) {
   cat("Total rows in updated panel:", nrow(updated_panel_data), "\n")
   cat("New unique rows added:", nrow(new_panel_data), "\n")
   
-  # Push changes to GitHub
-  repo_path <- "/Users/jaredblack/GitHub/ElectionGPT"
-  commit_message <- paste("Updated panel dataset -", Sys.Date())
-  git_push_changes(repo_path, panel_file, commit_message)
-  
   return(updated_panel_data)
 }
 
 # Example usage
 base_path <- "/Users/jaredblack/GitHub/ElectionGPT/data/processed"
 panel_file <- "/Users/jaredblack/GitHub/ElectionGPT/data/panel_election_results_state.csv"
-
 result <- append_to_panel_dataset(base_path, panel_file)
-
 if (is.null(result)) {
   cat("No updates were made to the panel dataset.\n")
 } else {

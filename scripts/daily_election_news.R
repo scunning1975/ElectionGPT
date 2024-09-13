@@ -18,15 +18,12 @@ news_params <- list(
   articleBodyLen = 200  # This parameter sets the length of the article body to a shorter summary
 )
 
-# Directories to save the JSON files
-save_directory_1 <- "/Users/jaredblack/KamalaGPT/news_data/election_news"
-save_directory_2 <- "/Users/jaredblack/GitHub/ElectionGPT/data/news"  # New save location
+# Directory to save the JSON files
+save_directory <- "/Users/jaredblack/GitHub/ElectionGPT/data/news"  # New save location
 
-# Create the directories if they don't exist
-for (dir in c(save_directory_1, save_directory_2)) {
-  if (!dir.exists(dir)) {
-    dir.create(dir, recursive = TRUE)
-  }
+# Create the directory if it doesn't exist
+if (!dir.exists(save_directory)) {
+  dir.create(save_directory, recursive = TRUE)
 }
 
 # Function to fetch news data
@@ -53,12 +50,10 @@ if (!is.null(news_data)) {
   timestamp <- format(Sys.time(), "%Y-%m-%d_%H-%M-%S")
   json_filename <- paste0("news_data_", timestamp, ".json")
   
-  # Save to both locations
-  for (dir in c(save_directory_1, save_directory_2)) {
-    json_filepath <- file.path(dir, json_filename)
-    write_json(news_data, json_filepath)
-    cat("News data fetched and saved as:", json_filepath, "\n")
-  }
+  # Save to the directory
+  json_filepath <- file.path(save_directory, json_filename)
+  write_json(news_data, json_filepath)
+  cat("News data fetched and saved as:", json_filepath, "\n")
 } else {
   cat("Failed to fetch news data.\n")
 }
