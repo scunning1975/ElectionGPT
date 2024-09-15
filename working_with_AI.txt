@@ -1,0 +1,11 @@
+# Jared - Working with AI
+
+## Prior thoughts
+I thought the value of AI would be primarily in its ability to develop my ideas into sudo-code and then parse that sudo-code into executable language.  
+
+
+## Updated thoughts
+I was right about that in part.  What I didn't expect was how good a teacher AI can be, but also how little you can fully rely on it.
+
+## Advice
+Use AI as a halfway point between hours and hours of Googling StackOverflow and 30 minutes with a very good tutor.  Don't trust what it says.  Always run your own code and validate, validate, validate.  But also, 30 days ago, I barely knew how to use GitHub to share work. I had never used cron for scheduling code to run, I hadn't used news or GPT APIs, and the fine-tuning aspect of GPT was completely unknown to me - now I feel confident using all these things for future work.
