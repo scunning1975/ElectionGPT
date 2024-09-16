@@ -60,10 +60,9 @@ library(rsconnect)
 
 library(httr)
 
+setwd("/Users/sunmingrun/Documents/GitHub/ElectionGPT/ShinyApp")
 
-
-#data<-read_csv("panel_election_results_state_final_fixed.csv",show_col_types = FALSE)
-#data<-read_csv("panel_election_results_state.csv",show_col_types = FALSE)
+# 1 data import
 data<-read_csv("panel_election_results_state.csv",show_col_types = FALSE)
 
 
@@ -71,7 +70,7 @@ rsconnect::setAccountInfo(name='pregptdiction',
                           token='8AF4A8FFA3DE9C3227A9308BB61CB584',
                           secret='TVVaFnWHhaU7l/TUKn3zZyju6dbpXJULIa0QfP9J')
 
-#rsconnect :: deployApp(server="shinyapps.io",appName = "Shiny2",forceUpdate = TRUE)
+
 
 # 2 change the variable name and assigned the predicted party based on the result
 melted_data<-data%>%
@@ -410,7 +409,55 @@ expert_data<-expert%>%
 expert_all<-average_votes_percent_reshape%>%
   filter(party=="Democratic") %>%
   left_join(expert_data,by=c("Date","party"))
-           
+
+# ----------------------------
+expert <-read_csv("expert_combined_panel.csv",show_col_types = FALSE)
+
+expert_data<-expert%>%
+  rename(
+    Date = date,  # Renaming 'Result' to 'value'
+  )%>%
+  mutate(Date = as.Date(Date, format = "%m/%d/%y")) %>%
+  mutate(Harris = round(Harris/100,digit=2)) %>%
+  mutate(Trump = round(Trump/100,digit=2))
+.groups = 'drop'
+
+
+
+# simulation
+# Comment: subdata2 creates the probability of aggregated state winner by Date and Type 
+# Creating the second subset with state-specific totals and proportions
+# ******************Percent_byState variable used for state-level time series 
+
+# Creating the second subset with state-specific totals,showing total trial for specific day with value 1 or 2
+
+# Monte_Carlo Simulation
+monte_carlo<-melted_data %>%
+  group_by(Type, Trial, Date,party) %>%
+  summarise(
+    Number_Repub_Win = n(),
+    TotalTrial_byVoice = n(),
+    votes_party =sum(Electoral_Votes),
+    .groups = 'drop'
+  ) %>%
+  mutate(outcome = ifelse(votes_party>=270, "Winner", "Loser"))%>%
+  mutate(Result = ifelse(votes_party>=270, 1, 0))
+
+monte_carlo_overall<-monte_carlo%>%
+  group_by(Type, Date,party) %>%
+  summarise(
+    Total_Trials=n(),
+    No_Win_Trial = sum(Result == 1, na.rm = TRUE),
+    .groups = 'drop'
+  ) %>%
+  mutate(Simulation=No_Win_Trial/Total_Trials)%>%
+  mutate(Simulation_chr=sprintf("%1.2f%%", 100*Simulation))
+
+monte_carlo_reshape<- monte_carlo_overall %>%
+  select(Date, Type, party, Simulation) %>% 
+  mutate(Simulation=round(Simulation,digit=2))%>%
+  pivot_wider(names_from = Type, values_from = Simulation, names_prefix = "Trial_Percent_")
+
 
 #------------Data  process done
 
@@ -710,14 +757,28 @@ ui <- dashboardPage(
         div(
           id = "expert_panel", 
           column(
-            width = 12,
-            style = "padding-left: 50px; padding-right: 50px;",
+            width = 6,
+            #style = "padding-left: 50px; padding-right: 50px;",
+            style = "padding-left: 50px;",
             uiOutput("box_pat9")
           ),
           column(
-            width = 12,
-            style = "padding-left: 50px; padding-right: 50px;",
-            uiOutput("box_table3")
+            width = 6,
+            #style = "padding-left: 50px; padding-right: 50px;",
+            style = "padding-right: 50px;",
+            uiOutput("box_pat10")
+          ),
+          column(
+            width = 6,
+            style = "padding-left: 50px;",
+            #style = "padding-left: 50px; padding-right: 50px;",
+            uiOutput("box_pat11")
+          ),
+          column(
+            width = 6,
+            #style = "padding-left: 50px; padding-right: 50px;",
+            style = "padding-right: 50px;",
+            uiOutput("box_pat12")
           )
         ),
         
@@ -1054,7 +1115,14 @@ server <- function(input, output, session) {
   })
   
   
-  # UI 9 & 10 both average votes and average votes percent use this function
+  # UI 9 monte
+  monte_carlo <-reactive({
+    req(input$date2)
+    filter(monte_carlo_reshape,Date >= input$date2[1] & Date <= input$date2[2])%>%
+    filter(party=="Democratic")
+  }) 
+  
+  # UI 10 both average votes and average votes percent use this function
   Votes_final <-reactive({
     req(input$date2)
     filter(trial_votes_reshape,Date >= input$date2[1] & Date <= input$date2[2])
@@ -1062,11 +1130,19 @@ server <- function(input, output, session) {
   
 
   # UI Table 1 average votes 
-  Table1_votes <-reactive({
+  Table1 <-reactive({
     #filter(average_votes,Type %in%  input$box_table1)
+    monte_carlo_select<-monte_carlo_overall%>%
+      select(-Simulation) %>%
+      rename(
+        Party="party",
+        "Total Trial"=Total_Trials,
+        "Average Win"=Simulation_chr,
+        "Total Winning Trial"=No_Win_Trial
+      )
     
     datatable(
-      average_votes, 
+      monte_carlo_select, 
       rownames = FALSE, 
       extensions = "Buttons",
       options = list(
@@ -1137,6 +1213,28 @@ server <- function(input, output, session) {
     req(input$date2)
     filter(expert_all,Date >= input$date2[1] & Date <= input$date2[2])
   })
+  
+  expert_Economist <- reactive({
+    req(input$date2)
+    filter(expert_data, source=="economist") %>%
+      filter(Date >= input$date2[1] & Date <= input$date2[2])
+  })
+  
+  expert_silver <- reactive({
+    req(input$date2)
+    filter(expert_data, source=="silver") %>%
+      filter(Date >= input$date2[1] & Date <= input$date2[2])
+  })
+  
+  expert_times <- reactive({
+    req(input$date2)
+    filter(expert_data, source=="times-siena") %>%
+      filter(Date >= input$date2[1] & Date <= input$date2[2])
+  })
+  
+  
+  
+  
   
 #-------------------------------------------------------------------------------
   # Render UI -Map 1
@@ -1279,7 +1377,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 320,
         tabPanel(
-          title = "Average Electoral College (EC) Votes"
+          title = "Average Harris Win by Trial"
         ),
         withSpinner(
           plotlyOutput("distPlot", height = 230),
@@ -1311,7 +1409,7 @@ server <- function(input, output, session) {
       )
     )
 })
-  # UI Table 1 votes
+  # UI Table 1 mont carlo
   output$box_table1 <- renderUI({
     div(
       style = "position: relative",
@@ -1320,10 +1418,10 @@ server <- function(input, output, session) {
         width = NULL,
         height = 400,
         tabPanel(
-          title = "Average Electoral College Votes"
+          title = "Average Harris Win by Trial"
           ),
           withSpinner(
-            DT::dataTableOutput("table1_votes", height = 300),
+            DT::dataTableOutput("table1", height = 300),
             type = 4,
             color = "#d33724",
             size = 0.7
@@ -1379,7 +1477,7 @@ server <- function(input, output, session) {
   
 
   
-  # UI 9 -----Expert
+  # UI 9 -----Expert -Overall
   output$box_pat9 <- renderUI({
     div(
       style = "position: relative; backgroundColor: #ecf0f5",
@@ -1400,6 +1498,65 @@ server <- function(input, output, session) {
     )
   })
   
+  output$box_pat10 <- renderUI({
+    div(
+      style = "position: relative; backgroundColor: #ecf0f5",
+      tabBox(
+        id = "box_table",
+        width = NULL,
+        height = 320, 
+        tabPanel(
+          title = "Economist Opinion"
+        ),
+        withSpinner(
+          plotlyOutput("distPlot4", height = 230),
+          type = 4,
+          color = "#d33724", 
+          size = 0.7 
+        )
+      )
+    )
+  })
+  
+  output$box_pat11 <- renderUI({
+    div(
+      style = "position: relative; backgroundColor: #ecf0f5",
+      tabBox(
+        id = "box_table",
+        width = NULL,
+        height = 320, 
+        tabPanel(
+          title = "Nate Sliver Opinions "
+        ),
+        withSpinner(
+          plotlyOutput("distPlot5", height = 230),
+          type = 4,
+          color = "#d33724", 
+          size = 0.7 
+        )
+      )
+    )
+  })
+  
+  output$box_pat12 <- renderUI({
+    div(
+      style = "position: relative; backgroundColor: #ecf0f5",
+      tabBox(
+        id = "box_table",
+        width = NULL,
+        height = 320, 
+        tabPanel(
+          title = "Times Siena Opinion "
+        ),
+        withSpinner(
+          plotlyOutput("distPlot6", height = 230),
+          type = 4,
+          color = "#d33724", 
+          size = 0.7 
+        )
+      )
+    )
+  })
   #         Output
   #-------Map 1 Anonymous
   output$box_map_anonymous <- renderPlotly ({
@@ -1723,64 +1880,124 @@ server <- function(input, output, session) {
     })
   })
   
+  # monte carlo for table 1
   output$distPlot <- renderPlotly({
     input$date2
     #input$confirm
     
-  fig <- plot_ly(Votes_final(), x = ~Date, y = ~Votes_Anonymous, name = 'Anonymous', type = 'scatter', mode = 'lines',
+  fig <- plot_ly(monte_carlo(), x = ~Date, y = ~Trial_Percent_Anonymous, name = 'Anonymous', type = 'scatter', mode = 'lines',
                  line = list(color = 'rgb(205, 12, 24)', width = 4)) 
-  fig <- fig %>% add_trace(y = ~Votes_BBC, name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
-  fig <- fig %>% add_trace(y = ~Votes_Fox, name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
-  fig <- fig %>% add_trace(y = ~Votes_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) %>%
+  fig <- fig %>% add_trace(y = ~Trial_Percent_BBC, name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
+  fig <- fig %>% add_trace(y = ~Trial_Percent_Fox, name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
+  fig <- fig %>% add_trace(y = ~Trial_Percent_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) %>%
     layout(
       title = NULL,
       xaxis = list(title = "Date",
                    showgrid = TRUE),
-      yaxis = list(title = "Votes", 
-                   range = c(140, 400),
+      yaxis = list(title = "Percent", 
+                   range = c(0, 1.1),
                    showgrid = FALSE),
       shapes = list(
         list(
           type = "rect",
           fillcolor = "rgba(205, 12, 24, 0.2)", # Light red fill for 140-270
           line = list(color = "rgba(205, 12, 24, 0)"), # No border
-          x0 = min(Votes_final()$Date), x1 = max(Votes_final()$Date),
-          y0 = 140, y1 = 270
+          x0 = min(monte_carlo()$Date), x1 = max(monte_carlo()$Date),
+          y0 =0, y1 = 0.5
         ),
         list(
           type = "rect",
           fillcolor = "rgba(22, 96, 167, 0.2)", # Light blue fill for 270-400
           line = list(color = "rgba(22, 96, 167, 0)"), # No border
-          x0 = min(Votes_final()$Date), x1 = max(Votes_final()$Date),
-          y0 = 270, y1 = 400
+          x0 = min(monte_carlo()$Date), x1 = max(monte_carlo()$Date),
+          y0 = 0.5, y1 = 1.1
         ),
         list(
           type = "line",
-          x0 = min(Votes_final()$Date), x1 = max(Votes_final()$Date),
-          y0 = 270, y1 = 270,
+          x0 = min(monte_carlo()$Date), x1 = max(monte_carlo()$Date),
+          y0 = 0.5, y1 = 0.5,
           line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
         )
       )
     ) %>%
     layout(annotations = list(
       list(
-        x = min(Votes_final()$Date) + 5,
-        y = 350,
+        x = min(monte_carlo()$Date) + 5,
+        y = 0.65,
         text = "Democrat Win",
         showarrow = FALSE,
         font = list(size = 12, weight = "bold", color = "rgb(22, 96, 167)"),
         showgrid = FALSE
       ),
       list(
-        x = min(Votes_final()$Date) + 5,
-        y = 200,
+        x = min(monte_carlo()$Date) + 5,
+        y = 0.4,
         text = "Republican Win",
         showarrow = FALSE,
         font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
       )
     ))
-})
+  })
   
+  output$distPlot2 <- renderPlotly({
+    input$date2
+    #input$confirm
+    
+    fig <- plot_ly(Votes_final(), x = ~Date, y = ~Votes_Percent_Anonymous, name = 'Anonymous', type = 'scatter', mode = 'lines',
+                   line = list(color = 'rgb(205, 12, 24)', width = 4)) 
+    fig <- fig %>% add_trace(y = ~Votes_Percent_BBC, name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
+    fig <- fig %>% add_trace(y = ~Votes_Percent_Fox, name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
+    fig <- fig %>% add_trace(y = ~Votes_Percent_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) %>%
+      layout(
+        title = NULL,
+        xaxis = list(title = "Date",
+                     showgrid = TRUE),
+        yaxis = list(title = "Percent", 
+                     range = c(0.3, 0.7),
+                     showgrid = FALSE),
+        shapes = list(
+          list(
+            type = "rect",
+            fillcolor = "rgba(205, 12, 24, 0.2)", # Light red fill for 140-270
+            line = list(color = "rgba(205, 12, 24, 0)"), # No border
+            x0 = min(Votes_final()$Date), x1 = max(Votes_final()$Date),
+            y0 =0.3, y1 = 0.5
+          ),
+          list(
+            type = "rect",
+            fillcolor = "rgba(22, 96, 167, 0.2)", # Light blue fill for 270-400
+            line = list(color = "rgba(22, 96, 167, 0)"), # No border
+            x0 = min(Votes_final()$Date), x1 = max(Votes_final()$Date),
+            y0 = 0.5, y1 = 0.7
+          ),
+          list(
+            type = "line",
+            x0 = min(Votes_final()$Date), x1 = max(Votes_final()$Date),
+            y0 = 0.5, y1 = 0.5,
+            line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
+          )
+        )
+      ) %>%
+      layout(annotations = list(
+        list(
+          x = min(Votes_final()$Date) + 5,
+          y = 0.65,
+          text = "Democrat Win",
+          showarrow = FALSE,
+          font = list(size = 12, weight = "bold", color = "rgb(22, 96, 167)"),
+          showgrid = FALSE
+        ),
+        list(
+          x = min(Votes_final()$Date) + 5,
+          y = 0.4,
+          text = "Republican Win",
+          showarrow = FALSE,
+          font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
+        )
+      ))
+  })
+  
+  #expert
   output$distPlot2 <- renderPlotly({
     input$date2
     #input$confirm
@@ -1841,9 +2058,9 @@ server <- function(input, output, session) {
   
   
   # Table 1
-  output$table1_votes <- DT::renderDataTable({
-    input$box_table1
-    Table1_votes()
+  output$table1 <- DT::renderDataTable({
+    #input$box_table1
+    Table1()
   }, server = FALSE)
   
   # Table 2
@@ -1869,67 +2086,58 @@ server <- function(input, output, session) {
 
   
   # Expert graph
-  output$distPlot3 <- renderPlotly({
+  output$distPlot4 <- renderPlotly({
     input$date2
     #input$confirm
     
-    fig <- plot_ly(Expert_Data(), x = ~Date, y = ~Votes_Percent_Anonymous, name = 'Anonymous', type = 'scatter', mode = 'lines',
-                   line = list(color = 'rgb(205, 12, 24)', width = 4)) 
-    fig <- fig %>% add_trace(y = ~Votes_Percent_BBC, name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
-    fig <- fig %>% add_trace(y = ~Votes_Percent_Fox, name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
-    fig <- fig %>% add_trace(y = ~Votes_Percent_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) 
-    fig <- fig %>% add_trace(y = ~Silver, name = 'Nate Silver', line = list(color = 'orange', width = 4, dash = 'lines')) 
-    fig <- fig %>% add_trace(y = ~Times, name = 'New York Times', line = list(color = 'lightgreen', width = 4, dash = 'lines'))
-    fig <- fig %>% add_trace(y = ~Times, name = 'Economist', line = list(color = 'purple', width = 4, dash = 'dot')) %>%
+    fig <- plot_ly(expert_Economist(), x = ~Date, y = ~Harris, name = 'Harris', type = 'scatter', mode = 'lines',
+                   line = list(color = 'rgb(22, 96, 167)', width = 4)) 
+    fig <- fig %>% add_trace(y = ~Trump, name = 'Trump', line = list(color = 'rgb(205, 12, 24)', width = 4))%>%
       layout(
         title = NULL,
         xaxis = list(title = "Date",
                      showgrid = TRUE),
         yaxis = list(title = "Percent", 
-                     range = c(0.3, 0.7),
-                     showgrid = FALSE),
-        shapes = list(
-          list(
-            type = "rect",
-            fillcolor = "rgba(205, 12, 24, 0.2)", # Light red fill for 140-270
-            line = list(color = "rgba(205, 12, 24, 0)"), # No border
-            x0 = min(Expert_Data()$Date), x1 = max(Expert_Data()$Date),
-            y0 =0.3, y1 = 0.5
-          ),
-          list(
-            type = "rect",
-            fillcolor = "rgba(22, 96, 167, 0.2)", # Light blue fill for 270-400
-            line = list(color = "rgba(22, 96, 167, 0)"), # No border
-            x0 = min(Expert_Data()$Date), x1 = max(Expert_Data()$Date),
-            y0 = 0.5, y1 = 0.7
-          ),
-          list(
-            type = "line",
-            x0 = min(Expert_Data()$Date), x1 = max(Expert_Data()$Date),
-            y0 = 0.5, y1 = 0.5,
-            line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
-          )
-        )
-      ) %>%
-      layout(annotations = list(
-        list(
-          x = min(Expert_Data()$Date) + 5,
-          y = 0.65,
-          text = "Democrat Win",
-          showarrow = FALSE,
-          font = list(size = 12, weight = "bold", color = "rgb(22, 96, 167)"),
-          showgrid = FALSE
-        ),
-        list(
-          x = min(Expert_Data()$Date) + 5,
-          y = 0.4,
-          text = "Republican Win",
-          showarrow = FALSE,
-          font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
-        )
-      ))
+                     range = c(0.40, 0.60),
+                     showgrid = FALSE))
+  
   })
   
+
+  output$distPlot5 <- renderPlotly({
+    input$date2
+    #input$confirm
+    
+    fig <- plot_ly(expert_silver(), x = ~Date, y = ~Harris, name = 'Harris', type = 'scatter', mode = 'lines',
+                   line = list(color = 'rgb(22, 96, 167)', width = 4)) 
+    fig <- fig %>% add_trace(y = ~Trump, name = 'Trump', line = list(color = 'rgb(205, 12, 24)', width = 4))%>%
+      layout(
+        title = NULL,
+        xaxis = list(title = "Date",
+                     showgrid = TRUE),
+        yaxis = list(title = "Percent", 
+                     range = c(0.40, 0.60),
+                     showgrid = FALSE))
+  })
+  
+  output$distPlot6 <- renderPlotly({
+    input$date2
+    #input$confirm
+    
+    fig <- plot_ly(expert_times(), x = ~Date, y = ~Harris, name = 'Harris', type = 'scatter', mode = 'lines',
+                   line = list(color = 'rgb(22, 96, 167)', width = 4)) 
+    fig <- fig %>% add_trace(y = ~Trump, name = 'Trump', line = list(color = 'rgb(205, 12, 24)', width = 4))%>%
+      layout(
+        title = NULL,
+        xaxis = list(title = "Date",
+                     showgrid = TRUE),
+        yaxis = list(title = "Percent", 
+                     range = c(0.40, 0.60),
+                     showgrid = FALSE))
+  })
+  
+  
+     
 }
 
 
