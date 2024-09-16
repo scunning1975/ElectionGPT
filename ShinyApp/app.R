@@ -656,7 +656,7 @@ ui <- dashboardPage(
         ),
         dateInput("date", "DAYS TO FIRST PREDICTION (USE SINGLE DATE TO PLOT MAP):",   
                   value = "2024-08-13"),
-        dateRangeInput("date2", "START DATE TO END DATE ((USE DATE RANGE FOR STATE TREND PLOT):",   
+        dateRangeInput("date2", "START DATE TO END DATE (USE DATE RANGE FOR STATE TREND PLOT):",   
                        start = "2024-08-13",
                        end   = Sys.Date() )
       )
@@ -1136,6 +1136,7 @@ server <- function(input, output, session) {
       select(-Simulation) %>%
       rename(
         Party="party",
+        Voice="Type",
         "Total Trial"=Total_Trials,
         "Average Win"=Simulation_chr,
         "Total Winning Trial"=No_Win_Trial
@@ -1158,7 +1159,10 @@ server <- function(input, output, session) {
   # UI Table 2 average votes perentage
   Table2_votes_percent <-reactive({
     #filter(average_votes,Type %in%  input$box_table1)
-      
+    average_votes_percent<-average_votes_percent%>%
+      rename(
+        "Aaverage EC Votes Out of 538"=WinLikelihood
+      )
     datatable(
       average_votes_percent, 
       rownames = FALSE, 
@@ -1486,7 +1490,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 320, 
         tabPanel(
-          title = " Average Percent of Democrat Electory Votes With Expert Opinions "
+          title = "ElectionGPT Opinion"
         ),
         withSpinner(
           plotlyOutput("distPlot3", height = 230),
@@ -1880,7 +1884,7 @@ server <- function(input, output, session) {
     })
   })
   
-  # monte carlo for table 1
+  # monte carlo for 
   output$distPlot <- renderPlotly({
     input$date2
     #input$confirm
@@ -1998,40 +2002,40 @@ server <- function(input, output, session) {
   })
   
   #expert
-  output$distPlot2 <- renderPlotly({
+  output$distPlot3 <- renderPlotly({
     input$date2
     #input$confirm
     
-    fig <- plot_ly(Votes_final(), x = ~Date, y = ~Votes_Percent_Anonymous, name = 'Anonymous', type = 'scatter', mode = 'lines',
+    fig <- plot_ly(monte_carlo(), x = ~Date, y = ~Trial_Percent_Anonymous, name = 'Anonymous', type = 'scatter', mode = 'lines',
                    line = list(color = 'rgb(205, 12, 24)', width = 4)) 
-    fig <- fig %>% add_trace(y = ~Votes_Percent_BBC, name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
-    fig <- fig %>% add_trace(y = ~Votes_Percent_Fox, name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
-    fig <- fig %>% add_trace(y = ~Votes_Percent_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) %>%
+    fig <- fig %>% add_trace(y = ~Trial_Percent_BBC, name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
+    fig <- fig %>% add_trace(y = ~Trial_Percent_Fox, name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
+    fig <- fig %>% add_trace(y = ~Trial_Percent_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) %>%
       layout(
         title = NULL,
         xaxis = list(title = "Date",
                      showgrid = TRUE),
         yaxis = list(title = "Percent", 
-                     range = c(0.3, 0.7),
+                     range = c(0, 1.1),
                      showgrid = FALSE),
         shapes = list(
           list(
             type = "rect",
             fillcolor = "rgba(205, 12, 24, 0.2)", # Light red fill for 140-270
             line = list(color = "rgba(205, 12, 24, 0)"), # No border
-            x0 = min(Votes_final()$Date), x1 = max(Votes_final()$Date),
-            y0 =0.3, y1 = 0.5
+            x0 = min(monte_carlo()$Date), x1 = max(monte_carlo()$Date),
+            y0 =0, y1 = 0.5
           ),
           list(
             type = "rect",
             fillcolor = "rgba(22, 96, 167, 0.2)", # Light blue fill for 270-400
             line = list(color = "rgba(22, 96, 167, 0)"), # No border
-            x0 = min(Votes_final()$Date), x1 = max(Votes_final()$Date),
-            y0 = 0.5, y1 = 0.7
+            x0 = min(monte_carlo()$Date), x1 = max(monte_carlo()$Date),
+            y0 = 0.5, y1 = 1.1
           ),
           list(
             type = "line",
-            x0 = min(Votes_final()$Date), x1 = max(Votes_final()$Date),
+            x0 = min(monte_carlo()$Date), x1 = max(monte_carlo()$Date),
             y0 = 0.5, y1 = 0.5,
             line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
           )
@@ -2039,7 +2043,7 @@ server <- function(input, output, session) {
       ) %>%
       layout(annotations = list(
         list(
-          x = min(Votes_final()$Date) + 5,
+          x = min(monte_carlo()$Date) + 5,
           y = 0.65,
           text = "Democrat Win",
           showarrow = FALSE,
@@ -2047,7 +2051,7 @@ server <- function(input, output, session) {
           showgrid = FALSE
         ),
         list(
-          x = min(Votes_final()$Date) + 5,
+          x = min(monte_carlo()$Date) + 5,
           y = 0.4,
           text = "Republican Win",
           showarrow = FALSE,
@@ -2135,6 +2139,7 @@ server <- function(input, output, session) {
                      range = c(0.40, 0.60),
                      showgrid = FALSE))
   })
+  
   
   
      
