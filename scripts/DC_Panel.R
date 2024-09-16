@@ -78,8 +78,8 @@ append_to_panel_dataset <- function(base_path, panel_file) {
 }
 
 # Example usage
-base_path <- "/Users/jaredblack/GitHub/ElectionGPT/data/processed"
-panel_file <- "/Users/jaredblack/GitHub/ElectionGPT/data/panel_election_results_state.csv"
+base_path <- "data/processed"
+panel_file <- "data/panel_election_results_state.csv"
 result <- append_to_panel_dataset(base_path, panel_file)
 if (is.null(result)) {
   cat("No updates were made to the panel dataset.\n")

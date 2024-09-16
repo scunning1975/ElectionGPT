@@ -4,12 +4,16 @@ library(jsonlite)
 library(stringr)
 library(dplyr)
 library(openxlsx)
+library(dotenv) # access environment variables
+
+# Load the .env file
+dotenv::load_dot_env(file = "keys.env")
 
 # Set API key for OpenAI
-openai_api_key <- "sk-proj-8BVyZsvGY4ONpgi3yArWT3BlbkFJnje8XgFU5ReWDq1pbn0f"
+openai_api_key <- Sys.getenv("GPT4O_MINI_DIRECT_API_KEY")
 
 # Directory where news JSON files are saved
-save_directory <- "/Users/jaredblack/GitHub/ElectionGPT/data/news"
+save_directory <- "data/news"
 
 # Function to load the newest news file
 load_newest_news_file <- function(directory) {
@@ -102,7 +106,7 @@ extract_winners <- function(api_key, story) {
 # Prepare the combined story text file
 timestamp <- format(Sys.time(), "%Y-%m-%d_%H-%M-%S")
 combined_story_filename <- paste0("story_direct_", timestamp, ".txt")  # Adjust this part for each script (direct, Fox, MSNBC, BBC)
-combined_story_filepath <- file.path("/Users/jaredblack/GitHub/ElectionGPT/data/stories", combined_story_filename)
+combined_story_filepath <- file.path("data/stories", combined_story_filename)
 fileConn <- file(combined_story_filepath, "w")  # Initialize the file connection
 
 # Write the prompt at the beginning of the file
@@ -146,7 +150,7 @@ close(fileConn)
 
 # Save the results to an Excel file
 results_filename <- paste0("election_results_direct_", timestamp, ".xlsx")
-results_filepath <- file.path("/Users/jaredblack/GitHub/ElectionGPT/data/raw", results_filename)
+results_filepath <- file.path("data/raw", results_filename)
 write.xlsx(results, results_filepath)
 cat("Election results saved as:", results_filepath, "\n")
 cat("All stories saved as:", combined_story_filepath, "\n")

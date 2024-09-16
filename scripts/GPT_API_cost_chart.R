@@ -4,7 +4,7 @@ library(dplyr)
 library(readr)
 
 # Load the data from the CSV file
-file_path <- "/Users/jaredblack/GitHub/ElectionGPT/data/cost-2024-08-01-2024-09-10.csv"
+file_path <- "data/cost-2024-08-01-2024-09-10.csv"
 data <- read_csv(file_path)
 
 # Convert the 'date' column to Date type

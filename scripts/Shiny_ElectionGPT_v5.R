@@ -9,7 +9,7 @@ library(scales)
 library(bslib)
 
 # Read the panel data from the CSV file
-panel_data <- read.csv("/Users/jaredblack/GitHub/ElectionGPT/data/panel_election_results_state.csv")
+panel_data <- read.csv("data/panel_election_results_state.csv")
 
 # Convert the Date column to Date format
 panel_data$Date <- as.Date(panel_data$Date, format = "%m/%d/%y")
@@ -18,7 +18,7 @@ panel_data$Date <- as.Date(panel_data$Date, format = "%m/%d/%y")
 panel_data$Trial <- as.numeric(panel_data$Trial)
 
 # Read the Expert Opinions data
-expert_opinions <- read.csv("/Users/jaredblack/GitHub/ElectionGPT/data/expert/Expert_Opinions.csv")
+expert_opinions <- read.csv("data/expert/Expert_Opinions.csv")
 expert_opinions$date <- as.Date(expert_opinions$date, format = "%m/%d/%y")
 
 # Add electoral votes information for each state (including DC)

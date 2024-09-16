@@ -1,15 +1,19 @@
 # Load required libraries
 library(httr)
 library(jsonlite)
+library(dotenv) # access environment variables
 
-# Set API key
-news_api_key <- "7200c2f7-76db-4899-9328-ef6ac9c62b6d"
+# Load the .env file
+dotenv::load_dot_env(file = "keys.env")
+
+# Set API key from environment variable
+news_api_key <- Sys.getenv("PERIGON_API_KEY")
 
 # Base URL for Perigon API
 news_api_url <- "https://api.goperigon.com/v1/all"
 
-# Directory to save the JSON files
-save_directory <- "/Users/jaredblack/GitHub/ElectionGPT/data/news"
+# Directory to save the JSON files (relative path)
+save_directory <- "data/news"
 
 # Create the directory if it doesn't exist
 if (!dir.exists(save_directory)) {
