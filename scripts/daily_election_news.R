@@ -1,9 +1,13 @@
 # Load required libraries
 library(httr)
 library(jsonlite)
+library(dotenv) # access environment variables
+
+# Load the .env file
+dotenv::load_dot_env(file = "keys.env")
 
 # Set API key
-news_api_key <- "be2a99fb-1359-494c-a526-1d45a1ade146"
+news_api_key <- Sys.getenv("EVENT_REGISTRY_API_KEY")
 
 # Base URL for Event Registry API
 news_api_url <- "https://eventregistry.org/api/v1/article/getArticles"
@@ -19,7 +23,7 @@ news_params <- list(
 )
 
 # Directory to save the JSON files
-save_directory <- "/Users/jaredblack/GitHub/ElectionGPT/data/news"  # New save location
+save_directory <- "data/news"  # New save location
 
 # Create the directory if it doesn't exist
 if (!dir.exists(save_directory)) {

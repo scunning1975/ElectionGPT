@@ -2,9 +2,9 @@
 library(dplyr)
 
 # File paths
-economist_path <- "/Users/jaredblack/GitHub/ElectionGPT/data/expert/Economist_timeseries_poll_data.csv"
-silver_path <- "/Users/jaredblack/GitHub/ElectionGPT/data/expert/silverbulleton_predictions.csv"
-times_siena_path <- "/Users/jaredblack/GitHub/ElectionGPT/data/expert/Times-Siena_timeseries_poll_data.csv"
+economist_path <- "data/expert/Economist_timeseries_poll_data.csv"
+silver_path <- "data/expert/silverbulleton_predictions.csv"
+times_siena_path <- "data/expert/Times-Siena_timeseries_poll_data.csv"
 
 # Read in the CSV files
 economist_data <- read.csv(economist_path)
@@ -20,7 +20,7 @@ times_siena_data <- times_siena_data %>% mutate(source = "times-siena")
 combined_panel <- bind_rows(economist_data, silver_data, times_siena_data)
 
 # Save the combined panel to a new CSV
-write.csv(combined_panel, "/Users/jaredblack/GitHub/ElectionGPT/data/expert/combined_panel.csv", row.names = FALSE)
+write.csv(combined_panel, "data/expert/combined_panel.csv", row.names = FALSE)
 
 # Print a message
 cat("Combined panel CSV has been created successfully!\n")
@@ -31,7 +31,7 @@ library(dplyr)
 library(lubridate)
 
 # File path of combined panel
-panel_file <- "/Users/jaredblack/GitHub/ElectionGPT/data/expert/expert_combined_panel.csv"
+panel_file <- "data/expert/expert_combined_panel.csv"
 
 # Read the combined panel data
 poll_data <- read.csv(panel_file)

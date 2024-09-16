@@ -1,2 +1,4 @@
 .DS_Store
 .Rproj.user
+keys.env
+/scripts/git_daily.sh
