@@ -5,9 +5,9 @@ account: pregptdiction
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 12613070
-bundleId: 9093712
+bundleId: 9105176
 url: https://pregptdiction.shinyapps.io/ElectionGPT/
 version: 1
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: election_panel_dataset.csv|expert_combined_panel.csv|Expert_Opinions 2.csv|images/NationalLevel.png|images/StateLevel.png|panel_data.csv
+ignoredFiles: expert_combined_panel.csv|Expert_Opinions 2.csv|images/NationalLevel.png|images/StateLevel.png
