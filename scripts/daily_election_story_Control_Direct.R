@@ -7,7 +7,7 @@ library(openxlsx)
 library(dotenv) # Load environment variables
 
 # Load the .env file
-dotenv::load_dot_env(file = "keys.env")
+dotenv::load_dot_env(file = "/Users/jaredblack/GitHub/ElectionGPT/keys.env")
 
 # Set API key for OpenAI from environment variable
 openai_api_key <- Sys.getenv("GPT4O_MINI_NO-NEWS_API_KEY")
@@ -19,7 +19,7 @@ prompt <- "Generate a short news story from the perspective of a trustworthy ind
 generate_story <- function(api_key, prompt) {
   gpt_api_url <- "https://api.openai.com/v1/chat/completions"
   body <- list(
-    model = "gpt-4",  # Changed from "gpt-4o-mini" to "gpt-4"
+    model = "gpt-4o-mini",
     messages = list(
       list(role = "system", content = "You are a trustworthy independent reporter."),
       list(role = "user", content = prompt)
@@ -106,8 +106,8 @@ extract_winners <- function(api_key, story) {
 
 # Prepare the combined story text file
 timestamp <- format(Sys.time(), "%Y-%m-%d_%H-%M-%S")
-combined_story_filename <- paste0("story_No-News_", timestamp, ".txt")
-combined_story_filepath <- file.path("data/stories", combined_story_filename)
+combined_story_filename <- paste0("story_Control_Direct_", timestamp, ".txt")
+combined_story_filepath <- file.path("/Users/jaredblack/GitHub/ElectionGPT/data/stories", combined_story_filename)
 fileConn <- file(combined_story_filepath, "w")  # Initialize the file connection
 
 # Write the prompt at the beginning of the file
@@ -153,8 +153,8 @@ for (i in 1:100) {
 close(fileConn)
 
 # Save the results to an Excel file
-results_filename <- paste0("election_results_No-News_", timestamp, ".xlsx")
-results_filepath <- file.path("data/raw", results_filename)
+results_filename <- paste0("election_results_Control_Direct_", timestamp, ".xlsx")
+results_filepath <- file.path("/Users/jaredblack/GitHub/ElectionGPT/data/raw", results_filename)
 write.xlsx(results, results_filepath)
 cat("Election results saved as:", results_filepath, "\n")
 cat("All stories saved as:", combined_story_filepath, "\n")

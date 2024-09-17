@@ -7,8 +7,8 @@ library(lubridate)
 library(stringr)
 library(tibble)
 
-# Function to process a single file
-process_single_file <- function(file_path) {
+# Function to process a single control file
+process_single_control_file <- function(file_path) {
   # Read the Excel file
   data <- read_excel(file_path, col_types = "text")
   
@@ -36,7 +36,7 @@ process_single_file <- function(file_path) {
     add_column(DC = dc_column, .after = insert_position - 1)
   
   # Create new filename
-  new_file_name <- gsub("election_results", "DC_election_results", basename(file_path))
+  new_file_name <- gsub("election_results_Control", "DC_election_results_Control", basename(file_path))
   new_file_path <- file.path("/Users/jaredblack/GitHub/ElectionGPT/data/processed", new_file_name)
   
   # Save the modified data to a new Excel file
@@ -48,30 +48,30 @@ process_single_file <- function(file_path) {
   return(new_file_path)
 }
 
-# Function to find and process new daily files
-process_new_files <- function(base_path) {
+# Function to find and process new daily control files
+process_new_control_files <- function(base_path) {
   # Get today's date
   today <- Sys.Date()
   
-  # Find all relevant files from today
+  # Find all relevant control files from today
   today_files <- fs::dir_ls(
     base_path,
     recurse = TRUE,
-    regexp = paste0("election_results_(direct|Fox|MSNBC|BBC)_", today, ".*\\.xlsx$")
+    regexp = paste0("election_results_Control_.*_", today, ".*\\.xlsx$")
   )
   
   # Process each file
-  processed_files <- sapply(today_files, process_single_file)
+  processed_files <- sapply(today_files, process_single_control_file)
   
   # Remove NULL entries (files that were skipped)
   processed_files <- processed_files[!sapply(processed_files, is.null)]
   
-  cat("Processed", length(processed_files), "new files.\n")
+  cat("Processed", length(processed_files), "new control files.\n")
   
   return(processed_files)
 }
 
 # Main execution
 base_path <- "/Users/jaredblack/GitHub/ElectionGPT/data/raw"
-processed_files <- process_new_files(base_path)
+processed_files <- process_new_control_files(base_path)
 # If you want to do something with the processed files, you can use the 'processed_files' variable
