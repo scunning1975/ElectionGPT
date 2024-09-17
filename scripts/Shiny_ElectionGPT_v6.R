@@ -13,10 +13,15 @@ panel_data <- read.csv("data/panel_election_results_state.csv")
 control_panel_data <- read.csv("data/panel_control_election_results_state.csv")
 
 # Combine panel data and control panel data
+# Combine panel data and control panel data
 combined_panel_data <- bind_rows(
   panel_data %>% mutate(Group = "Regular"),
   control_panel_data %>% mutate(Group = "Control")
-)
+) %>%
+  mutate(Voice = case_when(
+    Voice %in% c("MSNBC", "BBC") ~ Voice,
+    TRUE ~ str_to_title(Voice)
+  ))
 
 # Convert the Date column to Date format
 combined_panel_data$Date <- as.Date(combined_panel_data$Date, format = "%m/%d/%y")
@@ -64,6 +69,11 @@ ui <- fluidPage(
                   animate = animationOptions(interval = 300, loop = TRUE)),
       selectInput("voice",
                   "Select Voice:",
+                  choices = c("Direct", "Fox", "MSNBC", "BBC",
+                              "Control Direct", "Control Fox", "Control MSNBC", "Control BBC"),
+                  selected = "Direct"),
+      selectInput("expert_comparison_voice",
+                  "Select Voice for Expert Comparison:",
                   choices = c("Direct", "Fox", "MSNBC", "BBC",
                               "Control Direct", "Control Fox", "Control MSNBC", "Control BBC"),
                   selected = "Direct")
@@ -181,33 +191,62 @@ server <- function(input, output) {
     paste("Republican Electoral Votes: ", round(rep_votes))
   })
   
-  # Reactive function to calculate overall trend data for all voices
   trend_data <- reactive({
-    combined_panel_data %>%
-      mutate(Voice = paste(ifelse(Group == "Control", "Control ", ""), Voice, sep = "")) %>%
-      filter(Voice %in% c("Direct", "Fox", "MSNBC", "BBC",
-                          "Control Direct", "Control Fox", "Control MSNBC", "Control BBC")) %>%
-      group_by(Date, Voice, State) %>%
+    print("Step 1: Initial data")
+    print(table(combined_panel_data$Voice, combined_panel_data$Group))
+    
+    step1 <- combined_panel_data %>%
+      mutate(FullVoice = case_when(
+        Group == "Control" ~ paste("Control", Voice),
+        TRUE ~ Voice
+      ))
+    
+    print("Step 2: After FullVoice creation")
+    print(table(step1$FullVoice))
+    
+    step2 <- step1 %>%
+      filter(FullVoice %in% c("Direct", "Fox", "MSNBC", "BBC",
+                              "Control Direct", "Control Fox", "Control MSNBC", "Control BBC"))
+    
+    print("Step 3: After filtering")
+    print(table(step2$FullVoice))
+    
+    step3 <- step2 %>%
+      group_by(Date, FullVoice, State) %>%
       summarize(
         Percent_Dem_Wins = mean(Result == 0) * 100,
         .groups = 'drop'
       ) %>%
-      left_join(electoral_votes, by = c("State" = "state")) %>%
-      group_by(Date, Voice) %>%
+      left_join(electoral_votes, by = c("State" = "state"))
+    
+    print("Step 4: After summarizing by state")
+    print(table(step3$FullVoice))
+    
+    final_data <- step3 %>%
+      group_by(Date, FullVoice) %>%
       summarize(
         Democrat_Votes = sum(Electoral_Votes * Percent_Dem_Wins / 100),
         .groups = 'drop'
       ) %>%
-      mutate(Voice = factor(Voice, levels = c("Direct", "Fox", "MSNBC", "BBC",
-                                              "Control Direct", "Control Fox", "Control MSNBC", "Control BBC")))
+      mutate(FullVoice = factor(FullVoice, levels = c("Direct", "Fox", "MSNBC", "BBC",
+                                                      "Control Direct", "Control Fox", "Control MSNBC", "Control BBC")))
+    
+    print("Final step: After calculating Democrat_Votes")
+    print(table(final_data$FullVoice))
+    
+    return(final_data)
   })
   
   output$trendLine <- renderPlot({
-    ggplot(data = trend_data(), aes(x = Date, y = Democrat_Votes, color = Voice)) +
+    data <- trend_data()
+    print("Data passed to ggplot:")
+    print(table(data$FullVoice))
+    
+    ggplot(data = data, aes(x = Date, y = Democrat_Votes, color = FullVoice)) +
       geom_rect(aes(xmin = min(Date), xmax = max(Date), ymin = 270, ymax = Inf), 
-                fill = "lightblue", alpha = 0.3) +
+                fill = "#4169E1", alpha = 0.1) +
       geom_rect(aes(xmin = min(Date), xmax = max(Date), ymin = -Inf, ymax = 270), 
-                fill = "pink", alpha = 0.3) +
+                fill = "#FF6347", alpha = 0.1) +
       geom_line(size = 1) +
       scale_color_manual(
         values = c("Direct" = "blue", "Fox" = "red", "MSNBC" = "purple", "BBC" = "green",
@@ -237,21 +276,36 @@ server <- function(input, output) {
   
   # Reactive function to calculate state outcomes by voice
   state_voice_trend <- reactive({
-    combined_panel_data %>%
-      mutate(Voice = paste(ifelse(Group == "Control", "Control ", ""), Voice, sep = "")) %>%
-      filter(Voice %in% input$voice_trend, State %in% input$state_trend) %>%
-      group_by(Date, Voice, State) %>%
+    data <- combined_panel_data %>%
+      mutate(FullVoice = paste(Group, Voice)) %>%
+      filter(
+        FullVoice %in% c(
+          paste("Regular", input$voice_trend),
+          paste("Control", gsub("^Control ", "", input$voice_trend))
+        ),
+        State %in% input$state_trend
+      ) %>%
+      group_by(Date, FullVoice, State) %>%
       summarize(
         Percent_Dem_Wins = mean(Result == 0) * 100,
+        n = n(),
         .groups = 'drop'
       )
+    
+    # Print debugging information
+    print(paste("Unique FullVoices:", paste(unique(data$FullVoice), collapse = ", ")))
+    print(paste("Date range:", min(data$Date), "to", max(data$Date)))
+    print(paste("Total rows:", nrow(data)))
+    
+    return(data)
   })
   
   # Render the state outcomes by voice plot
   output$stateVoiceTrend <- renderPlot({
-    ggplot(data = state_voice_trend(), aes(x = Date, y = Percent_Dem_Wins, color = State, linetype = Voice)) +
-      geom_line(size = 1) +
-      scale_color_manual(values = scales::hue_pal()(length(unique(state_voice_trend()$State)))) +
+    data <- state_voice_trend()
+    
+    p <- ggplot(data, aes(x = Date, y = Percent_Dem_Wins, color = State, linetype = FullVoice)) +
+      scale_color_manual(values = scales::hue_pal()(length(unique(data$State)))) +
       scale_y_continuous(limits = c(0, 100), labels = scales::percent_format(scale = 1)) +
       scale_x_date(
         date_breaks = "3 day",
@@ -264,31 +318,35 @@ server <- function(input, output) {
            linetype = "Voice") +
       theme_minimal() +
       theme(plot.title = element_text(size = 20))
+    
+    # Add lines for series with more than one day of data
+    p <- p + geom_line(data = subset(data, n > 1), size = 1)
+    
+    # Add points for all data
+    p <- p + geom_point(size = 2)
+    
+    p
   })
   
   # Render the comparisonPlot with expert opinions
   comparison_data <- reactive({
-    direct_data <- combined_panel_data %>%
-      filter(Voice == "Direct", Group == "Regular") %>%
+    selected_voice_data <- combined_panel_data %>%
+      filter(case_when(
+        grepl("^Control", input$expert_comparison_voice) ~ 
+          Group == "Control" & Voice == gsub("^Control ", "", input$expert_comparison_voice),
+        TRUE ~ Group == "Regular" & Voice == input$expert_comparison_voice
+      )) %>%
       group_by(Date) %>%
       summarize(Harris = mean(Result == 0) * 100) %>%
       rename(date = Date) %>%
-      mutate(source = "GPT-Direct Voice")
-    
-    control_direct_data <- combined_panel_data %>%
-      filter(Voice == "Direct", Group == "Control") %>%
-      group_by(Date) %>%
-      summarize(Harris = mean(Result == 0) * 100) %>%
-      rename(date = Date) %>%
-      mutate(source = "Control GPT-Direct Voice")
+      mutate(source = paste("GPT-", input$expert_comparison_voice))
     
     expert_data <- expert_opinions %>%
       select(date, Harris, source) %>%
       filter(!is.na(Harris))
     
     bind_rows(
-      direct_data,
-      control_direct_data,
+      selected_voice_data,
       expert_data
     ) %>%
       filter(!is.na(date)) %>%
@@ -297,18 +355,18 @@ server <- function(input, output) {
   
   # The comparisonPlot rendering
   output$comparisonPlot <- renderPlot({
-    ggplot(comparison_data(), aes(x = date, y = Harris, color = source)) +
+    data <- comparison_data()
+    gpt_voice <- paste("GPT-", input$expert_comparison_voice)
+    
+    ggplot(data, aes(x = date, y = Harris, color = source)) +
       geom_line(size = 1) +
       geom_hline(yintercept = 50, linetype = "dashed", color = "black", size = 1) +
-      scale_color_manual(values = c("GPT-Direct Voice" = "blue", 
-                                    "Control GPT-Direct Voice" = "lightblue",
+      scale_color_manual(values = c(setNames("blue", gpt_voice),
                                     "economist" = "red", 
                                     "silver" = "purple", 
                                     "times-siena" = "green"),
-                         breaks = c("GPT-Direct Voice", "Control GPT-Direct Voice", 
-                                    "economist", "silver", "times-siena"),
-                         labels = c("GPT-Direct Voice", "Control GPT-Direct Voice", 
-                                    "Economist", "FiveThirtyEight", "NYT/Siena")) +
+                         breaks = c(gpt_voice, "economist", "silver", "times-siena"),
+                         labels = c(gpt_voice, "Economist", "FiveThirtyEight", "NYT/Siena")) +
       scale_y_continuous(limits = c(40, 60), labels = scales::percent_format(scale = 1)) +
       scale_x_date(date_breaks = "1 week", date_labels = "%b %d") +
       labs(title = "Expert Opinion Comparison",
