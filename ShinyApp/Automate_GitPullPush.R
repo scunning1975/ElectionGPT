@@ -1,12 +1,17 @@
 
 pull_and_save_to_shiny <- function() {
   # Navigate to your local GitHub repository
-  setwd("/Users/sunmingrun/Documents/GitHub/ElectionGPT/data")
+  setwd("/Users/sunmingrun/Documents/GitHub/ElectionGPT")
   
   # Pull the latest changes from GitHub
+  system("git merge")
   system("git pull origin main")
   message("Pulled latest changes from GitHub.")
   
+}
+pull_and_save_to_shiny()
+
+save_to_shiny <- function() {
   # Path to the updated file after pulling from GitHub
   source_file_panel <- "/Users/sunmingrun/Documents/GitHub/ElectionGPT/data/panel_election_results_state.csv"
   
@@ -36,7 +41,7 @@ pull_and_save_to_shiny <- function() {
   }
 }
 
-pull_and_save_to_shiny()
+save_to_shiny()
 #Step 2: Use Git to add, commit, and push changes to GitHub
 push_to_github <- function() {
   # Navigate to your local GitHub repository

@@ -413,6 +413,10 @@ expert_all<-average_votes_percent_reshape%>%
 # ----------------------------
 expert <-read_csv("expert_combined_panel.csv",show_col_types = FALSE)
 
+expert <- expert %>%
+  distinct()  # This removes duplicates within the MSNBC data for August 19th
+
+
 expert_data<-expert%>%
   rename(
     Date = date,  # Renaming 'Result' to 'value'
