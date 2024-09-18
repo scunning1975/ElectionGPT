@@ -37,7 +37,7 @@ process_single_file <- function(file_path) {
   
   # Create new filename
   new_file_name <- gsub("election_results", "DC_election_results", basename(file_path))
-  new_file_path <- file.path("data/processed", new_file_name)
+  new_file_path <- file.path("/Users/jaredblack/GitHub/ElectionGPT/data/processed", new_file_name)
   
   # Save the modified data to a new Excel file
   write_xlsx(data, new_file_path)
@@ -72,6 +72,6 @@ process_new_files <- function(base_path) {
 }
 
 # Main execution
-base_path <- "data/raw"
+base_path <- "/Users/jaredblack/GitHub/ElectionGPT/data/raw"
 processed_files <- process_new_files(base_path)
 # If you want to do something with the processed files, you can use the 'processed_files' variable
