@@ -733,12 +733,12 @@ ui <- dashboardPage(
           column(
             style = "padding-left: 50px",
             width = 6,
-            uiOutput("box_pat7")
+            uiOutput("box_pat8_1")
         ),
         column(
           style = "padding-right: 50px;",
           width = 6,
-          uiOutput("box_pat8")
+          uiOutput("box_pat7")
         ),
         column(
           width = 6,
@@ -1394,7 +1394,27 @@ server <- function(input, output, session) {
   })
   
   # UI Time Trend - 4 ------------------------------------------------------------------
-  output$box_pat8 <- renderUI({
+  output$box_pat8_1 <- renderUI({
+    div(
+      style = "position: relative; backgroundColor: #ecf0f5",
+      tabBox(
+        id = "box_pat",
+        width = NULL,
+        height = 320, 
+        tabPanel(
+          title = "Average Harris Electoral College Votes Win"
+        ),
+        withSpinner(
+          plotlyOutput("distPlot1", height = 230),
+          type = 4,
+          color = "#d33724", 
+          size = 0.7 
+        )
+      )
+    )
+  })
+  # UI Time Trend - 4 ------------------------------------------------------------------
+  output$box_pat8_2 <- renderUI({
     div(
       style = "position: relative; backgroundColor: #ecf0f5",
       tabBox(
@@ -1941,6 +1961,66 @@ server <- function(input, output, session) {
         font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
       )
     ))
+  })
+  
+  
+  # electorial votes decided already to be used
+  output$distPlot1 <- renderPlotly({
+    input$date2
+    #input$confirm
+    
+    fig <- plot_ly(Votes_final(), x = ~Date, y = ~Votes_Anonymous, name = 'Anonymous', type = 'scatter', mode = 'lines',
+                   line = list(color = 'rgb(205, 12, 24)', width = 4)) 
+    fig <- fig %>% add_trace(y = ~Votes_BBC, name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
+    fig <- fig %>% add_trace(y = ~Votes_Fox, name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
+    fig <- fig %>% add_trace(y = ~Votes_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) %>%
+      layout(
+        title = NULL,
+        xaxis = list(title = "Date",
+                     showgrid = TRUE),
+        yaxis = list(title = "Votes", 
+                     range = c(140, 400),
+                     showgrid = FALSE),
+        shapes = list(
+          list(
+            type = "rect",
+            fillcolor = "rgba(205, 12, 24, 0.2)", # Light red fill for 140-270
+            line = list(color = "rgba(205, 12, 24, 0)"), # No border
+            x0 = min(Votes_final()$Date), x1 = max(Votes_final()$Date),
+            y0 = 140, y1 = 270
+          ),
+          list(
+            type = "rect",
+            fillcolor = "rgba(22, 96, 167, 0.2)", # Light blue fill for 270-400
+            line = list(color = "rgba(22, 96, 167, 0)"), # No border
+            x0 = min(Votes_final()$Date), x1 = max(Votes_final()$Date),
+            y0 = 270, y1 = 400
+          ),
+          list(
+            type = "line",
+            x0 = min(Votes_final()$Date), x1 = max(Votes_final()$Date),
+            y0 = 270, y1 = 270,
+            line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
+          )
+        )
+      ) %>%
+      layout(annotations = list(
+        list(
+          x = min(Votes_final()$Date) + 5,
+          y = 350,
+          text = "Democrat Win",
+          showarrow = FALSE,
+          font = list(size = 12, weight = "bold", color = "rgb(22, 96, 167)"),
+          showgrid = FALSE
+        ),
+        list(
+          x = min(Votes_final()$Date) + 5,
+          y = 200,
+          text = "Republican Win",
+          showarrow = FALSE,
+          font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
+        )
+      ))
   })
   
   output$distPlot2 <- renderPlotly({
