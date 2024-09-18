@@ -66,12 +66,6 @@ setwd("/Users/sunmingrun/Documents/GitHub/ElectionGPT/ShinyApp")
 data<-read_csv("panel_election_results_state.csv",show_col_types = FALSE)
 
 
-rsconnect::setAccountInfo(name='pregptdiction',
-                          token='8AF4A8FFA3DE9C3227A9308BB61CB584',
-                          secret='TVVaFnWHhaU7l/TUKn3zZyju6dbpXJULIa0QfP9J')
-
-
-
 # 2 change the variable name and assigned the predicted party based on the result
 melted_data<-data%>%
   rename(
@@ -83,6 +77,23 @@ melted_data<-data%>%
   mutate(Type = ifelse(Type == "direct", "Direct", Type)) %>%
   mutate(Date = as.Date(Date, format = "%m/%d/%y")) %>%
   mutate(Type = ifelse(Type == "Direct", "Anonymous", Type))
+
+#---------
+data2<-read_csv("panel_control_election_results_state.csv",show_col_types = FALSE)
+melted_data2<-data2%>%
+  rename(
+    value_control = Result,  # Renaming 'Result' to 'value'
+    state = State,
+    Type= Voice# Renaming 'State' to 'state'
+  )%>%
+  mutate(Type = ifelse(Type == "direct", "Direct", Type)) %>%
+  mutate(Date = as.Date(Date, format = "%m/%d/%y")) %>%
+  mutate(Type = ifelse(Type == "Direct", "Anonymous", Type))
+
+merged_data<-melted_data%>% 
+  left_join(melted_data2, by=c("Date","Type","Trial","state")) %>%
+  filter(Date=="2024-09-18")
+#````````````````
 
 # 3.1 2024-8-19 data has duplicates when retry to append the data
 data_0819_msnbc <- melted_data %>%
@@ -414,7 +425,7 @@ expert_all<-average_votes_percent_reshape%>%
 expert <-read_csv("expert_combined_panel.csv",show_col_types = FALSE)
 
 expert <- expert %>%
-  distinct()  # This removes duplicates within the MSNBC data for August 19th
+  distinct()  
 
 
 expert_data<-expert%>%
@@ -709,7 +720,7 @@ ui <- dashboardPage(
         column(
           width = 12,
           introBox(data.step = 3, data.intro = intro$text[3],
-          uiOutput("box_pat6")
+          uiOutput("box_pat6_2")
           )
         ),
         column(
@@ -1333,7 +1344,7 @@ server <- function(input, output, session) {
   })
   
   
-  # UI - Time Trend - 1 ------------------------------------------------------------------
+  # UI - Time Trend - 1 --------------Discard-----------------------------------------------------
   output$box_pat5 <- renderUI({
     div(
       style = "position: relative; backgroundColor: #ecf0f5",
@@ -1354,8 +1365,101 @@ server <- function(input, output, session) {
     )
   })
   
+  # UI - State Trend current working -----------------------------------------------------
+  output$box_pat6_2 <- renderUI({
+    div(
+      style = "position: relative",
+      tabBox(
+        id = "box_year",
+        width = NULL,
+        height = 400,
+        tabPanel(
+          title = "State Average Democrat Victory",
+          div(
+            style = "position: absolute; left:0.5em; bottom: 0.5em;",
+            dropdown(
+              radioGroupButtons(
+                inputId = "box_year1",
+                label = "Select time period", 
+                choiceNames = c("News", "No News"),
+                choiceValues = c("Result", "Result2"), 
+                selected = "Result", 
+                direction = "vertical"
+              ),
+              size = "xs",
+              icon = icon("gear", class = "opt"), 
+              up = TRUE
+            )
+          ),
+          withSpinner(
+            plotOutput("plot_state", height = 300),
+            type = 4,
+            color = "#d33724",
+            size = 0.7
+          )
+        )
+      )
+    )
+  })
   
-  # UI Time Trend - 2 ------Discard------------------------------------------------------------
+  
+  plot_year_select <- reactive({
+    
+    years <- set_reac_1() %>% 
+      count(year)
+    
+    months <- set_reac_1() %>% 
+      count(yearmonth_adm)
+    
+    quarter <- set_reac_1() %>% 
+      count(yearquarter_adm)
+    
+    if (input$box_year1 == "years") {
+      plot <- qic(year, n,
+                  data = years, 
+                  agg.fun = "sum",
+                  decimals = 2,
+                  xlab = "Year",
+                  ylab = "Count",
+                  title = "Admissions per year") +
+        scale_x_continuous(breaks = 
+                             c(min(set_reac_2()$year, na.rm = TRUE):max(set_reac_2()$year, na.rm = TRUE)))
+      
+    } else {
+      if (input$box_year1 == "yearquarter_adm") {
+        plot <- qic(yearquarter_adm, n,
+                    data = quarter,
+                    agg.fun = "sum",
+                    decimals = 2,
+                    xlab = "Quarter",
+                    ylab = "Count",
+                    title = "Admissions per quarter") +
+          scale_x_yearqtr(n = length(quarter$yearquarter_adm)/4) 
+        
+      } else {
+        plot <- qic(yearmonth_adm, n,
+                    data = months,
+                    agg.fun = "sum",
+                    decimals = 2,
+                    xlab = "Month",
+                    ylab = "Count",
+                    title = "Admissions per month") +
+          scale_x_yearmon(n = length(months$yearmonth_adm)/12)
+      }
+    }
+    
+    plot +
+      labs(caption = "(Line represents median; if red-dotted = signal for non-random variation)") +
+      theme(plot.caption = element_text(size = 10, colour = "darkgrey"), 
+            plot.title = element_text(face = "bold", size = 12))
+    
+  })
+  
+  output$plot_year_select <- renderPlot({
+    plot_year_select()
+  })
+  
+  # UI Time Trend - 2 ----------------------Used-------------------------------------------
   output$box_pat6 <- renderUI({
     div(
       style = "position: relative; backgroundColor: #ecf0f5",
