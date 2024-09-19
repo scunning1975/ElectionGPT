@@ -7,6 +7,7 @@ library(readr)
 library(tidyr)
 library(scales)
 library(bslib)
+library(stringr)
 
 # Read the panel data from the CSV files
 panel_data <- read.csv("data/panel_election_results_state.csv")

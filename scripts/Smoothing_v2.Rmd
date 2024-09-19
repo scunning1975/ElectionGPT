@@ -1,0 +1,311 @@
+---
+title: "Bayesian Hierarchical Modeling of Election Results"
+author: "Your Name"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Overview
+
+**Objective**: Smooth the daily estimations of the probability of a Republican win in each state, accounting for the hierarchical structure of the data, the effect of `Date`, and comparing different `Voice`s.
+
+**Data Structure**:
+
+- **Date**: Observation day.
+- **Voice**: One of Direct, Fox, MSNBC, or BBC.
+- **Trial**: Daily trials within each voice (90-100 per day).
+- **State**: 50 states plus DC (51 in total).
+- **Result**: Binary outcome (1 = Republican win, 0 = Democrat win).
+
+# Table of Contents
+
+1. [Install and Load Necessary Packages](#install-and-load-necessary-packages)
+2. [Read and Prepare the Data](#read-and-prepare-the-data)
+3. [Data Exploration and Preparation](#data-exploration-and-preparation)
+4. [Specify the Bayesian Hierarchical Model](#specify-the-bayesian-hierarchical-model)
+5. [Fit the Model Using `brms`](#fit-the-model-using-brms)
+6. [Check Model Diagnostics and Address Convergence Issues](#check-model-diagnostics-and-address-convergence-issues)
+7. [Extract and Visualize Smoothed Estimates](#extract-and-visualize-smoothed-estimates)
+8. [Compare Different Voices](#compare-different-voices)
+9. [Summary and Next Steps](#summary-and-next-steps)
+10. [References](#references)
+
+# 1. Install and Load Necessary Packages
+
+```{r}
+# Install packages if not already installed
+if (!require("brms")) install.packages("brms")
+if (!require("tidyverse")) install.packages("tidyverse")
+if (!require("bayesplot")) install.packages("bayesplot")
+
+# Load the libraries
+library(brms)
+library(tidyverse)
+library(bayesplot)
+```
+
+# 2. Read and Prepare the Data
+
+```{r}
+# Read your CSV file (replace with your actual file path)
+data <- read.csv('/Users/jaredblack/GitHub/ElectionGPT/data/panel_election_results_state.csv', stringsAsFactors = FALSE)
+
+# Convert 'Date' to Date type using the correct format
+# The dates are in "8/13/24", which corresponds to "%m/%d/%y"
+data$Date <- as.Date(data$Date, format = "%m/%d/%y")
+
+# Check for NAs after conversion
+if (any(is.na(data$Date))) {
+  warning("There are missing dates after conversion. Please check the date format.")
+}
+
+# Standardize the 'Voice' column
+data$Voice <- tolower(data$Voice)
+data$Voice <- tools::toTitleCase(data$Voice)
+
+# Ensure 'Voice', 'Trial', and 'State' are factors
+data$Voice <- as.factor(data$Voice)
+data$Trial <- as.factor(data$Trial)
+data$State <- as.factor(data$State)
+```
+
+# 3. Data Exploration and Preparation
+
+## 3.1. Aggregate the Data
+
+We need to aggregate the binary results to get counts of successes (Republican wins) and total trials per state per date per voice.
+
+```{r}
+# Summarize data by Date, State, and Voice
+summary_data <- data %>%
+  group_by(Date, State, Voice) %>%
+  summarise(
+    successes = sum(Result),  # Number of Republican wins
+    trials = n(),             # Total number of trials
+    .groups = 'drop'          # Ungroup after summarizing
+  )
+```
+
+## 3.2. Prepare Predictors
+
+### Center and Scale `Date`
+
+Centering and scaling continuous predictors can help with model convergence.
+
+```{r}
+# Convert Date to numeric (number of days since first date)
+summary_data$Date_num <- as.numeric(summary_data$Date - min(summary_data$Date))
+
+# Center and scale Date_num
+summary_data$Date_num_c <- scale(summary_data$Date_num, center = TRUE, scale = TRUE)
+```
+
+### Check for Perfect Separation
+
+Perfect separation can cause convergence issues.
+
+```{r}
+# Check for perfect separation
+separation_check <- summary_data %>%
+  mutate(proportion = successes / trials) %>%
+  filter(proportion == 0 | proportion == 1)
+
+# Print problematic observations
+print(separation_check)
+```
+
+**Action**: If you find observations with perfect separation, consider adding informative priors or excluding them (with justification).
+
+# 4. Specify the Bayesian Hierarchical Model
+
+Include `Date` and `Voice` as predictors, with random effects for `State` and random slopes for `Date`.
+
+```{r}
+# Define the model formula including interactions
+model_formula <- bf(
+  successes | trials(trials) ~ Date_num_c * Voice + (Date_num_c | State)
+)
+```
+
+# 5. Fit the Model Using `brms`
+
+Adjust model settings to address convergence issues.
+
+```{r}
+# Define priors
+priors <- c(
+  prior(normal(0, 1), class = "Intercept"),          # Prior for the intercept
+  prior(normal(0, 0.5), class = "b"),                # Priors for coefficients
+  prior(student_t(3, 0, 1), class = "sd"),           # Prior for random effects SD
+  prior(lkj(2), class = "cor")                       # Prior for correlations
+)
+
+# Fit the model
+fit <- brm(
+  formula = model_formula,
+  data = summary_data,
+  family = binomial(),
+  prior = priors,
+  chains = 4,
+  cores = 4,
+  iter = 10000,          # Increased number of iterations
+  warmup = 5000,         # Increased warm-up period
+  seed = 123,
+  control = list(adapt_delta = 0.99, max_treedepth = 20)  # Increased adapt_delta and max_treedepth
+)
+```
+
+**Note**: Be prepared for longer computation times due to increased iterations and treedepth.
+
+# 6. Check Model Diagnostics and Address Convergence Issues
+
+```{r}
+# Summarize the fitted model
+summary(fit)
+
+# Plot trace plots for diagnostics
+plot(fit)
+
+# Posterior predictive checks
+pp_check(fit)
+```
+
+**If Warnings Persist**:
+
+- Examine the `Rhat` values (should be close to 1).
+- Check effective sample sizes (`Bulk_ESS` and `Tail_ESS`).
+- If issues remain, consider simplifying the model or adjusting priors further.
+
+# 7. Extract and Visualize Smoothed Estimates
+
+## 7.1. Prepare New Data for Predictions
+
+Ensure that `new_data` includes all variables used in the model (`Date_num_c`, `Voice`, `State`, and `trials`).
+
+```{r}
+# Create new data for predictions
+new_data <- summary_data %>%
+  select(Date, Date_num_c, State, Voice, trials) %>%
+  distinct()
+```
+
+## 7.2. Generate Predicted Probabilities
+
+```{r}
+# Generate predicted probabilities
+predictions <- fitted(fit, newdata = new_data, re_formula = NULL, summary = TRUE)
+
+# Combine predictions with new_data
+predictions_df <- cbind(new_data, predictions)
+```
+
+## 7.3. Plot the Results
+
+Plot the smoothed probabilities over time for a specific state, comparing different voices.
+
+```{r}
+# Choose a state to plot
+state_to_plot <- "California"  # Replace with desired state
+
+# Filter data for the selected state
+plot_data <- predictions_df %>% filter(State == state_to_plot)
+
+# Plot the smoothed probabilities
+ggplot(plot_data, aes(x = Date, y = Estimate, color = Voice)) +
+  geom_line() +
+  geom_ribbon(aes(ymin = Q2.5, ymax = Q97.5, fill = Voice), alpha = 0.2) +
+  labs(
+    title = paste("Smoothed Probability of Republican Win in", state_to_plot),
+    x = "Date",
+    y = "Estimated Probability"
+  ) +
+  theme_minimal()
+```
+
+# 8. Compare Different Voices
+
+By including `Voice` as a predictor and fitting the combined model, you can directly compare the effects of different voices.
+
+## 8.1. Extract Coefficient Estimates
+
+```{r}
+# Extract fixed effects
+fixef(fit)
+```
+
+## 8.2. Visualize the Effects
+
+Plot the estimated coefficients for `Voice` and `Date_num_c`.
+
+```{r}
+# Coefficient plot
+mcmc_plot(fit, type = "areas", pars = c("b_Intercept", "b_Date_num_c", "b_VoiceFox", "b_VoiceMsnbc", "b_VoiceBbc"))
+```
+
+## 8.3. Posterior Predictive Checks by Voice
+
+```{r}
+# Posterior predictive checks by Voice
+pp_check(fit, group = "Voice")
+```
+
+# 9. Summary and Next Steps
+
+- **Model Diagnostics**: Ensure convergence by checking `Rhat`, `ESS`, and trace plots.
+- **Address Warnings**: If warnings about treedepth or ESS persist, consider further model adjustments.
+- **Interpret Results**: Analyze the estimated effects of `Date` and `Voice` on the probability of a Republican win.
+- **Visualization**: Create comparative plots for different states and voices to visualize trends.
+- **Reporting**: Document your methodology, results, and any challenges encountered.
+
+# 10. References
+
+- **`brms` Package Documentation**: [CRAN - brms](https://cran.r-project.org/package=brms)
+- **Stan Modeling Language**: [Stan User's Guide](https://mc-stan.org/users/documentation/)
+- **Bayesian Data Analysis**: Gelman et al.
+- **Visualization**: [ggplot2 Documentation](https://ggplot2.tidyverse.org/)
+- **Bayesplot Package**: [Bayesplot Documentation](https://mc-stan.org/bayesplot/)
+
+---
+
+**Additional Tips**
+
+- **Computational Considerations**: Long models may require substantial computational resources. Monitor your system's performance.
+- **Saving Models**: Use `saveRDS(fit, "fit_model.rds")` to save your fitted model and avoid re-running lengthy computations.
+- **Further Analysis**: Consider exploring interaction effects or adding more predictors if appropriate.
+- **Collaboration**: Discuss your modeling approach with peers or advisors for additional insights.
+
+---
+
+**Let me know** if you have any questions or need further assistance with specific parts of the code or interpretation of the results. Good luck with your analysis!
+```
+
+---
+
+**Notes on the Updates**:
+
+- **Included `Date` as a Predictor**: `Date_num_c` (centered and scaled `Date`) is included in the model to capture temporal trends.
+- **Comparison of `Voice`s**: `Voice` is included as a predictor, and interactions between `Date_num_c` and `Voice` are modeled to compare different voices.
+- **Fixed Errors**:
+  - **`trials` Variable**: Included `trials` in `new_data` for predictions.
+  - **`fit_rs` Object**: Since we're now using `fit` as the combined model with `Date` and `Voice`, `fit_rs` is no longer needed.
+- **Adjusted Model Settings**:
+  - Increased `max_treedepth` to 20.
+  - Increased `iter` to 10000 and `warmup` to 5000.
+  - Adjusted priors to be more informative, which can help with convergence.
+- **Centered and Scaled Predictors**: Centering and scaling of `Date_num_c` can improve sampling efficiency.
+
+**Remember to**:
+
+- Replace `'path/to/your/data.csv'` with the actual path to your data file.
+- Ensure that you have sufficient computational resources to run the model with increased iterations and `max_treedepth`.
+- Monitor model diagnostics and adjust as necessary.
+
+**If Warnings Persist**:
+
+- Consider simplifying the model by removing random slopes or interactions.
+- Experiment with different priors or modeling strategies.
+- Check for data issues such as perfect separation or sparse data in some groups.
+
+---
+
+**Feel free to reach out** if you have any questions or need further assistance. I'm here to help you get your analysis running smoothly!
