@@ -82,7 +82,7 @@ melted_data<-data%>%
 data2<-read_csv("panel_control_election_results_state.csv",show_col_types = FALSE)
 melted_data2<-data2%>%
   rename(
-    value_control = Result,  # Renaming 'Result' to 'value'
+    value = Result,  # Renaming 'Result' to 'value'
     state = State,
     Type= Voice# Renaming 'State' to 'state'
   )%>%
@@ -90,9 +90,6 @@ melted_data2<-data2%>%
   mutate(Date = as.Date(Date, format = "%m/%d/%y")) %>%
   mutate(Type = ifelse(Type == "Direct", "Anonymous", Type))
 
-merged_data<-melted_data%>% 
-  left_join(melted_data2, by=c("Date","Type","Trial","state")) %>%
-  filter(Date=="2024-09-18")
 #````````````````
 
 # 3.1 2024-8-19 data has duplicates when retry to append the data
@@ -124,6 +121,9 @@ electoral_votes <- data.frame(
 
 # 5 merage data
 melted_data<-melted_data%>%
+  left_join(electoral_votes, by ="state")
+
+melted_data2<-melted_data2%>%
   left_join(electoral_votes, by ="state")
 
 
@@ -176,6 +176,38 @@ subdata2 <- melted_data %>%
   mutate(Percent_byState_chr=sprintf("%1.2f%%", 100*Percent_byState))%>% 
   mutate(Percent_byState_Demo=round(1-Percent_byState, digits=3))%>% 
   mutate(Percent_byState_chr_Demo=sprintf("%1.2f%%", 100*Percent_byState_Demo))
+
+#------for data2 no news  and news
+subdata2_news <- subdata2 %>%
+  select(-TotalTrial_byState,-No_Democratic_State,-Percent_byState,-No_Republican_State,-Percent_byState_chr)
+
+
+subdata2_nonews <- melted_data2 %>%
+  mutate(StateFull = state.name[match(state, state.abb)])%>%
+  mutate(StateFull = ifelse(state == "DC", "District of Columbia", StateFull))%>%
+  group_by(Date, Type, state, StateFull) %>%
+  summarise(
+    Percent_byState = mean(value, na.rm = TRUE),
+    TotalTrial_byState = n(),
+    No_Republican_State = sum(value == 1, na.rm = TRUE),
+    No_Democratic_State = sum(value == 0, na.rm = TRUE),
+    .groups = 'drop'
+  )  %>% 
+  mutate(Percent_byState_chr=sprintf("%1.2f%%", 100*Percent_byState))%>% 
+  mutate(Percent_byState_Demo=round(1-Percent_byState, digits=3))%>% 
+  mutate(Percent_byState_chr_Demo=sprintf("%1.2f%%", 100*Percent_byState_Demo))%>%
+  select(-TotalTrial_byState,-No_Democratic_State,-Percent_byState,-No_Republican_State,-Percent_byState_chr)%>%
+  rename(
+    Percent_byState_Demo2=Percent_byState_Demo,
+    Percent_byState_chr_Demo2=Percent_byState_chr_Demo)
+
+
+#this is the combined news and no news data for switch purpose
+news_nonews<-subdata2_news%>%
+  left_join(subdata2_nonews, by=c("Date","Type","state","StateFull"))
+  
+#-----------------Combine news and no news
+
 
 # Creating the second subset with state-specific totals,showing total trial for specific day with value 1 or 2
 subdata3 <- melted_data %>%
@@ -446,7 +478,7 @@ expert_data<-expert%>%
 
 # Creating the second subset with state-specific totals,showing total trial for specific day with value 1 or 2
 
-# Monte_Carlo Simulation
+# Monte_Carlo Simulation with news
 monte_carlo<-melted_data %>%
   group_by(Type, Trial, Date,party) %>%
   summarise(
@@ -469,6 +501,35 @@ monte_carlo_overall<-monte_carlo%>%
   mutate(Simulation_chr=sprintf("%1.2f%%", 100*Simulation))
 
 monte_carlo_reshape<- monte_carlo_overall %>%
+  select(Date, Type, party, Simulation) %>% 
+  mutate(Simulation=round(Simulation,digit=2))%>%
+  pivot_wider(names_from = Type, values_from = Simulation, names_prefix = "Trial_Percent_")
+
+# -----------
+# Monte_Carlo Simulation without news
+monte_carlo2<-melted_data2 %>%
+  mutate(party = ifelse(value ==1, "Republican", "Democratic")) %>%
+  group_by(Type, Trial, Date,party) %>%
+  summarise(
+    Number_Repub_Win = n(),
+    TotalTrial_byVoice = n(),
+    votes_party =sum(Electoral_Votes),
+    .groups = 'drop'
+  ) %>%
+  mutate(outcome = ifelse(votes_party>=270, "Winner", "Loser"))%>%
+  mutate(Result = ifelse(votes_party>=270, 1, 0))
+
+monte_carlo_overall2<-monte_carlo2%>%
+  group_by(Type, Date,party) %>%
+  summarise(
+    Total_Trials=n(),
+    No_Win_Trial = sum(Result == 1, na.rm = TRUE),
+    .groups = 'drop'
+  ) %>%
+  mutate(Simulation=No_Win_Trial/Total_Trials)%>%
+  mutate(Simulation_chr=sprintf("%1.2f%%", 100*Simulation))
+
+monte_carlo_reshape2<- monte_carlo_overall2 %>%
   select(Date, Type, party, Simulation) %>% 
   mutate(Simulation=round(Simulation,digit=2))%>%
   pivot_wider(names_from = Type, values_from = Simulation, names_prefix = "Trial_Percent_")
@@ -1113,6 +1174,25 @@ server <- function(input, output, session) {
     
   })
   
+  # UI 6- Time Series 2 news without news
+  News_NoNews <- reactive({
+    req(input$voicechoice) 
+    req(input$statesInput)
+    req(input$date2)
+    req(input$box_year1)
+    #req(input$partychoice)
+    filter(news_nonews, Type %in% input$voicechoice) %>%
+      filter(StateFull %in% input$statesInput) %>%
+      filter(Date >= input$date2[1] & Date <= input$date2[2]) %>%
+      arrange(Date)
+    #%>%filter(party %in% input$partychoice)
+    
+  })
+  
+  observe({
+    print(News_NoNews())
+  })
+  
   # UI 7- Time Series 1 Calculate the average and assign the votes --DISCARD
   Votes_data_4Voice <- reactive({
     #req(input$TimeseriesVoices) 
@@ -1368,11 +1448,11 @@ server <- function(input, output, session) {
   # UI - State Trend current working -----------------------------------------------------
   output$box_pat6_2 <- renderUI({
     div(
-      style = "position: relative",
+      style = "position: relative; backgroundColor: #ecf0f5",
       tabBox(
-        id = "box_year",
+        id = "box_pat",
         width = NULL,
-        height = 400,
+        height = 320,
         tabPanel(
           title = "State Average Democrat Victory",
           div(
@@ -1382,8 +1462,8 @@ server <- function(input, output, session) {
                 inputId = "box_year1",
                 label = "Select time period", 
                 choiceNames = c("News", "No News"),
-                choiceValues = c("Result", "Result2"), 
-                selected = "Result", 
+                choiceValues = c("news", "no_news"), 
+                selected = "no_news", 
                 direction = "vertical"
               ),
               size = "xs",
@@ -1392,10 +1472,10 @@ server <- function(input, output, session) {
             )
           ),
           withSpinner(
-            plotOutput("plot_state", height = 300),
+            plotlyOutput("plot_state2", height = 230),
             type = 4,
-            color = "#d33724",
-            size = 0.7
+            color = "#d33724", 
+            size = 0.7 
           )
         )
       )
@@ -1403,61 +1483,167 @@ server <- function(input, output, session) {
   })
   
   
-  plot_year_select <- reactive({
+  output$plot_state2 <- renderPlotly({
+    input$allInput
+    input$voicechoice
+    input$statesInput
+    input$date2
+    input$box_year1
+    #input$confirm
+    #input$partychoice
     
-    years <- set_reac_1() %>% 
-      count(year)
-    
-    months <- set_reac_1() %>% 
-      count(yearmonth_adm)
-    
-    quarter <- set_reac_1() %>% 
-      count(yearquarter_adm)
-    
-    if (input$box_year1 == "years") {
-      plot <- qic(year, n,
-                  data = years, 
-                  agg.fun = "sum",
-                  decimals = 2,
-                  xlab = "Year",
-                  ylab = "Count",
-                  title = "Admissions per year") +
-        scale_x_continuous(breaks = 
-                             c(min(set_reac_2()$year, na.rm = TRUE):max(set_reac_2()$year, na.rm = TRUE)))
-      
-    } else {
-      if (input$box_year1 == "yearquarter_adm") {
-        plot <- qic(yearquarter_adm, n,
-                    data = quarter,
-                    agg.fun = "sum",
-                    decimals = 2,
-                    xlab = "Quarter",
-                    ylab = "Count",
-                    title = "Admissions per quarter") +
-          scale_x_yearqtr(n = length(quarter$yearquarter_adm)/4) 
-        
+      if (input$box_year1 == "no_news") {
+        fig <- plot_ly()
+        # Loop through each selected state and add a trace for it
+        for (k in seq_along(input$statesInput)){
+          state_data <- News_NoNews()[News_NoNews()$StateFull == input$statesInput[k], ]
+          fig <- add_trace(fig, data = state_data, 
+                           x = ~Date, y = ~Percent_byState_Demo2, type = 'scatter', mode = 'lines',
+                           name = input$statesInput[k],
+                           line = list(width = 2)) %>%
+            layout(
+              xaxis = list(title = "Date",
+                           showgrid = FALSE,
+                           zeroline = FALSE,
+                           showline = FALSE),
+              #tickformat = "%b %d, %Y"),
+              yaxis = list(
+                title = "Percent",
+                showline = TRUE,
+                showgrid = FALSE,
+                showticklabels = TRUE,
+                tickformat = ".0%",  # Format ticks as percentage
+                range = c(-0.1, 1.1),
+                tickmode = "linear",
+                tick0 = 0,
+                dtick = 0.2
+              ),
+              shapes = list(
+                list(
+                  type = "rect",
+                  fillcolor = "rgba(205, 12, 24, 0.2)", # Light red fill for 140-270
+                  line = list(color = "rgba(205, 12, 24, 0)"), # No border
+                  x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
+                  y0 =0, y1 = 0.5
+                ),
+                list(
+                  type = "rect",
+                  fillcolor = "rgba(22, 96, 167, 0.2)", # Light blue fill for 270-400
+                  line = list(color = "rgba(22, 96, 167, 0)"), # No border
+                  x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
+                  y0 = 0.5, y1 = 1
+                ),
+                list(
+                  type = "line",
+                  x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
+                  y0 = 0.5, y1 = 0.5,
+                  line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
+                )
+              )
+            ) %>%
+            layout(annotations = list(
+              list(
+                x = min(News_NoNews()$Date) + 5,
+                y = 0.65,
+                text = "Democrat Win",
+                showarrow = FALSE,
+                font = list(size = 12, weight = "bold", color = "rgb(22, 96, 167)"),
+                showgrid = FALSE
+              ),
+              list(
+                x = min(News_NoNews()$Date) + 5,
+                y = 0.4,
+                text = "Republican Win",
+                showarrow = FALSE,
+                font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
+              )
+            ))
+        }
+        fig  # Return the plotly figure
       } else {
-        plot <- qic(yearmonth_adm, n,
-                    data = months,
-                    agg.fun = "sum",
-                    decimals = 2,
-                    xlab = "Month",
-                    ylab = "Count",
-                    title = "Admissions per month") +
-          scale_x_yearmon(n = length(months$yearmonth_adm)/12)
+        # Initialize the plotly object
+        fig <- plot_ly()
+        # Loop through each selected state and add a trace for it
+        for (k in seq_along(input$statesInput)){
+          state_data <- News_NoNews()[News_NoNews()$StateFull == input$statesInput[k], ]
+          fig <- add_trace(fig, data = state_data, 
+                           x = ~Date, y = ~Percent_byState_Demo, type = 'scatter', mode = 'lines',
+                           name = input$statesInput[k],
+                           line = list(width = 2)) %>%
+            layout(
+              xaxis = list(title = "Date",
+                           showgrid = FALSE,
+                           zeroline = FALSE,
+                           showline = FALSE),
+              #tickformat = "%b %d, %Y"),
+              yaxis = list(
+                title = "Percent",
+                showline = TRUE,
+                showgrid = FALSE,
+                showticklabels = TRUE,
+                tickformat = ".0%",  # Format ticks as percentage
+                range = c(-0.1, 1.1),
+                tickmode = "linear",
+                tick0 = 0,
+                dtick = 0.2
+              ),
+              shapes = list(
+                list(
+                  type = "rect",
+                  fillcolor = "rgba(205, 12, 24, 0.2)", # Light red fill for 140-270
+                  line = list(color = "rgba(205, 12, 24, 0)"), # No border
+                  x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
+                  y0 =0, y1 = 0.5
+                ),
+                list(
+                  type = "rect",
+                  fillcolor = "rgba(22, 96, 167, 0.2)", # Light blue fill for 270-400
+                  line = list(color = "rgba(22, 96, 167, 0)"), # No border
+                  x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
+                  y0 = 0.5, y1 = 1
+                ),
+                list(
+                  type = "line",
+                  x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
+                  y0 = 0.5, y1 = 0.5,
+                  line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
+                )
+              )
+            ) %>%
+            layout(annotations = list(
+              list(
+                x = min(News_NoNews()$Date) + 5,
+                y = 0.65,
+                text = "Democrat Win",
+                showarrow = FALSE,
+                font = list(size = 12, weight = "bold", color = "rgb(22, 96, 167)"),
+                showgrid = FALSE
+              ),
+              list(
+                x = min(News_NoNews()$Date) + 5,
+                y = 0.4,
+                text = "Republican Win",
+                showarrow = FALSE,
+                font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
+              )
+            ))
+        }
+        fig  # Return the plotly figure
       }
-    }
-    
-    plot +
-      labs(caption = "(Line represents median; if red-dotted = signal for non-random variation)") +
-      theme(plot.caption = element_text(size = 10, colour = "darkgrey"), 
-            plot.title = element_text(face = "bold", size = 12))
-    
   })
   
-  output$plot_year_select <- renderPlot({
-    plot_year_select()
+  
+  observe({
+    print(input$box_year1)
   })
+  
+  # Observe the reactive expression `News_NoNews()` and log the changes
+  observe({
+    data <- News_NoNews()  # Store the reactive output in a variable
+    print("News_NoNews data has changed!")  # Log a message to the console
+    print(head(data))  # Print the first few rows of the data for inspection
+  })
+  
   
   # UI Time Trend - 2 ----------------------Used-------------------------------------------
   output$box_pat6 <- renderUI({
@@ -2327,8 +2513,6 @@ server <- function(input, output, session) {
                      range = c(0.40, 0.60),
                      showgrid = FALSE))
   })
-  
-  
   
      
 }

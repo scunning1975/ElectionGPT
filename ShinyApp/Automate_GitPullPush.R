@@ -39,6 +39,20 @@ save_to_shiny <- function() {
   } else {
     message("expert_combined_panel.csv does not exist. Please check the file path.")
   }
+  
+  source_file_panel <- "/Users/sunmingrun/Documents/GitHub/ElectionGPT/data/panel_control_election_results_state.csv"
+  
+  # Destination path where the file will be copied to (Shiny folder)
+  destination_file_panel <- "/Users/sunmingrun/Documents/GitHub/ElectionGPT/ShinyApp/panel_control_election_results_state.csv"
+  
+  # Check if the file exists, then copy it to the Shiny folder
+  if (file.exists(source_file_panel)) {
+    file.copy(from = source_file_panel, to = destination_file_panel, overwrite = TRUE)
+    message("panel_election_results_state.csv file copied to ShinyApp folder.")
+  } else {
+    message("panel_election_results_state.csv does not exist. Please check the file path.")
+  }
+  
 }
 
 save_to_shiny()
