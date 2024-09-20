@@ -790,7 +790,7 @@ ui <- dashboardPage(
     introBox(data.step = 2, data.intro = intro$text[2], 
     div(class = "inlay", style = "height:15px;width:100%;background-color: #ecf0f5;"),
     sidebarMenu(
-      introBox(data.step = 4, data.intro = intro$text[4], # intro tour
+      introBox(data.step = 5, data.intro = intro$text[5], # intro tour
       div(id = "sidebar_button",
           bsButton(inputId = "confirm", 
                    label = "START EXPLORE", 
@@ -1641,6 +1641,7 @@ server <- function(input, output, session) {
           title = "State Average Democrat Victory",
           div(
             style = "position: absolute; left:0.5em; bottom: 0.5em;",
+            introBox(data.step = 4, data.intro = intro$text[4], 
             dropdown(
               radioGroupButtons(
                 inputId = "box_year1",
@@ -1654,6 +1655,7 @@ server <- function(input, output, session) {
               icon = icon("gear", class = "opt"), 
               up = TRUE
             )
+          )
           ),
           withSpinner(
             plotlyOutput("plot_state2", height = 230),
