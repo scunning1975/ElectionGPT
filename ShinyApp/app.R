@@ -53,7 +53,7 @@ library(viridis)
 library(zoo)
 
 library(rsconnect)
-
+library(vroom)
 
 # download automate process
 
@@ -79,7 +79,11 @@ melted_data<-data%>%
   mutate(Type = ifelse(Type == "Direct", "Anonymous", Type))
 
 #---------
+#data2<-read_delim("panel_control_election_results_state.csv",show_col_types = FALSE)
+
 data2<-read_csv("panel_control_election_results_state.csv",show_col_types = FALSE)
+
+
 melted_data2<-data2%>%
   rename(
     value = Result,  # Renaming 'Result' to 'value'
@@ -711,9 +715,6 @@ distinct <- filtered_data %>%
   distinct(Type,Date, No_Republican,No_Democratic,Republican,Democratic,TotalTrial_byState)
 
 
-
-
-
 steps<-read_csv2("help.csv",show_col_types = FALSE)
 intro <- read_csv2("intro.csv",show_col_types = FALSE)
 
@@ -789,7 +790,7 @@ ui <- dashboardPage(
     introBox(data.step = 2, data.intro = intro$text[2], 
     div(class = "inlay", style = "height:15px;width:100%;background-color: #ecf0f5;"),
     sidebarMenu(
-      introBox(data.step = 5, data.intro = intro$text[5], # intro tour
+      introBox(data.step = 4, data.intro = intro$text[4], # intro tour
       div(id = "sidebar_button",
           bsButton(inputId = "confirm", 
                    label = "START EXPLORE", 
@@ -1640,7 +1641,6 @@ server <- function(input, output, session) {
           title = "State Average Democrat Victory",
           div(
             style = "position: absolute; left:0.5em; bottom: 0.5em;",
-            #introBox(data.step = 4, data.intro = intro$text[4],
             dropdown(
               radioGroupButtons(
                 inputId = "box_year1",
@@ -1654,7 +1654,6 @@ server <- function(input, output, session) {
               icon = icon("gear", class = "opt"), 
               up = TRUE
             )
-            #)
           ),
           withSpinner(
             plotlyOutput("plot_state2", height = 230),
@@ -2421,7 +2420,7 @@ server <- function(input, output, session) {
     #input$confirm
     #input$partychoice
     
-    if (input$box_year1 == "no_news") {
+    if (input$box_year1 == "Without News") {
       fig <- plot_ly()
       # Loop through each selected state and add a trace for it
       for (k in seq_along(input$statesInput)){
