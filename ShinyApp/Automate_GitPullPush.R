@@ -4,7 +4,10 @@ pull_and_save_to_shiny <- function() {
   setwd("/Users/sunmingrun/Documents/GitHub/ElectionGPT")
   
   # Pull the latest changes from GitHub
+  system("git commit -m 'update of Shiny'")
+  system("git pull")
   system("git merge")
+  system("git add .")
   system("git pull origin main")
   message("Pulled latest changes from GitHub.")
   

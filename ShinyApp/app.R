@@ -1666,7 +1666,159 @@ server <- function(input, output, session) {
   })
   
   
+<<<<<<< HEAD
 
+=======
+  output$plot_state2 <- renderPlotly({
+    input$allInput
+    input$voicechoice
+    input$statesInput
+    input$date2
+    input$box_year1
+    #input$confirm
+    #input$partychoice
+    isolate({
+      if (input$box_year1 == "no_news") {
+        fig <- plot_ly()
+        # Loop through each selected state and add a trace for it
+        for (k in seq_along(input$statesInput)){
+          state_data <- News_NoNews()[News_NoNews()$StateFull == input$statesInput[k], ]
+          fig <- add_trace(fig, data = state_data, 
+                           x = ~Date, y = ~Percent_byState_Demo2, type = 'scatter', mode = 'lines',
+                           name = input$statesInput[k],
+                           line = list(width = 2)) %>%
+            layout(
+              xaxis = list(title = "Date",
+                           showgrid = FALSE,
+                           zeroline = FALSE,
+                           showline = FALSE),
+              #tickformat = "%b %d, %Y"),
+              yaxis = list(
+                title = "Percent",
+                showline = TRUE,
+                showgrid = FALSE,
+                showticklabels = TRUE,
+                tickformat = ".0%",  # Format ticks as percentage
+                range = c(-0.1, 1.1),
+                tickmode = "linear",
+                tick0 = 0,
+                dtick = 0.2
+              ),
+              shapes = list(
+                list(
+                  type = "rect",
+                  fillcolor = "rgba(205, 12, 24, 0.2)", # Light red fill for 140-270
+                  line = list(color = "rgba(205, 12, 24, 0)"), # No border
+                  x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
+                  y0 =0, y1 = 0.5
+                ),
+                list(
+                  type = "rect",
+                  fillcolor = "rgba(22, 96, 167, 0.2)", # Light blue fill for 270-400
+                  line = list(color = "rgba(22, 96, 167, 0)"), # No border
+                  x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
+                  y0 = 0.5, y1 = 1
+                ),
+                list(
+                  type = "line",
+                  x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
+                  y0 = 0.5, y1 = 0.5,
+                  line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
+                )
+              )
+            ) %>%
+            layout(annotations = list(
+              list(
+                x = min(News_NoNews()$Date) + 5,
+                y = 0.65,
+                text = "Democrat Win",
+                showarrow = FALSE,
+                font = list(size = 12, weight = "bold", color = "rgb(22, 96, 167)"),
+                showgrid = FALSE
+              ),
+              list(
+                x = min(News_NoNews()$Date) + 5,
+                y = 0.4,
+                text = "Republican Win",
+                showarrow = FALSE,
+                font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
+              )
+            ))
+        }
+        fig  # Return the plotly figure
+      } else {
+        # Initialize the plotly object
+        fig <- plot_ly()
+        # Loop through each selected state and add a trace for it
+        for (k in seq_along(input$statesInput)){
+          state_data <- News_NoNews()[News_NoNews()$StateFull == input$statesInput[k], ]
+          fig <- add_trace(fig, data = state_data, 
+                           x = ~Date, y = ~Percent_byState_Demo, type = 'scatter', mode = 'lines',
+                           name = input$statesInput[k],
+                           line = list(width = 2)) %>%
+            layout(
+              xaxis = list(title = "Date",
+                           showgrid = FALSE,
+                           zeroline = FALSE,
+                           showline = FALSE),
+              #tickformat = "%b %d, %Y"),
+              yaxis = list(
+                title = "Percent",
+                showline = TRUE,
+                showgrid = FALSE,
+                showticklabels = TRUE,
+                tickformat = ".0%",  # Format ticks as percentage
+                range = c(-0.1, 1.1),
+                tickmode = "linear",
+                tick0 = 0,
+                dtick = 0.2
+              ),
+              shapes = list(
+                list(
+                  type = "rect",
+                  fillcolor = "rgba(205, 12, 24, 0.2)", # Light red fill for 140-270
+                  line = list(color = "rgba(205, 12, 24, 0)"), # No border
+                  x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
+                  y0 =0, y1 = 0.5
+                ),
+                list(
+                  type = "rect",
+                  fillcolor = "rgba(22, 96, 167, 0.2)", # Light blue fill for 270-400
+                  line = list(color = "rgba(22, 96, 167, 0)"), # No border
+                  x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
+                  y0 = 0.5, y1 = 1
+                ),
+                list(
+                  type = "line",
+                  x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
+                  y0 = 0.5, y1 = 0.5,
+                  line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
+                )
+              )
+            ) %>%
+            layout(annotations = list(
+              list(
+                x = min(News_NoNews()$Date) + 5,
+                y = 0.65,
+                text = "Democrat Win",
+                showarrow = FALSE,
+                font = list(size = 12, weight = "bold", color = "rgb(22, 96, 167)"),
+                showgrid = FALSE
+              ),
+              list(
+                x = min(News_NoNews()$Date) + 5,
+                y = 0.4,
+                text = "Republican Win",
+                showarrow = FALSE,
+                font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
+              )
+            ))
+        }
+        fig  # Return the plotly figure
+      }
+  })
+  })
+>>>>>>> 6911aae65c39ee3dbf760987e0938b170c9f36f4
   
 
   
