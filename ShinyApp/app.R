@@ -60,7 +60,7 @@ library(rsconnect)
 
 library(httr)
 
-setwd("/Users/sunmingrun/Documents/GitHub/ElectionGPT/ShinyApp")
+#setwd("/Users/sunmingrun/Documents/GitHub/ElectionGPT/ShinyApp")
 
 # 1 data import
 data<-read_csv("panel_election_results_state.csv",show_col_types = FALSE)
@@ -179,7 +179,9 @@ subdata2 <- melted_data %>%
 
 #------for data2 no news  and news
 subdata2_news <- subdata2 %>%
-  select(-TotalTrial_byState,-No_Democratic_State,-Percent_byState,-No_Republican_State,-Percent_byState_chr)
+  select(-TotalTrial_byState,-No_Democratic_State,-Percent_byState,-No_Republican_State,-Percent_byState_chr)%>%
+  mutate(Predicted_party=ifelse(Percent_byState_Demo>=0.5, "Democratic", "Republican"))
+
 
 
 subdata2_nonews <- melted_data2 %>%
@@ -199,7 +201,8 @@ subdata2_nonews <- melted_data2 %>%
   select(-TotalTrial_byState,-No_Democratic_State,-Percent_byState,-No_Republican_State,-Percent_byState_chr)%>%
   rename(
     Percent_byState_Demo2=Percent_byState_Demo,
-    Percent_byState_chr_Demo2=Percent_byState_chr_Demo)
+    Percent_byState_chr_Demo2=Percent_byState_chr_Demo)%>%
+  mutate(Predicted_party2=ifelse(Percent_byState_Demo2>=0.5, "Democratic", "Republican"))
 
 
 #this is the combined news and no news data for switch purpose
@@ -336,8 +339,6 @@ subdata3_1_for_sentiment<-melted_data %>%
   ) %>% filter(party=="Democratic") %>%
   mutate(percent_by_trail=votes_party/538)
 
-#write.csv(subdata3_1_for_sentiment, "/Users/sunmingrun/Documents/GitHub/KamalaGPT/data/subdata3_1_for_sentiment.csv", row.names = FALSE)
-
 subdata3_1_2<-melted_data %>%
   group_by(Type, Date, party) %>%
   summarise(
@@ -436,6 +437,119 @@ trial_votes_reshape <-average_votes_reshape%>%
   arrange(Date) 
 #*******************************************************************
 
+#***no news data
+
+subdata3_1_nonews<-melted_data2 %>%
+  mutate(party = ifelse(value ==1, "Republican", "Democratic"))%>%
+  group_by(Type, Trial, Date,party) %>%
+  summarise(
+    Number_Repub_Win = n(),
+    votes_party =sum(Electoral_Votes),
+    .groups = 'drop'
+  ) 
+
+subdata3_1_for_sentiment_nonews<-melted_data2 %>%
+  mutate(party = ifelse(value ==1, "Republican", "Democratic"))%>%
+  group_by(Type, Trial, Date,party) %>%
+  summarise(
+    Number_Repub_Win = n(),
+    votes_party =sum(Electoral_Votes),
+    .groups = 'drop'
+  ) %>% filter(party=="Democratic") %>%
+  mutate(percent_by_trail=votes_party/538)
+
+subdata3_1_2_nonews<-melted_data2 %>%
+  mutate(party = ifelse(value ==1, "Republican", "Democratic"))%>%
+  group_by(Type, Date, party) %>%
+  summarise(
+    Number_Repub_Win = n(),
+    votes_party =sum(Electoral_Votes),
+    .groups = 'drop'
+  ) %>%
+  arrange(Date)
+
+#calculate total number of votes
+subdata3_2_2_nonews<-melted_data2 %>%
+  mutate(party = ifelse(value ==1, "Republican", "Democratic"))%>%
+  group_by(Type, Date) %>%
+  summarise(
+    Votes =sum(Electoral_Votes),
+    .groups = 'drop'
+  ) 
+
+
+subdata3_2_reshape_nonews<-subdata3_1_2_nonews%>%
+  left_join(subdata3_2_2_nonews,by=c("Type","Date")) %>%
+  mutate(Votes_perent=votes_party/Votes) %>%
+  select(Date, Type,party, Votes_perent) %>%  # Select relevant columns
+  pivot_wider(names_from = Type, values_from = Votes_perent, names_prefix = "Votes_")%>% 
+  filter(party=="Democratic")%>%
+  arrange(Date) 
+.groups = 'drop'
+
+
+# calculate total trials for each type each date for both parties, should be 100 per day for each type but we lose trials
+trial_counts_nonews<-subdata3_1_nonews %>%
+  group_by(Type,Date) %>%
+  mutate(trial_counts= n_distinct(Trial))%>%
+  select(Type,Date,party,trial_counts)%>%
+  distinct() # drop duplicates 
+.groups = 'drop'
+
+trial_votes_nonews<-melted_data2 %>%
+  mutate(party = ifelse(value ==1, "Republican", "Democratic"))%>%
+  group_by(Type, Date,party) %>%
+  summarise(
+    votes_party =sum(Electoral_Votes),
+    .groups = 'drop'
+  ) %>%
+  left_join(trial_counts_nonews, by=c("party","Type","Date" ))%>%
+  mutate(average_votes=votes_party/trial_counts)
+
+
+#total should be 535 for now and 538 later
+total_votes_count_nonews <- trial_votes_nonews %>%
+  select(Date, Type, average_votes) %>%  
+  group_by(Type, Date)%>%
+  summarise(
+    votes_total=sum(average_votes)
+  )
+
+# merge two datasets before reshape
+trial_votes_nonews <-trial_votes_nonews%>%
+  left_join(total_votes_count_nonews, by=c("Type","Date" )) %>%
+  mutate(average_votes = round(average_votes, digits = 0)) %>%  # Round average_votes
+  mutate(average_votes_percent=average_votes/votes_total)
+
+#*************** Dataset no news with predicted votes 
+
+#For graph
+average_votes_reshape2 <- trial_votes_nonews %>%
+  select(Date, Type, party, average_votes) %>%  # Select relevant columns
+  pivot_wider(names_from = Type, values_from = average_votes, names_prefix = "NoNews_Votes_")
+
+# For graph
+average_votes_percent_reshape2<- trial_votes_nonews %>%
+  select(Date, Type, party, average_votes_percent) %>%  # Select relevant columns
+  pivot_wider(names_from = Type, values_from = average_votes_percent, names_prefix = "NoNews_Votes_Percent_")
+
+# Final Dataset for national level winner for average votes and average votes percent
+#*******************************************************************
+trial_votes_reshape2 <-average_votes_reshape2%>%
+  left_join(average_votes_percent_reshape2, by=c("Date","party"))%>% 
+  filter(party=="Democratic")%>%
+  arrange(Date) 
+#*******************************************************************
+
+
+
+
+
+
+
+
+
+
 #-------------import expert data
 expert <-read_csv("Expert_Opinions.csv",show_col_types = FALSE)
 
@@ -459,16 +573,15 @@ expert <-read_csv("expert_combined_panel.csv",show_col_types = FALSE)
 expert <- expert %>%
   distinct()  
 
-
 expert_data<-expert%>%
   rename(
     Date = date,  # Renaming 'Result' to 'value'
   )%>%
   mutate(Date = as.Date(Date, format = "%m/%d/%y")) %>%
   mutate(Harris = round(Harris/100,digit=2)) %>%
-  mutate(Trump = round(Trump/100,digit=2))
+  mutate(Trump = round(Trump/100,digit=2))%>%
+  distinct()  
 .groups = 'drop'
-
 
 
 # simulation
@@ -731,7 +844,7 @@ ui <- dashboardPage(
           sep = ""
         ),
         dateInput("date", "DAYS TO FIRST PREDICTION (USE SINGLE DATE TO PLOT MAP):",   
-                  value = "2024-08-13"),
+                  value =  Sys.Date()),
         dateRangeInput("date2", "START DATE TO END DATE (USE DATE RANGE FOR STATE TREND PLOT):",   
                        start = "2024-08-13",
                        end   = Sys.Date() )
@@ -815,16 +928,6 @@ ui <- dashboardPage(
           style = "padding-right: 50px;",
           width = 6,
           uiOutput("box_pat7")
-        ),
-        column(
-          width = 6,
-          style = "padding-left: 50px;",
-          uiOutput("box_table1")
-        ),
-        column(
-          width = 6,
-          style = "padding-right: 50px;",
-          uiOutput("box_table2")
         )
       ),
       
@@ -836,25 +939,13 @@ ui <- dashboardPage(
             width = 6,
             #style = "padding-left: 50px; padding-right: 50px;",
             style = "padding-left: 50px;",
-            uiOutput("box_pat9")
-          ),
-          column(
-            width = 6,
-            #style = "padding-left: 50px; padding-right: 50px;",
-            style = "padding-right: 50px;",
             uiOutput("box_pat10")
           ),
           column(
             width = 6,
-            style = "padding-left: 50px;",
-            #style = "padding-left: 50px; padding-right: 50px;",
-            uiOutput("box_pat11")
-          ),
-          column(
-            width = 6,
             #style = "padding-left: 50px; padding-right: 50px;",
             style = "padding-right: 50px;",
-            uiOutput("box_pat12")
+            uiOutput("box_pat9")
           )
         ),
         
@@ -1075,8 +1166,9 @@ server <- function(input, output, session) {
   # Reactive function for USA map data
   USA_map_Anonymous <- reactive({
     req(input$date)
+    req(input$box_map1)
     #req(input$USMap_state)
-    filter(extended_data2, Type=="Anonymous") %>%
+    filter(news_nonews, Type=="Anonymous") %>%
       filter(Date %in% input$date)%>%
       #filter(StateFull %in% input$USMap_state)%>%
       mutate(party_numeric= ifelse(Predicted_party == "Republican", 1, 0))%>%
@@ -1086,7 +1178,14 @@ server <- function(input, output, session) {
                            "Date:", Date, "<br>",
                            "Type:", Type, "<br>",
                            "Democrat Win Chance",Percent_byState_chr_Demo,"<br>",
-                           "Winner:", Predicted_party))
+                           "Winner:", Predicted_party))%>%
+      mutate(party_numeric= ifelse(Predicted_party == "Republican", 1, 0))%>%
+      mutate(hover2 = paste(state, '<br>', 
+                           "State:", StateFull, "<br>",
+                           "Date:", Date, "<br>",
+                           "Type:", Type, "<br>",
+                           "Democrat Win Chance",Percent_byState_chr_Demo2,"<br>",
+                           "Winner:", Predicted_party2))
   })
   
   
@@ -1097,8 +1196,9 @@ server <- function(input, output, session) {
   # Reactive function for USA map data
   USA_map_BBC <- reactive({
     req(input$date)
+    req(input$box_map2)
     #req(input$USMap_state)
-    filter(extended_data2, Type=="BBC") %>%
+    filter(news_nonews, Type=="BBC") %>%
       filter(Date %in% input$date)%>%
       #filter(StateFull %in% input$USMap_state)%>%
       mutate(party_numeric= ifelse(Predicted_party == "Republican", 1, 0))%>%
@@ -1108,16 +1208,25 @@ server <- function(input, output, session) {
                            "Date:", Date, "<br>",
                            "Type:", Type, "<br>",
                            "Democrat Win Chance",Percent_byState_chr_Demo,"<br>",
-                           "Winner:", Predicted_party))
+                           "Winner:", Predicted_party))%>%
+      mutate(party_numeric= ifelse(Predicted_party == "Republican", 1, 0))%>%
+      mutate(hover2 = paste(state, '<br>', 
+                            "State:", StateFull, "<br>",
+                            "Date:", Date, "<br>",
+                            "Type:", Type, "<br>",
+                            "Democrat Win Chance",Percent_byState_chr_Demo2,"<br>",
+                            "Winner:", Predicted_party2))
   })
+  
   
   # UI - Map - 3 ----------------------------------------------------------
   
   # Reactive function for USA map data
   USA_map_Fox <- reactive({
     req(input$date)
+    req(input$box_map3)
     #req(input$USMap_state)
-    filter(extended_data2, Type=="Fox") %>%
+    filter(news_nonews, Type=="Fox") %>%
       filter(Date %in% input$date)%>%
       #filter(StateFull %in% input$USMap_state)%>%
       mutate(party_numeric= ifelse(Predicted_party == "Republican", 1, 0))%>%
@@ -1127,16 +1236,25 @@ server <- function(input, output, session) {
                            "Date:", Date, "<br>",
                            "Type:", Type, "<br>",
                            "Democrat Win Chance",Percent_byState_chr_Demo,"<br>",
-                           "Winner:", Predicted_party))
+                           "Winner:", Predicted_party))%>%
+      mutate(party_numeric= ifelse(Predicted_party == "Republican", 1, 0))%>%
+      mutate(hover2 = paste(state, '<br>', 
+                            "State:", StateFull, "<br>",
+                            "Date:", Date, "<br>",
+                            "Type:", Type, "<br>",
+                            "Democrat Win Chance",Percent_byState_chr_Demo2,"<br>",
+                            "Winner:", Predicted_party2))
   })
+  
   
   # UI - Map - 4 ----------------------------------------------------------
   
   # Reactive function for USA map data
   USA_map_MSNBC <- reactive({
     req(input$date)
+    req(input$box_map4)
     #req(input$USMap_state)
-    filter(extended_data2, Type=="MSNBC") %>%
+    filter(news_nonews, Type=="MSNBC") %>%
       filter(Date %in% input$date)%>%
       #filter(StateFull %in% input$USMap_state)%>%
       mutate(party_numeric= ifelse(Predicted_party == "Republican", 1, 0))%>%
@@ -1146,7 +1264,14 @@ server <- function(input, output, session) {
                            "Date:", Date, "<br>",
                            "Type:", Type, "<br>",
                            "Democrat Win Chance",Percent_byState_chr_Demo,"<br>",
-                           "Winner:", Predicted_party))
+                           "Winner:", Predicted_party))%>%
+      mutate(party_numeric= ifelse(Predicted_party == "Republican", 1, 0))%>%
+      mutate(hover2 = paste(state, '<br>', 
+                            "State:", StateFull, "<br>",
+                            "Date:", Date, "<br>",
+                            "Type:", Type, "<br>",
+                            "Democrat Win Chance",Percent_byState_chr_Demo2,"<br>",
+                            "Winner:", Predicted_party2))
   })
   
   
@@ -1211,10 +1336,18 @@ server <- function(input, output, session) {
   
   
   # UI 9 monte
+  # for news
   monte_carlo <-reactive({
     req(input$date2)
     filter(monte_carlo_reshape,Date >= input$date2[1] & Date <= input$date2[2])%>%
     filter(party=="Democratic")
+  }) 
+  
+  # for no news
+  monte_carlo2 <-reactive({
+    req(input$date2)
+    filter(monte_carlo_reshape2,Date >= input$date2[1] & Date <= input$date2[2])%>%
+      filter(party=="Democratic")
   }) 
   
   # UI 10 both average votes and average votes percent use this function
@@ -1222,6 +1355,12 @@ server <- function(input, output, session) {
     req(input$date2)
     filter(trial_votes_reshape,Date >= input$date2[1] & Date <= input$date2[2])
   })
+  
+  Votes_final_2 <-reactive({
+    req(input$date2)
+    filter(trial_votes_reshape2,Date >= input$date2[1] & Date <= input$date2[2])
+  })
+  
   
 
   # UI Table 1 average votes 
@@ -1346,13 +1485,29 @@ server <- function(input, output, session) {
         width = NULL,
         height = 320,
         tabPanel(
-          title = paste("United States Map Anonymous", input$date)
-        ),
-        withSpinner(
-          plotlyOutput("box_map_anonymous", height = 230),
-          type = 4,
-          color = "#d33724", 
-          size = 0.7 
+          title = paste("United States Map Anonymous", input$date),
+          div(
+            style = "position: absolute; left:0.5em; bottom: 0.5em;",
+            dropdown(
+              radioGroupButtons(
+                inputId = "box_map1",
+                label = "Select time period", 
+                choiceNames = c("News", "No News"),
+                choiceValues = c("With News", "Without News"), 
+                selected = "With News",  
+                direction = "vertical"
+              ),
+              size = "xs",
+              icon = icon("gear", class = "opt"), 
+              up = TRUE
+            )
+          ),
+          withSpinner(
+            plotlyOutput("box_map_anonymous", height = 230),
+            type = 4,
+            color = "#d33724", 
+            size = 0.7 
+          )
         )
       )
     )
@@ -1369,13 +1524,29 @@ server <- function(input, output, session) {
         width = NULL,
         height = 320,
         tabPanel(
-          title = paste("United States Map BBC", input$date)
-        ),
-        withSpinner(
-          plotlyOutput("box_map_BBC", height = 230),
-          type = 4,
-          color = "#d33724", 
-          size = 0.7 
+          title = paste("United States Map BBC", input$date),
+          div(
+            style = "position: absolute; left:0.5em; bottom: 0.5em;",
+            dropdown(
+              radioGroupButtons(
+                inputId = "box_map2",
+                label = "Select time period", 
+                choiceNames = c("News", "No News"),
+                choiceValues = c("With News", "Without News"), 
+                selected = "With News", 
+                direction = "vertical"
+              ),
+              size = "xs",
+              icon = icon("gear", class = "opt"), 
+              up = TRUE
+            )
+          ),
+          withSpinner(
+            plotlyOutput("box_map_BBC", height = 230),
+            type = 4,
+            color = "#d33724", 
+            size = 0.7 
+          )
         )
       )
     )
@@ -1390,13 +1561,29 @@ server <- function(input, output, session) {
         width = NULL,
         height = 320,
         tabPanel(
-          title = paste("United States Map Fox", input$date)
-        ),
-        withSpinner(
-          plotlyOutput("box_map_Fox", height = 230),
-          type = 4,
-          color = "#d33724", 
-          size = 0.7 
+          title = paste("United States Map Fox", input$date),
+          div(
+            style = "position: absolute; left:0.5em; bottom: 0.5em;",
+            dropdown(
+              radioGroupButtons(
+                inputId = "box_map3",
+                label = "Select time period", 
+                choiceNames = c("News", "No News"),
+                choiceValues = c("With News", "Without News"), 
+                selected = "With News",  
+                direction = "vertical"
+              ),
+              size = "xs",
+              icon = icon("gear", class = "opt"), 
+              up = TRUE
+            )
+          ),
+          withSpinner(
+            plotlyOutput("box_map_Fox", height = 230),
+            type = 4,
+            color = "#d33724", 
+            size = 0.7 
+          )
         )
       )
     )
@@ -1411,7 +1598,22 @@ server <- function(input, output, session) {
         width = NULL,
         height = 320,
         tabPanel(
-          title = paste("United States Map MSNBC", input$date)
+          title = paste("United States Map MSNBC", input$date),
+          div(
+            style = "position: absolute; left:0.5em; bottom: 0.5em;",
+            dropdown(
+              radioGroupButtons(
+                inputId = "box_map4",
+                label = "Select time period", 
+                choiceNames = c("News", "No News"),
+                choiceValues = c("With News", "Without News"),  
+                selected = "With News", 
+                direction = "vertical"
+              ),
+              size = "xs",
+              icon = icon("gear", class = "opt"), 
+              up = TRUE
+            )
         ),
         withSpinner(
           plotlyOutput("box_map_MSNBC", height = 230),
@@ -1421,30 +1623,11 @@ server <- function(input, output, session) {
         )
       )
     )
-  })
-  
-  
-  # UI - Time Trend - 1 --------------Discard-----------------------------------------------------
-  output$box_pat5 <- renderUI({
-    div(
-      style = "position: relative; backgroundColor: #ecf0f5",
-      tabBox(
-        id = "box_pat",
-        width = NULL,
-        height = 320,
-        tabPanel(
-          title = "Projected Democrat Electoral College Victory Likelihood"
-        ),
-        withSpinner(
-          plotlyOutput("plot_Overall", height = 250),
-          type = 4,
-          color = "#d33724", 
-          size = 0.7
-        )
-      )
     )
   })
   
+  
+
   # UI - State Trend current working -----------------------------------------------------
   output$box_pat6_2 <- renderUI({
     div(
@@ -1463,7 +1646,7 @@ server <- function(input, output, session) {
                 label = "Select time period", 
                 choiceNames = c("News", "No News"),
                 choiceValues = c("news", "no_news"), 
-                selected = "no_news", 
+                selected = "news", 
                 direction = "vertical"
               ),
               size = "xs",
@@ -1483,159 +1666,9 @@ server <- function(input, output, session) {
   })
   
   
-  output$plot_state2 <- renderPlotly({
-    input$allInput
-    input$voicechoice
-    input$statesInput
-    input$date2
-    input$box_year1
-    #input$confirm
-    #input$partychoice
-    
-      if (input$box_year1 == "no_news") {
-        fig <- plot_ly()
-        # Loop through each selected state and add a trace for it
-        for (k in seq_along(input$statesInput)){
-          state_data <- News_NoNews()[News_NoNews()$StateFull == input$statesInput[k], ]
-          fig <- add_trace(fig, data = state_data, 
-                           x = ~Date, y = ~Percent_byState_Demo2, type = 'scatter', mode = 'lines',
-                           name = input$statesInput[k],
-                           line = list(width = 2)) %>%
-            layout(
-              xaxis = list(title = "Date",
-                           showgrid = FALSE,
-                           zeroline = FALSE,
-                           showline = FALSE),
-              #tickformat = "%b %d, %Y"),
-              yaxis = list(
-                title = "Percent",
-                showline = TRUE,
-                showgrid = FALSE,
-                showticklabels = TRUE,
-                tickformat = ".0%",  # Format ticks as percentage
-                range = c(-0.1, 1.1),
-                tickmode = "linear",
-                tick0 = 0,
-                dtick = 0.2
-              ),
-              shapes = list(
-                list(
-                  type = "rect",
-                  fillcolor = "rgba(205, 12, 24, 0.2)", # Light red fill for 140-270
-                  line = list(color = "rgba(205, 12, 24, 0)"), # No border
-                  x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
-                  y0 =0, y1 = 0.5
-                ),
-                list(
-                  type = "rect",
-                  fillcolor = "rgba(22, 96, 167, 0.2)", # Light blue fill for 270-400
-                  line = list(color = "rgba(22, 96, 167, 0)"), # No border
-                  x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
-                  y0 = 0.5, y1 = 1
-                ),
-                list(
-                  type = "line",
-                  x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
-                  y0 = 0.5, y1 = 0.5,
-                  line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
-                )
-              )
-            ) %>%
-            layout(annotations = list(
-              list(
-                x = min(News_NoNews()$Date) + 5,
-                y = 0.65,
-                text = "Democrat Win",
-                showarrow = FALSE,
-                font = list(size = 12, weight = "bold", color = "rgb(22, 96, 167)"),
-                showgrid = FALSE
-              ),
-              list(
-                x = min(News_NoNews()$Date) + 5,
-                y = 0.4,
-                text = "Republican Win",
-                showarrow = FALSE,
-                font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
-              )
-            ))
-        }
-        fig  # Return the plotly figure
-      } else {
-        # Initialize the plotly object
-        fig <- plot_ly()
-        # Loop through each selected state and add a trace for it
-        for (k in seq_along(input$statesInput)){
-          state_data <- News_NoNews()[News_NoNews()$StateFull == input$statesInput[k], ]
-          fig <- add_trace(fig, data = state_data, 
-                           x = ~Date, y = ~Percent_byState_Demo, type = 'scatter', mode = 'lines',
-                           name = input$statesInput[k],
-                           line = list(width = 2)) %>%
-            layout(
-              xaxis = list(title = "Date",
-                           showgrid = FALSE,
-                           zeroline = FALSE,
-                           showline = FALSE),
-              #tickformat = "%b %d, %Y"),
-              yaxis = list(
-                title = "Percent",
-                showline = TRUE,
-                showgrid = FALSE,
-                showticklabels = TRUE,
-                tickformat = ".0%",  # Format ticks as percentage
-                range = c(-0.1, 1.1),
-                tickmode = "linear",
-                tick0 = 0,
-                dtick = 0.2
-              ),
-              shapes = list(
-                list(
-                  type = "rect",
-                  fillcolor = "rgba(205, 12, 24, 0.2)", # Light red fill for 140-270
-                  line = list(color = "rgba(205, 12, 24, 0)"), # No border
-                  x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
-                  y0 =0, y1 = 0.5
-                ),
-                list(
-                  type = "rect",
-                  fillcolor = "rgba(22, 96, 167, 0.2)", # Light blue fill for 270-400
-                  line = list(color = "rgba(22, 96, 167, 0)"), # No border
-                  x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
-                  y0 = 0.5, y1 = 1
-                ),
-                list(
-                  type = "line",
-                  x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
-                  y0 = 0.5, y1 = 0.5,
-                  line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
-                )
-              )
-            ) %>%
-            layout(annotations = list(
-              list(
-                x = min(News_NoNews()$Date) + 5,
-                y = 0.65,
-                text = "Democrat Win",
-                showarrow = FALSE,
-                font = list(size = 12, weight = "bold", color = "rgb(22, 96, 167)"),
-                showgrid = FALSE
-              ),
-              list(
-                x = min(News_NoNews()$Date) + 5,
-                y = 0.4,
-                text = "Republican Win",
-                showarrow = FALSE,
-                font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
-              )
-            ))
-        }
-        fig  # Return the plotly figure
-      }
-  })
+
   
-  
-  observe({
-    print(input$box_year1)
-  })
+
   
   # Observe the reactive expression `News_NoNews()` and log the changes
   observe({
@@ -1645,28 +1678,44 @@ server <- function(input, output, session) {
   })
   
   
-  # UI Time Trend - 2 ----------------------Used-------------------------------------------
-  output$box_pat6 <- renderUI({
+  # UI Time Trend - 3 ------------------------------------------------------------------
+  output$box_pat8_1 <- renderUI({
     div(
       style = "position: relative; backgroundColor: #ecf0f5",
       tabBox(
         id = "box_pat",
         width = NULL,
-        height = 320,
+        height = 320, 
         tabPanel(
-          title = "State Average Democrat Victory "
-        ),
-        withSpinner(
-          plotlyOutput("plot_state", height = 230),
-          type = 4,
-          color = "#d33724", 
-          size = 0.7 
+          title = "Average Harris Electoral College Votes Win",
+          div(
+            style = "position: absolute; left:0.5em; bottom: 0.5em;",
+            dropdown(
+              radioGroupButtons(
+                inputId = "box_votes",
+                label = "Select time period", 
+                choiceNames = c("News", "No News"),
+                choiceValues = c("With News", "Without News"), 
+                selected = "With News",  
+                direction = "vertical"
+              ),
+              size = "xs",
+              icon = icon("gear", class = "opt"), 
+              up = TRUE
+            )
+          ),
+          withSpinner(
+            plotlyOutput("distPlot1", height = 230),
+            type = 4,
+            color = "#d33724", 
+            size = 0.7 
+          )
         )
       )
     )
   })
   
-  # UI Time Trend - 3 ------------------------------------------------------------------
+  # UI Time Trend -4 Average Win by Trial ------------------------------------------------------------------
   output$box_pat7 <- renderUI({
     div(
       style = "position: relative; backgroundColor: #ecf0f5",
@@ -1675,7 +1724,22 @@ server <- function(input, output, session) {
         width = NULL,
         height = 320,
         tabPanel(
-          title = "Average Harris Win by Trial"
+          title = "Average Harris Win by Trial",
+          div(
+            style = "position: absolute; left:0.5em; bottom: 0.5em;",
+            dropdown(
+              radioGroupButtons(
+                inputId = "box_monte",
+                label = "Select time period", 
+                choiceNames = c("News", "No News"),
+                choiceValues = c("With News", "Without News"), 
+                selected = "With News",  
+                direction = "vertical"
+              ),
+              size = "xs",
+              icon = icon("gear", class = "opt"), 
+              up = TRUE
+            )
         ),
         withSpinner(
           plotlyOutput("distPlot", height = 230),
@@ -1685,114 +1749,10 @@ server <- function(input, output, session) {
         )
       )
     )
-  })
-  
-  # UI Time Trend - 4 ------------------------------------------------------------------
-  output$box_pat8_1 <- renderUI({
-    div(
-      style = "position: relative; backgroundColor: #ecf0f5",
-      tabBox(
-        id = "box_pat",
-        width = NULL,
-        height = 320, 
-        tabPanel(
-          title = "Average Harris Electoral College Votes Win"
-        ),
-        withSpinner(
-          plotlyOutput("distPlot1", height = 230),
-          type = 4,
-          color = "#d33724", 
-          size = 0.7 
-        )
-      )
     )
   })
-  # UI Time Trend - 4 ------------------------------------------------------------------
-  output$box_pat8_2 <- renderUI({
-    div(
-      style = "position: relative; backgroundColor: #ecf0f5",
-      tabBox(
-        id = "box_pat",
-        width = NULL,
-        height = 320, 
-        tabPanel(
-          title = "Average Harris Electoral College Votes Out of 538"
-        ),
-        withSpinner(
-          plotlyOutput("distPlot2", height = 230),
-          type = 4,
-          color = "#d33724", 
-          size = 0.7 
-        )
-      )
-    )
-})
-  # UI Table 1 mont carlo
-  output$box_table1 <- renderUI({
-    div(
-      style = "position: relative",
-      tabBox(
-        id = "box_table1",
-        width = NULL,
-        height = 400,
-        tabPanel(
-          title = "Average Harris Win by Trial"
-          ),
-          withSpinner(
-            DT::dataTableOutput("table1", height = 300),
-            type = 4,
-            color = "#d33724",
-            size = 0.7
-          )
-        )
-      )
   
-  })
-  
-  # UI Table 2 percentage
-  output$box_table2 <- renderUI({
-    div(
-      style = "position: relative",
-      tabBox(
-        id = "box_table2",
-        width = NULL,
-        height = 400,
-        tabPanel(
-          title = "Average Harris Electoral College Votes Out of 538"
-        ),
-        withSpinner(
-          DT::dataTableOutput("table2_votes_percent", height = 300),
-          type = 4,
-          color = "#d33724",
-          size = 0.7
-        )
-      )
-    )
-    
-  })
-  
-  # UI Table 3 with expert
-  output$box_table3 <- renderUI({
-    div(
-      style = "position: relative",
-      tabBox(
-        id = "box_table3",
-        width = NULL,
-        height = 550,
-        tabPanel(
-          title = " Percent of Democrat Electory Votes By Voice and Expert"
-        ),
-        withSpinner(
-          DT::dataTableOutput("table3", height = 500),
-          type = 4,
-          color = "#d33724",
-          size = 0.7
-        )
-      )
-    )
-    
-  })
-  
+
 
   
   # UI 9 -----Expert -Overall
@@ -1804,7 +1764,24 @@ server <- function(input, output, session) {
         width = NULL,
         height = 320, 
         tabPanel(
-          title = "ElectionGPT Opinion"
+          title = "ElectionGPT Opinion",
+          title = "Average Harris Win by Trial",
+          div(
+            style = "position: absolute; left:0.5em; bottom: 0.5em;",
+            dropdown(
+              radioGroupButtons(
+                inputId = "box_monte",
+                label = "Select time period", 
+                choiceNames = c("News", "No News"),
+                choiceValues = c("With News", "Without News"), 
+                selected = "With News",  
+                direction = "vertical"
+              ),
+              size = "xs",
+              icon = icon("gear", class = "opt"), 
+              up = TRUE
+            )
+          ),
         ),
         withSpinner(
           plotlyOutput("distPlot3", height = 230),
@@ -1824,7 +1801,22 @@ server <- function(input, output, session) {
         width = NULL,
         height = 320, 
         tabPanel(
-          title = "Economist Opinion"
+          title = "Experts Opinion",
+          div(
+            style = "position: absolute; left:0.5em; bottom: 0.5em;",
+            dropdown(
+              radioGroupButtons(
+                inputId = "box_expert",
+                label = "Select time period", 
+                choiceNames = c("Nate Sliver", "Economist", "Times Siena"),
+                choiceValues = c("silver", "economist", "siena"), 
+                selected = "silver",  
+                direction = "vertical"
+              ),
+              size = "xs",
+              icon = icon("gear", class = "opt"), 
+              up = TRUE
+            )
         ),
         withSpinner(
           plotlyOutput("distPlot4", height = 230),
@@ -1833,6 +1825,7 @@ server <- function(input, output, session) {
           size = 0.7 
         )
       )
+    )
     )
   })
   
@@ -1875,147 +1868,298 @@ server <- function(input, output, session) {
       )
     )
   })
+
   #         Output
   #-------Map 1 Anonymous
   output$box_map_anonymous <- renderPlotly ({
-    
-    #input$confirm
     input$date
+    input$box_map1
     
-    l <- list(color = toRGB("white"), width = 1)
-    
-    g <- list(
-      scope = 'usa',
-      projection = list(type = 'albers usa'),
-      showlakes = FALSE
-    )
-    
-    fig <- plot_geo(USA_map_Anonymous(), locationmode = 'USA-states', marker = list(line = l)
-    )
-    fig <- fig %>% add_trace(
-      z = ~Percent_byState_Demo,  
-      text = ~hover,       # Hover text with details
-      locations = ~state,  # State abbreviations
-      color = ~Percent_byState_Demo,
-      colorscale = custom_colorscale,
-      showscale = TRUE,
-      hoverinfo = 'text' 
-    )
-    
-    
-    fig <- fig %>% colorbar(
-      title = "Probability",
-      thickness = 15,       # Adjust thickness
-      len = 0.8,            # Adjust length
-      tickvals = c(0, 0.25, 0.5, 0.75, 1),
-      cmin = 0,  # Ensure the minimum value is fixed to 0
-      cmax = 1,  # Ensure the maximum value is fixed to 1
-      ticks = "outside", # Set specific tick values
-      ticktext = c("0", "25%", "50%", "75%", "100%")  # Labels for ticks
-    )
-    
-    
-    fig <- fig %>% layout(
-      geo = g
-    )
-    
-    fig
+    if (input$box_map1 == "With News") {
+      
+      l <- list(color = toRGB("white"), width = 1)
+      
+      g <- list(
+        scope = 'usa',
+        projection = list(type = 'albers usa'),
+        showlakes = FALSE
+      )
+      
+      fig <- plot_geo(USA_map_Anonymous(), locationmode = 'USA-states', marker = list(line = l)
+      )
+      fig <- fig %>% add_trace(
+        z = ~Percent_byState_Demo,  
+        text = ~hover,       # Hover text with details
+        locations = ~state,  # State abbreviations
+        color = ~Percent_byState_Demo,
+        colorscale = custom_colorscale,
+        showscale = TRUE,
+        hoverinfo = 'text' 
+      )
+      
+      
+      fig <- fig %>% colorbar(
+        title = "Probability",
+        thickness = 15,       # Adjust thickness
+        len = 0.8,            # Adjust length
+        tickvals = c(0, 0.25, 0.5, 0.75, 1),  
+        ticks = "outside", # Set specific tick values
+        cmin = 0,  # Ensure the minimum value is fixed to 0
+        cmax = 1,  # Ensure the maximum value is fixed to 1
+        ticktext = c("0", "25%", "50%", "75%", "100%")  # Labels for ticks
+      )
+      
+      fig <- fig %>% layout(
+        title = input$box_map1
+      )
+      
+      
+      fig <- fig %>% layout(
+        geo = g
+      )
+      
+      fig
+    } else {
+      l <- list(color = toRGB("white"), width = 1)
+      
+      g <- list(
+        scope = 'usa',
+        projection = list(type = 'albers usa'),
+        showlakes = FALSE
+      )
+      
+      fig <- plot_geo(USA_map_Anonymous(), locationmode = 'USA-states', marker = list(line = l)
+      )
+      fig <- fig %>% add_trace(
+        z = ~Percent_byState_Demo2,  
+        text = ~hover2,       # Hover text with details
+        locations = ~state,  # State abbreviations
+        color = ~Percent_byState_Demo2,
+        colorscale = custom_colorscale,
+        showscale = TRUE,
+        hoverinfo = 'text' 
+      )
+      
+      
+      fig <- fig %>% colorbar(
+        title = "Probability",
+        thickness = 15,       # Adjust thickness
+        len = 0.8,            # Adjust length
+        tickvals = c(0, 0.25, 0.5, 0.75, 1),  
+        ticks = "outside", # Set specific tick values
+        cmin = 0,  # Ensure the minimum value is fixed to 0
+        cmax = 1,  # Ensure the maximum value is fixed to 1
+        ticktext = c("0", "25%", "50%", "75%", "100%")  # Labels for ticks
+      )
+      
+      fig <- fig %>% layout(
+        title = input$box_map1
+      )
+      
+      
+      fig <- fig %>% layout(
+        geo = g
+      )
+      
+      fig
+    }
   })  
   
   
   #-------Map 2 BBC
 
   
-  # Render the Plotly map #1
+  # Render the Plotly map #2
   output$box_map_BBC <- renderPlotly ({
     input$date
-    #input$confirm
+    input$box_map2
     
-    l <- list(color = toRGB("white"), width = 1)
-    
-    g <- list(
-      scope = 'usa',
-      projection = list(type = 'albers usa'),
-      showlakes = FALSE
-    )
-    
-    fig <- plot_geo(USA_map_BBC(), locationmode = 'USA-states', marker = list(line = l)
-    )
-    fig <- fig %>% add_trace(
-      z = ~Percent_byState_Demo,  
-      text = ~hover,       # Hover text with details
-      locations = ~state,  # State abbreviations
-      color = ~Percent_byState_Demo,
-      colorscale = custom_colorscale,
-      showscale = TRUE,
-      hoverinfo = 'text' 
-    )
-    
-    
+    if (input$box_map2 == "With News") {
+      
+      l <- list(color = toRGB("white"), width = 1)
+      
+      g <- list(
+        scope = 'usa',
+        projection = list(type = 'albers usa'),
+        showlakes = FALSE
+      )
+      
+      fig <- plot_geo(USA_map_BBC(), locationmode = 'USA-states', marker = list(line = l)
+      )
+      fig <- fig %>% add_trace(
+        z = ~Percent_byState_Demo,  
+        text = ~hover,       # Hover text with details
+        locations = ~state,  # State abbreviations
+        color = ~Percent_byState_Demo,
+        colorscale = custom_colorscale,
+        showscale = TRUE,
+        hoverinfo = 'text' 
+      )
+      
+      
       fig <- fig %>% colorbar(
-      title = "Probability",
-      thickness = 15,       # Adjust thickness
-      len = 0.8,            # Adjust length
-      tickvals = c(0, 0.25, 0.5, 0.75, 1), 
-      ticks = "outside", # Set specific tick values
-      cmin = 0,  # Ensure the minimum value is fixed to 0
-      cmax = 1,  # Ensure the maximum value is fixed to 1
-      ticktext = c("0", "25%", "50%", "75%", "100%")  # Labels for ticks
-    )
-    
-    
-    fig <- fig %>% layout(
-      geo = g
-    )
-    
-    fig
+        title = "Probability",
+        thickness = 15,       # Adjust thickness
+        len = 0.8,            # Adjust length
+        tickvals = c(0, 0.25, 0.5, 0.75, 1),  
+        ticks = "outside", # Set specific tick values
+        cmin = 0,  # Ensure the minimum value is fixed to 0
+        cmax = 1,  # Ensure the maximum value is fixed to 1
+        ticktext = c("0", "25%", "50%", "75%", "100%")  # Labels for ticks
+      )
+      
+      fig <- fig %>% layout(
+        title = input$box_map2
+      )
+      
+      
+      fig <- fig %>% layout(
+        geo = g
+      )
+      
+      fig
+    } else {
+      l <- list(color = toRGB("white"), width = 1)
+      
+      g <- list(
+        scope = 'usa',
+        projection = list(type = 'albers usa'),
+        showlakes = FALSE
+      )
+      
+      fig <- plot_geo(USA_map_BBC(), locationmode = 'USA-states', marker = list(line = l)
+      )
+      fig <- fig %>% add_trace(
+        z = ~Percent_byState_Demo2,  
+        text = ~hover2,       # Hover text with details
+        locations = ~state,  # State abbreviations
+        color = ~Percent_byState_Demo2,
+        colorscale = custom_colorscale,
+        showscale = TRUE,
+        hoverinfo = 'text' 
+      )
+      
+      
+      fig <- fig %>% colorbar(
+        title = "Probability",
+        thickness = 15,       # Adjust thickness
+        len = 0.8,            # Adjust length
+        tickvals = c(0, 0.25, 0.5, 0.75, 1),  
+        ticks = "outside", # Set specific tick values
+        cmin = 0,  # Ensure the minimum value is fixed to 0
+        cmax = 1,  # Ensure the maximum value is fixed to 1
+        ticktext = c("0", "25%", "50%", "75%", "100%")  # Labels for ticks
+      )
+      
+      fig <- fig %>% layout(
+        title = input$box_map2
+      )
+      
+      
+      
+      fig <- fig %>% layout(
+        geo = g
+      )
+      
+      fig
+    }
   })  
-  
   
   #-------Map 3 Fox
   
   # Render the Plotly map #1
   output$box_map_Fox <- renderPlotly ({
     input$date
-   
-    l <- list(color = toRGB("white"), width = 1)
+    input$box_map3
     
-    g <- list(
-      scope = 'usa',
-      projection = list(type = 'albers usa'),
-      showlakes = FALSE
-    )
-    
-    fig <- plot_geo(USA_map_Fox(), locationmode = 'USA-states', marker = list(line = l)
-    )
-    fig <- fig %>% add_trace(
-      z = ~Percent_byState_Demo,  
-      text = ~hover,       # Hover text with details
-      locations = ~state,  # State abbreviations
-      color = ~Percent_byState_Demo,
-      colorscale = custom_colorscale,
-      showscale = TRUE,
-      hoverinfo = 'text' 
-    )
-    
-    
-    fig <- fig %>% colorbar(
-      title = "Probability",
-      thickness = 15,       # Adjust thickness
-      len = 0.8,            # Adjust length
-      tickvals = c(0, 0.25, 0.5, 0.75, 1),
-      ticks = "outside", # Set specific tick values
-      cmin = 0,  # Ensure the minimum value is fixed to 0
-      cmax = 1,  # Ensure the maximum value is fixed to 1
-      ticktext = c("0", "25%", "50%", "75%", "100%")  # Labels for ticks
-    )
-    
-    
-    fig <- fig %>% layout(
-      geo = g
-    )
-    
-    fig
+    if (input$box_map3 == "With News") {
+      
+      l <- list(color = toRGB("white"), width = 1)
+      
+      g <- list(
+        scope = 'usa',
+        projection = list(type = 'albers usa'),
+        showlakes = FALSE
+      )
+      
+      fig <- plot_geo(USA_map_Fox(), locationmode = 'USA-states', marker = list(line = l)
+      )
+      fig <- fig %>% add_trace(
+        z = ~Percent_byState_Demo,  
+        text = ~hover,       # Hover text with details
+        locations = ~state,  # State abbreviations
+        color = ~Percent_byState_Demo,
+        colorscale = custom_colorscale,
+        showscale = TRUE,
+        hoverinfo = 'text' 
+      )
+      
+      
+      fig <- fig %>% colorbar(
+        title = "Probability",
+        thickness = 15,       # Adjust thickness
+        len = 0.8,            # Adjust length
+        tickvals = c(0, 0.25, 0.5, 0.75, 1),  
+        ticks = "outside", # Set specific tick values
+        cmin = 0,  # Ensure the minimum value is fixed to 0
+        cmax = 1,  # Ensure the maximum value is fixed to 1
+        ticktext = c("0", "25%", "50%", "75%", "100%")  # Labels for ticks
+      )
+      
+      fig <- fig %>% layout(
+        title = input$box_map3
+      )
+      
+      
+      fig <- fig %>% layout(
+        geo = g
+      )
+      
+      fig
+    } else {
+      l <- list(color = toRGB("white"), width = 1)
+      
+      g <- list(
+        scope = 'usa',
+        projection = list(type = 'albers usa'),
+        showlakes = FALSE
+      )
+      
+      fig <- plot_geo(USA_map_Fox(), locationmode = 'USA-states', marker = list(line = l)
+      )
+      fig <- fig %>% add_trace(
+        z = ~Percent_byState_Demo2,  
+        text = ~hover2,       # Hover text with details
+        locations = ~state,  # State abbreviations
+        color = ~Percent_byState_Demo2,
+        colorscale = custom_colorscale,
+        showscale = TRUE,
+        hoverinfo = 'text' 
+      )
+      
+      
+      fig <- fig %>% colorbar(
+        title = "Probability",
+        thickness = 15,       # Adjust thickness
+        len = 0.8,            # Adjust length
+        tickvals = c(0, 0.25, 0.5, 0.75, 1),  
+        ticks = "outside", # Set specific tick values
+        cmin = 0,  # Ensure the minimum value is fixed to 0
+        cmax = 1,  # Ensure the maximum value is fixed to 1
+        ticktext = c("0", "25%", "50%", "75%", "100%")  # Labels for ticks
+      )
+      
+      fig <- fig %>% layout(
+        title = input$box_map3
+      )
+      
+      
+      fig <- fig %>% layout(
+        geo = g
+      )
+      
+      fig
+    }
   })  
   
   #-------Map 4 MSNBC
@@ -2023,6 +2167,9 @@ server <- function(input, output, session) {
   # Render the Plotly map #1
   output$box_map_MSNBC <- renderPlotly ({
     input$date
+    input$box_map4
+    
+    if (input$box_map4 == "With News") {
 
     l <- list(color = toRGB("white"), width = 1)
     
@@ -2056,220 +2203,344 @@ server <- function(input, output, session) {
       ticktext = c("0", "25%", "50%", "75%", "100%")  # Labels for ticks
     )
     
+    fig <- fig %>% layout(
+      title = input$box_map4
+    )
+    
     
     fig <- fig %>% layout(
       geo = g
     )
     
     fig
+    } else {
+      l <- list(color = toRGB("white"), width = 1)
+      
+      g <- list(
+        scope = 'usa',
+        projection = list(type = 'albers usa'),
+        showlakes = FALSE
+      )
+      
+      fig <- plot_geo(USA_map_MSNBC(), locationmode = 'USA-states', marker = list(line = l)
+      )
+      fig <- fig %>% add_trace(
+        z = ~Percent_byState_Demo2,  
+        text = ~hover2,       # Hover text with details
+        locations = ~state,  # State abbreviations
+        color = ~Percent_byState_Demo2,
+        colorscale = custom_colorscale,
+        showscale = TRUE,
+        hoverinfo = 'text' 
+      )
+      
+      
+      fig <- fig %>% colorbar(
+        title = "Probability",
+        thickness = 15,       # Adjust thickness
+        len = 0.8,            # Adjust length
+        tickvals = c(0, 0.25, 0.5, 0.75, 1),  
+        ticks = "outside", # Set specific tick values
+        cmin = 0,  # Ensure the minimum value is fixed to 0
+        cmax = 1,  # Ensure the maximum value is fixed to 1
+        ticktext = c("0", "25%", "50%", "75%", "100%")  # Labels for ticks
+      )
+      
+      fig <- fig %>% layout(
+        title = input$box_map4
+      )
+      
+      
+      fig <- fig %>% layout(
+        geo = g
+      )
+  
+      fig
+    }
   })  
   
   
-  # UI #5 Overall need to be revised with add DNC ---Discard
-  output$plot_Overall<- renderPlotly({
-    input$date2
-    #input$confirm
-    
-    fig <- plot_ly(Count_data_4Voice(), x = ~Count_data_4Voice()$Date, y = ~avg_Direct, name = 'Anonymous', type = 'scatter', mode = 'lines',
-                   line = list(color = 'rgb(205, 12, 24)', width = 4)) 
-    fig <- fig %>% add_trace(y = ~avg_BBC, name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
-    fig <- fig %>% add_trace(y = ~avg_Fox, name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
-    fig <- fig %>% add_trace(y = ~avg_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width =4 , dash = 'dot')) %>%
-      layout(
-        title = NULL,
-        xaxis = list(title = "Date",
-                     showgrid = FALSE),
-        yaxis = list(title = "Percent", 
-                     range = c(0.4, 0.6),
-                     showgrid = FALSE),
-        shapes = list(
-          type = "rect",
-          fillcolor = "rgba(22, 96, 167, 0.2)", # Adjust fill color and transparency as needed
-          line = list(color = "rgba(22, 96, 167, 0)"), # No borderline = list(color = "rgba(22, 96, 167, 0)"), # No border
-          x0 = as.Date("2024-08-19"), x1 = Sys.Date() ,
-          y0 = 0.4, y1 = 0.6
-        ))%>%
-      layout(annotations = list(
-        list(
-          x = min(Count_data_4Voice()$Date+5),
-          y = 0.55,
-          text = "Democrat Win",
-          showarrow = FALSE,
-          font = list(size = 12, weight = "bold", color = color_plot6_Demo),
-          showgrid = FALSE
-        ),
-        list(
-          x = min(Count_data_4Voice()$Date+5),
-          y = 0.45,
-          text = "Republican Win",
-          showarrow = FALSE,
-          font = list(size = 12, weight = "bold", color = color_plot6_Repub)
-        )
-      ))
-  })
-  
+
   # UI #6 Time series by state 
-  output$plot_state <- renderPlotly({
+  output$plot_state2 <- renderPlotly({
     input$allInput
     input$voicechoice
     input$statesInput
     input$date2
+    input$box_year1
     #input$confirm
     #input$partychoice
     
-    isolate({
-      if (length(Count_data()$Predicted_party) ==0) {
-        fig <- ggplotly(
-          ggplot(data.frame(x = 1), aes(x = x)) +
-            ggtitle("No party fits selected characteristics. \nPlease modify selections.") +
-            theme_void() +
-            theme(plot.title = element_text(face = "bold", color = "#FF8D1E", size = 12))
-        )
-      } else {
-        # Initialize the plotly object
-        fig <- plot_ly()
-        # Loop through each selected state and add a trace for it
-        for (k in seq_along(input$statesInput)){
-          state_data <- Count_data()[Count_data()$StateFull == input$statesInput[k], ]
-          fig <- add_trace(fig, data = state_data, 
-                           x = ~Date, y = ~Percent_byState_Demo, type = 'scatter', mode = 'lines',
-                           name = input$statesInput[k],
-                           line = list(width = 2)) %>%
-            layout(
-              xaxis = list(title = "Date",
-                           showgrid = FALSE,
-                           zeroline = FALSE,
-                           showline = FALSE),
-              #tickformat = "%b %d, %Y"),
-              yaxis = list(
-                title = "Percent",
-                showline = TRUE,
-                showgrid = FALSE,
-                showticklabels = TRUE,
-                tickformat = ".0%",  # Format ticks as percentage
-                range = c(-0.1, 1.1),
-                tickmode = "linear",
-                tick0 = 0,
-                dtick = 0.2
-              ),
-              shapes = list(
+    if (input$box_year1 == "no_news") {
+      fig <- plot_ly()
+      # Loop through each selected state and add a trace for it
+      for (k in seq_along(input$statesInput)){
+        state_data <- News_NoNews()[News_NoNews()$StateFull == input$statesInput[k], ]
+        fig <- add_trace(fig, data = state_data, 
+                         x = ~Date, y = ~Percent_byState_Demo2, type = 'scatter', mode = 'lines',
+                         name = input$statesInput[k],
+                         line = list(width = 2)) %>%
+          layout(
+            xaxis = list(title = "Date",
+                         showgrid = FALSE,
+                         zeroline = FALSE,
+                         showline = FALSE),
+            #tickformat = "%b %d, %Y"),
+            yaxis = list(
+              title = "Percent",
+              showline = TRUE,
+              showgrid = FALSE,
+              showticklabels = TRUE,
+              tickformat = ".0%",  # Format ticks as percentage
+              range = c(-0.1, 1.1),
+              tickmode = "linear",
+              tick0 = 0,
+              dtick = 0.2
+            ),
+            shapes = list(
               list(
                 type = "rect",
                 fillcolor = "rgba(205, 12, 24, 0.2)", # Light red fill for 140-270
                 line = list(color = "rgba(205, 12, 24, 0)"), # No border
-                x0 = min(Count_data()$Date), x1 = max(Count_data()$Date),
+                x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
                 y0 =0, y1 = 0.5
               ),
               list(
                 type = "rect",
                 fillcolor = "rgba(22, 96, 167, 0.2)", # Light blue fill for 270-400
                 line = list(color = "rgba(22, 96, 167, 0)"), # No border
-                x0 = min(Count_data()$Date), x1 = max(Count_data()$Date),
+                x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
                 y0 = 0.5, y1 = 1
               ),
               list(
                 type = "line",
-                x0 = min(Count_data()$Date), x1 = max(Count_data()$Date),
+                x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
                 y0 = 0.5, y1 = 0.5,
                 line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
               )
             )
-    ) %>%
-      layout(annotations = list(
-        list(
-          x = min(Count_data()$Date) + 5,
-          y = 0.65,
-          text = "Democrat Win",
-          showarrow = FALSE,
-          font = list(size = 12, weight = "bold", color = "rgb(22, 96, 167)"),
-          showgrid = FALSE
-        ),
-        list(
-          x = min(Count_data()$Date) + 5,
-          y = 0.4,
-          text = "Republican Win",
-          showarrow = FALSE,
-          font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
-        )
-      ))
-        }
-        fig  # Return the plotly figure
+          ) %>%
+          layout(annotations = list(
+            list(
+              x = min(News_NoNews()$Date) + 5,
+              y = 0.65,
+              text = "Democrat Win",
+              showarrow = FALSE,
+              font = list(size = 12, weight = "bold", color = "rgb(22, 96, 167)"),
+              showgrid = FALSE
+            ),
+            list(
+              x = min(News_NoNews()$Date) + 5,
+              y = 0.4,
+              text = "Republican Win",
+              showarrow = FALSE,
+              font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
+            )
+          ))
       }
-    })
+      fig  # Return the plotly figure
+    } else {
+      # Initialize the plotly object
+      fig <- plot_ly()
+      # Loop through each selected state and add a trace for it
+      for (k in seq_along(input$statesInput)){
+        state_data <- News_NoNews()[News_NoNews()$StateFull == input$statesInput[k], ]
+        fig <- add_trace(fig, data = state_data, 
+                         x = ~Date, y = ~Percent_byState_Demo, type = 'scatter', mode = 'lines',
+                         name = input$statesInput[k],
+                         line = list(width = 2)) %>%
+          layout(
+            xaxis = list(title = "Date",
+                         showgrid = FALSE,
+                         zeroline = FALSE,
+                         showline = FALSE),
+            #tickformat = "%b %d, %Y"),
+            yaxis = list(
+              title = "Percent",
+              showline = TRUE,
+              showgrid = FALSE,
+              showticklabels = TRUE,
+              tickformat = ".0%",  # Format ticks as percentage
+              range = c(-0.1, 1.1),
+              tickmode = "linear",
+              tick0 = 0,
+              dtick = 0.2
+            ),
+            shapes = list(
+              list(
+                type = "rect",
+                fillcolor = "rgba(205, 12, 24, 0.2)", # Light red fill for 140-270
+                line = list(color = "rgba(205, 12, 24, 0)"), # No border
+                x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
+                y0 =0, y1 = 0.5
+              ),
+              list(
+                type = "rect",
+                fillcolor = "rgba(22, 96, 167, 0.2)", # Light blue fill for 270-400
+                line = list(color = "rgba(22, 96, 167, 0)"), # No border
+                x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
+                y0 = 0.5, y1 = 1
+              ),
+              list(
+                type = "line",
+                x0 = min(News_NoNews()$Date), x1 = max(News_NoNews()$Date),
+                y0 = 0.5, y1 = 0.5,
+                line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
+              )
+            )
+          ) %>%
+          layout(annotations = list(
+            list(
+              x = min(News_NoNews()$Date) + 5,
+              y = 0.65,
+              text = "Democrat Win",
+              showarrow = FALSE,
+              font = list(size = 12, weight = "bold", color = "rgb(22, 96, 167)"),
+              showgrid = FALSE
+            ),
+            list(
+              x = min(News_NoNews()$Date) + 5,
+              y = 0.4,
+              text = "Republican Win",
+              showarrow = FALSE,
+              font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
+            )
+          ))
+      }
+      fig  # Return the plotly figure
+    }
   })
   
-  # monte carlo for 
+
+  # monte carlo
   output$distPlot <- renderPlotly({
     input$date2
+    input$box_monte
     #input$confirm
-    
-  fig <- plot_ly(monte_carlo(), x = ~Date, y = ~Trial_Percent_Anonymous, name = 'Anonymous', type = 'scatter', mode = 'lines',
-                 line = list(color = 'rgb(205, 12, 24)', width = 4)) 
-  fig <- fig %>% add_trace(y = ~Trial_Percent_BBC, name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
-  fig <- fig %>% add_trace(y = ~Trial_Percent_Fox, name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
-  fig <- fig %>% add_trace(y = ~Trial_Percent_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) %>%
-    layout(
-      title = NULL,
-      xaxis = list(title = "Date",
-                   showgrid = TRUE),
-      yaxis = list(title = "Percent", 
-                   range = c(0, 1.1),
-                   showgrid = FALSE),
-      shapes = list(
-        list(
-          type = "rect",
-          fillcolor = "rgba(205, 12, 24, 0.2)", # Light red fill for 140-270
-          line = list(color = "rgba(205, 12, 24, 0)"), # No border
-          x0 = min(monte_carlo()$Date), x1 = max(monte_carlo()$Date),
-          y0 =0, y1 = 0.5
-        ),
-        list(
-          type = "rect",
-          fillcolor = "rgba(22, 96, 167, 0.2)", # Light blue fill for 270-400
-          line = list(color = "rgba(22, 96, 167, 0)"), # No border
-          x0 = min(monte_carlo()$Date), x1 = max(monte_carlo()$Date),
-          y0 = 0.5, y1 = 1.1
-        ),
-        list(
-          type = "line",
-          x0 = min(monte_carlo()$Date), x1 = max(monte_carlo()$Date),
-          y0 = 0.5, y1 = 0.5,
-          line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
-        )
-      )
-    ) %>%
-    layout(annotations = list(
-      list(
-        x = min(monte_carlo()$Date) + 5,
-        y = 0.65,
-        text = "Democrat Win",
-        showarrow = FALSE,
-        font = list(size = 12, weight = "bold", color = "rgb(22, 96, 167)"),
-        showgrid = FALSE
-      ),
-      list(
-        x = min(monte_carlo()$Date) + 5,
-        y = 0.4,
-        text = "Republican Win",
-        showarrow = FALSE,
-        font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
-      )
-    ))
+    if (input$box_monte=="With News"){
+      fig <- plot_ly(monte_carlo(), x = ~Date, y = ~Trial_Percent_Anonymous, name = 'Anonymous', type = 'scatter', mode = 'lines',
+                     line = list(color = 'rgb(205, 12, 24)', width = 4)) 
+      fig <- fig %>% add_trace(y = ~Trial_Percent_BBC, name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
+      fig <- fig %>% add_trace(y = ~Trial_Percent_Fox, name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
+      fig <- fig %>% add_trace(y = ~Trial_Percent_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) %>%
+        layout(
+          title = input$box_monte,
+          xaxis = list(title = "Date",
+                       showgrid = TRUE),
+          yaxis = list(title = "Percent", 
+                       range = c(0, 1.1),
+                       showgrid = FALSE),
+          shapes = list(
+            list(
+              type = "rect",
+              fillcolor = "rgba(205, 12, 24, 0.2)", # Light red fill for 140-270
+              line = list(color = "rgba(205, 12, 24, 0)"), # No border
+              x0 = min(monte_carlo()$Date), x1 = max(monte_carlo()$Date),
+              y0 =0, y1 = 0.5
+            ),
+            list(
+              type = "rect",
+              fillcolor = "rgba(22, 96, 167, 0.2)", # Light blue fill for 270-400
+              line = list(color = "rgba(22, 96, 167, 0)"), # No border
+              x0 = min(monte_carlo()$Date), x1 = max(monte_carlo()$Date),
+              y0 = 0.5, y1 = 1.1
+            ),
+            list(
+              type = "line",
+              x0 = min(monte_carlo()$Date), x1 = max(monte_carlo()$Date),
+              y0 = 0.5, y1 = 0.5,
+              line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
+            )
+          )
+        ) %>%
+        layout(annotations = list(
+          list(
+            x = min(monte_carlo()$Date) + 5,
+            y = 0.65,
+            text = "Democrat Win",
+            showarrow = FALSE,
+            font = list(size = 12, weight = "bold", color = "rgb(22, 96, 167)"),
+            showgrid = FALSE
+          ),
+          list(
+            x = min(monte_carlo()$Date) + 5,
+            y = 0.4,
+            text = "Republican Win",
+            showarrow = FALSE,
+            font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
+          )
+        ))
+    } else {
+      fig <- plot_ly(monte_carlo2(), x = ~Date, y = ~Trial_Percent_Anonymous, name = 'Anonymous', type = 'scatter', mode = 'lines',
+                     line = list(color = 'rgb(205, 12, 24)', width = 4)) 
+      fig <- fig %>% add_trace(y = ~Trial_Percent_BBC, name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
+      fig <- fig %>% add_trace(y = ~Trial_Percent_Fox, name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
+      fig <- fig %>% add_trace(y = ~Trial_Percent_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) %>%
+        layout(
+          title = input$box_monte,
+          xaxis = list(title = "Date",
+                       showgrid = TRUE),
+          yaxis = list(title = "Percent", 
+                       range = c(0, 1.1),
+                       showgrid = FALSE),
+          shapes = list(
+            list(
+              type = "rect",
+              fillcolor = "rgba(205, 12, 24, 0.2)", # Light red fill for 140-270
+              line = list(color = "rgba(205, 12, 24, 0)"), # No border
+              x0 = min(monte_carlo2()$Date), x1 = max(monte_carlo2()$Date),
+              y0 =0, y1 = 0.5
+            ),
+            list(
+              type = "rect",
+              fillcolor = "rgba(22, 96, 167, 0.2)", # Light blue fill for 270-400
+              line = list(color = "rgba(22, 96, 167, 0)"), # No border
+              x0 = min(monte_carlo2()$Date), x1 = max(monte_carlo2()$Date),
+              y0 = 0.5, y1 = 1.1
+            ),
+            list(
+              type = "line",
+              x0 = min(monte_carlo2()$Date), x1 = max(monte_carlo2()$Date),
+              y0 = 0.5, y1 = 0.5,
+              line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
+            )
+          )
+        ) %>%
+        layout(annotations = list(
+          list(
+            x = min(monte_carlo2()$Date) + 5,
+            y = 0.65,
+            text = "Democrat Win",
+            showarrow = FALSE,
+            font = list(size = 12, weight = "bold", color = "rgb(22, 96, 167)"),
+            showgrid = FALSE
+          ),
+          list(
+            x = min(monte_carlo2()$Date) + 5,
+            y = 0.4,
+            text = "Republican Win",
+            showarrow = FALSE,
+            font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
+          )
+        ))
+    }
   })
+  
   
   
   # electorial votes decided already to be used
   output$distPlot1 <- renderPlotly({
     input$date2
-    #input$confirm
+    input$box_votes
     
+    if (input$box_votes=="With News"){
     fig <- plot_ly(Votes_final(), x = ~Date, y = ~Votes_Anonymous, name = 'Anonymous', type = 'scatter', mode = 'lines',
                    line = list(color = 'rgb(205, 12, 24)', width = 4)) 
     fig <- fig %>% add_trace(y = ~Votes_BBC, name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
     fig <- fig %>% add_trace(y = ~Votes_Fox, name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
     fig <- fig %>% add_trace(y = ~Votes_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) %>%
       layout(
-        title = NULL,
+        title =  input$box_votes,
         xaxis = list(title = "Date",
                      showgrid = TRUE),
         yaxis = list(title = "Votes", 
@@ -2315,78 +2586,76 @@ server <- function(input, output, session) {
           font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
         )
       ))
-  })
-  
-  output$distPlot2 <- renderPlotly({
-    input$date2
-    #input$confirm
-    
-    fig <- plot_ly(Votes_final(), x = ~Date, y = ~Votes_Percent_Anonymous, name = 'Anonymous', type = 'scatter', mode = 'lines',
-                   line = list(color = 'rgb(205, 12, 24)', width = 4)) 
-    fig <- fig %>% add_trace(y = ~Votes_Percent_BBC, name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
-    fig <- fig %>% add_trace(y = ~Votes_Percent_Fox, name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
-    fig <- fig %>% add_trace(y = ~Votes_Percent_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) %>%
-      layout(
-        title = NULL,
-        xaxis = list(title = "Date",
-                     showgrid = TRUE),
-        yaxis = list(title = "Percent", 
-                     range = c(0.3, 0.7),
-                     showgrid = FALSE),
-        shapes = list(
-          list(
-            type = "rect",
-            fillcolor = "rgba(205, 12, 24, 0.2)", # Light red fill for 140-270
-            line = list(color = "rgba(205, 12, 24, 0)"), # No border
-            x0 = min(Votes_final()$Date), x1 = max(Votes_final()$Date),
-            y0 =0.3, y1 = 0.5
-          ),
-          list(
-            type = "rect",
-            fillcolor = "rgba(22, 96, 167, 0.2)", # Light blue fill for 270-400
-            line = list(color = "rgba(22, 96, 167, 0)"), # No border
-            x0 = min(Votes_final()$Date), x1 = max(Votes_final()$Date),
-            y0 = 0.5, y1 = 0.7
-          ),
-          list(
-            type = "line",
-            x0 = min(Votes_final()$Date), x1 = max(Votes_final()$Date),
-            y0 = 0.5, y1 = 0.5,
-            line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
+    } else {
+      fig <- plot_ly(Votes_final_2(), x = ~Date, y = ~NoNews_Votes_Anonymous , name = 'Anonymous', type = 'scatter', mode = 'lines',
+                     line = list(color = 'rgb(205, 12, 24)', width = 4)) 
+      fig <- fig %>% add_trace(y = ~NoNews_Votes_BBC , name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
+      fig <- fig %>% add_trace(y = ~NoNews_Votes_Fox , name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
+      fig <- fig %>% add_trace(y = ~NoNews_Votes_MSNBC  , name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) %>%
+        layout(
+          title = input$box_votes,
+          xaxis = list(title = "Date",
+                       showgrid = TRUE),
+          yaxis = list(title = "Votes", 
+                       range = c(140, 400),
+                       showgrid = FALSE),
+          shapes = list(
+            list(
+              type = "rect",
+              fillcolor = "rgba(205, 12, 24, 0.2)", # Light red fill for 140-270
+              line = list(color = "rgba(205, 12, 24, 0)"), # No border
+              x0 = min(Votes_final_2()$Date), x1 = max(Votes_final_2()$Date),
+              y0 = 140, y1 = 270
+            ),
+            list(
+              type = "rect",
+              fillcolor = "rgba(22, 96, 167, 0.2)", # Light blue fill for 270-400
+              line = list(color = "rgba(22, 96, 167, 0)"), # No border
+              x0 = min(Votes_final_2()$Date), x1 = max(Votes_final_2()$Date),
+              y0 = 270, y1 = 400
+            ),
+            list(
+              type = "line",
+              x0 = min(Votes_final_2()$Date), x1 = max(Votes_final_2()$Date),
+              y0 = 270, y1 = 270,
+              line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
+            )
           )
-        )
-      ) %>%
-      layout(annotations = list(
-        list(
-          x = min(Votes_final()$Date) + 5,
-          y = 0.65,
-          text = "Democrat Win",
-          showarrow = FALSE,
-          font = list(size = 12, weight = "bold", color = "rgb(22, 96, 167)"),
-          showgrid = FALSE
-        ),
-        list(
-          x = min(Votes_final()$Date) + 5,
-          y = 0.4,
-          text = "Republican Win",
-          showarrow = FALSE,
-          font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
-        )
-      ))
+        ) %>%
+        layout(annotations = list(
+          list(
+            x = min(Votes_final_2()$Date) + 5,
+            y = 350,
+            text = "Democrat Win",
+            showarrow = FALSE,
+            font = list(size = 12, weight = "bold", color = "rgb(22, 96, 167)"),
+            showgrid = FALSE
+          ),
+          list(
+            x = min(Votes_final_2()$Date) + 5,
+            y = 200,
+            text = "Republican Win",
+            showarrow = FALSE,
+            font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
+          )
+        ))
+    }
   })
   
-  #expert
+  
+  #monte carlo
   output$distPlot3 <- renderPlotly({
     input$date2
+    input$box_monte
     #input$confirm
-    
+    if (input$box_monte=="With News"){
     fig <- plot_ly(monte_carlo(), x = ~Date, y = ~Trial_Percent_Anonymous, name = 'Anonymous', type = 'scatter', mode = 'lines',
                    line = list(color = 'rgb(205, 12, 24)', width = 4)) 
     fig <- fig %>% add_trace(y = ~Trial_Percent_BBC, name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
     fig <- fig %>% add_trace(y = ~Trial_Percent_Fox, name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
     fig <- fig %>% add_trace(y = ~Trial_Percent_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) %>%
       layout(
-        title = NULL,
+        title = input$box_monte,
         xaxis = list(title = "Date",
                      showgrid = TRUE),
         yaxis = list(title = "Percent", 
@@ -2432,28 +2701,64 @@ server <- function(input, output, session) {
           font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
         )
       ))
+    } else {
+      fig <- plot_ly(monte_carlo2(), x = ~Date, y = ~Trial_Percent_Anonymous, name = 'Anonymous', type = 'scatter', mode = 'lines',
+                     line = list(color = 'rgb(205, 12, 24)', width = 4)) 
+      fig <- fig %>% add_trace(y = ~Trial_Percent_BBC, name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
+      fig <- fig %>% add_trace(y = ~Trial_Percent_Fox, name = 'Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
+      fig <- fig %>% add_trace(y = ~Trial_Percent_MSNBC, name = 'MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) %>%
+        layout(
+          title = input$box_monte,
+          xaxis = list(title = "Date",
+                       showgrid = TRUE),
+          yaxis = list(title = "Percent", 
+                       range = c(0, 1.1),
+                       showgrid = FALSE),
+          shapes = list(
+            list(
+              type = "rect",
+              fillcolor = "rgba(205, 12, 24, 0.2)", # Light red fill for 140-270
+              line = list(color = "rgba(205, 12, 24, 0)"), # No border
+              x0 = min(monte_carlo2()$Date), x1 = max(monte_carlo2()$Date),
+              y0 =0, y1 = 0.5
+            ),
+            list(
+              type = "rect",
+              fillcolor = "rgba(22, 96, 167, 0.2)", # Light blue fill for 270-400
+              line = list(color = "rgba(22, 96, 167, 0)"), # No border
+              x0 = min(monte_carlo2()$Date), x1 = max(monte_carlo2()$Date),
+              y0 = 0.5, y1 = 1.1
+            ),
+            list(
+              type = "line",
+              x0 = min(monte_carlo2()$Date), x1 = max(monte_carlo2()$Date),
+              y0 = 0.5, y1 = 0.5,
+              line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
+            )
+          )
+        ) %>%
+        layout(annotations = list(
+          list(
+            x = min(monte_carlo2()$Date) + 5,
+            y = 0.65,
+            text = "Democrat Win",
+            showarrow = FALSE,
+            font = list(size = 12, weight = "bold", color = "rgb(22, 96, 167)"),
+            showgrid = FALSE
+          ),
+          list(
+            x = min(monte_carlo2()$Date) + 5,
+            y = 0.4,
+            text = "Republican Win",
+            showarrow = FALSE,
+            font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
+          )
+        ))
+    }
   })
   
   
-  # Table 1
-  output$table1 <- DT::renderDataTable({
-    #input$box_table1
-    Table1()
-  }, server = FALSE)
-  
-  # Table 2
-  output$table2_votes_percent <- DT::renderDataTable({
 
-    Table2_votes_percent()
-  }, server = FALSE)
-  
-  
-  # Table 3
-  output$table3<- DT::renderDataTable({
-    
-    Table3()
-  }, server = FALSE)
-  
   
   
   # Image in About----------------------------------------------------------
@@ -2464,55 +2769,44 @@ server <- function(input, output, session) {
 
   
   # Expert graph
+
   output$distPlot4 <- renderPlotly({
     input$date2
-    #input$confirm
+    input$box_expert
     
-    fig <- plot_ly(expert_Economist(), x = ~Date, y = ~Harris, name = 'Harris', type = 'scatter', mode = 'lines',
-                   line = list(color = 'rgb(22, 96, 167)', width = 4)) 
-    fig <- fig %>% add_trace(y = ~Trump, name = 'Trump', line = list(color = 'rgb(205, 12, 24)', width = 4))%>%
-      layout(
-        title = NULL,
-        xaxis = list(title = "Date",
-                     showgrid = TRUE),
-        yaxis = list(title = "Percent", 
-                     range = c(0.40, 0.60),
-                     showgrid = FALSE))
-  
+    if (input$box_expert == "economist") {
+      fig <- plot_ly(expert_Economist(), x = ~Date, y = ~Harris, name = 'Harris', type = 'scatter', mode = 'lines',
+                     line = list(color = 'rgb(22, 96, 167)', width = 4)) 
+      fig <- fig %>% add_trace(y = ~Trump, name = 'Trump', line = list(color = 'rgb(205, 12, 24)', width = 4)) %>%
+        layout(
+          title = NULL,
+          xaxis = list(title = "Date", showgrid = TRUE),
+          yaxis = list(title = "Percent", range = c(0.40, 0.60), showgrid = FALSE)
+        )
+    } else if (input$box_expert == "silver") {
+      fig <- plot_ly(expert_silver(), x = ~Date, y = ~Harris, name = 'Harris', type = 'scatter', mode = 'lines',
+                     line = list(color = 'rgb(22, 96, 167)', width = 4)) 
+      fig <- fig %>% add_trace(y = ~Trump, name = 'Trump', line = list(color = 'rgb(205, 12, 24)', width = 4)) %>%
+        layout(
+          title = NULL,
+          xaxis = list(title = "Date", showgrid = TRUE),
+          yaxis = list(title = "Percent", range = c(0.40, 0.60), showgrid = FALSE)
+        )
+    } else {
+      fig <- plot_ly(expert_times(), x = ~Date, y = ~Harris, name = 'Harris', type = 'scatter', mode = 'lines',
+                     line = list(color = 'rgb(22, 96, 167)', width = 4)) 
+      fig <- fig %>% add_trace(y = ~Trump, name = 'Trump', line = list(color = 'rgb(205, 12, 24)', width = 4)) %>%
+        layout(
+          title = NULL,
+          xaxis = list(title = "Date", showgrid = TRUE),
+          yaxis = list(title = "Percent", range = c(0.40, 0.60), showgrid = FALSE)
+        )
+    }
+    
+    fig  # Return the final plotly figure
   })
   
 
-  output$distPlot5 <- renderPlotly({
-    input$date2
-    #input$confirm
-    
-    fig <- plot_ly(expert_silver(), x = ~Date, y = ~Harris, name = 'Harris', type = 'scatter', mode = 'lines',
-                   line = list(color = 'rgb(22, 96, 167)', width = 4)) 
-    fig <- fig %>% add_trace(y = ~Trump, name = 'Trump', line = list(color = 'rgb(205, 12, 24)', width = 4))%>%
-      layout(
-        title = NULL,
-        xaxis = list(title = "Date",
-                     showgrid = TRUE),
-        yaxis = list(title = "Percent", 
-                     range = c(0.40, 0.60),
-                     showgrid = FALSE))
-  })
-  
-  output$distPlot6 <- renderPlotly({
-    input$date2
-    #input$confirm
-    
-    fig <- plot_ly(expert_times(), x = ~Date, y = ~Harris, name = 'Harris', type = 'scatter', mode = 'lines',
-                   line = list(color = 'rgb(22, 96, 167)', width = 4)) 
-    fig <- fig %>% add_trace(y = ~Trump, name = 'Trump', line = list(color = 'rgb(205, 12, 24)', width = 4))%>%
-      layout(
-        title = NULL,
-        xaxis = list(title = "Date",
-                     showgrid = TRUE),
-        yaxis = list(title = "Percent", 
-                     range = c(0.40, 0.60),
-                     showgrid = FALSE))
-  })
   
      
 }
