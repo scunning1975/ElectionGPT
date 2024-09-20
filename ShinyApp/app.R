@@ -1491,7 +1491,7 @@ server <- function(input, output, session) {
     input$box_year1
     #input$confirm
     #input$partychoice
-    
+    isolate({
       if (input$box_year1 == "no_news") {
         fig <- plot_ly()
         # Loop through each selected state and add a trace for it
@@ -1630,6 +1630,7 @@ server <- function(input, output, session) {
         }
         fig  # Return the plotly figure
       }
+  })
   })
   
   
