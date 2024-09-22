@@ -53,7 +53,7 @@ library(viridis)
 library(zoo)
 
 library(rsconnect)
-library(vroom)
+
 
 # download automate process
 
@@ -470,7 +470,7 @@ subdata3_1_2_nonews<-melted_data2 %>%
     votes_party =sum(Electoral_Votes),
     .groups = 'drop'
   ) %>%
-  arrange(Date)
+  arrange(Date)%>% drop_na
 
 #calculate total number of votes
 subdata3_2_2_nonews<-melted_data2 %>%
@@ -479,8 +479,7 @@ subdata3_2_2_nonews<-melted_data2 %>%
   summarise(
     Votes =sum(Electoral_Votes),
     .groups = 'drop'
-  ) 
-
+  ) %>% drop_na
 
 subdata3_2_reshape_nonews<-subdata3_1_2_nonews%>%
   left_join(subdata3_2_2_nonews,by=c("Type","Date")) %>%
@@ -488,6 +487,7 @@ subdata3_2_reshape_nonews<-subdata3_1_2_nonews%>%
   select(Date, Type,party, Votes_perent) %>%  # Select relevant columns
   pivot_wider(names_from = Type, values_from = Votes_perent, names_prefix = "Votes_")%>% 
   filter(party=="Democratic")%>%
+  select("Date","party","Votes_Anonymous","Votes_BBC","Votes_Fox","Votes_MSNBC" )%>%
   arrange(Date) 
 .groups = 'drop'
 
@@ -530,7 +530,9 @@ trial_votes_nonews <-trial_votes_nonews%>%
 #For graph
 average_votes_reshape2 <- trial_votes_nonews %>%
   select(Date, Type, party, average_votes) %>%  # Select relevant columns
-  pivot_wider(names_from = Type, values_from = average_votes, names_prefix = "NoNews_Votes_")
+  pivot_wider(names_from = Type, values_from = average_votes, names_prefix = "NoNews_Votes_")%>%
+  select("Date","party","NoNews_Votes_Anonymous", "NoNews_Votes_BBC" ,"NoNews_Votes_Fox", "NoNews_Votes_MSNBC")%>%
+  drop_na
 
 # For graph
 average_votes_percent_reshape2<- trial_votes_nonews %>%
@@ -542,11 +544,15 @@ average_votes_percent_reshape2<- trial_votes_nonews %>%
 trial_votes_reshape2 <-average_votes_reshape2%>%
   left_join(average_votes_percent_reshape2, by=c("Date","party"))%>% 
   filter(party=="Democratic")%>%
-  arrange(Date) 
+  arrange(Date)
 #*******************************************************************
 
+#****combined
 
-
+combined_nonews_news<-trial_votes_reshape %>%
+  select(-"Votes_Percent_Anonymous", -"Votes_Percent_BBC", -"Votes_Percent_Fox", -"Votes_Percent_MSNBC") %>%
+  left_join(trial_votes_reshape2,by=c("Date","party" ))%>%
+  select("Date","party", "Votes_Anonymous", "Votes_BBC", "Votes_Fox", "Votes_MSNBC","NoNews_Votes_Anonymous", "NoNews_Votes_BBC", "NoNews_Votes_Fox", "NoNews_Votes_MSNBC") 
 
 
 
@@ -1362,7 +1368,11 @@ server <- function(input, output, session) {
     filter(trial_votes_reshape2,Date >= input$date2[1] & Date <= input$date2[2])
   })
   
-  
+  #for combined
+  Votes_final_3<-reactive({
+    req(input$date2)
+    filter(combined_nonews_news,Date >= input$date2[1] & Date <= input$date2[2])
+  })
 
   # UI Table 1 average votes 
   Table1 <-reactive({
@@ -1846,8 +1856,8 @@ server <- function(input, output, session) {
               radioGroupButtons(
                 inputId = "box_votes",
                 label = "Select time period", 
-                choiceNames = c("News", "No News"),
-                choiceValues = c("With News", "Without News"), 
+                choiceNames = c("News", "No News", "Combined"),
+                choiceValues = c("With News", "Without News", "Combined"), 
                 selected = "With News",  
                 direction = "vertical"
               ),
@@ -2739,7 +2749,7 @@ server <- function(input, output, session) {
           font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
         )
       ))
-    } else {
+    } else if (input$box_votes=="Without News"){
       fig <- plot_ly(Votes_final_2(), x = ~Date, y = ~NoNews_Votes_Anonymous , name = 'Anonymous', type = 'scatter', mode = 'lines',
                      line = list(color = 'rgb(205, 12, 24)', width = 4)) 
       fig <- fig %>% add_trace(y = ~NoNews_Votes_BBC , name = 'BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
@@ -2786,6 +2796,63 @@ server <- function(input, output, session) {
           ),
           list(
             x = min(Votes_final_2()$Date) + 5,
+            y = 200,
+            text = "Republican Win",
+            showarrow = FALSE,
+            font = list(size = 12, weight = "bold", color =  "rgb(205, 12, 24)")
+          )
+        ))
+    } else {
+      fig <- plot_ly(Votes_final_3(), x = ~Date, y = ~Votes_Anonymous , name = 'News Anonymous', type = 'scatter', mode = 'lines',
+                     line = list(color = 'rgb(205, 12, 24)', width = 4)) 
+      fig <- fig %>% add_trace(y = ~Votes_BBC , name = 'News BBC', line = list(color = 'rgb(22, 96, 167)', width = 4)) 
+      fig <- fig %>% add_trace(y = ~Votes_Fox , name = 'News Fox', line = list(color = 'rgb(205, 12, 24)', width = 4, dash = 'dash')) 
+      fig <- fig %>% add_trace(y = ~Votes_MSNBC  , name = 'News MSNBC', line = list(color = 'rgb(22, 96, 167)', width = 4, dash = 'dot')) 
+      fig <- fig %>% add_trace(y = ~NoNews_Votes_Anonymous , name = 'No News Anonymous', line = list(color = 'purple', width = 4, mode = 'lines')) 
+      fig <- fig %>% add_trace(y = ~NoNews_Votes_BBC , name = 'No News BBC', line = list(color = 'purple', width = 4, dash = 'dash')) 
+      fig <- fig %>% add_trace(y = ~NoNews_Votes_Fox  , name = 'No News Fox', line = list(color = 'darkgreen', width = 4, dash = 'lines'))
+      fig <- fig %>% add_trace(y = ~NoNews_Votes_MSNBC  , name = 'No News MSNBC', line = list(color = 'orange', width = 4, dash = 'lines'))%>%
+        layout(
+          title = input$box_votes,
+          xaxis = list(title = "Date",
+                       showgrid = TRUE),
+          yaxis = list(title = "Votes", 
+                       range = c(140, 400),
+                       showgrid = FALSE),
+          shapes = list(
+            list(
+              type = "rect",
+              fillcolor = "rgba(205, 12, 24, 0.2)", # Light red fill for 140-270
+              line = list(color = "rgba(205, 12, 24, 0)"), # No border
+              x0 = min(Votes_final_3()$Date), x1 = max(Votes_final_3()$Date),
+              y0 = 140, y1 = 270
+            ),
+            list(
+              type = "rect",
+              fillcolor = "rgba(22, 96, 167, 0.2)", # Light blue fill for 270-400
+              line = list(color = "rgba(22, 96, 167, 0)"), # No border
+              x0 = min(Votes_final_3()$Date), x1 = max(Votes_final_3()$Date),
+              y0 = 270, y1 = 400
+            ),
+            list(
+              type = "line",
+              x0 = min(Votes_final_3()$Date), x1 = max(Votes_final_3()$Date),
+              y0 = 270, y1 = 270,
+              line = list(color = "rgb(0, 0, 0)", dash = 'dash', width = 2)
+            )
+          )
+        ) %>%
+        layout(annotations = list(
+          list(
+            x = min(Votes_final_3()$Date) + 5,
+            y = 350,
+            text = "Democrat Win",
+            showarrow = FALSE,
+            font = list(size = 12, weight = "bold", color = "rgb(22, 96, 167)"),
+            showgrid = FALSE
+          ),
+          list(
+            x = min(Votes_final_3()$Date) + 5,
             y = 200,
             text = "Republican Win",
             showarrow = FALSE,
