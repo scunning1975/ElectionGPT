@@ -1,19 +1,19 @@
-library(usmap) #import the package
+library(usmap) 
 library(shiny)
-library(ggplot2) #use ggplot2 to add layer for visualization
+library(ggplot2)
 library(maps)
 library(openxlsx)
 library(readxl)
 library(dplyr)
 library(tidyr)
 
-library(tidytuesdayR) # to get tidytuesday data
-library(tidyverse) # for ggplot
-library(janitor) # for clean_names
-library(ggeasy) # making ggplot customisation easy
-library(gganimate) # for animating map by year
-library(transformr) # i think i need this for gganimate
-library(patchwork) # to patch plots together
+library(tidytuesdayR) 
+library(tidyverse) 
+library(janitor) 
+library(ggeasy) 
+library(gganimate)
+library(transformr) 
+library(patchwork) 
 library(PNWColors)
 
 library(tidyquant)
@@ -28,7 +28,6 @@ library(shinyBS)
 library(scales)
 library(shinyWidgets)
 library(bslib)
-#library(rjson)
 
 library(shinydashboard)
 library(shinycssloaders)
@@ -53,14 +52,7 @@ library(viridis)
 library(zoo)
 
 library(rsconnect)
-
-
-# download automate process
-
-
 library(httr)
-
-#setwd("/Users/sunmingrun/Documents/GitHub/ElectionGPT/ShinyApp")
 
 # 1 data import
 data<-read_csv("panel_election_results_state.csv",show_col_types = FALSE)
@@ -561,22 +553,6 @@ combined_nonews_news<-trial_votes_reshape %>%
 
 
 #-------------import expert data
-expert <-read_csv("Expert_Opinions.csv",show_col_types = FALSE)
-
-expert_data<-expert%>%
-  rename(
-  Date = date,  # Renaming 'Result' to 'value'
-)%>%
-  mutate(Date = as.Date(Date, format = "%m/%d/%y")) %>%
-  mutate(Silver = round(Silver/100,digit=2)) %>%
-  mutate(Times = round(Times/100,digit=2)) %>%
-  mutate(Economist = round(Economist/100,digit=2)) %>%
-  mutate(party="Democratic")
-
-expert_all<-average_votes_percent_reshape%>%
-  filter(party=="Democratic") %>%
-  left_join(expert_data,by=c("Date","party"))
-
 # ----------------------------
 expert <-read_csv("expert_combined_panel.csv",show_col_types = FALSE)
 
@@ -592,6 +568,9 @@ expert_data<-expert%>%
   mutate(Trump = round(Trump/100,digit=2))%>%
   distinct()  
 .groups = 'drop'
+
+expert_nate <-expert_data%>%
+  filter(source=="silver")
 
 
 # simulation
@@ -669,13 +648,6 @@ color_for_1 <- pal[16]  # Close to red
 color_for_0 <- pal[1]  # Close to blue
 
 
-#pal2<- pnw_palette("Moth",12)
-#color_for_low1 <- pal2[6]
-
-#pal4<-pnw_palette(name = "Bay", n = 16, type = "continuous")
-#color_for_low0 <- pal4[5]
-
-
 pal2<-pnw_palette(name = "Bay", n = 16, type = "continuous")
 color_for_low1 <- pal2[13]
 
@@ -691,11 +663,11 @@ color_for_05 <- pal5[97]
 
 
 custom_colorscale <- list(
-  list(0, "#DD4124"),       # Red at the low end (0) (Democrats)
-  list(0.25, color_for_low1),    # Lighter red between 0 and 0.5
-  list(0.5, color_for_05),     # Very light red/pink at the middle (0.5) "#ffe6e6"
-  list(0.75, color_for_low0),    # Lighter blue between 0.5 and 1
-  list(1, "#00496F")        # Blue at the high end (1) (Republicans)
+  list(0, "#DD4124"),       
+  list(0.25, color_for_low1),    
+  list(0.5, color_for_05),     
+  list(0.75, color_for_low0),   
+  list(1, "#00496F")        
 )
 #data
 #function 1 state unique label
@@ -1321,9 +1293,7 @@ server <- function(input, output, session) {
     
   })
   
-  observe({
-    print(News_NoNews())
-  })
+
   
   # UI 7- Time Series 1 Calculate the average and assign the votes --DISCARD
   Votes_data_4Voice <- reactive({
@@ -1460,28 +1430,34 @@ server <- function(input, output, session) {
   Expert_Data <- reactive({
     #req(input$TimeseriesVoices) 
     req(input$date2)
-    filter(expert_all,Date >= input$date2[1] & Date <= input$date2[2])
+    filter(expert_data,Date >= input$date2[1] & Date <= input$date2[2])
   })
   
   expert_Economist <- reactive({
     req(input$date2)
+    req(input$box_expert)
     filter(expert_data, source=="economist") %>%
       filter(Date >= input$date2[1] & Date <= input$date2[2])
   })
   
   expert_silver <- reactive({
     req(input$date2)
+    req(input$box_expert)
     filter(expert_data, source=="silver") %>%
-      filter(Date >= input$date2[1] & Date <= input$date2[2])
+      filter(Date >= input$date2[1] & Date <= input$date2[2]) %>%
+      arrange("Date")
   })
   
   expert_times <- reactive({
     req(input$date2)
+    req(input$box_expert)
     filter(expert_data, source=="times-siena") %>%
       filter(Date >= input$date2[1] & Date <= input$date2[2])
   })
   
-  
+  observe({
+    print(expert_silver(),n=60)
+  })
   
   
   
@@ -1832,7 +1808,7 @@ server <- function(input, output, session) {
   
 
   
-  # Observe the reactive expression `News_NoNews()` and log the changes
+
   observe({
     data <- News_NoNews()  # Store the reactive output in a variable
     print("News_NoNews data has changed!")  # Log a message to the console
@@ -1926,7 +1902,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 320, 
         tabPanel(
-          title = "Election Opinion",
+          title = "ElectionGPT Opinion",
           div(
             style = "position: absolute; left:0.5em; bottom: 0.5em;",
             dropdown(
@@ -1971,7 +1947,7 @@ server <- function(input, output, session) {
                 label = "Select time period", 
                 choiceNames = c("Nate Sliver", "Economist", "Times Siena"),
                 choiceValues = c("Nate Sliver", "Economist", "Times Siena"), 
-                selected = "Economist",  
+                selected = "Nate Sliver",  
                 direction = "vertical"
               ),
               size = "xs",
@@ -1980,7 +1956,7 @@ server <- function(input, output, session) {
             )
         ),
         withSpinner(
-          plotlyOutput("distPlot4", height = 230),
+          plotlyOutput("distPlot5", height = 230),
           type = 4,
           color = "#d33724", 
           size = 0.7 
@@ -2874,41 +2850,55 @@ server <- function(input, output, session) {
   
   # Expert graph
 
-  output$distPlot4 <- renderPlotly({
+  
+
+  
+  
+  # Assuming expert_nate is your filtered dataset for the 'silver' source
+  output$distPlot5 <- renderPlotly({
     input$date2
     input$box_expert
-    
-    if (input$box_expert == "Economist") {
-      fig <- plot_ly(expert_Economist(), x = ~Date, y = ~Harris, name = 'Harris', type = 'scatter', mode = 'lines',
-                     line = list(color = 'rgb(22, 96, 167)', width = 4)) 
-      fig <- fig %>% add_trace(y = ~Trump, name = 'Trump', line = list(color = 'rgb(205, 12, 24)', width = 4)) %>%
-        layout(
-          title = input$box_expert,
-          xaxis = list(title = "Date", showgrid = TRUE),
-          yaxis = list(title = "Percent", range = c(0.30, 0.70), showgrid = FALSE)
-        )
-    } else if (input$box_expert == "Nate Silver") {
+    if (input$box_expert=="Nate Sliver") {
       fig <- plot_ly(expert_silver(), x = ~Date, y = ~Harris, name = 'Harris', type = 'scatter', mode = 'lines',
-                     line = list(color = 'rgb(22, 96, 167)', width = 4)) 
+                     line = list(color = 'rgb(22, 96, 167)', width = 4))
+      
       fig <- fig %>% add_trace(y = ~Trump, name = 'Trump', line = list(color = 'rgb(205, 12, 24)', width = 4)) %>%
         layout(
           title = input$box_expert,
           xaxis = list(title = "Date", showgrid = TRUE),
           yaxis = list(title = "Percent", range = c(0.30, 0.70), showgrid = FALSE)
         )
+      
+    fig  # Return the final plotly figure
+    
+    } else if (input$box_expert=="Economist") {
+      fig <- plot_ly(expert_Economist(), x = ~Date, y = ~Harris, name = 'Harris', type = 'scatter', mode = 'lines',
+                     line = list(color = 'rgb(22, 96, 167)', width = 4))
+      
+      fig <- fig %>% add_trace(y = ~Trump, name = 'Trump', line = list(color = 'rgb(205, 12, 24)', width = 4)) %>%
+        layout(
+          title = input$box_expert,
+          xaxis = list(title = "Date", showgrid = TRUE),
+          yaxis = list(title = "Percent", range = c(0.30, 0.70), showgrid = FALSE)
+        )
+      
+      fig  # Return the final plotly figure
     } else {
       fig <- plot_ly(expert_times(), x = ~Date, y = ~Harris, name = 'Harris', type = 'scatter', mode = 'lines',
-                     line = list(color = 'rgb(22, 96, 167)', width = 4)) 
+                     line = list(color = 'rgb(22, 96, 167)', width = 4))
+      
       fig <- fig %>% add_trace(y = ~Trump, name = 'Trump', line = list(color = 'rgb(205, 12, 24)', width = 4)) %>%
         layout(
           title = input$box_expert,
           xaxis = list(title = "Date", showgrid = TRUE),
           yaxis = list(title = "Percent", range = c(0.30, 0.70), showgrid = FALSE)
         )
+      
+      fig  # Return the final plotly figure
+      
     }
-    
-    fig  # Return the final plotly figure
   })
+  
   
 
   # votes percent 
@@ -3036,4 +3026,3 @@ server <- function(input, output, session) {
 
 
 shinyApp(ui, server)
-#deployApp(appName = "ElectionGPT2", forceUpdate = TRUE)
