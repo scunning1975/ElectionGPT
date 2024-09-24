@@ -10,7 +10,7 @@ library(dotenv) # Load environment variables
 dotenv::load_dot_env(file = "/Users/jaredblack/GitHub/ElectionGPT/keys.env")
 
 # Set API key for OpenAI from environment variable
-openai_api_key <- Sys.getenv("GPT4O_MINI_NO-NEWS_API_KEY")
+openai_api_key <- Sys.getenv("CONTROL_DIRECT")
 
 # Define the prompt
 prompt <- "Generate a short news story from the perspective of a trustworthy independent reporter about the outcome of the 2024 US presidential election between Donald Trump and Kamala Harris. The story must explicitly state the winner in each of the 50 states."
