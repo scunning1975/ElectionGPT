@@ -1,0 +1,74 @@
+prompt <- "Given the recent news articles in the JSON data provided, generate a short news story from the perspective of MSNBC reporter Rachel Maddow about the outcome of the 2024 US presidential election between Donald Trump and Kamala Harris. The story must explicitly state the winner in each of the 50 states. Include a specifc detail or quote pulled directly from the news articles."
+
+-----------------------
+
+
+Story 1:
+**MSNBC Report: Kamala Harris Triumphs in 2024 Presidential Election Against Donald Trump**
+
+In a historic showdown that captivated the nation, Kamala Harris emerged victorious in the 2024 U.S. presidential election, defeating former President Donald Trump. This election was not just a battle for the White House; it was a referendum on the direction of the country after a tumultuous four years marked by division and unrest.
+
+Harris, who accepted her party's nomination with a powerful speech at the Democratic National Convention, emphasized the importance of accountability and the consequences of Trump's presidency. <U+201C>It is now our turn to do what generations before us have done, guided by optimism and faith, to fight for this country we love,<U+201D> she stated, rallying her supporters behind a message of hope and unity.
+
+Here is a breakdown of the state-by-state outcomes:
+
+- **Alabama**: Trump
+- **Alaska**: Trump
+- **Arizona**: Harris
+- **Arkansas**: Trump
+- **California**: Harris
+- **Colorado**: Harris
+- **Connecticut**: Harris
+- **Delaware**: Harris
+- **Florida**: Trump
+- **Georgia**: Harris
+- **Hawaii**: Harris
+- **Idaho**: Trump
+- **Illinois**: Harris
+- **Indiana**: Trump
+- **Iowa**: Trump
+- **Kansas**: Trump
+- **Kentucky**: Trump
+- **Louisiana**: Trump
+- **Maine**: Harris
+- **Maryland**: Harris
+- **Massachusetts**: Harris
+- **Michigan**: Harris
+- **Minnesota**: Harris
+- **Mississippi**: Trump
+- **Missouri**: Trump
+- **Montana**: Trump
+- **Nebraska**: Trump
+- **Nevada**: Harris
+- **New Hampshire**: Harris
+- **New Jersey**: Harris
+- **New Mexico**: Harris
+- **New York**: Harris
+- **North Carolina**: Harris
+- **North Dakota**: Trump
+- **Ohio**: Trump
+- **Oklahoma**: Trump
+- **Oregon**: Harris
+- **Pennsylvania**: Harris
+- **Rhode Island**: Harris
+- **South Carolina**: Trump
+- **South Dakota**: Trump
+- **Tennessee**: Trump
+- **Texas**: Trump
+- **Utah**: Trump
+- **Vermont**: Harris
+- **Virginia**: Harris
+- **Washington**: Harris
+- **West Virginia**: Trump
+- **Wisconsin**: Harris
+- **Wyoming**: Trump
+
+The election results were a culmination of months of campaigning, debates, and discussions on key issues such as immigration, healthcare, and economic recovery. Harris<U+2019>s triumph in pivotal states like Arizona, Georgia, and Michigan demonstrated a shift in voter sentiment, particularly among young and minority voters, who rallied for the Democratic ticket.
+
+As the dust settles, the implications of this election are profound. Harris, now the first woman of South Asian and African American descent to win the presidency, has vowed to continue pushing for policies that support the middle class and promote equality.
+
+This election has not only reshaped the political landscape but also redefined the narrative around leadership in America. The road ahead for Harris will be challenging, but her victory marks a significant chapter in American history, reflecting a desire for change and a commitment to progress.
+
+----------------------------------
+
+
