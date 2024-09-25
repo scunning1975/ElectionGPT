@@ -254,8 +254,7 @@ dates <-unique(extended_data2$Date)
 
 
 # Combine the original data with the dc_data and ensure it is sorted by Date, Type, and state
-extended_data2 <- rbind(extended_data2, dc_data) %>%
-  arrange(Date, Type, state)
+
 
 
 # method #1 calculate the average winning probability in each state and assign the electoral votes
