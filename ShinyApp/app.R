@@ -497,7 +497,7 @@ total_votes_count_nonews <- trial_votes_nonews %>%
     votes_total=sum(average_votes)
   )
 
-# merge two datasets before reshape
+# merge two datasets before reshape missing 09-24
 trial_votes_nonews <-trial_votes_nonews%>%
   left_join(total_votes_count_nonews, by=c("Type","Date" )) %>%
   mutate(average_votes = round(average_votes, digits = 0)) %>%  # Round average_votes
@@ -788,7 +788,7 @@ ui <- dashboardPage(
         icon = icon("user-md"),
         radioButtons(
           inputId = "voicechoice",
-          label = "VOICECHOICE",
+          label = "VOICE CHOICE",
           choices = voice_group$Type,
           selected = "Anonymous" 
         )
@@ -923,20 +923,20 @@ ui <- dashboardPage(
             style = "padding-left: 60px;", 
             h4(p("About the Project")),
             h5(p("The project began as an attempt to combine our interest in artificial intelligence, focusing on its predictive power and potential to shape the future.")),
-            h5(p("Step 1: Pull 100 news stories from Event Registry: API Search for news stories related to the prompt: “2024 US presidential election”. Each date corresponds to a 1am CST newspaper article pull on that date.For example, on September 10th, we pulled the data at 1am CST and therefore the news refers is up to the 9th."),
-               p("Step 2: Feed stories to Chat-GPT in 4 distinct voices：Four characters, each representing different perspectives, will generate 100 stories:"),
+            h5(p("Step 1: Pull 100 news stories from Event Registry: API Search for news stories related to the prompt: “2024 US presidential election”. Each date corresponds to a 1 am CST newspaper article pulled on that date. For example, on September 10th, we pulled the data at 1 am CST, and therefore the news refers up to the 9th."),
+               p("Step 2: Feed stories to Chat-GPT in 4 distinct voices:Four characters, each representing different perspectives, will generate 100 stories:"),
                h6(p("• Voice 1: Anonymous/Direct truthful reporter"),
                   p("• Voice 2: Fox Reporter Bret Baier"),
                   p("• Voice 3: MSNBC Reporter Rachel Maddow"),
                   p("• Voice 4: BBC Reporter Laura Kuenssberg"),
                ),
-               p("Step 3: Generate election stories from each character’s perspective:For each character, 100 stories are written about the election outcome in each state."),
-               p("Step 4: Extract the election winners from each story: Use GPT to extract only the name of the winners from the stories for each character."),
-               p("Step 5: Save winners and display percentage of daily trials that went to each party in each state: 1 = Trump/Republican and 0 = Harris/Democrat"),
+               p("Step 3: Generate election stories from each character’s perspective: For each character, 100 stories are written about the election outcome in each state."),
+               p("Step 4: Extract the election winners from each story: Use GPT to extract only the names of the winners from the stories for each character."),
+               p("Step 5: Save winners and display the percentage of daily trials that went to each party in each state: 1 = Trump/Republican and 0 = Harris/Democrat"),
                p("Step 6: Repeat the process daily, appending new results to the previous day’s data panel.")
             ),
             br(),
-            h5(p("We hope you find it interesting and/or useful.  Any comments or questions are welcome at email address"),
+            h5(p("We hope you find it interesting and/or useful.  Any comments or questions are welcome at the email address"),
                p("The source for this project is available ", a("on github", href = "https://github.com/"), ".")),
             #hr(),
             
@@ -946,7 +946,7 @@ ui <- dashboardPage(
                  # HTML('<img src="GregPicCrop.png", height="110px"
                  # style="float:right"/>','<p style="color:black"></p>'),
                  h4(p("About the Author")),
-                 h5(p("Scott Cunningham is the Ben H. Williams Professor of Economics at Baylor University.  He specializes in a range of topics in applied microeconomics, such as mental illness, drug policy and sex work."),
+                 h5(p("Scott Cunningham is the Ben H. Williams Professor of Economics at Baylor University.  He specializes in a range of topics in applied microeconomics, such as mental illness, drug policy, and sex work."),
                     p("Jared Black is a PhD candidate in the Health Service Research program at Baylor University. His research focuses on the healthcare administration and drug policy."),
                     p("Coco Mingrun Sun is a PhD candidate in the Health Service Research program at Baylor University. Her research interests span the intersection of technology, healthcare, and household finance.")
                  )
@@ -1388,7 +1388,7 @@ server <- function(input, output, session) {
         BBC=Votes_Percent_BBC,
         Fox=Votes_Percent_Fox,
         MSNBC=Votes_Percent_MSNBC,
-        "Nate Sliver"=Silver,
+        "Nate Silver"=Silver,
         "New York Times"=Times
       ) %>%
       mutate(Anonymous=round(Anonymous,digits=2)) %>%
@@ -1931,9 +1931,9 @@ server <- function(input, output, session) {
               radioGroupButtons(
                 inputId = "box_expert",
                 label = "Select time period", 
-                choiceNames = c("Nate Sliver", "Economist", "Times Siena"),
-                choiceValues = c("Nate Sliver", "Economist", "Times Siena"), 
-                selected = "Nate Sliver",  
+                choiceNames = c("Nate Silver", "Economist", "Times Siena"),
+                choiceValues = c("Nate Silver", "Economist", "Times Siena"), 
+                selected = "Nate Silver",  
                 direction = "vertical"
               ),
               size = "xs",
@@ -1960,7 +1960,7 @@ server <- function(input, output, session) {
         width = NULL,
         height = 320, 
         tabPanel(
-          title = "Nate Sliver Opinions "
+          title = "Nate  Opinions "
         ),
         withSpinner(
           plotlyOutput("distPlot5", height = 230),
@@ -2844,7 +2844,7 @@ server <- function(input, output, session) {
   output$distPlot5 <- renderPlotly({
     input$date2
     input$box_expert
-    if (input$box_expert=="Nate Sliver") {
+    if (input$box_expert=="Nate Silver") {
       fig <- plot_ly(expert_silver(), x = ~Date, y = ~Harris, name = 'Harris', type = 'scatter', mode = 'lines',
                      line = list(color = 'rgb(22, 96, 167)', width = 4))
       
