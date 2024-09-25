@@ -250,25 +250,11 @@ extended_data2<-extended_data%>%
 # Create the dc_data with DC information for each Date and Type
 dates <-unique(extended_data2$Date)
 
-dc_data <- expand.grid(
-  state = "DC",
-  StateFull = "District of Columbia",
-  party = "Democratic",
-  Predicted_party = "Democratic",
-  Percent_byState_Demo = 1,
-  Percent_byState_chr_Demo = "100.00%",
-  Percent_byStateParty = 1,
-  Type = c("Direct", "MSNBC", "BBC", "Fox"),  # The four types
-  Date = dates
-)
-
-
 # Ensure the column order is the same as in extended_data2
 
 
 # Combine the original data with the dc_data and ensure it is sorted by Date, Type, and state
-extended_data2 <- rbind(extended_data2, dc_data) %>%
-  arrange(Date, Type, state)
+
 
 
 # method #1 calculate the average winning probability in each state and assign the electoral votes
