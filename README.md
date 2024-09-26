@@ -44,7 +44,7 @@ The project will present two main types of visualizations:
 
 For more informaton about the project, please visit our shiny app. 
 
-https://pregptdiction.shinyapps.io/ElectionGPT/
+ https://electiongpt.shinyapps.io/ElectionGPT/
 
 ## Thank you
 This dashboard was built using R Gallary demo built by Christian Luz (https://shiny.posit.co/r/gallery/life-sciences/hospital-data-antimicrobial/) and many great tools in the R ecosystem. Thanks to all of the developers of these open source packages:
