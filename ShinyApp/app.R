@@ -51,8 +51,15 @@ library(survminer)
 library(viridis)
 library(zoo)
 
-library(rsconnect)
+
 library(httr)
+
+rsconnect::setAccountInfo(name='electiongpt',
+                          token='19CC0E13DCA3606107031711822CCD94',
+                          secret='Z6yzTrq+CyJEX40VYtuWrsI7x8bwkjiVITIRiElp')
+
+library(rsconnect)
+#rsconnect::deployApp('/Users/sunmingrun/Documents/GitHub/ElectionGPT/ShinyApp')
 
 # 1 data import
 data<-read_csv("panel_election_results_state.csv",show_col_types = FALSE)
