@@ -93,6 +93,8 @@ Date,Voice,Party,AverageVotes,avg_sentiment,No_News
 2024-09-27,Anonymous,Republican,221,0.040547,100
 2024-09-28,Anonymous,Democratic,297,0.04408,100
 2024-09-28,Anonymous,Republican,241,0.04408,100
+2024-09-29,Anonymous,Democratic,296,0.093414,100
+2024-09-29,Anonymous,Republican,242,0.093414,100
 2024-08-13,BBC,Democratic,309,-0.138197,100
 2024-08-13,BBC,Republican,229,-0.138197,100
 2024-08-14,BBC,Democratic,307,0.128009,100
@@ -187,6 +189,8 @@ Date,Voice,Party,AverageVotes,avg_sentiment,No_News
 2024-09-27,BBC,Republican,217,0.040547,100
 2024-09-28,BBC,Democratic,287,0.04408,100
 2024-09-28,BBC,Republican,251,0.04408,100
+2024-09-29,BBC,Democratic,302,0.093414,100
+2024-09-29,BBC,Republican,236,0.093414,100
 2024-08-13,Fox,Democratic,302,-0.138197,100
 2024-08-13,Fox,Republican,236,-0.138197,100
 2024-08-14,Fox,Democratic,278,0.128009,100
@@ -281,6 +285,8 @@ Date,Voice,Party,AverageVotes,avg_sentiment,No_News
 2024-09-27,Fox,Republican,234,0.040547,100
 2024-09-28,Fox,Democratic,262,0.04408,100
 2024-09-28,Fox,Republican,276,0.04408,100
+2024-09-29,Fox,Democratic,268,0.093414,100
+2024-09-29,Fox,Republican,270,0.093414,100
 2024-08-13,MSNBC,Democratic,310,-0.138197,100
 2024-08-13,MSNBC,Republican,228,-0.138197,100
 2024-08-14,MSNBC,Democratic,307,0.128009,100
@@ -375,4 +381,6 @@ Date,Voice,Party,AverageVotes,avg_sentiment,No_News
 2024-09-27,MSNBC,Republican,221,0.040547,100
 2024-09-28,MSNBC,Democratic,297,0.04408,100
 2024-09-28,MSNBC,Republican,241,0.04408,100
+2024-09-29,MSNBC,Democratic,303,0.093414,100
+2024-09-29,MSNBC,Republican,235,0.093414,100
 NA,NA,NA,NA,NA,NA

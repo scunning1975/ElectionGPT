@@ -28,15 +28,9 @@ rename v2 BBC
 rename v3 Fox
 rename v4 MSNBC
 
+// endcode voice for regresson 
 encode voice, gen(voice_en)
-
-reg averagevotes Fox MSNBC BBC avg_sentiment,r
-
-
-reg averagevotes Fox MSNBC BBC avg_sentiment Fox##c.avg_sentiment MSNBC##c.avg_sentiment BBC##c.avg_sentiment, r
 
 reg averagevotes voice_en##c.avg_sentiment, r
 
-
-reg averagevotes Fox##c.avg_sentiment MSNBC##c.avg_sentiment BBC##c.avg_sentiment, r
 
