@@ -367,7 +367,7 @@ server <- function(input, output) {
                                     "silver" = "purple", 
                                     "times-siena" = "green"),
                          breaks = c(gpt_voice, "economist", "silver", "times-siena"),
-                         labels = c(gpt_voice, "Economist", "FiveThirtyEight", "NYT/Siena")) +
+                         labels = c(gpt_voice, "Economist", "Nate Silver", "NYT/Siena")) +
       scale_y_continuous(limits = c(40, 60), labels = scales::percent_format(scale = 1)) +
       scale_x_date(date_breaks = "1 week", date_labels = "%b %d") +
       labs(title = "Expert Opinion Comparison",
