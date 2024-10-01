@@ -159,6 +159,7 @@ write_csv(avgvotes_sentiment,"/Users/sunmingrun/Documents/GitHub/ElectionGPT/NLP
 
 
 # ----------------------#
+# Graph 1               #
 # Sentiment score graph #
 #                       #
 #-----------------------#
@@ -187,7 +188,38 @@ fig <- fig %>% layout(title = "Sentiment Analysis",
 
 fig
 
+# ---------------------------------------------PART 2 ------------------------------------------
 
+# ----------------------#
+# Create Dataset        #
+#                       #
+#-----------------------#
+
+data_state_counts_raw <- read_csv("/Users/sunmingrun/Documents/GitHub/ElectionGPT/NLP/state_full_count_title_body.csv",show_col_types = FALSE)
+
+data_state_counts <- data_state_counts_raw %>%
+  mutate(StateFull=(ifelse(state=="DC","District of Columbia",state))) %>%
+  arrange(feed_date) %>%
+  filter(feed_date>="2024-08-13") %>%
+  rename(
+    Date="feed_date",
+    counts="state_name_count"
+  ) %>%
+  select(-state)%>%
+  mutate(state = state.abb[match(StateFull, state.name)])%>%
+  mutate(state = ifelse(StateFull == "District of Columbia", "DC", state))
+
+check_state_counts <-data_state_counts %>%
+  group_by(Date) %>%
+  summarise(
+    No_states=n()
+  )
+
+# ----------------------#
+# Graph 2               #
+# State counts graph    #
+#                       #
+#-----------------------#
 
 
 
