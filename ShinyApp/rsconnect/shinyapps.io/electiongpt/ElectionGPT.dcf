@@ -5,7 +5,7 @@ account: electiongpt
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 12613070
-bundleId: 9153829
+bundleId: 9168651
 url: https://electiongpt.shinyapps.io/ElectionGPT/
 version: 1
 asMultiple: FALSE
