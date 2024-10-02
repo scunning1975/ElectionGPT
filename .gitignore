@@ -2,3 +2,14 @@
 .Rproj.user
 keys.env
 /scripts/git_daily.sh
+
+# Logs
+deploy_log.txt
+update_log.txt
+
+# Scripts
+redeploy_ShinyApp_Jared.R
+update_ShinyApp_Jared.R
+
+# ShinyApp folder and all its contents
+ShinyApp_Jared/
