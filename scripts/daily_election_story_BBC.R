@@ -39,18 +39,27 @@ generate_story <- function(api_key, prompt, json_data) {
   body <- list(
     model = "gpt-4o-mini",
     messages = list(
-      list(role = "system", content = "You are Laura Kuenssberg, a BBC reporter."),
+      list(role = "system", content = "You are a trustworthy independent reporter."),
       list(role = "user", content = paste(prompt, "\n\n", json_data))
     ),
-    temperature = 0.7,
+    temperature = 0.75,
     max_tokens = 3000
   )
-  response <- POST(gpt_api_url, body = toJSON(body, auto_unbox = TRUE), encode = "json",
-                   add_headers(`Authorization` = paste("Bearer", api_key), `Content-Type` = "application/json"))
+  response <- POST(
+    gpt_api_url,
+    body = toJSON(body, auto_unbox = TRUE),
+    encode = "json",
+    add_headers(
+      `Authorization` = paste("Bearer", api_key),
+      `Content-Type` = "application/json"
+    )
+  )
   if (status_code(response) == 200) {
     return(content(response, "parsed")$choices[[1]]$message$content)
   } else {
+    error_content <- content(response, "text", encoding = "UTF-8")
     cat("Failed to generate story:", status_code(response), "\n")
+    cat("Response content:", error_content, "\n")
     return(NULL)
   }
 }

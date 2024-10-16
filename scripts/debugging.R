@@ -9,10 +9,10 @@ library(dotenv) # access environment variables
 # Load the .env file
 dotenv::load_dot_env(file = "/Users/jaredblack/GitHub/ElectionGPT/keys.env")
 
-# Set API key for OpenAI from environment variable
-openai_api_key <- Sys.getenv("GPT4O_MINI_MSNBC_API_KEY")
+# Set API key for OpenAI
+openai_api_key <- Sys.getenv("GPT4O_MINI_DIRECT_API_KEY")
 
-# Directory where news JSON files are saved (relative path)
+# Directory where news JSON files are saved
 save_directory <- "/Users/jaredblack/GitHub/ElectionGPT/data/news"
 
 # Function to load the newest news file
@@ -28,12 +28,12 @@ load_newest_news_file <- function(directory) {
 news_content <- load_newest_news_file(save_directory)
 
 # Define the prompt
-prompt <- "Given the recent news articles in the JSON data provided, generate a short news story from the perspective of MSNBC reporter Rachel Maddow about the outcome of the 2024 US presidential election between Donald Trump and Kamala Harris. The story must explicitly state the winner in each of the 50 states. Include a specifc detail or quote pulled directly from the news articles."
+prompt <- "Given the recent news articles in the JSON data provided, generate a short news story from the perspective of a trustworthy independent reporter about the outcome of the 2024 US presidential election between Donald Trump and Kamala Harris. The story must explicitly state the winner in each of the 50 states.  Include a specifc detail or quote pulled directly from the news articles."
+# Consider randomizing the order of the candidate names in the prompt
 
 # Prepare the news content for API input
 news_content_text <- toJSON(news_content)
 
-# Function to generate the story using GPT-4
 generate_story <- function(api_key, prompt, json_data) {
   gpt_api_url <- "https://api.openai.com/v1/chat/completions"
   body <- list(
@@ -113,7 +113,7 @@ extract_winners <- function(api_key, story) {
 
 # Prepare the combined story text file
 timestamp <- format(Sys.time(), "%Y-%m-%d_%H-%M-%S")
-combined_story_filename <- paste0("story_MSNBC_", timestamp, ".txt")  # Adjust this part for each script (direct, Fox, MSNBC, BBC)
+combined_story_filename <- paste0("story_direct_", timestamp, ".txt")  # Adjust this part for each script (direct, Fox, MSNBC, BBC)
 combined_story_filepath <- file.path("/Users/jaredblack/GitHub/ElectionGPT/data/stories", combined_story_filename)
 fileConn <- file(combined_story_filepath, "w")  # Initialize the file connection
 
@@ -157,7 +157,7 @@ for (i in 1:100) {
 close(fileConn)
 
 # Save the results to an Excel file
-results_filename <- paste0("election_results_MSNBC_", timestamp, ".xlsx")
+results_filename <- paste0("election_results_direct_", timestamp, ".xlsx")
 results_filepath <- file.path("/Users/jaredblack/GitHub/ElectionGPT/data/raw", results_filename)
 write.xlsx(results, results_filepath)
 cat("Election results saved as:", results_filepath, "\n")

@@ -51,11 +51,14 @@ date_exists <- existing_data %>%
 if (!date_exists) {
   # Extract data for the latest_silver_date
   latest_data <- silver_processed %>%
-    filter(date == latest_silver_date) %>%
-    mutate(date = format(date, "%m/%d/%y"))  # Format date as in the existing data
+    filter(date == latest_silver_date)
   
   # Append the latest_data to existing_data
   combined_panel <- bind_rows(existing_data, latest_data)
+  
+  # After combining, format the date column to character
+  combined_panel <- combined_panel %>%
+    mutate(date = format(date, "%m/%d/%y"))
   
   # Save the updated combined panel to the CSV
   write.csv(combined_panel, output_path, row.names = FALSE, quote = FALSE)
@@ -65,7 +68,7 @@ if (!date_exists) {
   cat("Number of rows before update:", nrow(existing_data), "\n")
   cat("Number of new rows appended:", nrow(latest_data), "\n")
   cat("Total number of rows after update:", nrow(combined_panel), "\n")
-  cat("New date added:", latest_data$date, "\n")
+  cat("New date added:", format(latest_silver_date, "%m/%d/%y"), "\n")
 } else {
   cat("No new data to append. The latest date (", format(latest_silver_date, "%m/%d/%y"), ") already exists in the panel.\n", sep = "")
 }
