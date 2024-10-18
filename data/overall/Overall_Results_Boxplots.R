@@ -29,11 +29,22 @@ merged_data <- panel_data %>%
   group_by(Voice, Trial) %>%
   summarize(Harris_Electoral_Votes = sum(Electoral_Votes, na.rm = TRUE), .groups = 'drop')
 
+# Calculate mean and median for each voice
+voice_stats <- merged_data %>%
+  group_by(Voice) %>%
+  summarize(
+    Mean = mean(Harris_Electoral_Votes),
+    Median = median(Harris_Electoral_Votes),
+    .groups = 'drop'
+  )
+
 # Create the main plot
 p <- ggplot(merged_data, aes(x = Harris_Electoral_Votes, y = Voice, fill = Voice)) +
   geom_boxplot(outlier.shape = NA, alpha = 0.7, width = 0.5) +
   geom_jitter(aes(color = Voice), width = 0, height = 0.2, size = 2, alpha = 0.5) +
   geom_vline(xintercept = 270, linetype = "dashed", color = "darkred", size = 1) +
+  geom_point(data = voice_stats, aes(x = Mean, y = Voice), shape = 23, size = 3, fill = "blue") +
+  geom_point(data = voice_stats, aes(x = Median, y = Voice), shape = 22, size = 3, fill = "green") +
   scale_fill_manual(values = c("Fox" = "#1f78b4", "Msnbc" = "#33a02c")) +
   scale_color_manual(values = c("Fox" = "#1f78b4", "Msnbc" = "#33a02c")) +
   labs(title = "Electoral Votes for Kamala Harris by News Reader",
@@ -49,26 +60,31 @@ p <- ggplot(merged_data, aes(x = Harris_Electoral_Votes, y = Voice, fill = Voice
     axis.text = element_text(size = 10),
     plot.margin = margin(10, 10, 60, 10)  # Increase bottom margin for larger note
   ) +
-  annotate("text", x = 270, y = 1.5, label = "270 Votes to Win", color = "darkred", angle = 90, vjust = -0.5, size = 4) +
-  annotate("rect", xmin = 270, xmax = Inf, ymin = -Inf, ymax = Inf, fill = "green", alpha = 0.1)
+  annotate("text", x = 270, y = 1.5, label = "270 Votes to Win", color = "darkred", angle = 90, vjust = -0.5, size = 4)
 
 # Create a key/legend
-key <- ggplot() +
-  geom_point(data = data.frame(x = c(1, 2), y = c(1, 1), color = c("Fox", "Msnbc")),
-             aes(x = x, y = y, color = color), size = 3) +
-  geom_text(data = data.frame(x = c(1.2, 2.2), y = c(1, 1), label = c("Fox News", "MSNBC")),
-            aes(x = x, y = y, label = label), hjust = 0, size = 4) +
-  scale_color_manual(values = c("Fox" = "#1f78b4", "Msnbc" = "#33a02c")) +
+key_data <- data.frame(
+  x = c(1, 2, 3, 4),
+  y = c(1, 1, 1, 1),
+  label = c("Fox News", "MSNBC", "Mean", "Median"),
+  color = c("#1f78b4", "#33a02c", "blue", "green"),
+  shape = c(21, 21, 23, 22)
+)
+
+key <- ggplot(key_data, aes(x = x, y = y, fill = color, shape = shape)) +
+  geom_point(size = 5) +
+  geom_text(aes(label = label), hjust = -0.2, size = 4) +
+  scale_fill_identity() +
+  scale_shape_identity() +
   theme_void() +
-  theme(legend.position = "none") +
-  xlim(0.5, 3) + ylim(0.5, 1.5)
+  xlim(0.5, 5) + ylim(0.5, 1.5)
 
 # Combine the main plot and key
 combined_plot <- grid.arrange(p, key, ncol = 1, heights = c(10, 1))
 
 # Add explanatory note with larger font size
-note <- "Note: This chart shows the distribution of electoral votes for Kamala Harris based on different news sources.\nThe boxes represent the interquartile range, with the middle line showing the median.\nThe points represent individual trials. The dashed red line marks the 270 votes needed to win."
+note <- "Note: This chart shows the distribution of electoral votes for Kamala Harris based on different news sources.\nThe boxes represent the interquartile range, with the middle line showing the median.\nThe points represent individual trials. Blue triangles show the mean and green squares show the median for each voice.\nThe dashed red line marks the 270 votes needed to win."
 
 grid.arrange(combined_plot, 
              bottom = textGrob(note, x = 0, hjust = 0, vjust = 1, 
-                               gp = gpar(fontsize = 11, lineheight = 1.2)))  # Increased font size and line height
+                               gp = gpar(fontsize = 11, lineheight = 1.2)))

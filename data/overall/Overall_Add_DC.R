@@ -57,7 +57,7 @@ process_single_file <- function(file_path, output_directory) {
 # Main execution
 
 # Specify the exact file to process
-input_file <- "/Users/jaredblack/GitHub/ElectionGPT/data/overall/election_results_FOX_2024-10-16_12-07-58.xlsx"
+input_file <- "/Users/jaredblack/GitHub/ElectionGPT/data/overall/election_results_BBC_2024-10-17_10-24-34.xlsx"
 
 # Specify the output directory
 output_directory <- "/Users/jaredblack/GitHub/ElectionGPT/data/overall/"
