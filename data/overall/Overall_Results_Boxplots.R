@@ -19,8 +19,8 @@ electoral_votes <- data.frame(
                       3, 3, 3)
 )
 
-# Read the panel data from the CSV file
-panel_data <- read_csv("/Users/jaredblack/GitHub/ElectionGPT/data/overall/panel_overall_election_results.csv")
+# Read the panel data from the new CSV file
+panel_data <- read_csv("/Users/jaredblack/GitHub/ElectionGPT/data/overall/overall_election_results_17Oct.csv")
 
 # Merge panel data with electoral votes
 merged_data <- panel_data %>%
@@ -45,10 +45,10 @@ p <- ggplot(merged_data, aes(x = Harris_Electoral_Votes, y = Voice, fill = Voice
   geom_vline(xintercept = 270, linetype = "dashed", color = "darkred", size = 1) +
   geom_point(data = voice_stats, aes(x = Mean, y = Voice), shape = 23, size = 3, fill = "blue") +
   geom_point(data = voice_stats, aes(x = Median, y = Voice), shape = 22, size = 3, fill = "green") +
-  scale_fill_manual(values = c("Fox" = "#1f78b4", "Msnbc" = "#33a02c")) +
-  scale_color_manual(values = c("Fox" = "#1f78b4", "Msnbc" = "#33a02c")) +
+  scale_fill_manual(values = c("Fox" = "#1f78b4", "Msnbc" = "#33a02c", "Bbc" = "#e31a1c")) +
+  scale_color_manual(values = c("Fox" = "#1f78b4", "Msnbc" = "#33a02c", "Bbc" = "#e31a1c")) +
   labs(title = "Electoral Votes for Kamala Harris by News Reader",
-       subtitle = "Based on 1000 trials per news reader voice",
+       subtitle = "Based on multiple trials per news reader voice",
        x = "Electoral Votes for Harris",
        y = "News Voice") +
   theme_fivethirtyeight() +
@@ -60,15 +60,15 @@ p <- ggplot(merged_data, aes(x = Harris_Electoral_Votes, y = Voice, fill = Voice
     axis.text = element_text(size = 10),
     plot.margin = margin(10, 10, 60, 10)  # Increase bottom margin for larger note
   ) +
-  annotate("text", x = 270, y = 1.5, label = "270 Votes to Win", color = "darkred", angle = 90, vjust = -0.5, size = 4)
+  annotate("text", x = 270, y = 2, label = "270 Votes to Win", color = "darkred", angle = 90, vjust = -0.5, size = 4)
 
 # Create a key/legend
 key_data <- data.frame(
-  x = c(1, 2, 3, 4),
-  y = c(1, 1, 1, 1),
-  label = c("Fox News", "MSNBC", "Mean", "Median"),
-  color = c("#1f78b4", "#33a02c", "blue", "green"),
-  shape = c(21, 21, 23, 22)
+  x = c(1, 2, 3, 4, 5),
+  y = c(1, 1, 1, 1, 1),
+  label = c("Fox News", "MSNBC", "BBC", "Mean", "Median"),
+  color = c("#1f78b4", "#33a02c", "#e31a1c", "blue", "green"),
+  shape = c(21, 21, 21, 23, 22)
 )
 
 key <- ggplot(key_data, aes(x = x, y = y, fill = color, shape = shape)) +
@@ -77,7 +77,7 @@ key <- ggplot(key_data, aes(x = x, y = y, fill = color, shape = shape)) +
   scale_fill_identity() +
   scale_shape_identity() +
   theme_void() +
-  xlim(0.5, 5) + ylim(0.5, 1.5)
+  xlim(0.5, 6) + ylim(0.5, 1.5)
 
 # Combine the main plot and key
 combined_plot <- grid.arrange(p, key, ncol = 1, heights = c(10, 1))

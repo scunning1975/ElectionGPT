@@ -19,7 +19,7 @@ load_news_file <- function(filepath) {
 }
 
 # Load the news file (update the path to your news data file)
-news_filepath <- "/Users/jaredblack/GitHub/ElectionGPT/data/news/news_data_cleaned_2024-10-14_15-13-46.json"
+news_filepath <- "/Users/jaredblack/GitHub/ElectionGPT/data/news/news_data_cleaned_2024-10-16_11-39-32.json"
 news_content <- load_news_file(news_filepath)
 
 # Total number of news stories loaded
