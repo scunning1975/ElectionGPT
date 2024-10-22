@@ -25,7 +25,7 @@ process_file <- function(file_path) {
   date <- as_date(str_sub(date_time_str, 1, 10))
   
   # Extract voice from filename using case-insensitive regex
-  voice_match <- str_match(file_name, regex("DC_election_results_(direct|Fox|MSNBC|BBC)_\\d{4}-\\d{2}-\\d{2}_\\d{2}-\\d{2}-\\d{2}\\.xlsx$", ignore_case = TRUE))
+  voice_match <- str_match(file_name, regex("DC_election_results_(Fox|MSNBC|BBC)_\\d{4}-\\d{2}-\\d{2}_\\d{2}-\\d{2}-\\d{2}\\.xlsx$", ignore_case = TRUE))
   if (is.na(voice_match[1,2])) {
     cat("Error: Filename does not contain voice in expected format.\n")
     return(NULL)
