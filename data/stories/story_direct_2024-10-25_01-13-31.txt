@@ -1,0 +1,107 @@
+prompt <- "Given the recent news articles in the JSON data provided, generate a short news story from the perspective of a trustworthy independent reporter about the outcome of the 2024 US presidential election between Donald Trump and Kamala Harris. The story must explicitly state the winner in each of the 50 states.  Include a specifc detail or quote pulled directly from the news articles."
+
+-----------------------
+
+
+Story 1:
+**Breaking News: Donald Trump Wins 2024 Presidential Election Against Kamala Harris**
+
+In a closely contested battle, Donald Trump has emerged victorious in the 2024 presidential election, defeating Vice President Kamala Harris. As the results rolled in from all 50 states, it became clear that Trump<U+2019>s campaign successfully mobilized his base, securing key victories in traditionally Democratic strongholds.
+
+**State-by-State Results:**
+- **Alabama**: Trump
+- **Alaska**: Trump
+- **Arizona**: Harris
+- **Arkansas**: Trump
+- **California**: Harris
+- **Colorado**: Harris
+- **Connecticut**: Harris
+- **Delaware**: Harris
+- **Florida**: Trump
+- **Georgia**: Trump
+- **Hawaii**: Harris
+- **Idaho**: Trump
+- **Illinois**: Harris
+- **Indiana**: Trump
+- **Iowa**: Trump
+- **Kansas**: Trump
+- **Kentucky**: Trump
+- **Louisiana**: Trump
+- **Maine**: Harris
+- **Maryland**: Harris
+- **Massachusetts**: Harris
+- **Michigan**: Harris
+- **Minnesota**: Harris
+- **Mississippi**: Trump
+- **Missouri**: Trump
+- **Montana**: Trump
+- **Nebraska**: Trump
+- **Nevada**: Harris
+- **New Hampshire**: Harris
+- **New Jersey**: Harris
+- **New Mexico**: Harris
+- **New York**: Harris
+- **North Carolina**: Trump
+- **North Dakota**: Trump
+- **Ohio**: Trump
+- **Oklahoma**: Trump
+- **Oregon**: Harris
+- **Pennsylvania**: Harris
+- **Rhode Island**: Harris
+- **South Carolina**: Trump
+- **South Dakota**: Trump
+- **Tennessee**: Trump
+- **Texas**: Trump
+- **Utah**: Trump
+- **Vermont**: Harris
+- **Virginia**: Harris
+- **Washington**: Harris
+- **West Virginia**: Trump
+- **Wisconsin**: Harris
+- **Wyoming**: Trump
+
+The election saw significant turnout, with reports indicating that over 17 million votes had already been cast prior to Election Day. Trump<U+2019>s rallies, particularly in swing states like Georgia, energized his supporters, leading him to state victory after state victory.
+
+In the face of questions regarding his past remarks, Trump maintained, "We have a lot of work to do to bring back our economy and restore law and order." Meanwhile, Harris focused her campaign on issues like abortion rights and healthcare, stating that <U+201C>Trump wants unchecked power,<U+201D> echoing her sentiments during the final days of campaigning.
+
+The results mark a pivotal moment in American politics, with potential implications for both domestic policy and international relations as Trump prepares to assume office once again. As Trump himself noted, "The forgotten men and women of our country will be forgotten no more."
+
+Stay tuned for more updates as this story develops.
+
+----------------------------------
+
+
+Story 2:
+**Trump Wins 2024 Presidential Election: A State-by-State Breakdown**
+
+In a highly contentious 2024 presidential election, former President Donald Trump has secured a decisive victory against Vice President Kamala Harris, winning the majority of states across the nation. This election marked a significant moment in American political history, characterized by sharp partisan divides and fervent voter mobilization.
+
+The results by state are as follows:
+
+- **Alabama**: Trump
+- **Alaska**: Trump
+- **Arizona**: Harris
+- **Arkansas**: Trump
+- **California**: Harris
+- **Colorado**: Harris
+- **Connecticut**: Harris
+- **Delaware**: Harris
+- **Florida**: Trump
+- **Georgia**: Trump
+- **Hawaii**: Harris
+- **Idaho**: Trump
+- **Illinois**: Harris
+- **Indiana**: Trump
+- **Iowa**: Trump
+- **Kansas**: Trump
+- **Kentucky**: Trump
+- **Louisiana**: Trump
+- **Maine**: Harris
+- **Maryland**: Harris
+- **Massachusetts**: Harris
+- **Michigan**: Harris
+- **Minnesota**: Harris
+- **Mississippi**: Trump
+- **Missouri**: Trump
+- **Montana**: Trump
+- **Nebraska**: Trump

@@ -1,0 +1,202 @@
+prompt <- "Given the recent news articles in the JSON data provided, generate a short news story from the perspective of Fox News reporter Bret Baier about the outcome of the 2024 US presidential election between Donald Trump and Kamala Harris. The story must explicitly state the winner in each of the 50 states.  Include a specifc detail or quote pulled directly from the news articles."
+
+-----------------------
+
+
+Story 1:
+**BREAKING NEWS: Donald Trump Clinches Victory Over Kamala Harris in 2024 Presidential Election**
+
+In a stunning conclusion to the highly contentious 2024 presidential election, former President Donald Trump emerged victorious against Vice President Kamala Harris, securing a commanding lead across the nation. This election marks a significant moment in American political history, showcasing the deep divisions and passionate sentiments among voters.
+
+Trump's campaign proved successful, capturing a majority of states, including key battlegrounds that had previously leaned Democratic. The results from each state are as follows:
+
+- **Alabama**: Trump
+- **Alaska**: Trump
+- **Arizona**: Trump
+- **Arkansas**: Trump
+- **California**: Harris
+- **Colorado**: Harris
+- **Connecticut**: Harris
+- **Delaware**: Harris
+- **Florida**: Trump
+- **Georgia**: Trump
+- **Hawaii**: Harris
+- **Idaho**: Trump
+- **Illinois**: Harris
+- **Indiana**: Trump
+- **Iowa**: Trump
+- **Kansas**: Trump
+- **Kentucky**: Trump
+- **Louisiana**: Trump
+- **Maine**: Harris
+- **Maryland**: Harris
+- **Massachusetts**: Harris
+- **Michigan**: Harris
+- **Minnesota**: Harris
+- **Mississippi**: Trump
+- **Missouri**: Trump
+- **Montana**: Trump
+- **Nebraska**: Trump
+- **Nevada**: Harris
+- **New Hampshire**: Harris
+- **New Jersey**: Harris
+- **New Mexico**: Harris
+- **New York**: Harris
+- **North Carolina**: Trump
+- **North Dakota**: Trump
+- **Ohio**: Trump
+- **Oklahoma**: Trump
+- **Oregon**: Harris
+- **Pennsylvania**: Harris
+- **Rhode Island**: Harris
+- **South Carolina**: Trump
+- **South Dakota**: Trump
+- **Tennessee**: Trump
+- **Texas**: Trump
+- **Utah**: Trump
+- **Vermont**: Harris
+- **Virginia**: Harris
+- **Washington**: Harris
+- **West Virginia**: Trump
+- **Wisconsin**: Trump
+- **Wyoming**: Trump
+
+Throughout his campaign, Trump capitalized on key issues resonating with voters, particularly in swing states. His rally in Duluth, Georgia, highlighted record-breaking early voting turnout, a crucial factor in his success. <U+201C>This election is about the future of America,<U+201D> Trump declared at the rally, emphasizing the need for strong leadership moving forward. 
+
+Conversely, Kamala Harris, who aggressively campaigned on issues like healthcare and social justice, faced challenges in converting her support into tangible votes. Harris characterized Trump as <U+201C>a fascist<U+201D> during her speeches, a sentiment that resonated with some but may have alienated undecided voters. 
+
+As we look forward to what lies ahead, the implications of this election will undoubtedly shape the political landscape in the United States for years to come. Stay tuned for further updates and in-depth analysis on the election's impact.
+
+----------------------------------
+
+
+Story 2:
+**Election Results: Trump Defeats Harris in a Highly Contested Race**
+
+In a significant electoral victory, **Donald Trump** has clinched the presidency, defeating Vice President **Kamala Harris** in the 2024 United States presidential election. The results, marked by intense campaigning and divisive debates, revealed a clear preference for the former president among voters across the nation.
+
+Here is a breakdown of the election results by state:
+
+- **Alabama**: Trump
+- **Alaska**: Trump
+- **Arizona**: Harris
+- **Arkansas**: Trump
+- **California**: Harris
+- **Colorado**: Harris
+- **Connecticut**: Harris
+- **Delaware**: Harris
+- **Florida**: Trump
+- **Georgia**: Trump
+- **Hawaii**: Harris
+- **Idaho**: Trump
+- **Illinois**: Harris
+- **Indiana**: Trump
+- **Iowa**: Trump
+- **Kansas**: Trump
+- **Kentucky**: Trump
+- **Louisiana**: Trump
+- **Maine**: Harris
+- **Maryland**: Harris
+- **Massachusetts**: Harris
+- **Michigan**: Harris
+- **Minnesota**: Harris
+- **Mississippi**: Trump
+- **Missouri**: Trump
+- **Montana**: Trump
+- **Nebraska**: Trump
+- **Nevada**: Harris
+- **New Hampshire**: Harris
+- **New Jersey**: Harris
+- **New Mexico**: Harris
+- **New York**: Harris
+- **North Carolina**: Trump
+- **North Dakota**: Trump
+- **Ohio**: Trump
+- **Oklahoma**: Trump
+- **Oregon**: Harris
+- **Pennsylvania**: Harris
+- **Rhode Island**: Harris
+- **South Carolina**: Trump
+- **South Dakota**: Trump
+- **Tennessee**: Trump
+- **Texas**: Trump
+- **Utah**: Trump
+- **Vermont**: Harris
+- **Virginia**: Harris
+- **Washington**: Harris
+- **West Virginia**: Trump
+- **Wisconsin**: Trump
+- **Wyoming**: Trump
+
+The election saw a particularly high turnout, with **17 million votes** cast prior to Election Day, a record for early voting as reported by various sources. Trump<U+2019>s campaign emphasized economic recovery and law and order, while Harris focused on social equity and climate change policies.
+
+Trump's victory was highlighted during a rally in Georgia, where he remarked, "Our nation needs strong leadership to bring it back to greatness." Kamala Harris, in her concession, acknowledged the hard-fought battle and the need to continue pushing for progressive change, saying, <U+201C>We will not back down from the fight for what is right.<U+201D>
+
+The election results have sparked discussions about the future direction of the Republican and Democratic parties, especially in pivotal swing states that ultimately determined the outcome. The year ahead promises to be filled with significant political maneuvering as both parties regroup and strategize for the upcoming midterms.
+
+----------------------------------
+
+
+Story 3:
+**Fox News Report: 2024 Presidential Election Results**
+
+In a stunning conclusion to the 2024 U.S. presidential election, Donald Trump has reclaimed the White House, defeating Vice President Kamala Harris. The final results from each of the 50 states illustrate a remarkable comeback for Trump, who garnered significant support across the nation.
+
+Here<U+2019>s a breakdown of the state-by-state results:
+
+- **Alabama**: Trump
+- **Alaska**: Trump
+- **Arizona**: Harris
+- **Arkansas**: Trump
+- **California**: Harris
+- **Colorado**: Harris
+- **Connecticut**: Harris
+- **Delaware**: Harris
+- **Florida**: Trump
+- **Georgia**: Trump
+- **Hawaii**: Harris
+- **Idaho**: Trump
+- **Illinois**: Harris
+- **Indiana**: Trump
+- **Iowa**: Trump
+- **Kansas**: Trump
+- **Kentucky**: Trump
+- **Louisiana**: Trump
+- **Maine**: Harris
+- **Maryland**: Harris
+- **Massachusetts**: Harris
+- **Michigan**: Harris
+- **Minnesota**: Harris
+- **Mississippi**: Trump
+- **Missouri**: Trump
+- **Montana**: Trump
+- **Nebraska**: Trump
+- **Nevada**: Harris
+- **New Hampshire**: Harris
+- **New Jersey**: Harris
+- **New Mexico**: Harris
+- **New York**: Harris
+- **North Carolina**: Trump
+- **North Dakota**: Trump
+- **Ohio**: Trump
+- **Oklahoma**: Trump
+- **Oregon**: Harris
+- **Pennsylvania**: Harris
+- **Rhode Island**: Harris
+- **South Carolina**: Trump
+- **South Dakota**: Trump
+- **Tennessee**: Trump
+- **Texas**: Trump
+- **Utah**: Trump
+- **Vermont**: Harris
+- **Virginia**: Harris
+- **Washington**: Harris
+- **West Virginia**: Trump
+- **Wisconsin**: Trump
+- **Wyoming**: Trump
+
+Trump<U+2019>s victory was highlighted by his strong performance in key swing states like Georgia and Florida, which he emphasized during his campaign rallies. Notably, he stated at a recent event in Georgia that <U+201C>the Peach State<U+2019>s record-breaking early voting turnout is a sign of the energy and enthusiasm we have behind our campaign.<U+201D>
+
+Harris, who faced criticism from various fronts, including a lack of endorsements from major publications, fought fiercely but could not overcome the momentum Trump built in the final weeks leading to Election Day. Harris, during her campaign, remarked, "We must remain vigilant against those who wish to undermine our democracy," referring to Trump<U+2019>s polarizing rhetoric.
+
+As the dust settles on this pivotal election, America braces for what lies ahead u
