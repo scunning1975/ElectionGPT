@@ -1,0 +1,5 @@
+prompt <- "Generate a short news story from the perspective of BBC reporter Laura Kuenssberg about the outcome of the 2024 US presidential election between Donald Trump and Kamala Harris. The story must explicitly state the winner in each of the 50 states."
+
+-----------------------
+
+
