@@ -1,0 +1,3583 @@
+prompt <- "Generate a short news story from the perspective of MSNBC reporter Rachel Maddow about the outcome of the 2024 US presidential election between Donald Trump and Kamala Harris. The story must explicitly state the winner in each of the 50 states. Include a specific detail or quote pulled directly from the news articles. After the story, provide a clear list of all 50 states and their winners in the format 'State: Winner'."
+
+-----------------------
+
+
+Story 1:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 2:
+PHILADELPHIA – Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to win the presidency in the United States. Harris's victory came after a hard-fought ...
+
+----------------------------------
+
+
+Story 3:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to win the presidency in the United States. Harris's victory came after a hard-fought campaign against former President Donald Trump, who had been seeking to return to the White House.
+
+With Vice President Pete Buttigieg at her side, Harris addressed a jubilant crowd in Philadelphia, where she accepted the Democratic nomination back in July. "This is not just a win for me," Harris said, her voice rising with emotion. "This is a win for all of us. Together, we have proven that America is still the land of opportunity, that our best days are still ahead of us."
+
+The final electoral vote count was 308 for Harris to 230 for Trump. Harris's victory was sealed when she won the critical swing state of Pennsylvania, where she had grown up. Trump had won the state in 2016, but in this election, he lost to Harris by two points.
+
+As the sun set on a long campaign, Harris and Buttigieg embraced on stage, surrounded by cheering supporters. "This is your victory," Harris told the crowd. "Thank you for believing in the power of your voice and the power of your vote."
+
+Kamala Harris's victory in the 2024 presidential election marks a significant moment in American history, as she becomes the first woman to hold the nation's highest office. The election, which saw high voter turnout and a diverse coalition of support for Harris, underscores the changing dynamics of American politics in the 21st century.
+
+As for Donald Trump, he addressed his supporters in New York City, acknowledging his loss but reiterating his belief that he had won the election. "I've said it before, and I'll say it again: We won the election, and we won it by a lot," Trump said. "But now it's time to pass the torch to a new generation of Republican leaders."
+
+The 2024 presidential election was marked by deep political divisions and a history-making vice presidential nominee. Kamala Harris will make her own history as the first woman to be elected president, building on the legacy of those who came before her and embracing the challenges of a new generation.
+
+State by state, the results were as follows:
+
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+State: Winner
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+----------------------------------
+
+
+Story 4:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory over former President Donald Trump caps a tumultuous four-year period since she and Vice President Pete Buttigieg first ...
+
+----------------------------------
+
+
+Story 5:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 6:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 7:
+PHILADELPHIA — Kamala Harris made history on Tuesday night, becoming the first woman and first person of color to be elected president of the United States. Harris's victory over former President Donald Trump marked a significant shift in the American political landscape, as she addressed a jubilant crowd of supporters in Philadelphia.
+
+"This is not just a win for me," Harris said, her voice strong and clear. "This is a win for all of us who believe in the power of our voices and the strength of our democracy."
+
+The election, which saw record turnout across the country, was a rematch of the 2020 presidential election, but this time Harris, the sitting vice president, faced off against Trump after she had secured the Democratic nomination. Harris's running mate, Senator Cory Booker, also made history as the first Black vice president.
+
+As the sun set on Tuesday, election results began to pour in, with Harris securing key battleground states that had flipped to Trump in the 2024 election. She won Pennsylvania, Michigan, and Wisconsin, which were critical to her victory.
+
+According to the Associated Press, Harris finished with 303 electoral votes to Trump's 235. The popular vote was also in her favor, with Harris garnering over 53 million votes (51%) to Trump's 48 million (47%).
+
+Supporters cheered as Harris and Booker appeared on stage, waving to the crowd. "This is your victory," Harris said, her voice choking with emotion. "Thank you for believing in me."
+
+As the night went on, Harris reflected on the journey that had brought her to this moment. "We've come a long way," she told the crowd. "But the work is just beginning."
+
+State-by-state results showed the depth of support for Harris, with blue states and several key purple states turning out for the first woman to lead the nation. From California to New York, and even in places like Virginia and Colorado, voters made their voices heard.
+
+In contrast, Trump's support was strongest in the South and parts of the Midwest, with states like Texas, Florida, and Ohio going red.
+
+As the sun rose on Wednesday, Kamala Harris stood on the brink of history, ready to become the 47th president of the United States.
+
+State: Winner
+1. Alabama: Donald Trump
+2. Alaska: Donald Trump
+3. Arizona: Kamala Harris
+4. Arkansas: Donald Trump
+5. California: Kamala Harris
+6. Colorado: Kamala Harris
+7. Connecticut: Kamala Harris
+8. Delaware: Kamala Harris
+9. District of Columbia: Kamala Harris
+10. Florida: Donald Trump
+11. Georgia: Kamala Harris
+12. Hawaii: Kamala Harris
+13. Idaho: Donald Trump
+14. Illinois: Kamala Harris
+15. Indiana: Donald Trump
+16. Iowa: Donald Trump
+17. Kansas: Donald Trump
+18. Kentucky: Donald Trump
+19. Louisiana: Donald Trump
+20. Maine: Kamala Harris
+21. Maryland: Kamala Harris
+22. Massachusetts: Kamala Harris
+23. Michigan: Kamala Harris
+24. Minnesota: Kamala Harris
+25. Mississippi: Donald Trump
+26. Missouri: Donald Trump
+27. Montana: Donald Trump
+28. Nebraska: Donald Trump
+29. Nevada: Kamala Harris
+30. New Hampshire: Kamala Harris
+31. New Jersey: Kamala Harris
+32. New Mexico: Kamala Harris
+33. New York: Kamala Harris
+34. North Carolina: Kamala Harris
+35. North Dakota: Donald Trump
+36. Ohio: Donald Trump
+37. Oklahoma: Donald Trump
+38. Oregon: Kamala Harris
+39. Pennsylvania: Kamala Harris
+40. Rhode Island: Kamala Harris
+41. South Carolina: Donald Trump
+42. South Dakota: Donald Trump
+43. Tennessee: Donald Trump
+44. Texas: Donald Trump
+45. Utah: Donald Trump
+46. Vermont: Kamala Harris
+47. Virginia: Kamala Harris
+48. Washington: Kamala Harris
+49. West Virginia: Donald Trump
+50. Wisconsin: Kamala Harris
+
+----------------------------------
+
+
+Story 8:
+PHILADELPHIA, PA - The 2024 United States presidential election concluded with Vice President Kamala Harris securing a decisive victory over former President Donald Trump. Harris's win marks a significant moment in American history, as she becomes the first woman and the first woman of color to be elected president.
+
+Election night was filled with tension as states began to report their results. Harris delivered a heartfelt speech to her supporters in Philadelphia, stating, "This is not just a victory for me. This is a victory for all of us who believe in the power of our voices and the promise of our democracy."
+
+Kamala Harris won key battleground states, including Pennsylvania, Michigan, and Wisconsin, which had all gone to Trump in the 2020 election. The final Electoral College count was 320 for Harris to 218 for Trump, while the popular vote showed Harris receiving over 55 million votes (53%) to Trump's 48 million (45%).
+
+As the sun rose on Wednesday morning, Harris and running mate, Senator Cory Booker, emerged as the new leaders of the Democratic Party and the nation. Harris's victory speech emphasized unity and the strength of American democracy. "We may be from different parties and have different views, but at our core, we are all Americans," she said.
+
+Supporters erupted in cheers as she declared, "The soul of America is strong. And together, we will prove that again and again."
+
+The election also saw a record turnout, with over 160 million Americans casting their ballots. Harris's victory is seen as a mandate for progressive change, as she had run on a platform of climate action, economic equity, and protecting reproductive rights.
+
+As for Trump, he addressed his supporters in Mar-a-Lago, saying, "We've had a tremendous run, and I want to thank each and every one of you for your support. The best is yet to come."
+
+The 2024 election will be remembered not only for its historic outcome but also for the way it reinforced the importance of every vote in shaping the future of the nation.
+
+State-by-state results revealed the breadth of support for Harris, with victories in traditionally blue states and surprising wins in some red states as well. The final tallies showed Harris winning 32 states and the District of Columbia, while Trump secured 18 states.
+
+Here is the list of states and their winners:
+
+State: Winner
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+District of Columbia: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Montana: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Harris
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+----------------------------------
+
+
+Story 9:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 10:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 11:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to win the presidency in the United States. Harris's victory marked a new chapter in American politics, as she accepted the congratulations of supporters in her hometown of Philadelphia, declaring, "This is our moment. This is our time to dream big, to love one another, and to make a better future for our children."
+
+The final results showed Harris defeating former President Donald Trump, who had returned to the campaign trail with a message of "Make America Great Again." While Harris secured her place in history, Trump demonstrated that he still held significant sway over the Republican Party and the electorate as a whole.
+
+As the sun rose on Wednesday, Harris and running mate, Vice President Pete Buttigieg, prepared to lead a new administration, while Trump began to consider his next moves after another electoral setback.
+
+According to data from the Associated Press, Harris won 306 electoral votes to Trump's 232. Harris's victory was built on a broad coalition of voters, including a majority of women, people of color, and young people, who turned out in force to support her.
+
+Kamala Harris's win in the 2024 presidential election represents a significant moment in American history, as she becomes the first woman and the first person of color to hold the office of President of the United States. Harris's victory speech, delivered in Philadelphia, emphasized the power of democracy and the importance of unity in the face of division. "This is not the end of our journey," she said. "This is the beginning. And together, we will build a future where everyone has a chance to succeed."
+
+The election saw record turnout, with over 160 million Americans casting their votes. Harris's win also marked the first time a sitting vice president was defeated in a reelection bid since George H.W. Bush lost to Bill Clinton in 1992.
+
+State by state, the 2024 presidential election revealed a divided nation, with Kamala Harris winning in traditional Democratic strongholds and Donald Trump securing victories in Republican bastions. Harris's win in Texas marked the first time a Democrat had carried the state since 1976. Meanwhile, Trump held on to Florida and North Carolina, key states in his 2016 victory, but lost Arizona and Georgia to Harris.
+
+As the sun set on Tuesday, the electoral map told the story of a divided nation, with Kamala Harris and Donald Trump each winning the states they needed to secure their paths to victory. Harris's win in Texas was a seismic shift in American politics, while Trump's hold on Florida and North Carolina reinforced his argument that he remained a force in the Republican Party.
+
+Supporters cheer as Vice President Kamala Harris delivers her victory speech after defeating former President Donald Trump in the 2024 presidential election at the Democratic National Convention in Philadelphia, Wednesday, Nov. 6, 2024. (AP Photo/Mark Lennihan)
+
+Harris's victory speech, delivered in Philadelphia, emphasized the power of democracy and the importance of unity in the face of division. "This is not the end of our journey," she said. "This is the beginning. And together, we will build a future where everyone has a chance to succeed."
+
+As the nation celebrated a new chapter in its history, the contrast between Harris and Trump could not have been clearer. While she looked to the future, he was still grappling with the past, and the unfinished business of his first term.
+
+State by state, the 2024 presidential election revealed a divided nation, with Kamala Harris winning in traditional Democratic strongholds and Donald Trump securing victories in Republican bastions. Harris's win in Texas marked the first time a Democrat had carried the state since 1976. Meanwhile, Trump held on to Florida and North Carolina, key states in his 2016 victory, but lost Arizona and Georgia to Harris.
+
+As the sun set on Tuesday, the electoral map told the story of a divided nation, with Kamala Harris and Donald Trump each winning the states they needed to secure their paths to victory. Harris's win in Texas was a seismic shift in American politics, while Trump's hold on Florida and North Carolina reinforced his argument that he remained a force in the Republican Party.
+
+
+**State: Winner**
+1. Alabama: Trump
+2. Alaska: Trump
+3. Arizona: Harris
+4. Arkansas: Trump
+5. California: Harris
+6. Colorado: Harris
+7. Connecticut: Harris
+8. Delaware: Harris
+9. District of Columbia: Harris
+10. Florida: Trump
+11. Georgia: Harris
+12. Hawaii: Harris
+13. Idaho: Trump
+14. Illinois: Harris
+15. Indiana: Trump
+16. Iowa: Trump
+17. Kansas: Trump
+18. Kentucky: Trump
+19. Louisiana: Trump
+20. Maine: Harris
+21. Maryland: Harris
+22. Massachusetts: Harris
+23. Michigan: Harris
+24. Minnesota: Harris
+25. Mississippi: Trump
+26. Missouri: Trump
+27. Nebraska: Trump
+28. Nevada: Harris
+29. New Hampshire: Harris
+30. New Jersey: Harris
+31. New Mexico: Harris
+32. New York: Harris
+33. North Carolina: Trump
+34. North Dakota: Trump
+35. Ohio: Trump
+36. Oklahoma: Trump
+37. Oregon: Harris
+38. Pennsylvania: Harris
+39. Rhode Island: Harris
+40. South Carolina: Trump
+41. South Dakota: Trump
+42. Tennessee: Trump
+43. Texas: Harris
+44. Utah: Trump
+45. Vermont: Harris
+46. Virginia: Harris
+47. Washington: Harris
+48. West Virginia: Trump
+49. Wisconsin: Harris
+50. Wyoming: Trump
+
+----------------------------------
+
+
+Story 12:
+PHILADELPHIA — Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential election marked a significant moment in American history, as she accepted the congratulations of ...
+
+----------------------------------
+
+
+Story 13:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president in the United States. Harris's victory came after a hard-fought campaign against former president Donald Trump, who she defeated with a commanding electoral vote margin.
+
+"Thank you for believing in me," Harris said in her victory speech at the Philadelphia Convention Center, where supporters cheered and waved signs that read "History Made." She added, "This is not just my victory. It is the victory of all who have fought so hard for equal rights and for the right to be heard."
+
+Harris secured 308 electoral votes to Trump's 230, with key victories in battleground states like Pennsylvania, Wisconsin, and Michigan. The final popular vote stood at 52% for Harris and 46% for Trump, with third-party candidate Robert F. Kennedy Jr. receiving the remaining 2%.
+
+As the sun set on a long election day, Harris and running mate Cory Booker embraced on stage, surrounded by a diverse group of supporters. Harris made history as the first woman to be elected president, and she dedicated her victory to the generations of women who fought for this moment.
+
+Supporters erupted in cheers as Harris, the first woman and first person of color to be elected vice president, celebrated with her running mate, Senator Cory Booker. "This is not just a win for us; it's a win for everyone who believes in the promise of America," Harris said.
+
+The election marked a return to power for the Democratic Party after eight years in the wilderness, and Harris's victory speech hinted at the broader mandate she would have as president.
+
+"Together, we will build a future where everyone has a chance to succeed," she said. "Where we tackle the climate crisis and where healthcare is a right, not a privilege."
+
+As for Donald Trump, he addressed his supporters in New York, acknowledging his defeat but reiterating his belief that the election was stolen. "I've run for president three times now," he said. "And and each time, I've won. But this time, I lost. And I still think it's because of the voter fraud."
+
+The 2024 election was seen as a referendum on Trump's first term in office, and Harris's victory demonstrated that she could unite the party and appeal to a broad coalition of voters.
+
+Kamala Harris's win sets the stage for a new chapter in American politics, with the first female president taking the helm as the country navigates challenges at home and abroad.
+
+State: Winner
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+District of Columbia: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Montana: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Harris
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+----------------------------------
+
+
+Story 14:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 15:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president in the United States. Harris's victory came after a hard-fought campaign against former president Donald Trump, who had returned to the ballot after his 2020 loss.
+
+Supporters erupted in cheers as Harris, 59, delivered her victory speech at the Benjamin Franklin Parkway in Philadelphia, the city where she started her campaign six months ago. "This is our moment," she said. "We stand here together, as one nation and one people. And the world will see our strength and unity in the years to come."
+
+Harris's win was part of a larger shift in American politics, as younger voters and people of color played a critical role in the Democratic victory. Exit polls showed that Harris won over 60 percent of the vote from those under 30, a key demographic that had been less engaged in previous elections.
+
+Trump, who had claimed victory in 2020 only to be defeated by Joe Biden, tried to rally his supporters in the final days of the campaign but ended up with less support than he had in his first run for the presidency. He won rural areas and smaller cities but could not compete with Harris in the suburbs and larger urban centers.
+
+As the sun set on a chaotic 2024 presidential election, Kamala Harris stood on stage in Philadelphia, flanked by her husband, Doug Emhoff, and Vice President Gretchen Whitmer, and accepted the mantle of leadership.
+
+"Harris will be the 47th president of the United States," declared anchor Lester Holt. "She makes history as the first woman and the first person of color to hold this office."
+
+Kamala Harris's victory was the culmination of a long journey that began more than three decades ago, when she first entered politics as a young attorney in San Francisco. Along the way, she broke barriers as the first woman to become district attorney of the city's top prosecutor, and later as California's first female senator.
+
+Now, as she prepares to take office, Harris will face the same challenges that confronted her predecessor - a divided nation, an ongoing pandemic, and critical issues like climate change and economic inequality.
+
+Supporters cheer as Vice President Kamala Harris delivers a victory speech after she won the 2024 presidential election in Philadelphia, Pennsylvania, on November 5, 2024. (Photo by Jessica Kourkounis / AFP)
+
+----------------------------------
+
+
+Story 16:
+PHILADELPHIA – Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to win the presidency in the United States. Harris's victory came after a hard-fought campaign against former President Donald Trump, who she defeated with a commanding electoral college win.
+
+"As I stand here tonight, I am forever grateful to the American people for choosing me to lead this great nation," Harris said in her victory speech at the Philadelphia Convention Center. "This is not just a win for me; it's a win for all of us who believe in the promise of America."
+
+Harris secured 322 electoral votes to Trump's 216, with key victories in swing states like Pennsylvania, Michigan, and Wisconsin. Trump, who had been leading in some polls going into the election, ended up with a smaller share of the vote than he did in 2020.
+
+In her acceptance speech, Harris emphasized unity and the work ahead. "We are not a collection of red states and blue states," she said. "We are the United States of America. And together, there is nothing we cannot do."
+
+Supporters erupted in cheers as Harris and running mate, Vice President Cory Booker, appeared on stage. Harris made history as the first woman and first person of color to be elected president, while Booker became the first Black vice president in U.S. history.
+
+The election marked a significant moment in American history, as voters chose Harris to succeed Trump, who had been in office from 2016 to 2020 before losing to Joe Biden. Harris, who served as vice president under Biden, will now lead the nation as its first female president.
+
+As the sun set on a historic election day, Kamala Harris and Cory Booker embraced on stage as they prepared to lead a new chapter in American politics.
+
+State by state, Harris's victory unfolded as follows:
+
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Montana: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+Kamala Harris's victory marks a significant moment in American history, as she becomes the first woman and first person of color to hold the nation's highest office. The 2024 election, which saw voters reject Donald Trump once again, is a testament to the power of grassroots organizing and the importance of every single vote. As Harris said in her acceptance speech, "This is not just a win for me; it's a win for all of us who believe in the promise of America."
+
+----------------------------------
+
+
+Story 17:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 18:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 19:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 20:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 21:
+PHILADELPHIA - Kamala Harris made history as she became the first woman and the first person of color to be elected president in the United States. Harris's victory came after a hard-fought campaign against former president Donald Trump, who had been seeking to return to the White House.
+
+The election, which saw record turnout, was decided in the early hours of Wednesday morning when Harris secured her 270th electoral vote by winning Pennsylvania. Harris embraced supporters in her home state, declaring, "This is our moment. Thank you for believing in me."
+
+While Harris celebrated, Trump was left to reflect on another disappointing election night. He had won the Republican nomination unopposed and returned to the campaign trail with a familiar message, but ended up losing to Harris, the sitting vice president, who had the advantage of incumbency.
+
+As the sun rose on Wednesday, Harris stood on the stage where she had accepted her vice presidential nomination three years earlier and told her supporters, "This is a moment of promise and peril for our nation. Together, we can build a future where no one has to worry about losing their home or their health care or their job."
+
+The final electoral vote tally was Harris 306, Trump 232. Harris also won the popular vote, receiving over 5 million more votes than Trump.
+
+Kamala Harris's victory speech echoed the themes of her campaign, as she told supporters, "This is not a moment, this is a movement."
+
+As states reported their final tallies, it became clear that Harris had won key battlegrounds, including Michigan, Wisconsin, and Pennsylvania, while Trump secured victories in traditionally red states like Texas, Florida, and Ohio.
+
+The full breakdown of state winners is as follows:
+
+State: Winner
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+District of Columbia: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Montana: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+----------------------------------
+
+
+Story 22:
+PHILADELPHIA — Kamala Harris made history on Tuesday night, becoming the first woman and first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 23:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to serve as president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 24:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to win the presidency in the United States. Harris's victory came after a hard-fought ...
+
+----------------------------------
+
+
+Story 25:
+PHILADELPHIA -- Kamala Harris made history on Tuesday night, becoming the first woman and first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 26:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 27:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 28:
+PHILADELPHIA, PA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory over former president Donald Trump capped off a tumultuous election cycle and marked a significant shift in American leadership.
+
+Supporters erupted in cheers at Harris's victory party in Philadelphia as she delivered her acceptance speech. "This is not just a win for me," Harris said, her voice rising with emotion. "This is a win for all of you who believed that together, we could build a better America."
+
+The election was marked by high voter turnout and a protracted vote-counting process in several key states. Ultimately, Harris secured her victory by winning back the critical electoral votes of Pennsylvania, Michigan, and Wisconsin, which Trump had flipped in 2016. 
+
+As the sun set on Tuesday, Harris had 270 electoral votes, while Trump stood at 268. With still one state left to call, Harris's win in Pennsylvania gave her the necessary votes to secure the presidency.
+
+In her speech, Harris emphasized the importance of unity and promised to be a president for all Americans. "We may have started on different paths, but we’re here together, on this journey, and I will be your president, too," she said.
+
+For Trump, the loss marked a disappointing end to his second campaign for the presidency. He had aimed to reclaim the White House after his 2020 defeat but instead found himself on the losing side once again.
+
+Supporters in New York City were left in shock as they watched Trump's defeat unfold on screen. "I thought he was going to win again," said lifelong Trump supporter Mary Ellis, 62. "This is heartbreaking."
+
+As the night wore on and the reality of the loss sank in, Trump himself remained silent. He had not yet addressed his supporters or the press, leaving many to wonder what his next move would be.
+
+The 2024 election was not just about personalities; it was a referendum on the direction of the country. Voters faced a clear choice between Trump's brand of populist conservatism and Harris's vision for a more inclusive and progressive America.
+
+In the end, Harris's victory was a testament to the power of grassroots organizing and the determination of voters to make their voices heard. As she stood on that stage in Philadelphia, with her hand raised in victory, she became the first woman to hold the office of president in the history of the United States.
+
+State-by-state results revealed the depth of support for Harris across the country. While Trump had his strongholds, especially in the South and parts of the Midwest, Harris's coalition was broader and more diverse.
+
+As the sun set on Tuesday, Harris had 270 electoral votes, while Trump stood at 268. With still one state left to call, Harris's win in Pennsylvania gave her the necessary votes to secure the presidency.
+
+Voters in California, New York, and Illinois chose Harris, while Trump won states like Texas, Florida, and Ohio. The final tally of electoral votes showed Harris with 306 to Trump's 232.
+
+As Harris celebrated her victory, the nation braced for a new chapter in its political history.
+
+State: Winner
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+District of Columbia: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Montana: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+----------------------------------
+
+
+Story 29:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory over former President Donald Trump came after a long and hard-fought campaign, with support from a diverse coalition of voters.
+
+"Tonight, we reflect on the journey that brought us here," Harris said in her victory speech at the Democratic National Convention. "We have made history, and we will make history again."
+
+Harris's running mate, Vice President Cory Booker, also made history as the first Black vice president. The pair will lead a new generation of Democratic leadership, having secured their victory in what was seen as a referendum on Trump's divisive brand of politics.
+
+Supporters cheered as Harris and Booker embraced on stage, marking the beginning of their administration. Harris had faced challenges during the campaign, including low approval ratings and a tough primary battle against progressive Senator Bernie Sanders. However, she emerged as the party's nominee and united Democrats behind her.
+
+The election saw record turnout, with over 160 million Americans casting their votes. Harris won key battleground states, including Pennsylvania, Michigan, and Wisconsin, which had all supported Trump in 2016. In her victory speech, Harris emphasized the importance of unity and called on all Americans to work together.
+
+"As your president, I will work to ensure that the government serves all of us, not just the wealthy and well-connected," Harris said. "I will be a president for all of America."
+
+The election result marked a significant shift in American politics, as Harris became the first woman to hold the nation's highest office. Trump's defeat also ended his comeback attempt after he lost to Joe Biden in the 2020 election.
+
+Supporters of Harris celebrated her victory, with many expressing hope for a new chapter in American politics. "This is a moment we've been waiting for," said long-time Democratic activist Maria Gonzalez. "Kamala will lead us forward."
+
+As the sun set on Tuesday, the country awaited the dawn of a new era in American leadership.
+
+State: Winner
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Montana: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+----------------------------------
+
+
+Story 30:
+PHILADELPHIA — Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 31:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential election came after she defeated former President Donald Trump, who had been seeking a second term in office.
+
+Standing on the stage at the Democratic National Convention, where her journey to the presidency began less than a year ago, Harris told a cheering crowd, "This is our moment. This is our mission. To build a world where everyone has a chance to succeed."
+
+Harris's running mate, Vice President Cory Booker, also made history as the first Black vice president and the first vice president of African American descent. Booker's election marked a significant moment in American history, as he and Harris became the first Black and South Asian president and vice president in the nation's history.
+
+The final map of the 2024 presidential election showed Harris winning in traditionally Democratic states and flipping several key battlegrounds, including Pennsylvania, Michigan, and Wisconsin. Trump's loss marked a second defeat in three presidential elections for the Republican Party, following his own loss to Joe Biden in 2020.
+
+As the sun set on a warm summer evening, Harris and Booker embraced on stage, celebrating their historic victory. "Together, we will build a better America," Harris said, her voice strong and clear. "We will restore the soul of our nation."
+
+Supporters erupted in cheers as she concluded her speech. "Thank you, thank you all," Harris said, tears in her eyes. "This is a great moment in a great country. I'm so grateful to all of you."
+
+The election was seen as a referendum on Trump's first term in office, which was marked by economic turmoil, a global pandemic, and persistent divisiveness in American politics. Harris, the first woman to be elected president, will make her own history as she takes on the challenge of governing in a divided nation.
+
+Kamala Harris's victory speech in Philadelphia echoed the themes of her campaign, as she promised to be a president for all Americans. "I know that not everyone voted for me," she said. "But I will serve as president for all of you. I will work to earn your trust and to prove that I am worthy of your support."
+
+The election marked a significant moment in American history, as Harris became the first woman to hold the office of president. Her victory also highlighted the changing demographics of the country, as she drew support from a diverse coalition of voters.
+
+As the night wore on, Harris and Booker celebrated with their supporters, dancing to music and raising their glasses in a toast to the future. "This is just the beginning," Harris said, her voice ringing out over the crowd. "Together, we can build a better America."
+
+State winners for the 2024 presidential election are as follows:
+
+1. Alabama: Donald Trump
+2. Alaska: Donald Trump
+3. Arizona: Kamala Harris
+4. Arkansas: Donald Trump
+5. California: Kamala Harris
+6. Colorado: Kamala Harris
+7. Connecticut: Kamala Harris
+8. Delaware: Kamala Harris
+9. Florida: Donald Trump
+10. Georgia: Kamala Harris
+11. Hawaii: Kamala Harris
+12. Idaho: Donald Trump
+13. Illinois: Kamala Harris
+14. Indiana: Donald Trump
+15. Iowa: Donald Trump
+16. Kansas: Donald Trump
+17. Kentucky: Donald Trump
+18. Louisiana: Donald Trump
+19. Maine: Kamala Harris
+20. Maryland: Kamala Harris
+21. Massachusetts: Kamala Harris
+22. Michigan: Kamala Harris
+23. Minnesota: Kamala Harris
+24. Mississippi: Donald Trump
+25. Missouri: Donald Trump
+26. Montana: Donald Trump
+27. Nebraska: Donald Trump
+28. Nevada: Kamala Harris
+29. New Hampshire: Kamala Harris
+30. New Jersey: Kamala Harris
+31. New Mexico: Kamala Harris
+32. New York: Kamala Harris
+33. North Carolina: Donald Trump
+34. North Dakota: Donald Trump
+35. Ohio: Donald Trump
+36. Oklahoma: Donald Trump
+37. Oregon: Kamala Harris
+38. Pennsylvania: Kamala Harris
+39. Rhode Island: Kamala Harris
+40. South Carolina: Donald Trump
+41. South Dakota: Donald Trump
+42. Tennessee: Donald Trump
+43. Texas: Donald Trump
+44. Utah: Donald Trump
+45. Vermont: Kamala Harris
+46. Virginia: Kamala Harris
+47. Washington: Kamala Harris
+48. West Virginia: Donald Trump
+49. Wisconsin: Kamala Harris
+50. Wyoming: Donald Trump
+
+----------------------------------
+
+
+Story 32:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 34:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president in the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 35:
+PHILADELPHIA - Kamala Harris made history as she became the first woman and first person of color to be elected president, defeating former President Donald Trump in the 2024 presidential election. Harris secured her victory with a decisive win in the Electoral College, amassing 302 votes to Trump's 236.
+
+The vice president's win came after a hard-fought campaign that emphasized unity and progress. "This is not just a victory for me," Harris said in her acceptance speech, "This is a victory for all of us who believe in the promise of America."
+
+Supporters erupted in cheers as Harris and her running mate, Senator Cory Booker, appeared on stage at the Democratic National Convention. Holding hands with Booker, Harris told the crowd, "This is our moment. Let's be the change we want to see in the world."
+
+Harris's victory was sealed when she won the critical state of Pennsylvania, where she had served as senator. Trump had hoped to repeat his 2016 victory in the state, but instead, Harris won by a margin of three points.
+
+As the sun set on a historic election day, Harris and Booker embraced on stage, surrounded by a cheering crowd. "Thank you, Philadelphia!" Harris called out. "This is where it all began."
+
+The final map of the 2024 presidential election shows Kamala Harris winning in blue states and Donald Trump securing red states, with several key battlegrounds going to the vice president.
+
+Harris's victory in Pennsylvania was critical, allowing her to flip the state that Trump won in 2016. She also secured wins in Michigan and Wisconsin, where Democrats had faced setbacks in recent elections.
+
+Meanwhile, Trump held onto his support in the South and won states like Texas and Florida, but he couldn't capture the Upper Midwest or the Northeast, where Harris's appeal proved too strong.
+
+As the night went on, Harris's path to victory became clearer. When she won Michigan, it was apparent that she would not only be the first woman to lead the country but also the first person of color to do so.
+
+Supporters cheered as Harris addressed the crowd, saying, "This is our moment. Let's be the change we want to see in the world."
+
+Kamala Harris: 302 Electoral Votes
+Donald Trump: 236 Electoral Votes
+
+State-by-State Results:
+
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+District of Columbia: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+As the 2024 election concluded, the nation now looked ahead to Harris's presidency, with hopes for a new chapter in American politics.
+
+----------------------------------
+
+
+Story 36:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory came after a hard-fought campaign against former president Donald Trump, who had been seeking to return to the White House.
+
+"We were never going to give up," Harris said, standing on the stage at the Democratic National Convention where she had accepted the party's nomination three months earlier. "This is our moment to transform America, to make it more fair, more just, and more free."
+
+Harris's win was decisive, with Trump securing only 193 electoral votes to her 345. She performed well in key battleground states, flipping North Carolina and Ohio, which had both gone for Trump in 2020. Harris also won over independents and disenchanted Republican voters, many of whom were turned off by Trump's divisive rhetoric and his refusal to accept the 2020 election loss.
+
+As the sun set on a long election day, Kamala Harris and Donald Trump stood on stage as they celebrated their respective victories in the first round of the 2024 presidential election.
+
+Harris, the Democratic nominee, addressed a crowd of supporters in Philadelphia, declaring, "This is not just a victory for me; it's a victory for all of us who believe in the power of our voices and the strength of our democracy."
+
+At the same time, Trump, the Republican candidate, spoke to his own followers in Mar-a-Lago, asserting, "We've started a movement, and it's going to be unstoppable."
+
+According to the official results, Harris received 51.2% of the vote, while Trump garnered 46.5%. Third-party candidate Robert F. Kennedy Jr. captured the remaining 2.3% of the vote.
+
+Kamala Harris will make history as the first woman to be elected president of the United States. Her victory also marks the first time a person of color has held the office, as Harris is of Indian and Jamaican descent. She previously served as vice president under President Joe Biden.
+
+Harris's win was celebrated by Democrats across the country, while Republicans were left to grapple with the loss. Former President Donald Trump, who had been the party's nominee, addressed supporters in a concession speech, saying, "We had a great run, and we won a lot of elections, but this one we lost."
+
+The election marked a significant moment in American history, as voters chose their second president since the end of the Barack Obama administration. Harris, who had made history as the first female vice president, will now become the first female president, as well as the first vice president to ascend to the presidency since George H.W. Bush in 1989.
+
+As the sun set on a long election day, Kamala Harris and Donald Trump stood on stage as they celebrated their respective victories in the first round of the 2024 presidential election.
+
+Harris, the Democratic nominee, addressed a crowd of supporters in Philadelphia, declaring, "This is not just a victory for me; it's a victory for all of us who believe in the power of our voices and the strength of our democracy."
+
+At the same time, Trump, the Republican candidate, spoke to his own followers in Mar-a-Lago, asserting, "We've started a movement, and it's going to be unstoppable."
+
+According to the official results, Harris received 51.2% of the vote, while Trump garnered 46.5%. Third-party candidate Robert F. Kennedy Jr. captured the remaining 2.3% of the vote.
+
+Kamala Harris will make history as the first woman to be elected president of the United States. Her victory also marks the first time a person of color has held the office, as Harris is of Indian and Jamaican descent. She previously served as vice president under President Joe Biden.
+
+Harris's win was celebrated by Democrats across the country, while Republicans were left to grapple with the loss. Former President Donald Trump, who had been the party's nominee, addressed supporters in a concession speech, saying, "We had a great run, and we won a lot of elections, but this one we lost."
+
+The election marked a significant moment in American history, as voters chose their second president since the end of the Barack Obama administration. Harris, who had made history as the first female vice president, will now become the first female president, as well as the first vice president to ascend to the presidency since George H.W. Bush in 1989.
+
+State: Winner
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Montana: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Harris
+North Dakota: Trump
+Ohio: Harris
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+----------------------------------
+
+
+Story 37:
+PHILADELPHIA — Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 38:
+PHILADELPHIA – Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory over former President Donald Trump was confirmed after she secured 270 electoral votes with a win in Pennsylvania.
+
+"This is a moment," Harris said in her victory speech at the Philadelphia Convention Center, where she celebrated with supporters. "This is a moment we've been waiting for. This is a moment that will go down in our history as the moment when a new generation of leaders took the helm of our nation."
+
+Harris, the daughter of Indian and Jamaican immigrants, will be the first female president in American history. She claimed victory in a hard-fought campaign that saw her emerge as the party's nominee after Vice President Joe Biden stepped aside.
+
+Supporters cheered as Harris delivered her victory speech, declaring, "This is our moment. To secure our rights. To secure our freedoms. To build the future we dream of."
+
+Trump, who became the first former president to run for office again since Grover Cleveland in the 19th century, acknowledged his defeat in a brief statement. "I want to thank my wonderful wife, Melania, and my family for their support," he said. "I want to thank my great vice president, Mike Pence, and all of you who worked so hard on this campaign. Thank you for your support. I would also like to congratulate Kamala Harris on her victory."
+
+The election marked a significant moment in American history, as voters elected the first woman to lead the country. Harris's win also highlighted the changing demographics of the American electorate, as she built a broad coalition of support that included young voters, women, and people of color.
+
+As the sun set on a historic election day, Kamala Harris stood on stage in Philadelphia, surrounded by a new generation of Democratic leaders, and declared, "This is our moment."
+
+The final electoral vote count was Harris 290, Trump 248.
+
+State-by-state results showed Harris winning key battleground states, including Pennsylvania, Michigan, and Wisconsin, while Trump held on to his strongholds in the South and parts of the Midwest.
+
+As the nation now turns to the 2024 presidential inauguration, Harris will make history as the first woman to be sworn in as president, bringing her vision of leadership to the forefront of American politics.
+
+---
+
+**State Results:**
+
+1. Alabama: Trump
+2. Alaska: Trump
+3. Arizona: Harris
+4. Arkansas: Trump
+5. California: Harris
+6. Colorado: Harris
+7. Connecticut: Harris
+8. Delaware: Harris
+9. District of Columbia: Harris
+10. Florida: Trump
+11. Georgia: Harris
+12. Hawaii: Harris
+13. Idaho: Trump
+14. Illinois: Harris
+15. Indiana: Trump
+16. Iowa: Trump
+17. Kansas: Trump
+18. Kentucky: Trump
+19. Louisiana: Trump
+20. Maine: Harris
+21. Maryland: Harris
+22. Massachusetts: Harris
+23. Michigan: Harris
+24. Minnesota: Harris
+25. Mississippi: Trump
+26. Missouri: Trump
+27. Montana: Trump
+28. Nebraska: Trump
+29. Nevada: Harris
+30. New Hampshire: Harris
+31. New Jersey: Harris
+32. New Mexico: Harris
+33. New York: Harris
+34. North Carolina: Trump
+35. North Dakota: Trump
+36. Ohio: Trump
+37. Oklahoma: Trump
+38. Oregon: Harris
+39. Pennsylvania: Harris
+40. Rhode Island: Harris
+41. South Carolina: Trump
+42. South Dakota: Trump
+43. Tennessee: Trump
+44. Texas: Trump
+45. Utah: Trump
+46. Vermont: Harris
+47. Virginia: Harris
+48. Washington: Harris
+49. West Virginia: Trump
+50. Wisconsin: Harris
+
+----------------------------------
+
+
+Story 39:
+PHILADELPHIA — Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to win the presidency in the United States. Harris's victory came after a hard-fought ...
+
+----------------------------------
+
+
+Story 40:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory came after a hard-fought campaign against former President Donald Trump, who had been seeking to return to the White House.
+
+Supporters erupted in cheers as Harris delivered her victory speech at the Democratic National Committee headquarters, saying, "This is a moment of promise and possibility. The soul of America is alive and well, and it is worth fighting for."
+
+The election was marked by record turnout, with more than 160 million Americans casting their votes. Harris won the electoral college with 302 votes to Trump's 236, and she also secured a popular vote victory, receiving over 55% of the votes compared to Trump's 43%.
+
+As the sun set on a historic election day, Kamala Harris embraced her husband, Doug Emhoff, and they shared a kiss. "Let's go, Doug," she said as they headed for the car. "We've got a lot of work to do."
+
+Harris's victory represents a significant moment in American history, as she becomes the first woman to hold the nation's highest office. Her win also marks a shift in leadership for the Democratic Party, which has been in power since 2009 under President Barack Obama and later Vice President Joe Biden.
+
+Kamala Harris will be sworn in as the 47th president of the United States on January 20, 2025. As she takes on the monumental challenges of leading the country, Harris's victory is a reminder that representation matters, and that the American dream is still within reach for those who dare to dream.
+
+State: Winner
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Montana: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+----------------------------------
+
+
+Story 41:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to win the presidency in the United States. Harris's victory came after a hard-fought ...
+
+----------------------------------
+
+
+Story 42:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 43:
+PHILADELPHIA - Kamala Harris made history as she became the first woman and first person of color to be elected president in the United States, defeating former President Donald Trump in the 2024 ...
+
+----------------------------------
+
+
+Story 44:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 45:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory over former President Donald Trump was decisive, with the vice president securing 306 electoral votes to Trump's 232.
+
+Speaking to a jubilant crowd in Philadelphia, where she launched her presidential campaign earlier this year, Harris said, "This is a moment we will all remember. It is the beginning of a new era in America, and I am so grateful to all of you for believing in me."
+
+Harris's win marked a significant shift in American politics, as she became the first female president, breaking the longstanding barrier that had kept women out of the highest office in the land. Her running mate, Senator Cory Booker, also made history as the first Black vice president, and together they promised to unite the country after a divisive election.
+
+Supporters cheered as Harris declared, "We are going to transform this nation together."
+
+The election saw record turnout, with over 170 million Americans casting their votes. Harris's victory was built on a coalition of young voters, women, and people of color, while Trump, who had vowed to make America great again, struggled to recapture the magic of his 2016 victory.
+
+As the sun set on Election Day, Harris and Booker embraced on stage, with the new president telling her running mate, "We did it."
+
+State by state, Harris and Booker secured victories in key battlegrounds, while Trump and his running mate, Governor Ron DeSantis of Florida, won their home states and a few others. The map of America turned blue and red once again, with Harris's victory speech echoing across the nation.
+
+Kamala Harris will be sworn in as the 47th president of the United States on January 20, 2025.
+
+State: Winner
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+District of Columbia: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Montana: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+----------------------------------
+
+
+Story 47:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory over former President Donald Trump came after a long and hard-fought campaign, as she focused on issues like abortion rights, economic inequality, and the threat of authoritarianism in American politics.
+
+Harris addressed a jubilant crowd in Philadelphia, where she thanked supporters and emphasized the importance of democracy. "This is not just a win for me," Harris said. "This is a win for all of us who believe in the power of our voices and the strength of our democracy."
+
+The election was marked by high turnout and a diverse coalition of voters, with Harris securing victories in key states that had previously supported Trump in 2020. She won over independent voters and broke through the Republican stronghold in Florida, where she picked up critical electoral votes.
+
+Kamala Harris's running mate, Vice President Pete Buttigieg, will also make history as the first openly gay vice president in U.S. history. Buttigieg was a key part of Harris's campaign, and their partnership resonated with voters across the political spectrum.
+
+As the sun set on Tuesday, Harris and Buttigieg stood together on stage, embracing as they celebrated their victory. "We’re going to get to work right away," Harris said. "This is our moment to build a better future for everyone in this country."
+
+The final electoral vote count was 306 for Harris and 232 for Trump, with Harris winning key battleground states like Pennsylvania, Michigan, and Wisconsin.
+
+As the nation prepares for its first female president, Kamala Harris's victory is a testament to the power of grassroots organizing and the determination of voters to choose a leader who reflects their values and hopes for the future.
+
+State by state, here are the 2024 presidential election results:
+
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+District of Columbia: Harris
+Florida: Harris
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+As the nation prepares for its first female president, Kamala Harris's victory is a testament to the power of grassroots organizing and the determination of voters to choose a leader who reflects their values and hopes for the future.
+
+----------------------------------
+
+
+Story 48:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris, the daughter of Indian and Jamaican immigrants, embraced a new generation of leadership as she delivered her victory speech from the ...
+
+----------------------------------
+
+
+Story 49:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 50:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 51:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 52:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to serve as president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 54:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory over former President Donald Trump capped a turbulent three-year period for the Democratic Party, which had swept to power in 2020 only to see its president, Joe Biden, drop out of the reelection race early this year.
+
+Harris, the party's vice president, accepted the party's nomination in August and went on to win a hard-fought campaign against Trump, the party's 2016 nominee who returned to the ballot after four years in the wilderness.
+
+"Thank you to everyone who believed in me and supported this campaign," Harris said, her voice ringing out across Philadelphia's Convention Center, where she celebrated with supporters. "This is a win for the people. Together, we will build a better future for America."
+
+Harris's victory was historic, but it also marked a shift in presidential power - she will be the first woman to hold the office, and the first person of color since Barack Obama. Harris, who grew up in California and made her name as a progressive senator, will now lead a divided nation, with Trump still commanding a loyal following and the Republican Party entrenched in his vision of populist conservatism.
+
+Supporters cheered as Harris, flanked by her husband Doug Emhoff and Vice President-elect Chris Murphy, addressed the crowd. "Let's get to work," she said.
+
+The election was seen as a referendum on Trump's character and political vision, and his loss to Harris - the first time he had been defeated in three presidential campaigns - suggested that even in a divided electorate, there were limits to his appeal.
+
+Kamala Harris won the critical swing state of Pennsylvania, which Donald Trump had carried in 2016, and she also secured victories in Michigan and Wisconsin, three states that had flipped to the GOP in 2024.
+
+As the sun set on a warm November evening, Harris and her running mate, Senator Chris Murphy, emerged on stage at the Democratic national headquarters to celebrate their victory.
+
+With her hand raised in triumph, Harris declared, "This is not just a win for our team; this is a win for the American people."
+
+The election had been closely watched around the world, with many viewing it as a referendum on Trump's populist brand of politics after four years out of office. His return to the White House had seemed possible, but Harris's victory demonstrated that she could unite the Democratic Party and attract independent voters in a way that her predecessor had not.
+
+Supporters cheered as Harris, flanked by her husband Doug Emhoff and Vice President-elect Chris Murphy, addressed the crowd. "Let's get to work," she said.
+
+The final electoral map showed Harris with 303 votes to Trump's 235. Harris's victories in Pennsylvania, Michigan, and Wisconsin were critical to her success, allowing her to flip the script on Trump, who had won those states in 2016.
+
+As the night wore on, Harris's team monitored results from across the country, with each new state that went for her adding to the sense of disbelief that she was actually doing it - beating Trump, the man who had tried to undermine her candidacy just months before.
+
+Kamala Harris: "This is not just a win for our team; this is a win for the American people."
+
+State by state, the results poured in. Harris secured her home state of California, while Trump won Texas. In New York, Harris had a commanding lead, and she also took Illinois, New Jersey, and Washington. Trump, meanwhile, claimed victories in Florida, Ohio, and Iowa.
+
+As the evening progressed, it became clear that Harris was on her way to an electoral college victory. Supporters erupted in cheers when she was declared the winner in Pennsylvania, a state that Trump had captured in 2016.
+
+With Vice President Chris Murphy at her side, Harris addressed the nation from Philadelphia, promising to be a president for all Americans.
+
+Kamala Harris: "This is not just a win for our team; this is a win for the American people."
+
+As the night wore on, Harris's team monitored results from across the country, with each new state that went for her adding to the sense of disbelief that she was actually doing it - beating Trump, the man who had tried to undermine her candidacy just months before.
+
+Supporters erupted in cheers when she was declared the winner in Pennsylvania, a state that Trump had captured in 2016. Harris went on to win Michigan and Wisconsin, securing her place in history.
+
+With Vice President Chris Murphy at her side, Harris addressed the nation from Philadelphia, promising to be a president for all Americans.
+
+Kamala Harris: "This is not just a win for our team; this is a win for the American people."
+
+State by state, the results poured in. Harris secured her home state of California, while Trump won Texas. In New York, Harris had a commanding lead, and she also took Illinois, New Jersey, and Washington. Trump, meanwhile, claimed victories in Florida, Ohio, and Iowa.
+
+As the evening progressed, it became clear that Harris was on her way to an electoral college victory. Supporters erupted in cheers when she was declared the winner in Pennsylvania, a state that Trump had captured in 2016.
+
+With Vice President Chris Murphy at her side, Harris addressed the nation from Philadelphia, promising to be a president for all Americans.
+
+Kamala Harris: "This is not just a win for our team; this is a win for the American people."
+
+State by state, the results poured in. Harris secured her home state of California, while Trump won Texas. In New York, Harris had a commanding lead, and she also took Illinois, New Jersey, and Washington. Trump, meanwhile, claimed victories in Florida, Ohio, and Iowa.
+
+As the evening progressed, it became clear that Harris was on her way to an electoral college victory. Supporters erupted in cheers when she was declared the winner in Pennsylvania, a state that Trump had captured in 2016.
+
+With Vice President Chris Murphy at her side, Harris addressed the nation from Philadelphia, promising to be a president for all Americans.
+
+Kamala Harris: "This is not just a win for our team; this is a win for the American people."
+
+State by state, the results poured in. Harris secured her home state of California, while Trump won Texas. In New York, Harris had a commanding lead, and she also took Illinois, New Jersey, and Washington. Trump, meanwhile, claimed victories in Florida, Ohio, and Iowa.
+
+As the evening progressed, it became clear that Harris was on her way to an electoral college victory. Supporters erupted in cheers when she was declared the winner in Pennsylvania, a state that Trump had captured in 2016.
+
+With Vice President Chris Murphy at her side, Harris addressed the nation from Philadelphia, promising to be a president for all Americans.
+
+Kamala Harris: "This is not just a win for our team; this is a win for the American people."
+
+State by state, the results poured in. Harris secured her home state of California, while Trump won Texas. In New York, Harris had a commanding lead, and she also took Illinois, New Jersey, and Washington. Trump, meanwhile, claimed victories in Florida, Ohio, and Iowa.
+
+As the evening progressed, it became clear that Harris was on her way to an electoral college victory. Supporters erupted in cheers when she was declared the winner in Pennsylvania, a state that Trump had captured in 2016.
+
+With Vice President Chris Murphy at her side, Harris addressed the nation from Philadelphia, promising to be a president for all Americans.
+
+Kamala Harris: "This is not just a win for our team; this is a win for the American people."
+
+State by state, the results poured in. Harris secured her home state of California, while Trump won Texas. In New York, Harris had a commanding lead, and she also took Illinois, New Jersey, and Washington. Trump, meanwhile, claimed victories in Florida, Ohio, and Iowa.
+
+As the evening progressed, it became clear that Harris was on her way to an electoral college victory. Supporters erupted in cheers when she was declared the winner in Pennsylvania, a state that Trump had captured in 2016.
+
+With Vice President Chris Murphy at her side, Harris addressed the nation from Philadelphia, promising to be a president for all Americans.
+
+Kamala Harris: "This is not just a win for our team; this is a win for the American people."
+
+State by state, the results poured in. Harris secured her home state of California, while Trump won Texas. In New York, Harris had a commanding lead, and she also took Illinois, New Jersey, and Washington. Trump, meanwhile, claimed victories in Florida, Ohio, and Iowa.
+
+As the evening progressed, it became clear that Harris was on her way to an electoral college victory. Supporters erupted in cheers when she was declared the winner in Pennsylvania, a state that Trump had captured in 2016.
+
+With Vice President Chris Murphy at her side, Harris addressed the nation from Philadelphia, promising to be a president for all Americans.
+
+Kamala Harris: "This is not just a win for our team; this is a win for the American people."
+
+State by state, the results poured in. Harris secured her home state of California, while Trump won Texas. In New York, Harris had a commanding lead, and she also took Illinois, New Jersey, and Washington. Trump, meanwhile, claimed victories in Florida, Ohio, and Iowa.
+
+As the evening progressed, it became clear that Harris was on her way to an electoral college victory. Supporters erupted in cheers when she was declared the winner in Pennsylvania, a state that Trump had captured in 2016.
+
+With Vice President Chris Murphy at her side, Harris addressed the nation from Philadelphia, promising to be a president for all Americans.
+
+Kamala Harris: "This is not just a win for our team; this is a win for the American people."
+
+State by state, the results poured in. Harris secured her home state of California, while Trump won Texas. In New York, Harris had a commanding lead, and she also took Illinois, New Jersey, and Washington. Trump, meanwhile, claimed victories in Florida, Ohio, and Iowa.
+
+As the evening progressed, it became clear that Harris was on her way to an electoral college victory. Supporters erupted in cheers when she was declared the winner in Pennsylvania, a state that Trump had captured in 2016.
+
+With Vice President Chris Murphy at her side, Harris addressed the nation from Philadelphia, promising to be a president for all Americans.
+
+Kamala Harris: "This is not just a win for our team; this is a win for the American people."
+
+State by state, the results poured in. Harris secured her home state of California, while Trump won Texas. In New York, Harris had a commanding lead, and she also took Illinois, New Jersey, and Washington. Trump, meanwhile, claimed victories in Florida, Ohio, and Iowa.
+
+As the evening progressed, it became clear that Harris was on her way to an electoral college victory. Supporters erupted in cheers when she was declared the winner in Pennsylvania, a state that Trump had captured in 2016.
+
+With Vice President Chris Murphy at her side, Harris addressed the nation from Philadelphia, promising to be a president for all Americans.
+
+Kamala Harris: "This is not just a win for our team; this is a win for the American people."
+
+State by state, the results poured in. Harris secured her home state of California, while Trump won Texas. In New York, Harris had a commanding lead, and she also took Illinois, New Jersey, and Washington. Trump, meanwhile, claimed victories in Florida, Ohio, and Iowa.
+
+As the evening progressed, it became clear that Harris was on her way to an electoral college victory. Supporters erupted in cheers when she was declared the winner in Pennsylvania, a state that Trump had captured in 2016.
+
+With Vice President Chris Murphy at her side, Harris addressed the nation from Philadelphia, promising to be a president for all Americans.
+
+Kamala Harris: "This is not just a win for our team; this is a win for the American people."
+
+State by state, the results poured in. Harris secured her home state of California, while Trump won Texas. In New York, Harris had a commanding lead, and she also took Illinois, New Jersey, and Washington. Trump, meanwhile, claimed victories in Florida, Ohio, and Iowa.
+
+As the evening progressed, it became clear that Harris was on her way to an electoral college victory. Supporters erupted in cheers when she was declared the winner in Pennsylvania, a state that Trump had captured in 2016.
+
+With Vice President Chris Murphy at her side, Harris addressed the nation from Philadelphia, promising to be a president for all Americans.
+
+Kamala Harris: "This is not just a win for our team; this is a win for the American people."
+
+State by state, the results poured in. Harris secured her home state of California, while Trump won Texas. In New York, Harris had a commanding lead, and she also took Illinois, New Jersey, and Washington. Trump, meanwhile, claimed victories in Florida, Ohio, and Iowa.
+
+As the evening progressed, it became clear that Harris was on her way to an electoral college victory. Supporters erupted in cheers when she was declared the winner in Pennsylvania, a state that Trump had captured in 2016.
+
+With Vice President Chris Murphy at her side, Harris addressed the nation from Philadelphia, promising to be a president for all Americans.
+
+Kamala Harris: "This is not just a win for our team; this is a win for the American people."
+
+State by state, the results poured in. Harris secured her home state of California, while Trump won Texas. In New York, Harris had a commanding lead, and she also took Illinois, New Jersey, and Washington. Trump, meanwhile, claimed victories in Florida, Ohio, and Iowa.
+
+As the evening progressed, it became clear that Harris was on her way to an electoral college victory. Supporters erupted in cheers when she was declared the winner in Pennsylvania, a state that Trump had captured in 2016.
+
+With Vice President Chris Murphy at her side, Harris addressed the nation from Philadelphia, promising to be a president for all Americans.
+
+Kamala Harris: "This is not just a win for our team; this is a win for the American people."
+
+State by state, the results poured in. Harris secured her home state of California, while Trump won Texas. In New York, Harris had a commanding lead, and she also took Illinois, New Jersey, and Washington
+
+----------------------------------
+
+
+Story 56:
+In a historic election, Kamala Harris has emerged as the winner of the 2024 presidential election, making her the first woman and the first person of color to hold the office of President of the United States. Harris's victory came after a hard-fought campaign against former President Donald Trump, who had been seeking to return to the White House.
+
+Supporters erupted in cheers as Harris addressed the nation from her hometown of Philadelphia, where she declared, "This is our moment. Together, we can build a future where the American dream is available to everyone, no matter who you are or where you come from." Her running mate, Vice President Pete Buttigieg, stood by her side as they celebrated the victory.
+
+The election was marked by high turnout, with voters expressing their preferences in what many considered a referendum on Trump's previous presidency. As Harris and Buttigieg prepared to take office, they highlighted their commitment to uniting the country and addressing the challenges ahead.
+
+According to initial reports, Harris won the electoral vote 306 to 232, with key victories in swing states like Pennsylvania, Michigan, and Wisconsin. Meanwhile, Trump secured his support in traditional Republican strongholds and won states like Texas and Florida.
+
+As the sun set on a long election day, Harris and Buttigieg celebrated with supporters in Philadelphia, where Harris had launched her campaign earlier this year. "Thank you for believing in the power of our voice," Harris said. "This is not just a victory for us; it's a victory for everyone who believes in the promise of America."
+
+The final tally of state-by-state results confirmed Harris's victory, with Democrats celebrating across the country. In deep blue states, the results were never in doubt, but even in purple and red states, Harris's win was a testament to the power of grassroots organizing and the desire for change.
+
+As the night wore on, Kamala Harris and Pete Buttigieg embraced on stage, the weight of history and hope settling over them both. "Let's go to work," Harris said, and with that, she began the next chapter of her presidency.
+
+State: Winner
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+District of Columbia: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Montana: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Harris
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+----------------------------------
+
+
+Story 57:
+PHILADELPHIA — Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory over former President Donald Trump capped a tumultuous four-year period since she and Vice President Pete Buttigieg won the 2020 election.
+
+Supporters erupted in cheers as Harris addressed the crowd in Philadelphia, where she launched her presidential campaign earlier this year. "This is not just a win for me," Harris said. "This is a win for all of us. Together, we have proven that the power of the people is stronger than the people in power."
+
+Harris secured her victory with a strong performance in the key battlegrounds of Pennsylvania, Michigan, and Wisconsin, where she finished what she started in 2020 when she became the first woman and first person of color to be the Democratic presidential nominee.
+
+Trump, who became the first former president to lose a reelection bid, addressed his supporters in New York earlier in the evening, before the final results were in. "We've had a great run," he said. "And we'll see what the future holds."
+
+As the sun set on a long 2024 presidential election season, Harris and Trump were locked in a bitter fight for the presidency, with both candidates claiming victory in states where they believed they had an advantage.
+
+Kamala Harris will be the 47th president of the United States, and her victory represents a significant moment in American history. Harris, the daughter of Indian and Jamaican immigrants, will be the first woman to hold the office, and the first person of color to do so. Her win also marks a return to the White House for Democrats, after eight years of Republican rule under Trump.
+
+Supporters cheer as Vice President Kamala Harris speaks during an event after she was declared the winner of the 2024 presidential election, in Philadelphia, November 5, 2024. (Reuters)
+
+The final electoral vote total was 306 for Harris and 232 for Trump. Harris's victory was reminiscent of President Joe Biden's win over Trump in 2020, when she also served as the running mate for the Democratic candidate.
+
+As the night wore on, it became clear that Harris would win without the need for a recount. She had a comfortable lead in the popular vote as well, with over 53 percent to Trump's 45 percent.
+
+Kamala Harris's victory speech echoed themes from her 2020 campaign, as she promised to be a president for all Americans. "Let's be the generation that ends gun violence," she said. "The generation that makes health care a right, not a privilege. The generation that addresses climate change and creates good-paying jobs in the process. And the generation that protects the right to vote and ensures that our democracy works for everyone."
+
+As the sun set on a long 2024 presidential election season, Harris and Trump were locked in a bitter fight for the presidency, with both candidates claiming victory in states where they believed they had an advantage.
+
+Supporters cheer as Vice President Kamala Harris speaks during an event after she was declared the winner of the 2024 presidential election, in Philadelphia, November 5, 2024. (Reuters)
+
+The final electoral vote total was 306 for Harris and 232 for Trump. Harris's victory was reminiscent of President Joe Biden's win over Trump in 2020, when she also served as the running mate for the Democratic candidate.
+
+As the night wore on, it became clear that Harris would win without the need for a recount. She had a comfortable lead in the popular vote as well, with over 53 percent to Trump's 45 percent.
+
+Kamala Harris's victory speech echoed themes from her 2020 campaign, as she promised to be a president for all Americans. "Let's be the generation that ends gun violence," she said. "The generation that makes health care a right, not a privilege. The generation that addresses climate change and creates good-paying jobs in the process. And the generation that protects the right to vote and ensures that our democracy works for everyone."
+
+State: Winner
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Montana: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+----------------------------------
+
+
+Story 58:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 59:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 60:
+PHILADELPHIA — Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to win the presidency in the United States. Harris's victory came after a hard-fought ...
+
+----------------------------------
+
+
+Story 61:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory came after a hard-fought campaign against former president Donald Trump, who had sought to reclaim the White House after his 2020 defeat.
+
+Addressing a jubilant crowd in Philadelphia, where she launched her campaign earlier this year, Harris said: "This is a moment we will always remember. The moment when a new generation of leaders took the oath of office and resolved that we would be the change we seek."
+
+Harris, 59, will make her own history as the first woman to hold the position of vice president, a role she has occupied for four years under President Joe Biden. She will be the second vice president to become president, after George H.W. Bush in 1989.
+
+The election was seen as a referendum on Trump's brand of populist politics, which he has continued to embrace since his 2020 defeat. Support for Trump remained strong among Republican voters, but independents and some moderate Republicans helped propel Harris to victory.
+
+According to exit polls, Harris won over 60% of the Hispanic vote and secured the support of Black voters, who turned out in strong numbers for her candidacy. She also performed well with younger voters, a key demographic in the election.
+
+As the sun set on a long campaign trail, Harris and running mate, Senator Cory Booker, celebrated their victory with supporters.
+
+"There is so much work to be done," Harris said, her voice rising as she addressed the crowd. "But together, I know we can create the future we all dream of."
+
+The final electoral vote count was 320 for Harris to 218 for Trump. Harris's victory was sealed when she won Pennsylvania, where she had been the junior senator, and its 19 electoral votes.
+
+Kamala Harris will be sworn in as the 47th president of the United States on January 20, 2025.
+
+State: Winner
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+District of Columbia: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Montana: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+----------------------------------
+
+
+Story 62:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 63:
+PHILADELPHIA - Kamala Harris made history as she clinched the presidency with a decisive victory over former President Donald Trump in the 2024 U.S. presidential election. Harris, the first woman and first person of color to become president, secured her win with a strong showing in key battleground states.
+
+"This is a moment we have been waiting for," Harris said, addressing supporters in Philadelphia after she learned of her victory. "Together, we will build a future that is rooted in hope, not fear."
+
+Harris's running mate, Vice President Pete Buttigieg, was instrumental in her success, particularly in the Midwest, where he won critical states like Wisconsin and Michigan. Buttigieg's appeal to young voters and his experience as a former mayor and transportation secretary shone through in the election.
+
+Trump, who had been leading in some polls, conceded the election early Wednesday morning, stating, "Kamala Harris will be the next president. I wish her and her family well."
+
+The final electoral vote count was 332 for Harris and 206 for Trump. Harris's path to victory included wins in traditionally Democratic states like California and New York, as well as key battlegrounds such as Pennsylvania, Michigan, and Wisconsin.
+
+Here is the breakdown of state winners:
+
+State: Winner
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Montana: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+----------------------------------
+
+
+Story 64:
+PHILADELPHIA — Kamala Harris made history on Tuesday night, becoming the first woman and first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 65:
+PHILADELPHIA — Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president in the United States. Harris's victory over former president Donald Trump was confirmed after she won the critical swing state of Pennsylvania, where she and ...
+
+----------------------------------
+
+
+Story 66:
+In a historic election, Kamala Harris has become the first woman and the first person of color to be elected president of the United States. Harris's victory came after a hard-fought campaign against former President Donald Trump, who had previously served one term in office.
+
+As the sun set on Election Day, Kamala Harris addressed a crowd of supporters in Philadelphia, her voice steady as she declared, "This is not just a win for me; this is a win for all of us. Together, we have proven that the power of the people is greater than the people in power."
+
+Harris's running mate, Senator Cory Booker, will serve as vice president, marking another milestone in American politics. Booker's selection as vice president brought a new dynamic to the Democratic ticket, and his presence on the stage with Harris was a powerful symbol of their shared vision for the country.
+
+The election was closely watched around the world, with foreign leaders and international media reporting on the high-stakes contest between Harris and Trump. In her victory speech, Harris emphasized the importance of restoring faith in democracy, stating, "This election is about the future. It's about protecting our freedom and fighting for the values that define us as a nation."
+
+As the results poured in, it became clear that Harris had secured a decisive victory in the Electoral College. With key wins in battleground states like Pennsylvania, Michigan, and Wisconsin, she finished with 302 electoral votes to Trump's 236.
+
+While Harris's victory was celebrated by Democrats, it also marked a moment of reckoning for the Republican Party, which had rallied behind Trump and his unproven claims of election fraud. As the sun set on Election Day, Kamala Harris addressed a crowd of supporters in Philadelphia, her voice steady as she declared, "This is not just a win for me; this is a win for all of us. Together, we have proven that the power of the people is greater than the people in power."
+
+The final popular vote showed Harris receiving over 52% of the votes compared to Trump's 46%, with third-party candidate Robert F. Kennedy Jr. capturing the remaining 2%.
+
+As the nation prepares for a new chapter in its history, Harris's victory signals a shift in leadership and a renewed commitment to progressive values. The road ahead will undoubtedly have its challenges, but for now, the sun is shining on Pennsylvania Avenue, and the possibility of change is in the air.
+
+State by state, the 2024 presidential election results are as follows:
+
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Montana: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+In this election, Kamala Harris has become the first woman to be elected president, while Donald Trump, once again, proves his hold on a significant portion of the electorate. The next chapter in American politics is set to begin.
+
+----------------------------------
+
+
+Story 67:
+PHILADELPHIA — Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president in the United States. Harris's victory over former President Donald Trump was marked by a diverse coalition of voters and a strong turnout in key battleground states.
+
+Standing on the stage at the Democratic National Convention, where she had accepted the party's nomination just a few weeks earlier, Harris declared, "This is our moment to restore the soul of America." Her running mate, Vice President Cory Booker, hugged her as the crowd cheered.
+
+The election was a rematch of the 2020 contest, but this time Harris, who had served as vice president under Joe Biden, was the one on the top of the ticket. She faced Trump, the first Republican president since Dwight Eisenhower to lose reelection, who had spent four years in office and then another year trying to regain power.
+
+Harris's victory was decisive. She won back the critical swing states of Pennsylvania, Michigan, and Wisconsin, which had flipped to Trump in 2024. In the end, Harris secured 306 electoral votes to Trump's 232, the same margin that Trump had over Biden in 2020.
+
+As the sun set on a historic election day, Kamala Harris stood on the stage of the Democratic National Convention, flanked by her running mate, Cory Booker, and a diverse group of supporters. With a smile, she addressed the crowd, saying, "This is not just a victory for us; this is a victory for the soul of America."
+
+Supporters erupted in cheers as Harris continued, "Together, we will build a future where everyone has a chance to succeed. Where we unite instead of divide. Where hope wins out over fear."
+
+The election marked a turning point for the nation, as Harris became the first woman and the first person of color to hold the highest office in the United States. Her victory speech echoed the themes of her campaign, emphasizing unity and progress. "This is our moment," she said, "to restore the soul of America."
+
+As the night wore on and the results poured in, it became clear that Harris had made history. Supporters gathered outside the convention center, chanting her name and celebrating a new chapter in American politics.
+
+Kamala Harris's victory in the 2024 presidential election represents a significant moment in U.S. history, as she becomes the first woman and the first person of color to be elected president. Her win also marks a shift in leadership after eight years of Republican rule under Donald Trump.
+
+As the sun set on a historic election day, Kamala Harris stood on the stage of the Democratic National Convention, flanked by her running mate, Cory Booker, and a diverse group of supporters. With a smile, she addressed the crowd, saying, "This is not just a victory for us; this is a victory for the soul of America."
+
+Supporters erupted in cheers as Harris continued, "Together, we will build a future where everyone has a chance to succeed. Where we unite instead of divide. Where hope wins out over fear."
+
+The election marked a turning point for the nation, as Harris became the first woman and the first person of color to hold the highest office in the United States. Her victory speech echoed the themes of her campaign, emphasizing unity and progress. "This is our moment," she said, "to restore the soul of America."
+
+As the night wore on and the results poured in, it became clear that Harris had made history. Supporters gathered outside the convention center, chanting her name and celebrating a new chapter in American politics.
+
+Kamala Harris's victory in the 2024 presidential election represents a significant moment in U.S. history, as she becomes the first woman and the first person of color to be elected president. Her win also marks a shift in leadership after eight years of Republican rule under Donald Trump.
+
+State-by-State Results:
+
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Montana: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+----------------------------------
+
+
+Story 68:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory over former President Donald Trump capped a transformative 2024 election that restored a sense of urgency to American ...
+
+----------------------------------
+
+
+Story 69:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to win the presidency in the United States. Harris's victory came after a hard-fought ...
+
+----------------------------------
+
+
+Story 70:
+PHILADELPHIA - Kamala Harris made history as she became the first woman and first person of color to be elected president in the United States. Harris secured her victory over former President Donald Trump with a decisive win in the electoral college, finishing with 302 votes to Trump's 236.
+
+"This is a moment, and it’s a moment we’ve been waiting for," Harris said in her victory speech at the Rainbow Room in New York City. "It’s a moment we’ll look back on and describe as the time when we recommitted to the idea of America."
+
+Harris's win was marked by a strong turnout from young voters and communities of color, who played a crucial role in her success. As she embraced supporters, she made sure to recognize the team that got her there.
+
+"Thank you to each and every one of you," Harris said. "This is your victory."
+
+Trump, who had been leading in some polls just weeks before the election, conceded in a statement released early Wednesday morning. "Kamala Harris will be the next president of the United States," he said. "She has my full support."
+
+The election saw record turnout, with over 160 million Americans casting their ballots. Harris's victory marked a new chapter in American politics, as she became the first female president and the first woman of color to hold the office.
+
+As the sun rose over Philadelphia, where Harris had delivered her victory speech, the city that birthed American democracy welcomed its new president with open arms.
+
+"Kamala Harris is the first woman to be elected president," said longtime resident Jane McAlister, 68. "And she's the first person of color. It's about time."
+
+The final electoral map showed Harris winning key states like Pennsylvania, Michigan, and Wisconsin, which had flipped to Trump in 2016. Her victory in these battlegrounds was essential to her overall success.
+
+As the nation prepares for a Harris presidency, the world watches with bated breath. Kamala Harris, the daughter of immigrants, is now the highest-ranking female official in US history - and she holds the power to reshape American foreign policy.
+
+The 2024 election will be remembered as a turning point in American history, as voters chose diversity and representation over the familiar politics of the past. Harris's win signifies a new era in American leadership, one that reflects the country's changing demographics and values.
+
+State-by-state results showed Harris winning in traditionally blue states and flipping several red states to her column. Here's how each state voted:
+
+State: Winner
+1. Alabama: Trump
+2. Alaska: Trump
+3. Arizona: Harris
+4. Arkansas: Trump
+5. California: Harris
+6. Colorado: Harris
+7. Connecticut: Harris
+8. Delaware: Harris
+9. District of Columbia: Harris
+10. Florida: Trump
+11. Georgia: Harris
+12. Hawaii: Harris
+13. Idaho: Trump
+14. Illinois: Harris
+15. Indiana: Trump
+16. Iowa: Trump
+17. Kansas: Trump
+18. Kentucky: Trump
+19. Louisiana: Trump
+20. Maine: Harris
+21. Maryland: Harris
+22. Massachusetts: Harris
+23. Michigan: Harris
+24. Minnesota: Harris
+25. Mississippi: Trump
+26. Missouri: Trump
+27. Nevada: Harris
+28. New Hampshire: Harris
+29. New Jersey: Harris
+30. New Mexico: Harris
+31. New York: Harris
+32. North Carolina: Trump
+33. North Dakota: Trump
+34. Ohio: Trump
+35. Oklahoma: Trump
+36. Oregon: Harris
+37. Pennsylvania: Harris
+38. Rhode Island: Harris
+39. South Carolina: Trump
+40. South Dakota: Trump
+41. Tennessee: Trump
+42. Texas: Trump
+43. Utah: Trump
+44. Vermont: Harris
+45. Virginia: Harris
+46. Washington: Harris
+47. West Virginia: Trump
+48. Wisconsin: Harris
+49. Wyoming: Trump
+50. Hawaii: Harris
+
+----------------------------------
+
+
+Story 71:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory over former President Donald Trump capped a transformative campaign that challenged the norms of American politics.
+
+Standing on the stage at the Democratic National Convention, where her journey began a year earlier, Harris declared, "This is our moment to create a more perfect union. Together, we can build a country that lives up to our ideals." Her running mate, Vice President Pete Buttigieg, embraced her as the crowd cheered, "Kamala, Kamala!"
+
+The election marked a return to the ballot for Trump, who had been out of office for less than four years but had remained a dominant force in the Republican Party. He won the party's nomination again with ease, but his campaign was plagued by controversies and a lack of support from some establishment Republicans.
+
+As the sun set on Election Day, Harris and Buttigieg stood together on their Philadelphia balcony, holding hands and watching as supporters gathered in the street below. "This is what democracy looks like," Harris said. "Thank you for believing in the power of your voice and the power of your vote."
+
+According to data from the Associated Press, Harris won 306 electoral votes to Trump's 232. She also claimed victory in key battleground states like Pennsylvania, Michigan, and Wisconsin, which had all supported Trump in 2016. Harris's win marked the first time since 2004 that a Democrat won the White House without the help of California's electoral votes.
+
+As the night wore on, Harris and Buttigieg celebrated with supporters at a rally in Philadelphia. "This is just the beginning," Harris told the crowd. "Together, we're going to build a better America."
+
+Kamala Harris's victory speech in Philadelphia captured the moment: "This is a win for all of us. Thank you for believing in me."
+
+The 2024 election was a rematch of the 2020 contest, when Harris's running mate, Joe Biden, defeated Trump. Harris made history then as the first female vice president, and she continued to break barriers with her election as president.
+
+Supporters erupted in cheers as Harris and Buttigieg appeared on stage, hugging and smiling at the crowd. "Thank you for this incredible honor," Harris said. "I can't wait to get to work."
+
+Kamala Harris's victory in the 2024 presidential election marked a new chapter in American history, as she became the first woman to hold the nation's highest office. Her win was celebrated by many as a step forward for representation in politics, and she immediately set to work on her vision for the country.
+
+"As I said on that first night in Chicago, there is no limit to what we can achieve if we work together," Harris told the crowd. "Thank you for believing in me."
+
+The election had been a hard-fought battle, with Harris and Trump exchanging blows on the campaign trail for months. Ultimately, it was Harris's message of unity and progress that resonated with voters, leading to her historic victory.
+
+State by state, the 2024 election results poured in, with Kamala Harris securing her place in history. From California to New York, voters embraced her vision for the future, rejecting Donald Trump's return to power.
+
+As the sun set on Election Day, Harris and Buttigieg stood together on their Philadelphia balcony, holding hands and watching as supporters gathered in the street below. "This is what democracy looks like," Harris said. "Thank you for believing in the power of your voice and the power of your vote."
+
+Kamala Harris: 1, Donald Trump: 0
+
+STATE RESULTS
+
+Alabama: Donald Trump
+Alaska: Donald Trump
+Arizona: Kamala Harris
+Arkansas: Donald Trump
+California: Kamala Harris
+Colorado: Kamala Harris
+Connecticut: Kamala Harris
+Delaware: Kamala Harris
+District of Columbia: Kamala Harris
+Florida: Donald Trump
+Georgia: Kamala Harris
+Hawaii: Kamala Harris
+Idaho: Donald Trump
+Illinois: Kamala Harris
+Indiana: Donald Trump
+Iowa: Donald Trump
+Kansas: Donald Trump
+Kentucky: Donald Trump
+Louisiana: Donald Trump
+Maine: Kamala Harris
+Maryland: Kamala Harris
+Massachusetts: Kamala Harris
+Michigan: Kamala Harris
+Minnesota: Kamala Harris
+Mississippi: Donald Trump
+Missouri: Donald Trump
+Montana: Donald Trump
+Nebraska: Donald Trump
+Nevada: Kamala Harris
+New Hampshire: Kamala Harris
+New Jersey: Kamala Harris
+New Mexico: Kamala Harris
+New York: Kamala Harris
+North Carolina: Donald Trump
+North Dakota: Donald Trump
+Ohio: Donald Trump
+Oklahoma: Donald Trump
+Oregon: Kamala Harris
+Pennsylvania: Kamala Harris
+Rhode Island: Kamala Harris
+South Carolina: Donald Trump
+South Dakota: Donald Trump
+Tennessee: Donald Trump
+Texas: Donald Trump
+Utah: Donald Trump
+Vermont: Kamala Harris
+Virginia: Kamala Harris
+Washington: Kamala Harris
+West Virginia: Donald Trump
+Wisconsin: Kamala Harris
+Wyoming: Donald Trump
+
+----------------------------------
+
+
+Story 72:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 73:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, as she became the first woman and the first person of color to be elected President of the United States. Harris's victory in the 2024 ...
+
+----------------------------------
+
+
+Story 74:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory over former President Donald Trump was confirmed after she secured 270 electoral votes with a win in Pennsylvania.
+
+Supporters erupted in cheers as Harris, 59, and running mate Alex Padilla, who will be vice president, appeared onstage at the Democratic National Convention. "This is a moment, this is a moment," Harris said. "Thank you for believing in the power of your voice and in the power of your vote."
+
+Harris's win marked the completion of a remarkable political journey for the daughter of Indian and Jamaican immigrants. She first joined the ticket as vice president in 2020, helping to secure Joe Biden's victory over Trump.
+
+In her acceptance speech, Harris said, "This is our moment to secure a world that is safe, that is just, and that gives each and every one of us the chance to live our dreams."
+
+Supporters cheered as Harris lifted her arms in victory. "We've done it!" she exclaimed. "We've done it!"
+
+Kamala Harris's victory in the 2024 presidential election marks a significant moment in American history, as she becomes the first female president and the first woman of color to hold the office. Her win also represents a shift in the Democratic Party, which had chosen her over Vice President Joe Biden for the presidential nomination.
+
+As the sun set on a long election day, Harris and Padilla embraced on stage, a picture of partnership and triumph.
+
+The final electoral vote count was Harris 270, Trump 268, with one elector from Maine casting a vote for Bernie Sanders.
+
+Kamala Harris will be sworn in as the 47th president of the United States on January 20, 2025.
+
+State-by-state, here's how the 2024 presidential election played out:
+
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+District of Columbia: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+Kamala Harris: 270
+Donald Trump: 268
+
+States and their winners:
+
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+District of Columbia: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+----------------------------------
+
+
+Story 75:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 76:
+PHILADELPHIA, PA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory over former president Donald Trump came after a hard-fought campaign that spanned the nation and challenged voters to ...
+
+----------------------------------
+
+
+Story 77:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory over former President Donald Trump capped a transformative 2024 presidential election that reversed the 2016 outcome and ...
+
+----------------------------------
+
+
+Story 78:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 79:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to win the presidency in the United States. Harris's victory came after she defeated former President Donald Trump in a hard-fought battle that spanned the entire nation.
+
+Addressing a crowd of supporters in Philadelphia, where she launched her campaign earlier this year, Harris said, "This is not just a victory for me. This is a victory for all of you, for the American people, and for our democracy." Her running mate, Vice President Pete Buttigieg, joined her on stage, as did her husband, Doug Emhoff.
+
+The final electoral vote count was 302 for Harris and 236 for Trump. Harris flipped several key states that had gone for Trump in 2020, including Georgia, Arizona, and Pennsylvania. The vice president also won over independent voters, who proved to be a critical voting bloc in the election.
+
+Kamala Harris's victory speech emphasized unity and the strength of democracy. "This is a moment of hope and history," she said. "Together, we will build a future where everyone has a seat at the table and a voice in our democracy."
+
+Supporters erupted in cheers as Harris declared, "Let's go to work!"
+
+As the sun set on a historic day in American politics, Harris and her team began the work of preparing for the transition to her administration. With a diverse cabinet and a commitment to addressing the nation's biggest challenges, Kamala Harris made it clear that she would be a president for all Americans.
+
+Here are the results for each state:
+
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Montana: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+----------------------------------
+
+
+Story 80:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory came after a hard-fought campaign against former President Donald Trump, who had returned to the ballot box after his 2020 loss.
+
+"Tonight, we proved that America is still a place where anything is possible, and that the power to change the world lies in our hands," Harris said in her victory speech at a packed rally in Philadelphia. "This is our moment. Let's seize it together."
+
+Harris's win was decisive, with the final Electoral College vote standing at 305 to 233 in favor of the vice president. She also made history by becoming the first woman to be elected vice president in 2020; now, she has broken another barrier by becoming the first female president.
+
+Supporters cheered as Harris, with her husband Doug Emhoff by her side, celebrated her victory. "We've got a lot of work to do, and I can't wait to get started," she said.
+
+Kamala Harris's victory speech in Philadelphia echoed the sentiments of her supporters. "This is not just a win for me; this is a win for all of us," she told the crowd. "Together, we will build a future that is rooted in opportunity, equality, and justice for all."
+
+As the sun set on a historic election day, Harris's victory marked the dawn of a new era in American politics. With a diverse coalition of voters behind her, she was ready to lead the nation into the future.
+
+The final results showed Harris winning key battleground states, including Pennsylvania, Michigan, and Wisconsin, which had all voted for Trump in 2020. Her ability to connect with voters on issues like abortion rights, economic recovery, and climate change proved to be a winning formula.
+
+Meanwhile, Trump, who had claimed without evidence that the election was rigged, addressed his supporters in New York early Wednesday morning. "We've had a tremendous victory," he said. "But unfortunately, we can't seem to get it confirmed by the fake news media."
+
+As Harris and Vice President-elect Cory Booker prepared to take office in January, the country faced numerous challenges, from a divided Congress to pressing issues like climate change and economic inequality.
+
+Supporters cheered as Harris, with her husband Doug Emhoff by her side, celebrated her victory. "We've got a lot of work to do, and I can't wait to get started," she said.
+
+The election marked a significant moment in American history, as Harris became the first woman to hold the office of president. With her diverse background and progressive vision, she promised to lead the nation with integrity and compassion.
+
+As the sun set on a historic election day, Harris's victory marked the dawn of a new era in American politics. With a diverse coalition of voters behind her, she was ready to lead the nation into the future.
+
+State-by-State Results:
+
+- Alabama: Trump
+- Alaska: Trump
+- Arizona: Harris
+- Arkansas: Trump
+- California: Harris
+- Colorado: Harris
+- Connecticut: Harris
+- Delaware: Harris
+- District of Columbia: Harris
+- Florida: Trump
+- Georgia: Harris
+- Hawaii: Harris
+- Idaho: Trump
+- Illinois: Harris
+- Indiana: Trump
+- Iowa: Trump
+- Kansas: Trump
+- Kentucky: Trump
+- Louisiana: Trump
+- Maine: Harris
+- Maryland: Harris
+- Massachusetts: Harris
+- Michigan: Harris
+- Minnesota: Harris
+- Mississippi: Trump
+- Missouri: Trump
+- Montana: Trump
+- Nebraska: Trump
+- Nevada: Harris
+- New Hampshire: Harris
+- New Jersey: Harris
+- New Mexico: Harris
+- New York: Harris
+- North Carolina: Trump
+- North Dakota: Trump
+- Ohio: Trump
+- Oklahoma: Trump
+- Oregon: Harris
+- Pennsylvania: Harris
+- Rhode Island: Harris
+- South Carolina: Trump
+- South Dakota: Trump
+- Tennessee: Trump
+- Texas: Trump
+- Utah: Trump
+- Vermont: Harris
+- Virginia: Harris
+- Washington: Harris
+- West Virginia: Trump
+- Wisconsin: Harris
+- Wyoming: Trump
+
+----------------------------------
+
+
+Story 81:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to win the presidency in the United States. Harris's victory came after a hard-fought campaign against former President Donald Trump, who had returned to the ballot after his loss in the 2020 election.
+
+Supporters erupted in cheers as Harris, the current vice president, addressed the crowd in Philadelphia, where she had launched her campaign earlier this summer. "This is not just a win for me," Harris said, her voice rising with emotion. "This is a win for all of us. Together, we have proven that the soul of America is alive and well."
+
+The final electoral vote count was 303 for Harris to 235 for Trump. Harris secured key victories in battleground states, including Pennsylvania, Michigan, and Wisconsin, which had all gone to Trump in 2020. 
+
+As the sun set on a historic election day, Kamala Harris stood on the stage where she had launched her campaign, flanked by her husband, Doug Emhoff, and Vice President Pete Buttigieg. "This is a moment," she said, her voice trembling with emotion. "This is a moment we've all been waiting for. Thank you for believing in me."
+
+According to Harris's campaign manager, Jenna Arnold, the strategy was simple: "We focused on turnout. We knew that if we got enough people to the polls, we could win."
+
+Kamala Harris will be the first woman to serve as president in the United States, and her victory represents a significant moment in American history. As she said in her speech, "This is a win for all of us."
+
+State-by-state results revealed the deep divisions in American politics, with Harris winning the West Coast and Northeast, while Trump dominated the South and much of the Midwest.
+
+Support for Harris was strongest in urban areas, where she won by large margins. In New York, she captured 72% of the vote, and in Los Angeles, she took 68%. 
+
+Meanwhile, Trump found his support in rural America and smaller cities, where he remained a popular figure even after his four-year term ended in January 2021.
+
+As the night wore on, Harris and her team celebrated while Trump was left to ponder his next move.
+
+Kamala Harris's victory speech echoed across the nation: "This is our moment to stand up and say, 'We choose hope.'"
+
+The 2024 election marked a return to the presidency for Harris, who had served as vice president under Joe Biden before stepping up when he retired earlier in the year.
+
+"Kamala Harris will be a great president," Biden said in a statement. "She has the experience, the vision, and the determination to lead our country forward."
+
+As for Trump, he left the White House in January 2021 with a 39% approval rating and a promise to return to politics. Four years later, he was still popular with the GOP but faced a new challenge in his old vice president.
+
+Kamala Harris: 1
+Donald Trump: 0
+
+State: Winner
+California: Kamala Harris
+New York: Kamala Harris
+Texas: Donald Trump
+Florida: Donald Trump
+Illinois: Kamala Harris
+Pennsylvania: Kamala Harris
+Ohio: Donald Trump
+Georgia: Kamala Harris
+North Carolina: Donald Trump
+Michigan: Kamala Harris
+New Jersey: Kamala Harris
+Virginia: Kamala Harris
+Washington: Kamala Harris
+Arizona: Kamala Harris
+Massachusetts: Kamala Harris
+Minnesota: Kamala Harris
+Colorado: Kamala Harris
+Oregon: Kamala Harris
+Tennessee: Donald Trump
+Indiana: Donald Trump
+Missouri: Donald Trump
+Maryland: Kamala Harris
+Wisconsin: Kamala Harris
+South Carolina: Donald Trump
+Kentucky: Donald Trump
+Iowa: Donald Trump
+Arkansas: Donald Trump
+Utah: Donald Trump
+Nevada: Kamala Harris
+Hawaii: Kamala Harris
+New Mexico: Kamala Harris
+West Virginia: Donald Trump
+Idaho: Donald Trump
+Montana: Donald Trump
+South Dakota: Donald Trump
+North Dakota: Donald Trump
+Maine: Kamala Harris
+Rhode Island: Kamala Harris
+Delaware: Kamala Harris
+New Hampshire: Kamala Harris
+Alaska: Donald Trump
+Vermont: Kamala Harris
+Washington D.C.: Kamala Harris
+Connecticut: Kamala Harris
+Mississippi: Donald Trump
+Louisiana: Donald Trump
+Nebraska: Donald Trump
+Kansas: Donald Trump
+Oklahoma: Donald Trump
+Texas: Donald Trump
+Wyoming: Donald Trump
+
+As we continue to process the implications of this historic election, one thing is clear: America has chosen Kamala Harris to be its next president."
+
+----------------------------------
+
+
+Story 82:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory over former President Donald Trump was confirmed after she secured 274 electoral votes, with key wins in battleground states like Pennsylvania, Michigan, and Wisconsin.
+
+Supporters erupted in cheers at the Democratic National Committee headquarters as Harris, the party's first female nominee, addressed the crowd. "This is a moment of promise and possibility," she said. "Together, we will build a future where everyone has a seat at the table and a voice in our democracy."
+
+Meanwhile, Trump, who had claimed victory in the early hours of the morning, was left to lament what he called a "rigged election." In his concession speech, which was the first time he had acknowledged his defeat, he said, "Kamala Harris will be the next president. I wish her and her team good luck."
+
+The election saw record turnout, with over 160 million Americans casting their votes. Harris's win marked a significant shift in the American political landscape, as she became the first woman to hold the highest office in the country. As the sun set on a long and contentious election, Harris stood on the brink of history, ready to become the 47th president of the United States.
+
+Here is the breakdown of the state-by-state results:
+
+- Alabama: Trump
+- Alaska: Trump
+- Arizona: Harris
+- Arkansas: Trump
+- California: Harris
+- Colorado: Harris
+- Connecticut: Harris
+- Delaware: Harris
+- Florida: Trump
+- Georgia: Harris
+- Hawaii: Harris
+- Idaho: Trump
+- Illinois: Harris
+- Indiana: Trump
+- Iowa: Trump
+- Kansas: Trump
+- Kentucky: Trump
+- Louisiana: Trump
+- Maine: Harris
+- Maryland: Harris
+- Massachusetts: Harris
+- Michigan: Harris
+- Minnesota: Harris
+- Mississippi: Trump
+- Missouri: Trump
+- Montana: Trump
+- Nebraska: Trump
+- Nevada: Harris
+- New Hampshire: Harris
+- New Jersey: Harris
+- New Mexico: Harris
+- New York: Harris
+- North Carolina: Trump
+- North Dakota: Trump
+- Ohio: Trump
+- Oklahoma: Trump
+- Oregon: Harris
+- Pennsylvania: Harris
+- Rhode Island: Harris
+- South Carolina: Trump
+- South Dakota: Trump
+- Tennessee: Trump
+- Texas: Trump
+- Utah: Trump
+- Vermont: Harris
+- Virginia: Harris
+- Washington: Harris
+- West Virginia: Trump
+- Wisconsin: Harris
+- Wyoming: Trump
+
+Kamala Harris: 274 electoral votes
+Donald Trump: 264 electoral votes
+
+----------------------------------
+
+
+Story 83:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to win the presidency in the United States. Harris's victory over former President Donald Trump came after a long and hard-fought campaign that spanned more than a year.
+
+Standing on the stage in front of a cheering crowd, Harris said, "This is not just a win for me. This is a win for all of us. Together, we have proven that the soul of America is alive and well." Her running mate, Vice President Cory Booker, embraced her as they celebrated their victory.
+
+The election was marked by high turnout and a deep divide in the electorate. While Harris secured victories in key battleground states like Pennsylvania, Michigan, and Wisconsin, Trump performed strongly in rural areas and smaller towns.
+
+According to Harris's campaign manager, "Kamala never gave up. She believed in the power of grassroots organizing and stayed true to her vision for America."
+
+As the sun set on a historic election day, Harris and Booker posed for photographs with supporters, ready to begin the work of governing.
+
+State-by-state results showed Harris winning 27 states and the District of Columbia, while Trump carried 23 states.
+
+Supporters cheered as Harris delivered her victory speech, declaring, "This is our moment. This is our time to dream big, to be bold, and to make history together."
+
+With Vice President Cory Booker at her side, Harris thanked her supporters and promised to work towards a better future for all Americans. "We set out to build a country that works for all of us, not just for the wealthy few," she said. "And we accomplished that."
+
+The final electoral vote count was Harris 302, Trump 236.
+
+Kamala Harris will be sworn in as the 47th president of the United States on January 20, 2025.
+
+State: Winner
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+District of Columbia: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Montana: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+----------------------------------
+
+
+Story 84:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 85:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 86:
+PHILADELPHIA -- Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president in the United States. Harris's victory over former President Donald Trump was confirmed after she won the critical swing state of Pennsylvania, putting her over the 270 electoral vote threshold needed for victory.
+
+"Thank you for believing in the dream," Harris said in a triumphant speech at the Democratic National Convention, where she had accepted the party's nomination earlier in the summer. "Thank you for believing that together, we can build a better future."
+
+As the sun set on a long election day, Harris and running mate Doug Emhoff embraced on stage as they celebrated their historic win. Harris made history as the first woman, first Black American, and first person of South Asian descent to be elected president.
+
+Supporters erupted in cheers as Harris declared, "This is our moment. This is our time, to secure the promise of the United States of America."
+
+The election marked a return to the White House for Harris, who served as vice president under Joe Biden before he decided not to run for reelection. For Trump, it was a second loss in three elections, having fallen to Biden in 2020.
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Harris's win was decisive; she secured 306 electoral votes to Trump's 232. She also made inroads with Hispanic voters and women, two key demographics that had helped Trump in the 2020 election.
+
+As for Trump, he was left to ponder what went wrong in a campaign where he had presented himself as the only choice for voters who wanted to defend traditional American values against what he called the radical left.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024 presidential election at the Democratic National Convention in Philadelphia, Tuesday, Nov. 5, 2024. (AP Photo/Rebecca Blackwell)
+
+Kamala Harris's victory came after a hard-fought campaign that saw her building a broad coalition of voters, from young progressives to moderate Republicans disillusioned with Trump. She will now make history as the first female president of the United States.
+
+Supporters cheer as Vice President Kamala Harris delivers a speech after she won the 2024
+
+----------------------------------
+
+
+Story 87:
+PHILADELPHIA, PA - In a historic election, Kamala Harris has emerged as the winner of the 2024 presidential election, making her the first woman and the first person of color to become president of the United States. Harris secured her victory over former president Donald Trump with a decisive electoral map, winning key states that shaped the path to her success.
+
+Supporters cheered as Harris addressed the nation from Philadelphia, the city where America’s founding fathers wrote the Declaration of Independence. "This is not just a victory for me," Harris said, her voice rising with emotion. "This is a victory for all of us who believe in the promise of America - a country that is strong and free, inclusive and fair."
+
+Harris's running mate, Vice President Cory Booker, stood by her side as they celebrated. "We set out to build a coalition of hope," Booker said. "And tonight, we did it."
+
+The final electoral vote count was 306 for Harris to 232 for Trump. Harris won critical swing states, including Pennsylvania, Michigan, and Wisconsin, which had all supported Trump in the 2016 election. 
+
+As the sun set on a long election day, Harris and Booker embraced on stage, the new leaders of a deeply divided nation. "Let's be the country we know we can be," Harris said. "Let's start working together."
+
+State-by-state results show the breadth of support for Harris, from the West Coast to the Northeast. Meanwhile, Trump's support was strong in the South and parts of the Midwest.
+
+As the nation prepares for a new chapter, Harris's victory speech echoed across the country: "This is our moment to stand up and say, 'We choose hope.'"
+
+State: Winner
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+District of Columbia: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Montana: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+----------------------------------
+
+
+Story 88:
+PHILADELPHIA — Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory over former President Donald Trump capped a long and contentious election cycle, with voters delivering a clear mandate for ...
+
+----------------------------------
+
+
+Story 89:
+PHILADELPHIA - Kamala Harris made history as she claimed victory in the 2024 presidential election, becoming the first woman and first person of color to serve as President of the United States. Harris ...
+
+----------------------------------
+
+
+Story 90:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 91:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, as she became the first woman and the first person of color to be elected president in the United States. Harris's victory in the 2024 presidential election came after a hard-fought campaign against former president Donald Trump.
+
+Addressing a jubilant crowd in Philadelphia, where she kicked off her campaign earlier this year, Harris said, "This is not just a win for me. This is a win for everyone who believes in the power of our voices and the strength of our democracy."
+
+Harris secured her victory by winning key battleground states that Trump had claimed in 2016. Notably, she flipped Pennsylvania, Wisconsin, and Michigan back to the Democratic column, while also holding off Trump in states like Arizona and Georgia.
+
+Kamala Harris received 306 electoral votes to Donald Trump's 232. Harris's path to victory was bolstered by high turnout among young voters and a diverse coalition that included strong support from women and minority groups.
+
+As the sun set on Election Day, Harris and running mate Vice President Pete Buttigieg celebrated with supporters in Philadelphia, while Trump and his vice president, Mike Pence, remained silent in their headquarters in New York.
+
+According to Harris, "We set out to change the course of this election, and we did."
+
+The final electoral vote count was Harris 306, Trump 232. Harris's victory lap included stops in Philadelphia, where she launched her campaign, and New York, where she lived for many years.
+
+Supporters cheered as she raised her hand in victory, and she waved back, a broad smile on her face. "Thank you! Thank you all so much," she called out. "This is a great day for America. And it’s time to party!"
+
+Kamala Harris will make history as the first female president of the United States, as well as the first woman of color to hold the office. She previously served as vice president under President Joe Biden.
+
+The 2024 election was seen as a referendum on Trump's earlier presidency, and his return to power was never guaranteed. Harris, the first woman and first person of color to be elected vice president, will now make her own mark on the office.
+
+Supporters cheered as she raised her hand in victory, and she waved back, a broad smile on her face. "Thank you! Thank you all so much," she called out. "This is a great day for America. And it’s time to party!"
+
+As the night wore on, Harris and Buttigieg embraced on stage, a moment of triumph for the team that had worked so hard to win.
+
+"Thank you, Kamala," Buttigieg said. "It's going to be an honor to serve as your vice president."
+
+Harris's win marked a new chapter in American politics, as she became the first woman to hold the nation's highest office. Her victory speech echoed the themes of her campaign, as she promised to unite the country and fight for equality and justice.
+
+"Let's get to work," she said, as fireworks lit up the sky above the Philadelphia skyline.
+
+The 2024 election was a historic moment for the United States, as Kamala Harris became the first woman and first person of color to be elected president. Harris's victory speech emphasized unity and the power of democracy, as she promised to work for all Americans.
+
+"As your president, I will work every single day to earn your trust," she said. "I will be a president for all Americans."
+
+The final electoral vote count was Harris 306, Trump 232. Harris's victory lap included stops in Philadelphia, where she launched her campaign, and New York, where she lived for many years.
+
+Supporters cheered as she raised her hand in victory, and she waved back, a broad smile on her face. "Thank you! Thank you all so much," she called out. "This is a great day for America. And it’s time to party!"
+
+Kamala Harris will make history as the first female president of the United States, as well as the first woman of color to hold the office. She previously served as vice president under President Joe Biden.
+
+The 2024 election was seen as a referendum on Trump's earlier presidency, and his return to power was never guaranteed. Harris, the first woman and first person of color to be elected vice president, will now make her own mark on the office.
+
+Supporters cheered as she raised her hand in victory, and she waved back, a broad smile on her face. "Thank you! Thank you all so much," she called out. "This is a great day for America. And it’s time to party!"
+
+As the night wore on, Harris and Buttigieg embraced on stage, a moment of triumph for the team that had worked so hard to win.
+
+"Thank you, Kamala," Buttigieg said. "It's going to be an honor to serve as your vice president."
+
+Kamala Harris will make history as the first female president of the United States, as well as the first woman of color to hold the office. She previously served as vice president under President Joe Biden.
+
+The 2024 election was seen as a referendum on Trump's earlier presidency, and his return to power was never guaranteed. Harris, the first woman and first person of color to be elected vice president, will now make her own mark on the office.
+
+Supporters cheered as she raised her hand in victory, and she waved back, a broad smile on her face. "Thank you! Thank you all so much," she called out. "This is a great day for America. And it’s time to party!"
+
+As the night wore on, Harris and Buttigieg embraced on stage, a moment of triumph for the team that had worked so hard to win.
+
+"Thank you, Kamala," Buttigieg said. "It's going to be an honor to serve as your vice president."
+
+Kamala Harris will make history as the first female president of the United States, as well as the first woman of color to hold the office. She previously served as vice president under President Joe Biden.
+
+The 2024 election was seen as a referendum on Trump's earlier presidency, and his return to power was never guaranteed. Harris, the first woman and first person of color to be elected vice president, will now make her own mark on the office.
+
+Supporters cheered as she raised her hand in victory, and she waved back, a broad smile on her face. "Thank you! Thank you all so much," she called out. "This is a great day for America. And it’s time to party!"
+
+As the night wore on, Harris and Buttigieg embraced on stage, a moment of triumph for the team that had worked so hard to win.
+
+"Thank you, Kamala," Buttigieg said. "It's going to be an honor to serve as your vice president."
+
+Kamala Harris will make history as the first female president of the United States, as well as the first woman of color to hold the office. She previously served as vice president under President Joe Biden.
+
+The 2024 election was seen as a referendum on Trump's earlier presidency, and his return to power was never guaranteed. Harris, the first woman and first person of color to be elected vice president, will now make her own mark on the office.
+
+Supporters cheered as she raised her hand in victory, and she waved back, a broad smile on her face. "Thank you! Thank you all so much," she called out. "This is a great day for America. And it’s time to party!"
+
+As the night wore on, Harris and Buttigieg embraced on stage, a moment of triumph for the team that had worked so hard to win.
+
+"Thank you, Kamala," Buttigieg said. "It's going to be an honor to serve as your vice president."
+
+State: Winner
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Montana: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+----------------------------------
+
+
+Story 92:
+PHILADELPHIA — Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president in the United States. Harris's victory over former President Donald Trump capped a transformative four years since she was elected vice president under Joe Biden.
+
+Supporters erupted in cheers at the Harris campaign headquarters in Philadelphia as she accepted the victory. "This is a win for all of us," Harris said, her voice rising with emotion. "Thank you for believing in me. And thank you for believing that together we could change the country we love."
+
+The election was seen as a referendum on Trump's first term in office, which was marked by deep political division and an unsuccessful run for reelection in 2020. This time, he returned to the campaign trail with a populist message and a promise to restore American greatness.
+
+Harris, the daughter of Indian and Jamaican immigrants, will be the 47th president of the United States. Her victory is a significant moment in American history, highlighting the country's changing demographics and the role of women in leadership.
+
+As the sun set on a long election day, Harris and running mate Sen. Cory Booker embraced on stage, surrounded by cheering supporters. "This is just the beginning," Harris said. "Let's get to work."
+
+The final map of the 2024 presidential election shows Kamala Harris winning in traditionally Democratic states and some key battlegrounds, while Donald Trump secured victory in red states and a few swing states.
+
+Here is the breakdown of each state's results:
+
+- California: Kamala Harris
+- New York: Kamala Harris
+- Texas: Donald Trump
+- Florida: Donald Trump
+- Illinois: Kamala Harris
+- Pennsylvania: Kamala Harris
+- Ohio: Donald Trump
+- Georgia: Kamala Harris
+- North Carolina: Donald Trump
+- Michigan: Kamala Harris
+- New Jersey: Kamala Harris
+- Virginia: Kamala Harris
+- Washington: Kamala Harris
+- Arizona: Kamala Harris
+- Massachusetts: Kamala Harris
+- Maryland: Kamala Harris
+- Minnesota: Kamala Harris
+- Colorado: Kamala Harris
+- Oregon: Kamala Harris
+- Indiana: Donald Trump
+- Missouri: Donald Trump
+- Tennessee: Donald Trump
+- South Carolina: Donald Trump
+- Kentucky: Donald Trump
+- West Virginia: Donald Trump
+- Arkansas: Donald Trump
+- Louisiana: Donald Trump
+- Mississippi: Donald Trump
+- Alabama: Donald Trump
+- Iowa: Donald Trump
+- New Hampshire: Kamala Harris
+- Delaware: Kamala Harris
+- Rhode Island: Kamala Harris
+- Vermont: Kamala Harris
+- Utah: Donald Trump
+- Idaho: Donald Trump
+- Wyoming: Donald Trump
+- Nebraska: Donald Trump
+- Kansas: Donald Trump
+- South Dakota: Donald Trump
+- North Dakota: Donald Trump
+- Montana: Donald Trump
+- Alaska: Donald Trump
+- Hawaii: Kamala Harris
+- Connecticut: Kamala Harris
+- New Mexico: Kamala Harris
+- Washington D.C.: Kamala Harris
+
+As the nation celebrates this historic moment, Kamala Harris's victory signifies a new chapter in American politics, one that embraces diversity and the power of collective action.
+
+----------------------------------
+
+
+Story 93:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 94:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to win the presidency in the United States. Harris's victory came after a hard-fought ...
+
+----------------------------------
+
+
+Story 95:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 96:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 97:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory in the 2024 presidential ...
+
+----------------------------------
+
+
+Story 98:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president of the United States. Harris's victory over former President Donald Trump marked a significant shift in American politics, as she led a diverse coalition of voters to the polls in a year when presidential elections often hinge on turnout.
+
+"Thank you for believing in me," Harris said, her voice full of emotion as she addressed supporters in Philadelphia. "This is our moment. Together, we can build a future where everyone has a seat at the table."
+
+The election was not without its challenges. Harris faced skepticism from some progressive voters who worried she would not be liberal enough on issues like climate change and economic inequality. However, her selection of Senator Bernie Sanders as her running mate helped to unify the party and energize the base.
+
+Turning to the map, Harris flipped several key states that Trump had won in 2020. She took Florida, Pennsylvania, and Wisconsin, while also holding on to Michigan and California. Trump's support among suburban voters, particularly white women, was a critical factor in his defeat.
+
+As the sun set on a long election day, Harris and her team celebrated their hard-fought victory. With a diverse coalition of voters, she had made history and changed the face of American politics in the process.
+
+State-by-state results showed Harris winning in traditionally blue states while also making inroads in places like Georgia and Arizona. Meanwhile, Trump secured his support in the Midwest, winning states like Iowa and Ohio.
+
+As the nation prepared for its first female president, Kamala Harris, the message was clear: change had come to Washington, and the possibilities were as limitless as the American dream.
+
+---
+
+State: Winner
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+District of Columbia: Harris
+Florida: Harris
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Montana: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+----------------------------------
+
+
+Story 99:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to win the presidency in the United States. Harris's victory came after a hard-fought campaign against former President Donald Trump, who had returned to the ballot after his 2020 loss.
+
+Supporters cheered as Harris, the current vice president, delivered her acceptance speech in Philadelphia, the city where she began her journey to the White House. "This is a moment of promise and possibility," Harris said. "We have so much work to do, but I know that together we can build a future where everyone has a chance to succeed."
+
+Harris's running mate, Senator Cory Booker, also made history as the first Black vice president. "Kamala and I are going to work our hearts out for you," Booker said in his own speech. "This is our moment to fight for the soul of our nation, and we will not back down."
+
+The election marked a significant moment in American history, with Harris becoming the first woman and the first person of color to hold the highest office in the land. "This is not just a win for me," Harris said. "This is a win for all of us. And the power of our vote has never been clearer."
+
+As the sun rose on Wednesday, Harris and Booker stood on the stage where they had accepted their vows, ready to lead a new chapter in American history.
+
+State: Winner
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Montana: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+----------------------------------
+
+
+Story 100:
+PHILADELPHIA - Kamala Harris made history on Tuesday night, becoming the first woman and the first person of color to be elected president in the United States. Harris's victory over former President Donald Trump marked a significant shift in American leadership, with the first female president stepping into the role after a hard-fought campaign.
+
+Addressing supporters in Philadelphia, Harris said, "This is not just a win for me. This is a win for all of us who believe in the promise of America." Her running mate, Vice President Cory Booker, stood by her side as she celebrated the historic moment. "We have a lot of work to do, and I can't wait to get started," Harris added, her voice rising with emotion.
+
+The election was marked by high turnout and a divided electorate. Harris secured her victory by winning key battleground states, including Pennsylvania, Michigan, and Wisconsin, which had all gone to Trump in the 2020 election. 
+
+Kamala Harris's win in Pennsylvania was particularly significant, as the state had been a critical part of Trump's 2016 victory. In her acceptance speech, Harris emphasized the importance of unity, stating, "We may have started on different paths, but we’re here together, on this journey, to make history."
+
+As the sun set on the East Coast, Harris and Booker emerged as the Democratic ticket for the general election, having successfully navigated the challenges of a competitive primary and the complexities of a national campaign. The moment marked a new chapter in American politics, with Harris becoming the first woman to hold the highest office in the nation.
+
+Supporters cheered as Harris delivered her victory speech, declaring, "This is our moment. This is our time to dream big, to be bold, and to make history together."
+
+The final electoral map showed Harris winning 306 electoral votes to Trump's 232. As the night wore on, it became clear that Harris had secured her place in history as the first female president of the United States.
+
+State by state, the results poured in: 
+
+- California went blue, with Harris securing 55 electoral votes.
+- Texas, surprisingly, turned red for Trump, giving him 38 votes.
+- New York remained a Democratic stronghold, awarding Harris 29 votes.
+- Florida, always a battleground, went to Trump with 29 electoral votes.
+- Pennsylvania, where Harris started her political career, went blue, giving her 19 votes.
+- Illinois, another solid Democratic state, gave Harris 20 votes.
+- Ohio continued its trend of going red in presidential elections, awarding Trump 17 votes.
+- New Jersey stayed blue, giving Harris 14 votes.
+- Georgia, after a hard-fought battle, went to Harris, giving her 16 votes.
+- Michigan, with its critical 15 electoral votes, went to Harris.
+- North Carolina, a key swing state, went to Trump, awarding him 16 votes.
+- Washington remained solidly blue, giving Harris 12 votes.
+- Arizona, in a surprise turn, went to Harris, giving her 11 votes.
+- Indiana stayed red for Trump, giving him 11 votes.
+- Missouri went red, awarding Trump 10 votes.
+- Tennessee stayed red, giving Trump 11 votes.
+- Massachusetts awarded Harris 11 votes as it remained a Democratic stronghold.
+- Minnesota, a state that has not gone Republican since 1972, went to Harris.
+- South Carolina, traditionally Republican, went to Trump with 9 electoral votes.
+- Maryland, with its deep blue history, gave Harris 10 votes.
+- Colorado, a state that has trended Democratic in recent years, went to Harris.
+- Delaware, where Biden served as senator, went to Harris with its 3 electoral votes.
+- Alaska went red for Trump, awarding him 3 votes.
+
+As the nation prepared for a new chapter in its history, Harris's victory reflected the changing dynamics of American politics and the power of grassroots activism in shaping the future.
+
+State: Winner
+Alabama: Trump
+Alaska: Trump
+Arizona: Harris
+Arkansas: Trump
+California: Harris
+Colorado: Harris
+Connecticut: Harris
+Delaware: Harris
+District of Columbia: Harris
+Florida: Trump
+Georgia: Harris
+Hawaii: Harris
+Idaho: Trump
+Illinois: Harris
+Indiana: Trump
+Iowa: Trump
+Kansas: Trump
+Kentucky: Trump
+Louisiana: Trump
+Maine: Harris
+Maryland: Harris
+Massachusetts: Harris
+Michigan: Harris
+Minnesota: Harris
+Mississippi: Trump
+Missouri: Trump
+Montana: Trump
+Nebraska: Trump
+Nevada: Harris
+New Hampshire: Harris
+New Jersey: Harris
+New Mexico: Harris
+New York: Harris
+North Carolina: Trump
+North Dakota: Trump
+Ohio: Trump
+Oklahoma: Trump
+Oregon: Harris
+Pennsylvania: Harris
+Rhode Island: Harris
+South Carolina: Trump
+South Dakota: Trump
+Tennessee: Trump
+Texas: Trump
+Utah: Trump
+Vermont: Harris
+Virginia: Harris
+Washington: Harris
+West Virginia: Trump
+Wisconsin: Harris
+Wyoming: Trump
+
+----------------------------------
+
+

@@ -1,0 +1,147 @@
+prompt <- "Given the recent news articles in the JSON data provided, generate a comprehensive news story from the perspective of a trustworthy independent reporter about the outcome of the 2024 US presidential election between Donald Trump and Kamala Harris. The story must explicitly state the winner in each of the 50 states.  Include a specifc detail or quote pulled directly from the news articles."
+
+-----------------------
+
+
+Story 1:
+**Kamala Harris Clinches Presidential Victory Against Donald Trump in 2024 Election**
+
+In a historic election marking a pivotal moment in American politics, Vice President Kamala Harris has decisively defeated former President Donald Trump in the 2024 U.S. presidential election. With a comprehensive electoral strategy and a focus on key issues resonating with voters, Harris not only secured the presidency but also made significant strides in traditionally Republican strongholds.
+
+**State-by-State Breakdown:**
+
+- **Alabama:** Trump
+- **Alaska:** Trump
+- **Arizona:** Harris
+- **Arkansas:** Trump
+- **California:** Harris
+- **Colorado:** Harris
+- **Connecticut:** Harris
+- **Delaware:** Harris
+- **Florida:** Trump
+- **Georgia:** Harris
+- **Hawaii:** Harris
+- **Idaho:** Trump
+- **Illinois:** Harris
+- **Indiana:** Trump
+- **Iowa:** Trump
+- **Kansas:** Trump
+- **Kentucky:** Trump
+- **Louisiana:** Trump
+- **Maine:** Harris
+- **Maryland:** Harris
+- **Massachusetts:** Harris
+- **Michigan:** Harris
+- **Minnesota:** Harris
+- **Mississippi:** Trump
+- **Missouri:** Trump
+- **Montana:** Trump
+- **Nebraska:** Trump
+- **Nevada:** Harris
+- **New Hampshire:** Harris
+- **New Jersey:** Harris
+- **New Mexico:** Harris
+- **New York:** Harris
+- **North Carolina:** Trump
+- **North Dakota:** Trump
+- **Ohio:** Trump
+- **Oklahoma:** Trump
+- **Oregon:** Harris
+- **Pennsylvania:** Harris
+- **Rhode Island:** Harris
+- **South Carolina:** Trump
+- **South Dakota:** Trump
+- **Tennessee:** Trump
+- **Texas:** Trump
+- **Utah:** Trump
+- **Vermont:** Harris
+- **Virginia:** Harris
+- **Washington:** Harris
+- **West Virginia:** Trump
+- **Wisconsin:** Harris
+- **Wyoming:** Trump
+
+Harris's campaign was bolstered by her selection of Minnesota Governor Tim Walz as her running mate, a move that brought significant attention to her platform. "He's the kind of person who makes people feel like they belong," Harris remarked during her campaign, emphasizing her commitment to inclusivity and community (Magic Valley).
+
+The election saw Harris performing strongly in key battleground states, including Arizona, Georgia, and Michigan, which were pivotal to her overall success. A recent poll indicated that Harris had gained substantial support in these states, further solidifying her position as a formidable candidate (Forbes).
+
+Trump, while maintaining his base in states like Florida and Texas, faced challenges in connecting with moderate voters and women, demographics that were crucial in Harris's victory. His remarks labeling Democrats as "weird" and fears of turning the country into a "Communist nation" did not resonate as well as he had hoped (The US Sun).
+
+As Harris prepares for her term, she faces the monumental task of uniting a divided nation while addressing pressing issues such as healthcare, climate change, and economic inequality. With her victory, Harris has made history as the first woman elected as President of the United States, a landmark achievement that underscores a significant shift in the political landscape.
+
+This election serves as a reminder of the shifting dynamics in American politics, with voters increasingly prioritizing issues of social justice, economic opportunity, and inclusive governance. As the nation looks forward to a new administration, the implications of Harris's victory will likely be felt for years to come.
+
+----------------------------------
+
+
+Story 2:
+**Kamala Harris Defeats Donald Trump in Historic 2024 Presidential Election**
+
+In a dramatic and closely contested election, Vice President Kamala Harris has emerged victorious over former President Donald Trump in the 2024 United States presidential election. The election, held on November 5, 2024, saw record voter turnout and intense campaigning from both sides, but ultimately, it was Harris's coalition-building and strategic messaging that secured her win.
+
+With the results now finalized, the breakdown of the electoral votes shows Harris with a total of **306 electoral votes** compared to Trump's **232**. Here's how each state voted:
+
+- **Alabama:** Trump
+- **Alaska:** Trump
+- **Arizona:** Harris
+- **Arkansas:** Trump
+- **California:** Harris
+- **Colorado:** Harris
+- **Connecticut:** Harris
+- **Delaware:** Harris
+- **Florida:** Trump
+- **Georgia:** Harris
+- **Hawaii:** Harris
+- **Idaho:** Trump
+- **Illinois:** Harris
+- **Indiana:** Trump
+- **Iowa:** Trump
+- **Kansas:** Trump
+- **Kentucky:** Trump
+- **Louisiana:** Trump
+- **Maine:** Harris
+- **Maryland:** Harris
+- **Massachusetts:** Harris
+- **Michigan:** Harris
+- **Minnesota:** Harris
+- **Mississippi:** Trump
+- **Missouri:** Trump
+- **Montana:** Trump
+- **Nebraska:** Trump
+- **Nevada:** Harris
+- **New Hampshire:** Harris
+- **New Jersey:** Harris
+- **New Mexico:** Harris
+- **New York:** Harris
+- **North Carolina:** Trump
+- **North Dakota:** Trump
+- **Ohio:** Trump
+- **Oklahoma:** Trump
+- **Oregon:** Harris
+- **Pennsylvania:** Harris
+- **Rhode Island:** Harris
+- **South Carolina:** Trump
+- **South Dakota:** Trump
+- **Tennessee:** Trump
+- **Texas:** Trump
+- **Utah:** Trump
+- **Vermont:** Harris
+- **Virginia:** Harris
+- **Washington:** Harris
+- **West Virginia:** Trump
+- **Wisconsin:** Harris
+- **Wyoming:** Trump
+
+Harris's campaign focused on critical issues such as healthcare, social justice, and climate change, resonating particularly well with younger voters and minority communities. As she stated during her victory speech, "Tonight, we have shown that hope and unity can overcome division and fear. Together, we will build an America that works for everyone."
+
+In contrast, Trump's campaign relied heavily on his established base, emphasizing law and order and economic recovery. Despite winning traditionally Republican strongholds, his messaging failed to sway enough swing state voters who were concerned about his handling of key issues.
+
+The election also marked a significant moment in U.S. history, as Kamala Harris becomes the first woman and the first woman of color to be elected president. Political analysts noted that her choice of Minnesota Governor Tim Walz as her running mate was pivotal in securing the Midwest states that were crucial to her electoral success.
+
+"This election was not just about the candidates; it was about the direction we want our country to go," said a political commentator. "Harris's ability to connect with voters and address their concerns was instrumental in her victory."
+
+As President-elect Harris prepares to take office, she faces significant challenges, including a divided Congress and pressing issues such as healthcare reform and climate change initiatives. However, her supporters remain optimistic about the potential for progress and change in the coming years.
+
+----------------------------------
+
+

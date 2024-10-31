@@ -1,0 +1,2774 @@
+{
+  "results": [
+    {
+      "uri": "8327272729",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "23:57:48",
+      "dateTime": "2024-09-18T23:57:48Z",
+      "dateTimePub": "2024-09-18T23:57:33Z",
+      "dataType": "news",
+      "sim": 0.5451,
+      "url": "https://www.voanews.com/a/russia-capitalizes-on-trump-assassination-attempt-to-sow-division-deny-election-meddling-/7789694.html",
+      "title": "Russia capitalizes on Trump assassination attempt to sow division, deny election meddling",
+      "body": "ussia's efforts to amplify political divisions in the United States and influence the November 5 presidential election are well-documented.\n\nRussia is seizing on an apparent assassination attempt of ...",
+      "source": {
+        "uri": "voanews.com",
+        "dataType": "news",
+        "title": "VOA Voice of America"
+      },
+      "authors": [],
+      "image": "https://gdb.voanews.com/0761cdc6-2a43-45d7-90c5-d0c5689a8763_w1200_r1.jpg",
+      "eventUri": "eng-9913118",
+      "sentiment": -0.0275,
+      "wgt": 464399868,
+      "relevance": 1
+    },
+    {
+      "uri": "8327265545",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "23:44:12",
+      "dateTime": "2024-09-18T23:44:12Z",
+      "dateTimePub": "2024-09-18T23:43:49Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.sgtreport.com/2024/09/nolte-donald-trump-warns-election-cheaters-will-be-prosecuted-to-the-fullest-extent-of-the-law/",
+      "title": "Nolte: Donald Trump Warns Election Cheaters 'Will Be Prosecuted to the Fullest Extent of the Law'",
+      "body": "With early voting starting in crucial swing states, like Pennsylvania, former President Donald Trump is putting election cheaters on notice that, if he wins, they \"will be prosecuted to the fullest ...",
+      "source": {
+        "uri": "sgtreport.com",
+        "dataType": "news",
+        "title": "SGT Report"
+      },
+      "authors": [],
+      "image": {},
+      "eventUri": {},
+      "sentiment": -0.1843,
+      "wgt": 464399052,
+      "relevance": 1
+    },
+    {
+      "uri": "2024-09-489475843",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "23:42:53",
+      "dateTime": "2024-09-18T23:42:53Z",
+      "dateTimePub": "2024-09-18T23:05:43Z",
+      "dataType": "news",
+      "sim": 0.6235,
+      "url": "https://www.newsweek.com/fox-news-kamala-harris-donald-trump-polling-1956031",
+      "title": "Kamala Harris takes lead over Trump in Fox News poll",
+      "body": "The survey shows a 3-point shift among registered voters in their feelings around the candidates in the 2024 presidential election since August.\n\nLast month, Trump had a 1-point advantage, but now ...",
+      "source": {
+        "uri": "newsweek.com",
+        "dataType": "news",
+        "title": "Newsweek"
+      },
+      "authors": [
+        {
+          "uri": "monica_sager@newsweek.com",
+          "name": "Monica Sager",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://d.newsweek.com/en/full/2474887/kamala-harris-three-key-groups-poll-boost.webp?w=1600&h=900&q=88&f=a7bfaa2444bedecd2ef7aa4a969ae02a",
+      "eventUri": "eng-9910494",
+      "sentiment": 0.2549,
+      "wgt": 464398973,
+      "relevance": 1
+    },
+    {
+      "uri": "8327260119",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "23:35:01",
+      "dateTime": "2024-09-18T23:35:01Z",
+      "dateTimePub": "2024-09-18T23:34:41Z",
+      "dataType": "news",
+      "sim": 0.7961,
+      "url": "https://100percentfedup.com/teamsters-makes-historic-announcement-regarding-presidential-endorsement/",
+      "title": "Teamsters Makes Historic Announcement Regarding Presidential Endorsement * 100PercentFedUp.com * by Danielle",
+      "body": "Teamsters, an influential labor union which represents approximately 1.3 million workers in the United States and Canada, has decided not to endorse a candidate in the 2024 presidential ...",
+      "source": {
+        "uri": "100percentfedup.com",
+        "dataType": "news",
+        "title": "100 Percent Fed Up"
+      },
+      "authors": [],
+      "image": "https://100percentfedup.com/wp-content/uploads/2024/09/img_6236-1600x900.jpg",
+      "eventUri": "eng-9909141",
+      "sentiment": 0.3176,
+      "wgt": 464398501,
+      "relevance": 1
+    },
+    {
+      "uri": "2024-09-489472809",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "23:34:43",
+      "dateTime": "2024-09-18T23:34:43Z",
+      "dateTimePub": "2024-09-18T23:15:53Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.myrtlebeachonline.com/news/business/article292669079.html",
+      "title": "Fed makes large rate cut, forecasts more to come",
+      "body": "WASHINGTON -- The Federal Reserve cut interest rates Wednesday by half a percentage point, an unusually large move and a clear signal that central bankers think they are winning their war against ...",
+      "source": {
+        "uri": "myrtlebeachonline.com",
+        "dataType": "news",
+        "title": "MyrtleBeachOnline"
+      },
+      "authors": [
+        {
+          "uri": "jeanna_smialek@myrtlebeachonline.com",
+          "name": "Jeanna Smialek",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://www.mcclatchy-wires.com/incoming/ofvcc1/picture292709009/alternates/LANDSCAPE_1140/FED%20RATES%20EXPLAINER%201.jpg",
+      "eventUri": {},
+      "sentiment": -0.2627,
+      "wgt": 464398483,
+      "relevance": 1
+    },
+    {
+      "uri": "2024-09-489472332",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "23:33:10",
+      "dateTime": "2024-09-18T23:33:10Z",
+      "dateTimePub": "2024-09-18T23:04:07Z",
+      "dataType": "news",
+      "sim": 0.7176,
+      "url": "https://www.seattletimes.com/business/the-fed-makes-a-large-rate-cut-and-forecasts-more-to-come/",
+      "title": "The Fed makes a large rate cut and forecasts more to come",
+      "body": "WASHINGTON -- The Federal Reserve cut interest rates Wednesday by half a percentage point, an unusually large move and a clear signal that central bankers think they are winning their war against ...",
+      "source": {
+        "uri": "seattletimes.com",
+        "dataType": "news",
+        "title": "The Seattle Times"
+      },
+      "authors": [
+        {
+          "uri": "jeanna_smialek@seattletimes.com",
+          "name": "Jeanna Smialek",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://images.seattletimes.com/wp-content/uploads/2024/09/XET5b08V.jpg?d=1020x680",
+      "eventUri": "eng-9916613",
+      "sentiment": -0.2627,
+      "wgt": 464398390,
+      "relevance": 1
+    },
+    {
+      "uri": "8327250809",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "23:26:09",
+      "dateTime": "2024-09-18T23:26:09Z",
+      "dateTimePub": "2024-09-18T23:19:37Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.yahoo.com/news/groups-seek-intervene-protect-voters-225957705.html",
+      "title": "Groups Seek to Intervene to Protect Voters Rights",
+      "body": "Native Vote 2024. Naeva (formerly known as Native American Voters Alliance), the League of Women Voters of the United States, and Black Voters Matter moved today to intervene on behalf of voters in a ...",
+      "source": {
+        "uri": "yahoo.com",
+        "dataType": "news",
+        "title": "Yahoo"
+      },
+      "authors": [],
+      "image": "https://media.zenfs.com/en/native_news_online_articles_488/e0af651cc2c1e5e807135f905b75bf0e",
+      "eventUri": {},
+      "sentiment": 0.0902,
+      "wgt": 464397969,
+      "relevance": 1
+    },
+    {
+      "uri": "2024-09-489467298",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "23:25:38",
+      "dateTime": "2024-09-18T23:25:38Z",
+      "dateTimePub": "2024-09-18T23:15:53Z",
+      "dataType": "news",
+      "sim": 0.6863,
+      "url": "https://www.sunherald.com/news/business/article292669079.html",
+      "title": "Fed makes large rate cut, forecasts more to come",
+      "body": "WASHINGTON -- The Federal Reserve cut interest rates Wednesday by half a percentage point, an unusually large move and a clear signal that central bankers think they are winning their war against ...",
+      "source": {
+        "uri": "sunherald.com",
+        "dataType": "news",
+        "title": "Sun Herald"
+      },
+      "authors": [
+        {
+          "uri": "jeanna_smialek@sunherald.com",
+          "name": "Jeanna Smialek",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://www.mcclatchy-wires.com/incoming/ofvcc1/picture292709009/alternates/LANDSCAPE_1140/FED%20RATES%20EXPLAINER%201.jpg",
+      "eventUri": {},
+      "sentiment": -0.2627,
+      "wgt": 464397938,
+      "relevance": 1
+    },
+    {
+      "uri": "2024-09-489464768",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "23:16:14",
+      "dateTime": "2024-09-18T23:16:14Z",
+      "dateTimePub": "2024-09-18T19:11:35Z",
+      "dataType": "news",
+      "sim": 0.6471,
+      "url": "https://www.washingtontimes.com/news/2024/sep/18/house-defeats-mike-johnsons-six-month-funding-patc/",
+      "title": "House defeats Speaker Johnson's six-month funding patch, extends funding fight with little time left",
+      "body": "The House handed Speaker Mike Johnson an expected defeat Wednesday, voting down his stopgap, sic-month funding patch with a bill that requires proof of citizenship to vote.\n\nMr. Johnson's play call ...",
+      "source": {
+        "uri": "washingtontimes.com",
+        "dataType": "news",
+        "title": "Washington Times"
+      },
+      "authors": [
+        {
+          "uri": "alex_miller@washingtontimes.com",
+          "name": "Alex Miller",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://twt-thumbs.washtimes.com/media/image/2024/09/10/Congress_Budget_81387_c0-239-5724-3576_s1770x1032.jpg?d0c144b3eab089d13605033c19c1afe9cc1c7dc2",
+      "eventUri": "eng-9912992",
+      "sentiment": -0.2706,
+      "wgt": 464397374,
+      "relevance": 1
+    },
+    {
+      "uri": "8327247996",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "23:15:23",
+      "dateTime": "2024-09-18T23:15:23Z",
+      "dateTimePub": "2024-09-18T23:14:59Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.yahoo.com/news/government-funding-plan-gop-anti-225337508.html",
+      "title": "Government Funding Plan With GOP Anti-Voter Fraud Rider Dies In House",
+      "body": "WASHINGTON -- Lawmakers rejected a ploy by House Speaker Mike Johnson (R-La.) to combine legislation to fund the government with a right-wing bill attacking the illusory threat of illegal ...",
+      "source": {
+        "uri": "yahoo.com",
+        "dataType": "news",
+        "title": "Yahoo"
+      },
+      "authors": [],
+      "image": "https://media.zenfs.com/en/the_huffington_post_584/92d9cc25e607733577fbc659d5da383b",
+      "eventUri": {},
+      "sentiment": -0.0353,
+      "wgt": 464397323,
+      "relevance": 1
+    },
+    {
+      "uri": "8327248047",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "23:15:22",
+      "dateTime": "2024-09-18T23:15:22Z",
+      "dateTimePub": "2024-09-18T23:15:02Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://uk.news.yahoo.com/iranian-hackers-sent-biden-campaign-223424475.html",
+      "title": "Iranian hackers sent Biden campaign stolen Trump materials in unsolicited emails, FBI says",
+      "body": "This summer, Iranian hackers sent materials stolen from the Trump campaign to people associated with the Biden campaign as well as media outlets, according to U.S. law enforcement and intelligence ...",
+      "source": {
+        "uri": "uk.news.yahoo.com",
+        "dataType": "news",
+        "title": "Yahoo News UK"
+      },
+      "authors": [],
+      "image": "https://media.zenfs.com/en/the_independent_577/416d7c6252c6c552f3579cd408cbf0e7",
+      "eventUri": {},
+      "sentiment": -0.0039,
+      "wgt": 464397322,
+      "relevance": 1
+    },
+    {
+      "uri": "8327242464",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "23:07:47",
+      "dateTime": "2024-09-18T23:07:47Z",
+      "dateTimePub": "2024-09-18T23:07:20Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://nativenewsonline.net/currents/groups-seek-to-intervene-to-protect-voters-rights",
+      "title": "Groups Seek to Intervene to Protect Voters Rights",
+      "body": "Native Vote 2024. Naeva (formerly known as Native American Voters Alliance), the League of Women Voters of the United States, and Black Voters Matter moved today to intervene on behalf of voters in a ...",
+      "source": {
+        "uri": "nativenewsonline.net",
+        "dataType": "news",
+        "title": "Native News Online"
+      },
+      "authors": [],
+      "image": "https://nativenewsonline.net/images/2022/I_tried_to_vote_today.png",
+      "eventUri": {},
+      "sentiment": 0.0902,
+      "wgt": 464396867,
+      "relevance": 1
+    },
+    {
+      "uri": "8327241687",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "23:06:35",
+      "dateTime": "2024-09-18T23:06:35Z",
+      "dateTimePub": "2024-09-18T23:06:03Z",
+      "dataType": "news",
+      "sim": 0.7412,
+      "url": "https://abcnews.go.com/Politics/iranian-hackers-stolen-trump-campaign-material-biden-campaign/story?id=113826314",
+      "title": "Iranian hackers sent 'stolen' Trump campaign material to Biden campaign: FBI",
+      "body": "The FBI and other U.S. intelligence agencies released findings that Iranian hackers have continued efforts to influence the 2024 presidential election, with \"stolen\" information from former President ...",
+      "source": {
+        "uri": "abcnews.go.com",
+        "dataType": "news",
+        "title": "ABC News"
+      },
+      "authors": [],
+      "image": "https://i.abcnewsfe.com/a/6e8d63f5-5126-4569-8862-054533ff08c9/trump-biden-gty-er-240918_1726699432311_hpMain_16x9.jpg?w=1600",
+      "eventUri": "eng-9917196",
+      "sentiment": -0.0196,
+      "wgt": 464396795,
+      "relevance": 1
+    },
+    {
+      "uri": "8327240553",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "23:05:39",
+      "dateTime": "2024-09-18T23:05:39Z",
+      "dateTimePub": "2024-09-18T23:04:35Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.eagletribune.com/region/poll-angela-alsobrooks-maintains-lead-with-7-point-advantage-over-larry-hogan-in-maryland-senate/article_7a47e57e-099b-594d-8479-93f577ff51ae.html",
+      "title": "Poll: Angela Alsobrooks maintains lead with 7-point advantage over Larry Hogan in Maryland Senate race",
+      "body": "BALTIMORE -- Democrat Angela Alsobrooks leads Republican Larry Hogan in the Maryland U.S. Senate race by 7 percentage points, according to an Emerson College poll released Tuesday.\n\nAlsobrooks' lead ...",
+      "source": {
+        "uri": "eagletribune.com",
+        "dataType": "news",
+        "title": "Eagle-Tribune"
+      },
+      "authors": [
+        {
+          "uri": "lia_russell@eagletribune.com",
+          "name": "Lia Russell",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://bloximages.chicago2.vip.townnews.com/eagletribune.com/content/tncms/custom/image/ae213140-df8c-11e7-b06d-b798580d75a5.jpg?resize=600%2C333",
+      "eventUri": {},
+      "sentiment": -0.0353,
+      "wgt": 464396739,
+      "relevance": 1
+    },
+    {
+      "uri": "8327240254",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "23:04:45",
+      "dateTime": "2024-09-18T23:04:45Z",
+      "dateTimePub": "2024-09-18T23:04:06Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://ca.news.yahoo.com/government-funding-plan-gop-anti-225337508.html",
+      "title": "Government Funding Plan With GOP Anti-Voter Fraud Rider Dies In House",
+      "body": "WASHINGTON -- Lawmakers rejected a ploy by House Speaker Mike Johnson (R-La.) to combine legislation to fund the government with a right-wing bill attacking the illusory threat of illegal ...",
+      "source": {
+        "uri": "ca.news.yahoo.com",
+        "dataType": "news",
+        "title": "Yahoo"
+      },
+      "authors": [],
+      "image": "https://media.zenfs.com/en/the_huffington_post_584/92d9cc25e607733577fbc659d5da383b",
+      "eventUri": {},
+      "sentiment": -0.0353,
+      "wgt": 464396685,
+      "relevance": 1
+    },
+    {
+      "uri": "8327236557",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "23:00:09",
+      "dateTime": "2024-09-18T23:00:09Z",
+      "dateTimePub": "2024-09-18T22:58:41Z",
+      "dataType": "news",
+      "sim": 0.5882,
+      "url": "https://dnyuz.com/2024/09/18/house-defeats-johnsons-spending-plan-with-shutdown-looming/",
+      "title": "House Defeats Johnson's Spending Plan With Shutdown Looming",
+      "body": "The House on Wednesday defeated a $1.6 trillion stopgap spending bill to extend current government funding into March and impose new proof-of-citizenship requirements on voter registration, as ...",
+      "source": {
+        "uri": "dnyuz.com",
+        "dataType": "news",
+        "title": "DNyuz"
+      },
+      "authors": [],
+      "image": "https://dnyuz.com/wp-content/uploads/2024/09/House-Defeats-Johnsons-Spending-Plan-With-Shutdown-Looming.jpg",
+      "eventUri": {},
+      "sentiment": -0.0118,
+      "wgt": 464396409,
+      "relevance": 1
+    },
+    {
+      "uri": "2024-09-489456644",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "22:59:41",
+      "dateTime": "2024-09-18T22:59:41Z",
+      "dateTimePub": "2024-09-18T22:30:31Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.newsr.in/n/Celebrities/1zqxh7lss4/Ex-Patriots-FB-Patrick-Pass-Arrested-After-Allegedly.htm",
+      "title": "Ex-Patriots FB Patrick Pass Arrested After Allegedly Assaulting Elderly Man At Gym",
+      "body": "Maya Rudolph Returning to 'Saturday Night Live' to Play Kamala Harris Through 2024 Presidential Election | THR News Video\n\nMaya Rudolph is returning to 'Saturday Night Live' to play Kamala Harris in ...",
+      "source": {
+        "uri": "newsr.in",
+        "dataType": "news",
+        "title": "newsR"
+      },
+      "authors": [],
+      "image": "https://cdn.newsserve.net/newsR256.png",
+      "eventUri": {},
+      "sentiment": 0.0431,
+      "wgt": 464396381,
+      "relevance": 15
+    },
+    {
+      "uri": "8327235255",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "22:56:49",
+      "dateTime": "2024-09-18T22:56:49Z",
+      "dateTimePub": "2024-09-18T22:56:26Z",
+      "dataType": "news",
+      "sim": 0.6745,
+      "url": "https://www.huffpost.com/entry/mike-johnson-government-funding_n_66eb2d7be4b00648275bab3d",
+      "title": "Government Funding Plan With GOP Anti-Voter Fraud Rider Dies In House",
+      "body": "WASHINGTON -- Lawmakers rejected a ploy by House Speaker Mike Johnson (R-La.) to combine legislation to fund the government with a right-wing bill attacking the illusory threat of illegal ...",
+      "source": {
+        "uri": "huffpost.com",
+        "dataType": "news",
+        "title": "HuffPost"
+      },
+      "authors": [],
+      "image": "https://img.huffingtonpost.com/asset/66eb2def2400003200e6c67f.jpeg?ops=1200_630",
+      "eventUri": "eng-9912992",
+      "sentiment": -0.0353,
+      "wgt": 464396209,
+      "relevance": 1
+    },
+    {
+      "uri": "2024-09-489455283",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "22:54:51",
+      "dateTime": "2024-09-18T22:54:51Z",
+      "dateTimePub": "2024-09-18T22:52:17Z",
+      "dataType": "news",
+      "sim": 0.6078,
+      "url": "https://www.nytimes.com/2024/09/18/us/politics/mike-johnson-spending-bill-shutdown.html",
+      "title": "House Defeats Johnson's Spending Plan With Shutdown Looming",
+      "body": "The House on Wednesday defeated a $1.6 trillion stopgap spending bill to extend current government funding into March and impose new proof-of-citizenship requirements on voter registration, as ...",
+      "source": {
+        "uri": "nytimes.com",
+        "dataType": "news",
+        "title": "The New York Times"
+      },
+      "authors": [
+        {
+          "uri": "carl_hulse@nytimes.com",
+          "name": "Carl Hulse",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://static01.nyt.com/images/2024/09/18/multimedia/18DC-SPEND-hkgw/18DC-SPEND-hkgw-videoSixteenByNine3000.jpg",
+      "eventUri": "eng-9912992",
+      "sentiment": -0.098,
+      "wgt": 464396091,
+      "relevance": 1
+    },
+    {
+      "uri": "8327229177",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "22:51:12",
+      "dateTime": "2024-09-18T22:51:12Z",
+      "dateTimePub": "2024-09-18T22:46:04Z",
+      "dataType": "news",
+      "sim": 0.6941,
+      "url": "https://www.yahoo.com/news/iranian-hackers-sent-biden-campaign-223636488.html",
+      "title": "Iranian hackers sent Biden campaign stolen Trump materials in unsolicited emails, FBI says",
+      "body": "This summer, Iranian hackers sent materials stolen from the Trump campaign to people associated with the Biden campaign as well as media outlets, according to U.S. law enforcement and intelligence ...",
+      "source": {
+        "uri": "yahoo.com",
+        "dataType": "news",
+        "title": "Yahoo"
+      },
+      "authors": [],
+      "image": "https://media.zenfs.com/en/the_independent_635/416d7c6252c6c552f3579cd408cbf0e7",
+      "eventUri": "eng-9917196",
+      "sentiment": 0.0039,
+      "wgt": 464395872,
+      "relevance": 1
+    },
+    {
+      "uri": "8327232263",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "22:51:12",
+      "dateTime": "2024-09-18T22:51:12Z",
+      "dateTimePub": "2024-09-18T22:50:52Z",
+      "dataType": "news",
+      "sim": 0.702,
+      "url": "https://www.dailymail.co.uk/news/article-13865907/donald-trump-mike-johnson-funding-bill-fails-gop-chaos-shutdown.html",
+      "title": "Trump urges GOP to shut down the government as funding bill fails",
+      "body": "By Jon Michael Raasch For Dailymail.Com and Kelly Laco, Executive Editor Of Politics\n\nSpeaker Mike Johnson's short-gap funding bill stunningly failed on the House floor on Wednesday after GOP ...",
+      "source": {
+        "uri": "dailymail.co.uk",
+        "dataType": "news",
+        "title": "Daily Mail Online"
+      },
+      "authors": [],
+      "image": "https://i.dailymail.co.uk/1s/2024/09/18/21/89837269-0-image-a-12_1726691290877.jpg",
+      "eventUri": "eng-9912992",
+      "sentiment": 0.0588,
+      "wgt": 464395872,
+      "relevance": 1
+    },
+    {
+      "uri": "8327227698",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "22:47:31",
+      "dateTime": "2024-09-18T22:47:31Z",
+      "dateTimePub": "2024-09-18T22:43:40Z",
+      "dataType": "news",
+      "sim": 0.7529,
+      "url": "https://ca.news.yahoo.com/iranian-hackers-sent-biden-campaign-223636488.html",
+      "title": "Iranian hackers sent Biden campaign stolen Trump materials in unsolicited emails, FBI says",
+      "body": "This summer, Iranian hackers sent materials stolen from the Trump campaign to people associated with the Biden campaign as well as media outlets, according to U.S. law enforcement and intelligence ...",
+      "source": {
+        "uri": "ca.news.yahoo.com",
+        "dataType": "news",
+        "title": "Yahoo"
+      },
+      "authors": [],
+      "image": "https://media.zenfs.com/en/the_independent_635/416d7c6252c6c552f3579cd408cbf0e7",
+      "eventUri": "eng-9917196",
+      "sentiment": -0.1608,
+      "wgt": 464395651,
+      "relevance": 1
+    },
+    {
+      "uri": "8327227499",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "22:45:09",
+      "dateTime": "2024-09-18T22:45:09Z",
+      "dateTimePub": "2024-09-18T22:43:17Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://conservativeangle.com/one-or-the-other-trump-says-there-are-only-two-possible-reasons-for-interest-rate-cut/",
+      "title": "'One Or The Other': Trump Says There Are Only Two Possible Reasons For Interest Rate Cut - Conservative Angle",
+      "body": "Former President Donald Trump responded on Wednesday to the news that the Federal Reserve had moved to cut interest rates by a dramatic 0.5%, saying that there were only two possible reasons for such ...",
+      "source": {
+        "uri": "conservativeangle.com",
+        "dataType": "news",
+        "title": "Brigitte Gabriel"
+      },
+      "authors": [],
+      "image": "https://dw-wp-production.imgix.net/2024/09/GettyImages-1821573124.jpg",
+      "eventUri": {},
+      "sentiment": -0.0588,
+      "wgt": 464395509,
+      "relevance": 1
+    },
+    {
+      "uri": "2024-09-489448284",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "22:42:13",
+      "dateTime": "2024-09-18T22:42:13Z",
+      "dateTimePub": "2024-09-18T22:30:39Z",
+      "dataType": "news",
+      "sim": 0.5922,
+      "url": "https://www.nytimes.com/live/2024/09/18/us/trump-harris-election/the-democrat-in-north-carolinas-governors-race-has-rejected-debating-his-republican-rival",
+      "title": "The Democrat in North Carolina's governor's race has rejected debating his Republican rival.",
+      "body": "Ms. Lacina, a young police officer from Cedar Rapids, Iowa, maneuvered strategically through the game, voting out her opposition and bonding with an array of allies to earn the votes of a majority of ...",
+      "source": {
+        "uri": "nytimes.com",
+        "dataType": "news",
+        "title": "The New York Times"
+      },
+      "authors": [],
+      "image": "https://static01.nyt.com/images/2024/09/18/multimedia/18election-live-promo-545p-vkgl/18election-live-promo-545p-vkgl-videoSixteenByNine3000.jpg",
+      "eventUri": "eng-9909402",
+      "sentiment": 0.302,
+      "wgt": 464395333,
+      "relevance": 1
+    },
+    {
+      "uri": "8327225920",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "22:41:23",
+      "dateTime": "2024-09-18T22:41:23Z",
+      "dateTimePub": "2024-09-18T22:41:03Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.eurasiareview.com/19092024-how-will-afghanistan-feature-in-the-race-for-the-white-house-oped/",
+      "title": "How Will Afghanistan Feature In The Race For The White House? - OpEd",
+      "body": "Three years after the chaotic US withdrawal from Afghanistan, both Democrats and Republicans are revisiting the incident. Neither side is providing a credible or comprehensive explanation as to why ...",
+      "source": {
+        "uri": "eurasiareview.com",
+        "dataType": "news",
+        "title": "Eurasia Review"
+      },
+      "authors": [],
+      "image": "https://www.eurasiareview.com/wp-content/uploads/2021/08/e-26.jpg",
+      "eventUri": {},
+      "sentiment": -0.2392,
+      "wgt": 464395283,
+      "relevance": 1
+    },
+    {
+      "uri": "8327224588",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "22:39:53",
+      "dateTime": "2024-09-18T22:39:53Z",
+      "dateTimePub": "2024-09-18T22:38:57Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.newschannel5.com/news/more-poll-workers-needed-as-the-presidential-election-nears",
+      "title": "More poll workers needed as the Presidential Election nears",
+      "body": "NASHVILLE, Tenn. (WTVF) -- With the 2024 presidential election approaching, the Davidson County Election Commission is preparing for the busy season ahead. Poll workers, crucial to the smooth running ...",
+      "source": {
+        "uri": "newschannel5.com",
+        "dataType": "news",
+        "title": "WTVF"
+      },
+      "authors": [
+        {
+          "uri": "aaron_cantrell@newschannel5.com",
+          "name": "Aaron Cantrell",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://ewscripps.brightspotcdn.com/dims4/default/3f3972a/2147483647/strip/true/crop/1920x1008+0+36/resize/1200x630!/quality/90/?url=http%3A%2F%2Fewscripps-brightspot.s3.amazonaws.com%2F1d%2F46%2Ff9be387e4ec3ab0f3250d63d8f22%2Fposter-image-77.jpg",
+      "eventUri": {},
+      "sentiment": 0.1686,
+      "wgt": 464395193,
+      "relevance": 1
+    },
+    {
+      "uri": "8327217614",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "22:30:53",
+      "dateTime": "2024-09-18T22:30:53Z",
+      "dateTimePub": "2024-09-18T22:29:07Z",
+      "dataType": "news",
+      "sim": 0.8039,
+      "url": "https://theglobalherald.com/news/teamsters-union-withholds-presidential-endorsement-for-the-first-time-in-decades/",
+      "title": "Teamsters Union withholds presidential endorsement for the first time in decades - The Global Herald",
+      "body": "The International Brotherhood of Teamsters, recognized as the largest labor union in the United States, has announced that it will not endorse any candidate in the upcoming presidential election. This ...",
+      "source": {
+        "uri": "theglobalherald.com",
+        "dataType": "news",
+        "title": "The Global Herald"
+      },
+      "authors": [],
+      "image": {},
+      "eventUri": "eng-9909141",
+      "sentiment": 0.2235,
+      "wgt": 464394653,
+      "relevance": 1
+    },
+    {
+      "uri": "8327217667",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "22:30:39",
+      "dateTime": "2024-09-18T22:30:39Z",
+      "dateTimePub": "2024-09-18T22:29:14Z",
+      "dataType": "news",
+      "sim": 0.7961,
+      "url": "https://deadline.com/feature/snl-season-50-news-updates-1236083672/",
+      "title": "'Saturday Night Live' Season 50 News And Updates: Everything To Know",
+      "body": "Updated with the latest: Saturday Night Live has announced its first five hosts and the musical guest for the opening episode.\n\nSaturday Night Live will celebrate 50 years of airtime with its upcoming ...",
+      "source": {
+        "uri": "deadline.com",
+        "dataType": "news",
+        "title": "Deadline"
+      },
+      "authors": [
+        {
+          "uri": "dessi_gomez@deadline.com",
+          "name": "Dessi Gomez",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://deadline.com/wp-content/uploads/2024/09/SNL-Hosts-Sxn-50.jpg?w=1000",
+      "eventUri": "eng-9916961",
+      "sentiment": 0.2392,
+      "wgt": 464394639,
+      "relevance": 1
+    },
+    {
+      "uri": "8327205360",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "22:14:42",
+      "dateTime": "2024-09-18T22:14:42Z",
+      "dateTimePub": "2024-09-18T22:14:23Z",
+      "dataType": "news",
+      "sim": 0.549,
+      "url": "https://www.forbes.com/sites/tonyaevans/2024/09/18/trumps-wlfi-crypto-venture-raises-ethical-concerns-before-election/",
+      "title": "Trump's WLFI Crypto Venture Raises Ethical Concerns Before Election",
+      "body": "In recent months, former President Donald Trump has made a surprising pivot from calling cryptocurrency a \"scam\" to announcing his own crypto platform, World Liberty Financial (WLFI). With the 2024 ...",
+      "source": {
+        "uri": "forbes.com",
+        "dataType": "news",
+        "title": "Forbes"
+      },
+      "authors": [],
+      "image": "https://imageio.forbes.com/specials-images/imageserve/66eb4b4ffdc69fe1441ff42c/0x0.jpg?format=jpg&height=600&width=1200&fit=bounds",
+      "eventUri": "eng-9911160",
+      "sentiment": 0.1922,
+      "wgt": 464393682,
+      "relevance": 1
+    },
+    {
+      "uri": "8327205171",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "22:14:26",
+      "dateTime": "2024-09-18T22:14:26Z",
+      "dateTimePub": "2024-09-18T22:14:09Z",
+      "dataType": "news",
+      "sim": 0.7098,
+      "url": "https://townhall.com/tipsheet/saraharnold/2024/09/18/this-blue-state-just-made-a-bombshell-admission-heading-into-the-election-n2644978",
+      "title": "This Blue State Just Made a Bombshell Admission Just Months Before the Election",
+      "body": "The Oregon DMV recently admitted that 306 non-citizens have been mistakenly registered to vote since 2021 caused by an error in the state's 2019 decision to allow undocumented residents to obtain ...",
+      "source": {
+        "uri": "townhall.com",
+        "dataType": "news",
+        "title": "Townhall"
+      },
+      "authors": [
+        {
+          "uri": "sarah_arnold@townhall.com",
+          "name": "Sarah Arnold",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://media.townhall.com/cdn/hodl/2020/322/e45b31d0-b349-463c-b998-58a883989328.jpg",
+      "eventUri": "eng-9920895",
+      "sentiment": -0.1922,
+      "wgt": 464393666,
+      "relevance": 1
+    },
+    {
+      "uri": "8327199252",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "22:07:19",
+      "dateTime": "2024-09-18T22:07:19Z",
+      "dateTimePub": "2024-09-18T22:07:00Z",
+      "dataType": "news",
+      "sim": 0.7765,
+      "url": "https://www.oann.com/newsroom/billionaire-hedge-funder-john-paulson-will-take-his-money-out-of-the-stock-market-if-harris-wins-presidency/",
+      "title": "Billionaire Hedge Funder John Paulson Will Take His Money Out Of The Stock Market If Harris Wins Presidency",
+      "body": "Billionaire hedge funder John Paulson has claimed he will remove his money from the U.S. markets if Vice President Kamala Harris stays in the White House for another four years in the upcoming ...",
+      "source": {
+        "uri": "oann.com",
+        "dataType": "news",
+        "title": "One America News Network"
+      },
+      "authors": [],
+      "image": "https://www.oann.com/wp-content/uploads/2024/09/GettyImages-2172701027.webp",
+      "eventUri": "eng-9914450",
+      "sentiment": 0.098,
+      "wgt": 464393239,
+      "relevance": 1
+    },
+    {
+      "uri": "8327197728",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "22:06:16",
+      "dateTime": "2024-09-18T22:06:16Z",
+      "dateTimePub": "2024-09-18T22:05:21Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://dnyuz.com/2024/09/18/teamsters-union-refuses-to-endorse-kamala-harris-polling-shows-most-members-support-donald-trump/",
+      "title": "Teamsters Union Refuses to Endorse Kamala Harris; Polling Shows Most Members Support Donald Trump",
+      "body": "The Teamsters Union, representing more than one million union workers, will not endorse any candidate in 2024's presidential election even as polling reveals that the majority of members support ...",
+      "source": {
+        "uri": "dnyuz.com",
+        "dataType": "news",
+        "title": "DNyuz"
+      },
+      "authors": [],
+      "image": "https://dnyuz.com/wp-content/uploads/2024/09/Teamsters-Union-Refuses-to-Endorse-Kamala-Harris-Polling-Shows-Most.jpg",
+      "eventUri": {},
+      "sentiment": 0.4667,
+      "wgt": 464393176,
+      "relevance": 1
+    },
+    {
+      "uri": "8327195682",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "22:03:32",
+      "dateTime": "2024-09-18T22:03:32Z",
+      "dateTimePub": "2024-09-18T22:03:18Z",
+      "dataType": "news",
+      "sim": 0.5922,
+      "url": "https://www.politifact.com/factchecks/2024/sep/18/threads-posts/taylor-swift-remains-mum-on-elon-musks-impregnatio/",
+      "title": "No, Taylor Swift never responded to Elon Musk's \"creepy\" post about giving her a child.",
+      "body": "Just as her Instagram post endorsing Vice President Kamala Harris and Minnesota Gov. Tim Walz for the 2024 presidential election received a flurry of likes, pop superstar Taylor Swift also received a ...",
+      "source": {
+        "uri": "politifact.com",
+        "dataType": "news",
+        "title": "Politi Fact"
+      },
+      "authors": [],
+      "image": "https://static.politifact.com/politifact/rulings/meter-false.jpg",
+      "eventUri": "eng-9915124",
+      "sentiment": 0.2157,
+      "wgt": 464393012,
+      "relevance": 1
+    },
+    {
+      "uri": "8327189757",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "21:56:38",
+      "dateTime": "2024-09-18T21:56:38Z",
+      "dateTimePub": "2024-09-18T21:55:49Z",
+      "dataType": "news",
+      "sim": 0.6392,
+      "url": "https://www.dailymail.co.uk/femail/article-13866053/john-lennon-son-reveals-taylor-swift-lyric-feel-uncomfortable.html",
+      "title": "John Lennon's son says a Taylor Swift lyric made him 'uncomfortable'",
+      "body": "Although John Lennon's son thinks Donald Trump should Shake If Off, he does admit he finds one of Taylor Swift's lyrics 'uncomfortable.'\n\nSean Ono Lennon, the only son of the late Beatles singer John ...",
+      "source": {
+        "uri": "dailymail.co.uk",
+        "dataType": "news",
+        "title": "Daily Mail Online"
+      },
+      "authors": [],
+      "image": "https://i.dailymail.co.uk/1s/2024/09/18/22/89837237-0-image-m-45_1726694280624.jpg",
+      "eventUri": "eng-9915008",
+      "sentiment": 0.1843,
+      "wgt": 464392598,
+      "relevance": 1
+    },
+    {
+      "uri": "8327189306",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "21:55:15",
+      "dateTime": "2024-09-18T21:55:15Z",
+      "dateTimePub": "2024-09-18T21:55:02Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.dailywire.com/news/one-or-the-other-trump-says-there-are-only-two-possible-reasons-for-interest-rate-cut",
+      "title": "'One Or The Other': Trump Says There Are Only Two Possible Reasons For Interest Rate Cut",
+      "body": "Former President Donald Trump responded on Wednesday to the news that the Federal Reserve had moved to cut interest rates by a dramatic 0.5%, saying that there were only two possible reasons for such ...",
+      "source": {
+        "uri": "dailywire.com",
+        "dataType": "news",
+        "title": "The Daily Wire"
+      },
+      "authors": [],
+      "image": "https://dw-wp-production.imgix.net/2024/09/GettyImages-1821573124.jpg?w=1200&h=800&ixlib=react-9.3.0",
+      "eventUri": {},
+      "sentiment": -0.0588,
+      "wgt": 464392515,
+      "relevance": 1
+    },
+    {
+      "uri": "8327186743",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "21:51:34",
+      "dateTime": "2024-09-18T21:51:34Z",
+      "dateTimePub": "2024-09-18T21:51:12Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.nbcboston.com/entertainment/entertainment-news/jean-smart-ariana-grande-michael-keaton-snl-hosts/3492884/",
+      "title": "Jean Smart to host 'SNL' for its 50th season premiere. See the other hosts, musical guests announced",
+      "body": "Fresh off her Emmys win, Jean Smart is taking her comedy to a new audience -- she'll kick off \"Saturday Night Live's\" landmark 50th season along with musical guest Jelly Roll.\n\nIt will be Smart's ...",
+      "source": {
+        "uri": "nbcboston.com",
+        "dataType": "news",
+        "title": "NBC Boston"
+      },
+      "authors": [],
+      "image": "https://media.nbcboston.com/2024/09/image-2024-09-18T170420.949.png?resize=1200%2C675&quality=85&strip=all",
+      "eventUri": {},
+      "sentiment": 0.2235,
+      "wgt": 464392294,
+      "relevance": 1
+    },
+    {
+      "uri": "8327185955",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "21:50:13",
+      "dateTime": "2024-09-18T21:50:13Z",
+      "dateTimePub": "2024-09-18T21:50:04Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.yahoo.com/lifestyle/americans-are-more-anxious-about-the-election-than-they-were-4-months-ago-new-yahoo-newsyougov-poll-finds-experts-blame-volatile-times-tight-race-214111864.html",
+      "title": "Americans are more anxious about the election than they were 4 months ago, new Yahoo News/YouGov poll finds. Experts blame volatile times, tight race.",
+      "body": "If the mere thought of the Nov. 5 matchup between Vice President Kamala Harris and former President Donald Trump makes your palms sweat and heart rate increase, you're not alone. A new Yahoo ...",
+      "source": {
+        "uri": "yahoo.com",
+        "dataType": "news",
+        "title": "Yahoo"
+      },
+      "authors": [],
+      "image": "https://s.yimg.com/ny/api/res/1.2/dR72GQOtLVAuLyJMYw7KwQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA7Y2Y9d2VicA--/https://s.yimg.com/os/creatr-uploaded-images/2022-10/1da2d860-4e38-11ed-bbdf-288ab14c578f",
+      "eventUri": {},
+      "sentiment": -0.2784,
+      "wgt": 464392213,
+      "relevance": 1
+    },
+    {
+      "uri": "2024-09-489419917",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "21:48:07",
+      "dateTime": "2024-09-18T21:48:07Z",
+      "dateTimePub": "2024-09-18T21:47:53Z",
+      "dataType": "news",
+      "sim": 0.749,
+      "url": "https://www.nbclosangeles.com/entertainment/entertainment-news/jean-smart-ariana-grande-michael-keaton-snl-hosts/3514771/",
+      "title": "Jean Smart to host 'SNL' for its 50th season premiere. See the other hosts, musical guests announced",
+      "body": "It will be Smart's first time hosting and Jelly Roll's first time performing on the show.\n\n\"SNL\" on Wednesday announced the hosts and musical guests for its first five episodes of season 50, which ...",
+      "source": {
+        "uri": "nbclosangeles.com",
+        "dataType": "news",
+        "title": "NBC Southern California"
+      },
+      "authors": [
+        {
+          "uri": "associated_press@nbclosangeles.com",
+          "name": "Associated Press",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://media.nbclosangeles.com/2024/09/image-2024-09-18T170420.949.png?resize=1200%2C675&quality=85&strip=all",
+      "eventUri": "eng-9916923",
+      "sentiment": 0.1373,
+      "wgt": 464392087,
+      "relevance": 1
+    },
+    {
+      "uri": "2024-09-489419545",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "21:47:40",
+      "dateTime": "2024-09-18T21:47:40Z",
+      "dateTimePub": "2024-09-18T17:39:04Z",
+      "dataType": "news",
+      "sim": 0.5804,
+      "url": "https://www.washingtontimes.com/news/2024/sep/18/trump-doubles-down-on-calls-to-shut-down-governmen/",
+      "title": "Trump doubles down on calls to shut down government if GOP can't pass stopgap with election security",
+      "body": "Former President Donald Trump renewed his demand for Republicans to shut down the government if they can't pass House Speaker Mike Johnson's temporary funding bill that includes the Safeguard American ...",
+      "source": {
+        "uri": "washingtontimes.com",
+        "dataType": "news",
+        "title": "Washington Times"
+      },
+      "authors": [
+        {
+          "uri": "alex_miller@washingtontimes.com",
+          "name": "Alex Miller",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://twt-thumbs.washtimes.com/media/image/2024/09/18/AP24261853163829_c0-109-4896-2963_s1770x1032.jpg?7d789daacd70bcd3fa5d6c2992cdc35ed032aa23",
+      "eventUri": "eng-9912992",
+      "sentiment": -0.0118,
+      "wgt": 464392060,
+      "relevance": 1
+    },
+    {
+      "uri": "8327174970",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "21:35:24",
+      "dateTime": "2024-09-18T21:35:24Z",
+      "dateTimePub": "2024-09-18T21:34:59Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.nbcwashington.com/entertainment/entertainment-news/jean-smart-ariana-grande-michael-keaton-snl-hosts/3720813/",
+      "title": "Jean Smart to host 'SNL' for its 50th season premiere. See the other hosts, musical guests announced",
+      "body": "Fresh off her Emmys win, Jean Smart is taking her comedy to a new audience -- she'll kick off \"Saturday Night Live's\" landmark 50th season along with musical guest Jelly Roll.\n\nIt will be Smart's ...",
+      "source": {
+        "uri": "nbcwashington.com",
+        "dataType": "news",
+        "title": "NBC4 Washington"
+      },
+      "authors": [],
+      "image": "https://media.nbcwashington.com/2024/09/image-2024-09-18T170420.949.png?resize=1200%2C675&quality=85&strip=all",
+      "eventUri": {},
+      "sentiment": 0.2235,
+      "wgt": 464391324,
+      "relevance": 1
+    },
+    {
+      "uri": "8327174311",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "21:35:06",
+      "dateTime": "2024-09-18T21:35:06Z",
+      "dateTimePub": "2024-09-18T21:34:22Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://finance.yahoo.com/video/watch-volatility-potholes-coming-weeks-212818856.html",
+      "title": "Watch out for 'volatility potholes' in the coming weeks: Strategist",
+      "body": "The Federal Reserve cut rates by 50 basis points at its September meeting. RBC Capital Markets Equity Derivatives Strategist Amy Wu Silverman thinks it may take markets some time to process the cut ...",
+      "source": {
+        "uri": "finance.yahoo.com",
+        "dataType": "news",
+        "title": "Yahoo! Finance"
+      },
+      "authors": [],
+      "image": "https://s.yimg.com/ny/api/res/1.2/On37FEZQzxOeigpRnWbg0w--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NzQ7Y2Y9d2VicA--/https://s.yimg.com/os/creatr-uploaded-images/2024-09/ae865280-7604-11ef-bd7d-9b899caa3cef",
+      "eventUri": {},
+      "sentiment": -0.051,
+      "wgt": 464391306,
+      "relevance": 1
+    },
+    {
+      "uri": "8327174849",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "21:35:05",
+      "dateTime": "2024-09-18T21:35:05Z",
+      "dateTimePub": "2024-09-18T21:34:51Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.nbcphiladelphia.com/entertainment/entertainment-news/jean-smart-ariana-grande-michael-keaton-snl-hosts/3973813/",
+      "title": "Jean Smart to host 'SNL' for its 50th season premiere. See the other hosts, musical guests announced",
+      "body": "Fresh off her Emmys win, Jean Smart is taking her comedy to a new audience -- she'll kick off \"Saturday Night Live's\" landmark 50th season along with musical guest Jelly Roll.\n\nIt will be Smart's ...",
+      "source": {
+        "uri": "nbcphiladelphia.com",
+        "dataType": "news",
+        "title": "NBC10 Philadelphia"
+      },
+      "authors": [],
+      "image": "https://media.nbcphiladelphia.com/2024/09/image-2024-09-18T170420.949.png?resize=1200%2C675&quality=85&strip=all",
+      "eventUri": {},
+      "sentiment": 0.2235,
+      "wgt": 464391305,
+      "relevance": 1
+    },
+    {
+      "uri": "8327173414",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "21:33:45",
+      "dateTime": "2024-09-18T21:33:45Z",
+      "dateTimePub": "2024-09-18T21:33:21Z",
+      "dataType": "news",
+      "sim": 0.5255,
+      "url": "https://www.yahoo.com/news/harris-trump-showdown-polls-indicate-182753714.html",
+      "title": "Harris-Trump showdown: New polls indicate who has the edge in the Blue Wall battle",
+      "body": "Vice President Kamala Harris is ahead of former President Trump in three crucial 2024 election battleground states, according to a trio of new polls released on Wednesday.\n\nAccording to surveys from ...",
+      "source": {
+        "uri": "yahoo.com",
+        "dataType": "news",
+        "title": "Yahoo"
+      },
+      "authors": [],
+      "image": "https://s.yimg.com/ny/api/res/1.2/2bdjrDs4mbcddJGQJLiZ4g--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD02NzU7Y2Y9d2VicA--/https://media.zenfs.com/en/fox_news_text_979/47e2998b57ea88be41b462bbe5c630d2",
+      "eventUri": "eng-9910494",
+      "sentiment": 0.0353,
+      "wgt": 464391225,
+      "relevance": 1
+    },
+    {
+      "uri": "8327172254",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "21:32:22",
+      "dateTime": "2024-09-18T21:32:22Z",
+      "dateTimePub": "2024-09-18T21:32:00Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.nbcsandiego.com/entertainment/entertainment-news/jean-smart-ariana-grande-michael-keaton-snl-hosts/3626532/",
+      "title": "Jean Smart to host 'SNL' for its 50th season premiere. See the other hosts, musical guests announced",
+      "body": "Fresh off her Emmys win, Jean Smart is taking her comedy to a new audience -- she'll kick off \"Saturday Night Live's\" landmark 50th season along with musical guest Jelly Roll.\n\nIt will be Smart's ...",
+      "source": {
+        "uri": "nbcsandiego.com",
+        "dataType": "news",
+        "title": "NBC 7 San Diego"
+      },
+      "authors": [],
+      "image": "https://media.nbcsandiego.com/2024/09/image-2024-09-18T170420.949.png?resize=1200%2C675&quality=85&strip=all",
+      "eventUri": {},
+      "sentiment": 0.2235,
+      "wgt": 464391142,
+      "relevance": 1
+    },
+    {
+      "uri": "8327172250",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "21:32:20",
+      "dateTime": "2024-09-18T21:32:20Z",
+      "dateTimePub": "2024-09-18T21:31:59Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.politicususa.com/2024/09/18/trump-melts-down-and-demands-government-shutdown.html",
+      "title": "Trump Melts Down And Demands Government Shutdown",
+      "body": "Trump is reeling and demanding that the government be shut down unless a bill is passed against non-citizen voting, which is already illegal.\n\nTrump posted on Truth Social:\n\nIf Republicans ...",
+      "source": {
+        "uri": "politicususa.com",
+        "dataType": "news",
+        "title": "POLITICUSUSA"
+      },
+      "authors": [
+        {
+          "uri": "jason_easley@politicususa.com",
+          "name": "Jason Easley",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://www.politicususa.com/wp-content/uploads/2024/08/Trump-Las-Vegas-2024-scaled.jpg",
+      "eventUri": {},
+      "sentiment": -0.098,
+      "wgt": 464391140,
+      "relevance": 1
+    },
+    {
+      "uri": "8327170691",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "21:30:22",
+      "dateTime": "2024-09-18T21:30:22Z",
+      "dateTimePub": "2024-09-18T21:30:01Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.nbcchicago.com/entertainment/entertainment-news/jean-smart-ariana-grande-michael-keaton-snl-hosts/3551770/",
+      "title": "Jean Smart to host 'SNL' for its 50th season premiere. See the other hosts, musical guests announced",
+      "body": "Fresh off her Emmys win, Jean Smart is taking her comedy to a new audience -- she'll kick off \"Saturday Night Live's\" landmark 50th season along with musical guest Jelly Roll.\n\nIt will be Smart's ...",
+      "source": {
+        "uri": "nbcchicago.com",
+        "dataType": "news",
+        "title": "NBC Chicago"
+      },
+      "authors": [],
+      "image": "https://media.nbcchicago.com/2024/09/image-2024-09-18T170420.949.png?resize=1200%2C675&quality=85&strip=all",
+      "eventUri": {},
+      "sentiment": 0.2235,
+      "wgt": 464391022,
+      "relevance": 1
+    },
+    {
+      "uri": "8327170499",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "21:29:57",
+      "dateTime": "2024-09-18T21:29:57Z",
+      "dateTimePub": "2024-09-18T21:29:42Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.nbcdfw.com/entertainment/entertainment-news/jean-smart-ariana-grande-michael-keaton-snl-hosts/3649275/",
+      "title": "Jean Smart to host 'SNL' for its 50th season premiere. See the other hosts, musical guests announced",
+      "body": "Fresh off her Emmys win, Jean Smart is taking her comedy to a new audience -- she'll kick off \"Saturday Night Live's\" landmark 50th season along with musical guest Jelly Roll.\n\nIt will be Smart's ...",
+      "source": {
+        "uri": "nbcdfw.com",
+        "dataType": "news",
+        "title": "NBC 5 Dallas-Fort Worth"
+      },
+      "authors": [],
+      "image": "https://media.nbcdfw.com/2024/09/image-2024-09-18T170420.949.png?resize=1200%2C675&quality=85&strip=all",
+      "eventUri": {},
+      "sentiment": 0.2235,
+      "wgt": 464390997,
+      "relevance": 1
+    },
+    {
+      "uri": "8327170312",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "21:29:40",
+      "dateTime": "2024-09-18T21:29:40Z",
+      "dateTimePub": "2024-09-18T21:29:27Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.nbcmiami.com/entertainment/entertainment-news/jean-smart-ariana-grande-michael-keaton-snl-hosts/3421255/",
+      "title": "Jean Smart to host 'SNL' for its 50th season premiere. See the other hosts, musical guests announced",
+      "body": "Fresh off her Emmys win, Jean Smart is taking her comedy to a new audience -- she'll kick off \"Saturday Night Live's\" landmark 50th season along with musical guest Jelly Roll.\n\nIt will be Smart's ...",
+      "source": {
+        "uri": "nbcmiami.com",
+        "dataType": "news",
+        "title": "NBC 6 South Florida"
+      },
+      "authors": [],
+      "image": "https://media.nbcmiami.com/2024/09/image-2024-09-18T170420.949.png?resize=1200%2C675&quality=85&strip=all",
+      "eventUri": {},
+      "sentiment": 0.2235,
+      "wgt": 464390980,
+      "relevance": 1
+    },
+    {
+      "uri": "8327168736",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "21:27:55",
+      "dateTime": "2024-09-18T21:27:55Z",
+      "dateTimePub": "2024-09-18T21:27:40Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.nbcbayarea.com/entertainment/entertainment-news/jean-smart-ariana-grande-michael-keaton-snl-hosts/3656361/",
+      "title": "Jean Smart to host 'SNL' for its 50th season premiere. See the other hosts, musical guests announced",
+      "body": "Fresh off her Emmys win, Jean Smart is taking her comedy to a new audience -- she'll kick off \"Saturday Night Live's\" landmark 50th season along with musical guest Jelly Roll.\n\nIt will be Smart's ...",
+      "source": {
+        "uri": "nbcbayarea.com",
+        "dataType": "news",
+        "title": "NBC Bay Area"
+      },
+      "authors": [],
+      "image": "https://media.nbcbayarea.com/2024/09/image-2024-09-18T170420.949.png?resize=1200%2C675&quality=85&strip=all",
+      "eventUri": {},
+      "sentiment": 0.2235,
+      "wgt": 464390875,
+      "relevance": 1
+    },
+    {
+      "uri": "8327167870",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "21:26:38",
+      "dateTime": "2024-09-18T21:26:38Z",
+      "dateTimePub": "2024-09-18T21:26:29Z",
+      "dataType": "news",
+      "sim": 0.8,
+      "url": "https://www.nbcnewyork.com/entertainment/entertainment-news/jean-smart-ariana-grande-michael-keaton-snl-hosts/5808520/",
+      "title": "Jean Smart to host 'SNL' for its 50th season premiere. See the other hosts, musical guests announced",
+      "body": "Fresh off her Emmys win, Jean Smart is taking her comedy to a new audience -- she'll kick off \"Saturday Night Live's\" landmark 50th season along with musical guest Jelly Roll.\n\nIt will be Smart's ...",
+      "source": {
+        "uri": "nbcnewyork.com",
+        "dataType": "news",
+        "title": "NBC New York"
+      },
+      "authors": [],
+      "image": "https://media.nbcnewyork.com/2024/09/image-2024-09-18T170420.949.png?resize=1200%2C675&quality=85&strip=all",
+      "eventUri": "eng-9916923",
+      "sentiment": 0.2235,
+      "wgt": 464390798,
+      "relevance": 1
+    },
+    {
+      "uri": "8327167586",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "21:26:31",
+      "dateTime": "2024-09-18T21:26:31Z",
+      "dateTimePub": "2024-09-18T21:26:03Z",
+      "dataType": "news",
+      "sim": 0.6118,
+      "url": "https://www.xxlmag.com/pharrell-politics/",
+      "title": "Pharrell Gets Heat for Saying He Doesn't 'Do Politics' Or Want to Hear About Celebs Endorsing Politicians",
+      "body": "Pharrell says he doesn't \"do politics\" or want to hear about celebrities endorsing politicians and he's catching heat for his opinion.\n\nIn a recent interview with The Hollywood Reporter published on ...",
+      "source": {
+        "uri": "xxlmag.com",
+        "dataType": "news",
+        "title": "XXL Magazine"
+      },
+      "authors": [
+        {
+          "uri": "joey_ech@xxlmag.com",
+          "name": "Joey Ech",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://townsquare.media/site/812/files/2024/09/attachment-pharrell-1.jpg?w=1200&q=75&format=natural",
+      "eventUri": "eng-9912401",
+      "sentiment": 0.0745,
+      "wgt": 464390791,
+      "relevance": 1
+    },
+    {
+      "uri": "2024-09-489398903",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "21:13:24",
+      "dateTime": "2024-09-18T21:13:24Z",
+      "dateTimePub": "2024-09-18T21:13:19Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.wlsam.com/news/teamsters-decline-to-make-presidential-endorsement/",
+      "title": "Teamsters Decline to Make Presidential Endorsement",
+      "body": "The Teamsters union announced it will not offer an endorsement in the 2024 presidential election, though its members overwhelmingly support former President Donald Trump.\n\nThe union said in a release ...",
+      "source": {
+        "uri": "wlsam.com",
+        "dataType": "news",
+        "title": "WLS-AM 890 | WLS-AM"
+      },
+      "authors": [],
+      "image": "https://cdn.socast.io/6616/sites/353/2017/09/29114551/wlsam_opengraph-general_1200x630_01.jpg",
+      "eventUri": {},
+      "sentiment": 0.2235,
+      "wgt": 464390004,
+      "relevance": 1
+    },
+    {
+      "uri": "2024-09-489397364",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "21:09:48",
+      "dateTime": "2024-09-18T21:09:48Z",
+      "dateTimePub": "2024-09-18T21:09:23Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.wmal.com/news/teamsters-decline-to-make-presidential-endorsement/",
+      "title": "Teamsters Decline to Make Presidential Endorsement",
+      "body": "The Teamsters union announced it will not offer an endorsement in the 2024 presidential election, though its members overwhelmingly support former President Donald Trump.\n\nThe union said in a release ...",
+      "source": {
+        "uri": "wmal.com",
+        "dataType": "news",
+        "title": "WMAL-FM"
+      },
+      "authors": [],
+      "image": "https://cdn.socast.io/6616/sites/238/2022/02/04092822/WMAL-FM-Social.jpg",
+      "eventUri": {},
+      "sentiment": 0.2235,
+      "wgt": 464389788,
+      "relevance": 1
+    },
+    {
+      "uri": "8327151995",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "21:08:32",
+      "dateTime": "2024-09-18T21:08:32Z",
+      "dateTimePub": "2024-09-18T21:08:18Z",
+      "dataType": "news",
+      "sim": 0.6863,
+      "url": "https://www.postandcourier.com/arena/the-spun/nfl-fans-convinced-they-know-where-jason-kelce-stands-politically/article_de34fe27-a76d-5b64-a3eb-30d59231425d.html",
+      "title": "NFL Fans Convinced They Know Where Jason Kelce Stands Politically",
+      "body": "Jason Kelce took some heat for his performance on ESPN's \"Monday Night Football\" this week.\n\nThe legendary Philadelphia Eagles center appeared on ESPN's \"Monday Night Football\" broadcast in the third ...",
+      "source": {
+        "uri": "postandcourier.com",
+        "dataType": "news",
+        "title": "Post and Courier"
+      },
+      "authors": [
+        {
+          "uri": "andrew_holleran@postandcourier.com",
+          "name": "Andrew Holleran",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://bloximages.newyork1.vip.townnews.com/postandcourier.com/content/tncms/custom/image/6903687a-a7dc-11e9-896c-0bef6d6c9301.jpg?resize=600%2C314",
+      "eventUri": "eng-9906407",
+      "sentiment": 0.1216,
+      "wgt": 464389712,
+      "relevance": 1
+    },
+    {
+      "uri": "8327151582",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "21:08:10",
+      "dateTime": "2024-09-18T21:08:10Z",
+      "dateTimePub": "2024-09-18T21:07:54Z",
+      "dataType": "news",
+      "sim": 0.5882,
+      "url": "https://dnyuz.com/2024/09/18/on-survivor-talking-politics-could-get-you-voted-off-the-island/",
+      "title": "On 'Survivor,' Talking Politics Could Get You Voted Off the Island",
+      "body": "In the summer of 2016, as Donald J. Trump was locking up the Republican nomination for president, Sarah Lacina was dominating in her second appearance on the reality television show \"Survivor.\"\n\nMs. ...",
+      "source": {
+        "uri": "dnyuz.com",
+        "dataType": "news",
+        "title": "DNyuz"
+      },
+      "authors": [],
+      "image": "https://dnyuz.com/wp-content/uploads/2024/09/On-'Survivor-Talking-Politics-Could-Get-You-Voted-Off-the.jpg",
+      "eventUri": "eng-9909402",
+      "sentiment": 0.2549,
+      "wgt": 464389690,
+      "relevance": 1
+    },
+    {
+      "uri": "8327146624",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "21:03:13",
+      "dateTime": "2024-09-18T21:03:13Z",
+      "dateTimePub": "2024-09-18T21:03:04Z",
+      "dataType": "news",
+      "sim": 0.5216,
+      "url": "https://www.inquisitr.com/brittany-mahomes-bothered-about-donald-trump-after-he-spews-hate-for-friend-taylor-swift",
+      "title": "Brittany Mahomes 'Bothered' About Donald Trump After He Spews 'Hate' For Friend Taylor Swift",
+      "body": "Brittany Mahomes is apparently at a crossroads. Recently, when she appeared to endorse Republican nominee, Donald Trump, her friendship with Taylor Swift was speculated to have been on the rocks. ...",
+      "source": {
+        "uri": "inquisitr.com",
+        "dataType": "news",
+        "title": "The Inquisitr"
+      },
+      "authors": [],
+      "image": "https://dab57h0r8ahff.cloudfront.net/716198/uploads/bf26bc00-758d-11ef-aed0-33678927585e_1200_630.jpeg",
+      "eventUri": "eng-9909166",
+      "sentiment": 0.1843,
+      "wgt": 464389393,
+      "relevance": 1
+    },
+    {
+      "uri": "8327146486",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "21:03:11",
+      "dateTime": "2024-09-18T21:03:11Z",
+      "dateTimePub": "2024-09-18T21:02:58Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.rollingstone.com/politics/politics-news/trump-government-shutdown-congress-save-act-1235106067/",
+      "title": "Trump Calls for Govt. Shutdown Unless Congress Makes It Harder for Americans to Vote",
+      "body": "Judge Who Tossed Trump's Docs Case Repeatedly Violated Disclosure Rule: Report\n\nThe House is expected to vote Wednesday on a continuing resolution to keep the government funded and avoid a shutdown at ...",
+      "source": {
+        "uri": "rollingstone.com",
+        "dataType": "news",
+        "title": "Rolling Stone"
+      },
+      "authors": [
+        {
+          "uri": "nikki_mccann_ramirez@rollingstone.com",
+          "name": "Nikki McCann Ramirez",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://www.rollingstone.com/wp-content/uploads/2024/09/trump-govt-shutdown.jpg?crop=7px%2C318px%2C1554px%2C877px&resize=1600%2C900",
+      "eventUri": {},
+      "sentiment": -0.2314,
+      "wgt": 464389391,
+      "relevance": 1
+    },
+    {
+      "uri": "8327144055",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "21:01:11",
+      "dateTime": "2024-09-18T21:01:11Z",
+      "dateTimePub": "2024-09-18T21:00:22Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.neowin.net/news/microsoft-president-brad-smith-urges-the-us-congress-to-pass-a-new-deepfake-fraud-statute/",
+      "title": "Microsoft President Brad Smith urges the US Congress to pass a new \"deepfake fraud statute\"",
+      "body": "With the rise of generative AI has come a new wave of digital \"deepfake\" content by malicious actors who are trying to get false information about people and topics on the internet. That trend has ...",
+      "source": {
+        "uri": "neowin.net",
+        "dataType": "news",
+        "title": "Neowin"
+      },
+      "authors": [
+        {
+          "uri": "john_callaham@neowin.net",
+          "name": "John Callaham",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://cdn.neowin.com/news/images/uploaded/2021/02/1612276304_microsoft_logo_2_story.jpg",
+      "eventUri": {},
+      "sentiment": -0.2157,
+      "wgt": 464389271,
+      "relevance": 1
+    },
+    {
+      "uri": "2024-09-489390074",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "20:59:29",
+      "dateTime": "2024-09-18T20:59:29Z",
+      "dateTimePub": "2024-09-18T20:55:25Z",
+      "dataType": "news",
+      "sim": 0.6314,
+      "url": "https://www.nytimes.com/2024/09/18/us/politics/survivor-season-47-jon-lovett.html",
+      "title": "On 'Survivor,' Talking Politics Could Get You Voted Off the Island",
+      "body": "Kellen Browning watched early seasons of \"Survivor\" with his family as a child, and then rediscovered it when he was in high school. Alexandra Berzon, like many newer fans, binged old seasons of the ...",
+      "source": {
+        "uri": "nytimes.com",
+        "dataType": "news",
+        "title": "The New York Times"
+      },
+      "authors": [
+        {
+          "uri": "kellen_browning@nytimes.com",
+          "name": "Kellen Browning",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://static01.nyt.com/images/2024/09/18/us/politics/18pol-survivor1/18pol-survivor1-videoSixteenByNine3000.jpg",
+      "eventUri": "eng-9909402",
+      "sentiment": 0.2706,
+      "wgt": 464389169,
+      "relevance": 1
+    },
+    {
+      "uri": "2024-09-489388208",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "20:56:57",
+      "dateTime": "2024-09-18T20:56:57Z",
+      "dateTimePub": "2024-09-18T20:56:44Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.kvor.com/news/teamsters-decline-to-make-presidential-endorsement/",
+      "title": "Teamsters Decline to Make Presidential Endorsement",
+      "body": "The Teamsters union announced it will not offer an endorsement in the 2024 presidential election, though its members overwhelmingly support former President Donald Trump.\n\nThe union said in a release ...",
+      "source": {
+        "uri": "kvor.com",
+        "dataType": "news",
+        "title": "AM 740 KVOR | KVOR-AM"
+      },
+      "authors": [],
+      "image": "https://www.newsmax.com/Newsmax/files/f5/f57f6fd8-2f2c-4890-b846-0e81aa47f131.jpg",
+      "eventUri": {},
+      "sentiment": 0.2235,
+      "wgt": 464389017,
+      "relevance": 1
+    },
+    {
+      "uri": "8327133167",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "20:46:46",
+      "dateTime": "2024-09-18T20:46:46Z",
+      "dateTimePub": "2024-09-18T20:46:29Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.wnd.com/2024/09/union-bigwigs-decline-to-endorse-anyone-for-president-despite-rank-and-file-members-overwhelmingly-backing-trump/",
+      "title": "Union bigwigs decline to endorse anyone for president despite rank-and-file members overwhelmingly backing Trump * WorldNetDaily * by Robert Schmad, Daily Caller News Foundation",
+      "body": "The International Brotherhood of Teamsters on Wednesday declined to make an endorsement in the 2024 presidential election just hours after releasing internal polling data showing that the workers it ...",
+      "source": {
+        "uri": "wnd.com",
+        "dataType": "news",
+        "title": "WND"
+      },
+      "authors": [],
+      "image": "https://www.wnd.com/wp-content/uploads/2024/09/sean-obrien-teamsters-union-jpg-1600x900.jpg",
+      "eventUri": {},
+      "sentiment": 0.4196,
+      "wgt": 464388406,
+      "relevance": 1
+    },
+    {
+      "uri": "8327132497",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "20:46:26",
+      "dateTime": "2024-09-18T20:46:26Z",
+      "dateTimePub": "2024-09-18T20:45:30Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://bakersfieldnow.com/news/nation-world/teamsters-declines-to-endorse-either-harris-or-trump-international-brotherhood-of-teamsters-sean-obrien-donald-trump-kamala-harris-union-politics-2024-election",
+      "title": "Teamsters declines to endorse either Harris or Trump for president",
+      "body": "WASHINGTON (TND) -- The International Brotherhood of Teamsters announced Wednesday it will not issue its highly coveted endorsement to either major candidate in the 2024 presidential election.\n\nThe ...",
+      "source": {
+        "uri": "bakersfieldnow.com",
+        "dataType": "news",
+        "title": "KBAK"
+      },
+      "authors": [
+        {
+          "uri": "kristina_watrobski@bakersfieldnow.com",
+          "name": "Kristina Watrobski",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://bakersfieldnow.com/resources/media2/16x9/2844/986/0x25/90/97bbe10f-1c35-424e-8303-26bfa163e484-AP24230582322522.jpg",
+      "eventUri": {},
+      "sentiment": 0.2549,
+      "wgt": 464388386,
+      "relevance": 1
+    },
+    {
+      "uri": "8327131452",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "20:45:44",
+      "dateTime": "2024-09-18T20:45:44Z",
+      "dateTimePub": "2024-09-18T20:44:07Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://wfin.com/fox-political-news/new-poll-indicates-whether-harris-or-trump-has-the-edge-in-this-key-battleground-state/",
+      "title": "New poll indicates whether Harris or Trump has the edge in this key battleground state - WFIN Local News",
+      "body": "By entering your email and pushing continue, you are agreeing to Fox News' Terms of Use and Privacy Policy, which includes our Notice of Financial Incentive.\n\nA new poll conducted entirely after last ...",
+      "source": {
+        "uri": "wfin.com",
+        "dataType": "news",
+        "title": "WFIN"
+      },
+      "authors": [],
+      "image": "https://wfin.com/wp-content/uploads/2018/03/WFIN-AM-FM-logo.png",
+      "eventUri": {},
+      "sentiment": 0.0667,
+      "wgt": 464388344,
+      "relevance": 1
+    },
+    {
+      "uri": "8327131462",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "20:45:09",
+      "dateTime": "2024-09-18T20:45:09Z",
+      "dateTimePub": "2024-09-18T20:44:07Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://wfin.com/fox-political-news/harris-trump-showdown-new-polls-indicate-who-has-the-edge-in-the-blue-wall-battle/",
+      "title": "Harris-Trump showdown: New polls indicate who has the edge in the Blue Wall battle - WFIN Local News",
+      "body": "By entering your email and pushing continue, you are agreeing to Fox News' Terms of Use and Privacy Policy, which includes our Notice of Financial Incentive.\n\nVice President Kamala Harris is ahead of ...",
+      "source": {
+        "uri": "wfin.com",
+        "dataType": "news",
+        "title": "WFIN"
+      },
+      "authors": [],
+      "image": "https://wfin.com/wp-content/uploads/2018/03/WFIN-AM-FM-logo.png",
+      "eventUri": {},
+      "sentiment": 0.0667,
+      "wgt": 464388309,
+      "relevance": 1
+    },
+    {
+      "uri": "8327129222",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "20:41:39",
+      "dateTime": "2024-09-18T20:41:39Z",
+      "dateTimePub": "2024-09-18T20:41:23Z",
+      "dataType": "news",
+      "sim": 0.4353,
+      "url": "https://www.econotimes.com/Kamala-Harris-Presidency-May-Drive-US-Crypto-Firms-Overseas-Warns-Nansen-CEO-at-Token2049-1687637",
+      "title": "Kamala Harris Presidency May Drive US Crypto Firms Overseas, Warns Nansen CEO at Token2049 - EconoTimes",
+      "body": "Nansen CEO discusses U.S. crypto's future under Harris at Token2049. Credit: Gage Skidmore/Flickr(CC BY-SA 4.0)\n\nNansen CEO Alex Svanevik predicts a Kamala Harris presidency would create a challenging ...",
+      "source": {
+        "uri": "econotimes.com",
+        "dataType": "news",
+        "title": "EconoTimes"
+      },
+      "authors": [],
+      "image": "https://f1.econotimes.com/2024/09/y86z2vmfje_th_1024x0.jpeg",
+      "eventUri": "eng-9911517",
+      "sentiment": 0.3412,
+      "wgt": 464388099,
+      "relevance": 15
+    },
+    {
+      "uri": "8327125530",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "20:38:10",
+      "dateTime": "2024-09-18T20:38:10Z",
+      "dateTimePub": "2024-09-18T20:37:19Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://dnyuz.com/2024/09/18/saturday-night-live-season-50-news-and-updates-everything-to-know/",
+      "title": "'Saturday Night Live' Season 50 News And Updates: Everything To Know",
+      "body": "Updated with the latest: Saturday Night Live has announced its first five hosts and the musical guest for the opening episode.\n\nSaturday Night Live will celebrate 50 years of airtime with its upcoming ...",
+      "source": {
+        "uri": "dnyuz.com",
+        "dataType": "news",
+        "title": "DNyuz"
+      },
+      "authors": [],
+      "image": "https://dnyuz.com/wp-content/uploads/2024/09/'Saturday-Night-Live-Season-50-News-And-Updates-Everything-To.jpg",
+      "eventUri": {},
+      "sentiment": 0.2471,
+      "wgt": 464387890,
+      "relevance": 1
+    },
+    {
+      "uri": "8327123250",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "20:37:41",
+      "dateTime": "2024-09-18T20:37:41Z",
+      "dateTimePub": "2024-09-18T20:34:58Z",
+      "dataType": "news",
+      "sim": 0.7333,
+      "url": "https://ca.news.yahoo.com/saturday-night-live-season-50-181103819.html",
+      "title": "'Saturday Night Live' Season 50 News And Updates: Everything To Know",
+      "body": "Updated with the latest: Saturday Night Live has announced its first five hosts and the musical guest for the opening episode.\n\nSaturday Night Live will celebrate 50 years of airtime with its upcoming ...",
+      "source": {
+        "uri": "ca.news.yahoo.com",
+        "dataType": "news",
+        "title": "Yahoo"
+      },
+      "authors": [],
+      "image": "https://media.zenfs.com/en/deadline.com/707ab0f811ca7778e1f0e87c0880f164",
+      "eventUri": "eng-9916961",
+      "sentiment": 0.2471,
+      "wgt": 464387861,
+      "relevance": 1
+    },
+    {
+      "uri": "8327123598",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "20:37:31",
+      "dateTime": "2024-09-18T20:37:31Z",
+      "dateTimePub": "2024-09-18T20:35:15Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.yahoo.com/entertainment/saturday-night-live-season-50-181103819.html",
+      "title": "'Saturday Night Live' Season 50 News And Updates: Everything To Know",
+      "body": "Updated with the latest: Saturday Night Live has announced its first five hosts and the musical guest for the opening episode.\n\nSaturday Night Live will celebrate 50 years of airtime with its upcoming ...",
+      "source": {
+        "uri": "yahoo.com",
+        "dataType": "news",
+        "title": "Yahoo"
+      },
+      "authors": [],
+      "image": "https://media.zenfs.com/en/deadline.com/707ab0f811ca7778e1f0e87c0880f164",
+      "eventUri": {},
+      "sentiment": 0.2471,
+      "wgt": 464387851,
+      "relevance": 1
+    },
+    {
+      "uri": "8327125424",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "20:37:26",
+      "dateTime": "2024-09-18T20:37:26Z",
+      "dateTimePub": "2024-09-18T20:37:13Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://1010wcsi.com/fox-politics/new-poll-indicates-whether-harris-or-trump-has-the-edge-in-this-key-battleground-state/",
+      "title": "New poll indicates whether Harris or Trump has the edge in this key battleground state - 1010 WCSI",
+      "body": "By entering your email and pushing continue, you are agreeing to Fox News' Terms of Use and Privacy Policy, which includes our Notice of Financial Incentive.\n\nA new poll conducted entirely after last ...",
+      "source": {
+        "uri": "1010wcsi.com",
+        "dataType": "news",
+        "title": "1010 WCSI"
+      },
+      "authors": [],
+      "image": "https://1010wcsi.com/wp-content/uploads/2020/07/WCSI-header.png",
+      "eventUri": {},
+      "sentiment": 0.0667,
+      "wgt": 464387846,
+      "relevance": 1
+    },
+    {
+      "uri": "8327124096",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "20:36:11",
+      "dateTime": "2024-09-18T20:36:11Z",
+      "dateTimePub": "2024-09-18T20:35:46Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.live5news.com/2024/09/18/sc-restaurants-face-balancing-act-they-navigate-effects-inflation/",
+      "title": "SC restaurants face balancing act as they navigate effects of inflation",
+      "body": "CHARLESTON, S.C. (WCSC) - As concerns around inflation and the state of the economy continue across America, in South Carolina, restaurants are struggling to keep up with the high price of food and ...",
+      "source": {
+        "uri": "live5news.com",
+        "dataType": "news",
+        "title": "https://www.live5news.com"
+      },
+      "authors": [],
+      "image": "https://gray-wcsc-prod.cdn.arcpublishing.com/resizer/v2/ADFGJOCJSVFXXG2ZI7KLE4C6C4.jpg?auth=f3d1d927f6066c24440a0f6bf7c6aa60bdaef436e4fef16e9d120aeaed7039c9&width=1200&height=600&smart=true",
+      "eventUri": {},
+      "sentiment": 0.0353,
+      "wgt": 464387771,
+      "relevance": 1
+    },
+    {
+      "uri": "8327123704",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "20:35:42",
+      "dateTime": "2024-09-18T20:35:42Z",
+      "dateTimePub": "2024-09-18T20:35:21Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://okcfox.com/news/nation-world/teamsters-declines-to-endorse-either-harris-or-trump-international-brotherhood-of-teamsters-sean-obrien-donald-trump-kamala-harris-union-politics-2024-election",
+      "title": "Teamsters declines to endorse either Harris or Trump for president",
+      "body": "WASHINGTON (TND) -- The International Brotherhood of Teamsters announced Wednesday it will not issue its highly coveted endorsement to either major candidate in the 2024 presidential election.\n\nThe ...",
+      "source": {
+        "uri": "okcfox.com",
+        "dataType": "news",
+        "title": "KOKH"
+      },
+      "authors": [
+        {
+          "uri": "kristina_watrobski@okcfox.com",
+          "name": "Kristina Watrobski",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://okcfox.com/resources/media2/16x9/2844/986/0x25/90/97bbe10f-1c35-424e-8303-26bfa163e484-AP24230582322522.jpg",
+      "eventUri": {},
+      "sentiment": 0.2549,
+      "wgt": 464387742,
+      "relevance": 1
+    },
+    {
+      "uri": "8327123380",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "20:35:36",
+      "dateTime": "2024-09-18T20:35:36Z",
+      "dateTimePub": "2024-09-18T20:35:03Z",
+      "dataType": "news",
+      "sim": 0.5059,
+      "url": "https://cafemom.com/entertainment/sarah-huckabee-sanders-kamala-harris-not-having-biological-children",
+      "title": "Sarah Huckabee Sanders Takes a Dig at Kamala Harris for Not Having Biological Children",
+      "body": "The discussion around \"childless cat ladies\" has been a big one during the 2024 presidential election cycle, and the discussion usually includes the democratic nominee, Kamala Harris - even though ...",
+      "source": {
+        "uri": "cafemom.com",
+        "dataType": "news",
+        "title": "CafeMom.com"
+      },
+      "authors": [
+        {
+          "uri": "nicole_pomarico@cafemom.com",
+          "name": "Nicole Pomarico",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://cafemom.com/wp-content/uploads/2024/09/GettyImages-2171957085-scaled-e1726677190439.jpg",
+      "eventUri": "eng-9913950",
+      "sentiment": 0.2235,
+      "wgt": 464387736,
+      "relevance": 1
+    },
+    {
+      "uri": "8327122623",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "20:35:34",
+      "dateTime": "2024-09-18T20:35:34Z",
+      "dateTimePub": "2024-09-18T20:34:26Z",
+      "dataType": "news",
+      "sim": 0.8431,
+      "url": "https://www.breitbart.com/politics/2024/09/18/teamsters-union-refuses-to-endorse-kamala-harris-polling-shows-most-members-support-donald-trump/",
+      "title": "Teamsters Union Refuses to Endorse Kamala Harris; Polling Shows Most Members Support Donald Trump",
+      "body": "The Teamsters Union, representing more than one million union workers, will not endorse any candidate in 2024's presidential election even as polling reveals that the majority of members support ...",
+      "source": {
+        "uri": "breitbart.com",
+        "dataType": "news",
+        "title": "Breitbart"
+      },
+      "authors": [
+        {
+          "uri": "john_binder@breitbart.com",
+          "name": "John Binder",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://media.breitbart.com/media/2024/09/GettyImages-2170725798.jpg",
+      "eventUri": "eng-9909141",
+      "sentiment": 0.4667,
+      "wgt": 464387734,
+      "relevance": 1
+    },
+    {
+      "uri": "8327120571",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "20:33:47",
+      "dateTime": "2024-09-18T20:33:47Z",
+      "dateTimePub": "2024-09-18T20:32:11Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://foreignaffairs.co.nz/2024/09/19/mil-osi-usa-lujan-colleagues-urge-the-fcc-to-require-disclosure-of-the-use-of-ai-generated-content-in-political-ads-on-radio-and-tv/",
+      "title": "MIL-OSI USA: Luján, Colleagues Urge the FCC to Require Disclosure of the Use of AI-Generated...",
+      "body": "Washington, D.C. - U.S. Senator Ben Ray Luján (D-N.M.) led a letter signed by U.S. Senators Michael Bennet (D-Colo.), Angus King (I-Maine), Amy Klobuchar (D-Minn.), Chris Van Hollen (D-Md.), Reverend ...",
+      "source": {
+        "uri": "foreignaffairs.co.nz",
+        "dataType": "news",
+        "title": "foreignaffairs.co.nz"
+      },
+      "authors": [
+        {
+          "uri": "mil_osi_publisher@foreignaffairs.co.nz",
+          "name": "Mil-Osi Publisher",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": {},
+      "eventUri": {},
+      "sentiment": -0.0667,
+      "wgt": 464387627,
+      "relevance": 1
+    },
+    {
+      "uri": "2024-09-489374002",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "20:32:20",
+      "dateTime": "2024-09-18T20:32:20Z",
+      "dateTimePub": "2024-09-18T20:32:10Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.wgowam.com/news/teamsters-decline-to-make-presidential-endorsement/",
+      "title": "Teamsters Decline to Make Presidential Endorsement",
+      "body": "The Teamsters union announced it will not offer an endorsement in the 2024 presidential election, though its members overwhelmingly support former President Donald Trump.\n\nThe union said in a release ...",
+      "source": {
+        "uri": "wgowam.com",
+        "dataType": "news",
+        "title": "WGOW-AM"
+      },
+      "authors": [],
+      "image": "https://www.newsmax.com/Newsmax/files/f5/f57f6fd8-2f2c-4890-b846-0e81aa47f131.jpg",
+      "eventUri": {},
+      "sentiment": 0.2235,
+      "wgt": 464387540,
+      "relevance": 1
+    },
+    {
+      "uri": "8327119211",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "20:31:36",
+      "dateTime": "2024-09-18T20:31:36Z",
+      "dateTimePub": "2024-09-18T20:30:39Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://radio.foxnews.com/2024/09/18/lara-trump-voters-havent-heard-anything-from-kamala-harris-by-way-of-any-sort-of-plan/",
+      "title": "Lara Trump: Voters Haven't Heard Anything From Kamala Harris By Way Of Any Sort Of Plan",
+      "body": "RNC co-chair Lara Trump joins Fox Across America With Jimmy Failla to explain how Vice President Kamala Harris' answers to questions about her policy positions completely fail to get into any type of ...",
+      "source": {
+        "uri": "radio.foxnews.com",
+        "dataType": "news",
+        "title": "FOX News Radio"
+      },
+      "authors": [
+        {
+          "uri": "michael_addvensky@radio.foxnews.com",
+          "name": "Michael Addvensky",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://static.foxnews.com/radio.foxnews.com/content/uploads/2022/05/laratrump.jpg",
+      "eventUri": {},
+      "sentiment": -0.0275,
+      "wgt": 464387496,
+      "relevance": 1
+    },
+    {
+      "uri": "8327119042",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "20:30:44",
+      "dateTime": "2024-09-18T20:30:44Z",
+      "dateTimePub": "2024-09-18T20:30:25Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://cbs12.com/news/nation-world/teamsters-declines-to-endorse-either-harris-or-trump-international-brotherhood-of-teamsters-sean-obrien-donald-trump-kamala-harris-union-politics-2024-election",
+      "title": "Teamsters declines to endorse either Harris or Trump for president",
+      "body": "WASHINGTON (TND) -- The International Brotherhood of Teamsters announced Wednesday it will not issue its highly coveted endorsement to either major candidate in the 2024 presidential election.\n\nThe ...",
+      "source": {
+        "uri": "cbs12.com",
+        "dataType": "news",
+        "title": "WPEC"
+      },
+      "authors": [
+        {
+          "uri": "kristina_watrobski@cbs12.com",
+          "name": "Kristina Watrobski",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://cbs12.com/resources/media2/16x9/2844/986/0x25/90/97bbe10f-1c35-424e-8303-26bfa163e484-AP24230582322522.jpg",
+      "eventUri": {},
+      "sentiment": 0.2549,
+      "wgt": 464387444,
+      "relevance": 1
+    },
+    {
+      "uri": "8327118195",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "20:29:46",
+      "dateTime": "2024-09-18T20:29:46Z",
+      "dateTimePub": "2024-09-18T20:29:33Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://turnto10.com/news/nation-world/teamsters-declines-to-endorse-either-harris-or-trump-international-brotherhood-of-teamsters-sean-obrien-donald-trump-kamala-harris-union-politics-2024-election",
+      "title": "Teamsters declines to endorse either Harris or Trump for president",
+      "body": "WASHINGTON (TND) -- The International Brotherhood of Teamsters announced Wednesday it will not issue its highly coveted endorsement to either major candidate in the 2024 presidential election.\n\nThe ...",
+      "source": {
+        "uri": "turnto10.com",
+        "dataType": "news",
+        "title": "WJAR"
+      },
+      "authors": [
+        {
+          "uri": "kristina_watrobski@turnto10.com",
+          "name": "Kristina Watrobski",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://turnto10.com/resources/media2/16x9/2844/986/0x25/90/97bbe10f-1c35-424e-8303-26bfa163e484-AP24230582322522.jpg",
+      "eventUri": {},
+      "sentiment": 0.2549,
+      "wgt": 464387386,
+      "relevance": 1
+    },
+    {
+      "uri": "8327116851",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "20:28:36",
+      "dateTime": "2024-09-18T20:28:36Z",
+      "dateTimePub": "2024-09-18T20:27:54Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://cbs6albany.com/news/nation-world/teamsters-declines-to-endorse-either-harris-or-trump-international-brotherhood-of-teamsters-sean-obrien-donald-trump-kamala-harris-union-politics-2024-election",
+      "title": "Teamsters declines to endorse either Harris or Trump for president",
+      "body": "WASHINGTON (TND) -- The International Brotherhood of Teamsters announced Wednesday it will not issue its highly coveted endorsement to either major candidate in the 2024 presidential election.\n\nThe ...",
+      "source": {
+        "uri": "cbs6albany.com",
+        "dataType": "news",
+        "title": "WRGB"
+      },
+      "authors": [
+        {
+          "uri": "kristina_watrobski@cbs6albany.com",
+          "name": "Kristina Watrobski",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://cbs6albany.com/resources/media2/16x9/2844/986/0x25/90/97bbe10f-1c35-424e-8303-26bfa163e484-AP24230582322522.jpg",
+      "eventUri": {},
+      "sentiment": 0.2549,
+      "wgt": 464387316,
+      "relevance": 1
+    },
+    {
+      "uri": "8327116753",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "20:28:11",
+      "dateTime": "2024-09-18T20:28:11Z",
+      "dateTimePub": "2024-09-18T20:27:50Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://wlos.com/news/nation-world/teamsters-declines-to-endorse-either-harris-or-trump-international-brotherhood-of-teamsters-sean-obrien-donald-trump-kamala-harris-union-politics-2024-election",
+      "title": "Teamsters declines to endorse either Harris or Trump for president",
+      "body": "WASHINGTON (TND) -- The International Brotherhood of Teamsters announced Wednesday it will not issue its highly coveted endorsement to either major candidate in the 2024 presidential election.\n\nThe ...",
+      "source": {
+        "uri": "wlos.com",
+        "dataType": "news",
+        "title": "WLOS"
+      },
+      "authors": [
+        {
+          "uri": "kristina_watrobski@wlos.com",
+          "name": "Kristina Watrobski",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://wlos.com/resources/media2/16x9/2844/986/0x25/90/97bbe10f-1c35-424e-8303-26bfa163e484-AP24230582322522.jpg",
+      "eventUri": {},
+      "sentiment": 0.2549,
+      "wgt": 464387291,
+      "relevance": 1
+    },
+    {
+      "uri": "8327116664",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "20:27:56",
+      "dateTime": "2024-09-18T20:27:56Z",
+      "dateTimePub": "2024-09-18T20:27:43Z",
+      "dataType": "news",
+      "sim": 0.8078,
+      "url": "https://www.thedailybeast.com/teamsters-union-snubs-kamala-harris",
+      "title": "Teamsters Union Snubs Kamala Harrris",
+      "body": "The powerful union decided to sit out the 2024 presidential election.\n\nKamala Harris suffered a blow to her campaign Wednesday when the Teamsters, one of the most influential labor unions with long ...",
+      "source": {
+        "uri": "thedailybeast.com",
+        "dataType": "news",
+        "title": "The Daily Beast"
+      },
+      "authors": [],
+      "image": "https://img.thedailybeast.com/image/upload/c_crop,d_placeholder_euli9k,h_1666,w_2962,x_0,y_0/dpr_2.0/c_limit,w_740/fl_lossy,q_auto/v1726689071/240918-sean-obrien-tease_n9utrq",
+      "eventUri": "eng-9909141",
+      "sentiment": 0.1843,
+      "wgt": 464387276,
+      "relevance": 1
+    },
+    {
+      "uri": "8327113585",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "20:24:30",
+      "dateTime": "2024-09-18T20:24:30Z",
+      "dateTimePub": "2024-09-18T20:24:12Z",
+      "dataType": "news",
+      "sim": 0.8471,
+      "url": "https://www.objectivist.co/2024/09/teamsters-drop-presidential-polling-data-and-good-grief-its-bad-for-kamala-watch/",
+      "title": "Teamsters Drop Presidential Polling Data And 'Good Grief' Its Bad For Kamala [WATCH]",
+      "body": "The International Brotherhood of Teamsters, representing over one million members, announced Wednesday that it will not endorse a candidate in the 2024 presidential election.\n\nThis decision marks the ...",
+      "source": {
+        "uri": "objectivist.co",
+        "dataType": "news",
+        "title": "Objectivist"
+      },
+      "authors": [],
+      "image": "https://www.rvmnews.com/wp-content/uploads/2024/08/2024.08.04-03.02-rvmnews-66af980276571.jpg",
+      "eventUri": "eng-9909141",
+      "sentiment": 0.1373,
+      "wgt": 464387070,
+      "relevance": 1
+    },
+    {
+      "uri": "8327113112",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "20:24:00",
+      "dateTime": "2024-09-18T20:24:00Z",
+      "dateTimePub": "2024-09-18T20:23:41Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://abc45.com/news/nation-world/teamsters-declines-to-endorse-either-harris-or-trump-international-brotherhood-of-teamsters-sean-obrien-donald-trump-kamala-harris-union-politics-2024-election",
+      "title": "Teamsters declines to endorse either Harris or Trump for president",
+      "body": "WASHINGTON (TND) -- The International Brotherhood of Teamsters announced Wednesday it will not issue its highly coveted endorsement to either major candidate in the 2024 presidential election.\n\nThe ...",
+      "source": {
+        "uri": "abc45.com",
+        "dataType": "news",
+        "title": "WXLV"
+      },
+      "authors": [
+        {
+          "uri": "kristina_watrobski@abc45.com",
+          "name": "Kristina Watrobski",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://abc45.com/resources/media2/16x9/2844/986/0x25/90/97bbe10f-1c35-424e-8303-26bfa163e484-AP24230582322522.jpg",
+      "eventUri": {},
+      "sentiment": 0.2549,
+      "wgt": 464387040,
+      "relevance": 1
+    },
+    {
+      "uri": "8327112843",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "20:23:40",
+      "dateTime": "2024-09-18T20:23:40Z",
+      "dateTimePub": "2024-09-18T20:23:22Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://kfdm.com/news/nation-world/teamsters-declines-to-endorse-either-harris-or-trump-international-brotherhood-of-teamsters-sean-obrien-donald-trump-kamala-harris-union-politics-2024-election",
+      "title": "Teamsters declines to endorse either Harris or Trump for president",
+      "body": "WASHINGTON (TND) -- The International Brotherhood of Teamsters announced Wednesday it will not issue its highly coveted endorsement to either major candidate in the 2024 presidential election.\n\nThe ...",
+      "source": {
+        "uri": "kfdm.com",
+        "dataType": "news",
+        "title": "KFDM"
+      },
+      "authors": [
+        {
+          "uri": "kristina_watrobski@kfdm.com",
+          "name": "Kristina Watrobski",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://kfdm.com/resources/media2/16x9/2844/986/0x25/90/97bbe10f-1c35-424e-8303-26bfa163e484-AP24230582322522.jpg",
+      "eventUri": {},
+      "sentiment": 0.2549,
+      "wgt": 464387020,
+      "relevance": 1
+    },
+    {
+      "uri": "8327111717",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "20:22:26",
+      "dateTime": "2024-09-18T20:22:26Z",
+      "dateTimePub": "2024-09-18T20:22:10Z",
+      "dataType": "news",
+      "sim": 0.7882,
+      "url": "https://www.today.com/popculture/tv/snl-season-50-hosts-musical-guests-rcna171557",
+      "title": "Jean Smart to host 'SNL' for its 50th season premiere. See the other hosts, musical guests announced",
+      "body": "The legendary sketch comedy show kicks off its 50th season with three new cast members on Sept. 28.\n\n\"Saturday Night Live\" is kicking off its landmark 50th season on Sept. 28.\n\nThe legendary sketch ...",
+      "source": {
+        "uri": "today.com",
+        "dataType": "news",
+        "title": "TODAY.com"
+      },
+      "authors": [],
+      "image": "https://media-cldnry.s-nbcnews.com/image/upload/t_social_share_1024x512_center,f_auto,q_auto:best/rockcms/2024-09/saturday-night-live-cast-zz-240911-efd677.jpg",
+      "eventUri": "eng-9916961",
+      "sentiment": 0.1843,
+      "wgt": 464386946,
+      "relevance": 15
+    },
+    {
+      "uri": "8327111518",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "20:22:24",
+      "dateTime": "2024-09-18T20:22:24Z",
+      "dateTimePub": "2024-09-18T20:21:55Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://ktul.com/news/nation-world/teamsters-declines-to-endorse-either-harris-or-trump-international-brotherhood-of-teamsters-sean-obrien-donald-trump-kamala-harris-union-politics-2024-election",
+      "title": "Teamsters declines to endorse either Harris or Trump for president",
+      "body": "WASHINGTON (TND) -- The International Brotherhood of Teamsters announced Wednesday it will not issue its highly coveted endorsement to either major candidate in the 2024 presidential election.\n\nThe ...",
+      "source": {
+        "uri": "ktul.com",
+        "dataType": "news",
+        "title": "KTUL"
+      },
+      "authors": [
+        {
+          "uri": "kristina_watrobski@ktul.com",
+          "name": "Kristina Watrobski",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://ktul.com/resources/media2/16x9/2844/986/0x25/90/97bbe10f-1c35-424e-8303-26bfa163e484-AP24230582322522.jpg",
+      "eventUri": {},
+      "sentiment": 0.2549,
+      "wgt": 464386944,
+      "relevance": 1
+    },
+    {
+      "uri": "8327110228",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "20:20:32",
+      "dateTime": "2024-09-18T20:20:32Z",
+      "dateTimePub": "2024-09-18T20:20:03Z",
+      "dataType": "news",
+      "sim": 0.702,
+      "url": "https://www.motherjones.com/politics/2024/09/in-win-for-trump-teamsters-endorse-no-one/",
+      "title": "In win for Trump, Teamsters endorse no one",
+      "body": "Fight disinformation: Sign up for the free Mother Jones Daily newsletter and follow the news that matters.\n\nThe Teamsters union has decided not to endorse a candidate in the 2024 presidential election ...",
+      "source": {
+        "uri": "motherjones.com",
+        "dataType": "news",
+        "title": "Mother Jones"
+      },
+      "authors": [
+        {
+          "uri": "serena_lin@motherjones.com",
+          "name": "Serena Lin",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://www.motherjones.com/wp-content/uploads/2024/07/20240716_gowdy-obrien-speaking.jpg?w=1200&h=630&crop=1",
+      "eventUri": "eng-9909141",
+      "sentiment": 0.4039,
+      "wgt": 464386832,
+      "relevance": 1
+    },
+    {
+      "uri": "8327107598",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "20:17:14",
+      "dateTime": "2024-09-18T20:17:14Z",
+      "dateTimePub": "2024-09-18T20:16:58Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://wjla.com/news/nation-world/teamsters-declines-to-endorse-either-harris-or-trump-international-brotherhood-of-teamsters-sean-obrien-donald-trump-kamala-harris-union-politics-2024-election",
+      "title": "Teamsters declines to endorse either Harris or Trump for president",
+      "body": "WASHINGTON (TND) -- The International Brotherhood of Teamsters announced Wednesday it will not issue its highly coveted endorsement to either major candidate in the 2024 presidential election.\n\nThe ...",
+      "source": {
+        "uri": "wjla.com",
+        "dataType": "news",
+        "title": "WJLA"
+      },
+      "authors": [
+        {
+          "uri": "kristina_watrobski@wjla.com",
+          "name": "Kristina Watrobski",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://wjla.com/resources/media2/16x9/2844/986/0x25/90/97bbe10f-1c35-424e-8303-26bfa163e484-AP24230582322522.jpg",
+      "eventUri": {},
+      "sentiment": 0.2549,
+      "wgt": 464386634,
+      "relevance": 1
+    },
+    {
+      "uri": "8327103622",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "20:13:02",
+      "dateTime": "2024-09-18T20:13:02Z",
+      "dateTimePub": "2024-09-18T20:12:39Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://fox11online.com/news/nation-world/teamsters-declines-to-endorse-either-harris-or-trump-international-brotherhood-of-teamsters-sean-obrien-donald-trump-kamala-harris-union-politics-2024-election",
+      "title": "Teamsters declines to endorse either Harris or Trump for president",
+      "body": "WASHINGTON (TND) -- The International Brotherhood of Teamsters announced Wednesday it will not issue its highly coveted endorsement to either major candidate in the 2024 presidential election.\n\nThe ...",
+      "source": {
+        "uri": "fox11online.com",
+        "dataType": "news",
+        "title": "WLUK"
+      },
+      "authors": [
+        {
+          "uri": "kristina_watrobski@fox11online.com",
+          "name": "Kristina Watrobski",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://fox11online.com/resources/media2/16x9/2844/986/0x25/90/97bbe10f-1c35-424e-8303-26bfa163e484-AP24230582322522.jpg",
+      "eventUri": {},
+      "sentiment": 0.2549,
+      "wgt": 464386382,
+      "relevance": 1
+    },
+    {
+      "uri": "2024-09-489359725",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "20:10:48",
+      "dateTime": "2024-09-18T20:10:48Z",
+      "dateTimePub": "2024-09-18T19:44:31Z",
+      "dataType": "news",
+      "sim": 0.7412,
+      "url": "https://www.nydailynews.com/2024/09/18/jimmy-carter-health-update-hospice-grandson/",
+      "title": "Jimmy Carter still 'emotionally engaged' 19 months into hospice",
+      "body": "Even as his life force ebbs, 99-year-old Jimmy Carter remains emotionally engaged despite his steady physical deterioration, his grandson said Tuesday.\n\n\"He's doing OK,\" his grandson Jason told People ...",
+      "source": {
+        "uri": "nydailynews.com",
+        "dataType": "news",
+        "title": "Daily News"
+      },
+      "authors": [
+        {
+          "uri": "theresa_braine@nydailynews.com",
+          "name": "Theresa Braine",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://www.nydailynews.com/wp-content/uploads/2024/09/AP24214734572110.jpg?w=640",
+      "eventUri": "eng-9913738",
+      "sentiment": 0.498,
+      "wgt": 464386248,
+      "relevance": 1
+    },
+    {
+      "uri": "8327101024",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "20:10:21",
+      "dateTime": "2024-09-18T20:10:21Z",
+      "dateTimePub": "2024-09-18T20:10:11Z",
+      "dataType": "news",
+      "sim": 0.8627,
+      "url": "https://dailycallernewsfoundation.org/2024/09/18/union-bigwigs-decline-to-endorse-anyone-for-president-despite-rank-and-file-members-overwhelmingly-backing-trump/",
+      "title": "Union Bigwigs Decline To Endorse Anyone For President Despite Rank-And-File Members Overwhelmingly Backing Trump",
+      "body": "Former President Donald Trump campaigning in Bozeman, Mont., Aug. 9, 2024. (Screen Capture/CSPAN)\n\nThe International Brotherhood of Teamsters on Wednesday declined to make an endorsement in the 2024 ...",
+      "source": {
+        "uri": "dailycallernewsfoundation.org",
+        "dataType": "news",
+        "title": "dailycallernewsfoundation.org"
+      },
+      "authors": [],
+      "image": {},
+      "eventUri": {},
+      "sentiment": 0.3333,
+      "wgt": 464386221,
+      "relevance": 1
+    },
+    {
+      "uri": "2024-09-489355705",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "20:02:47",
+      "dateTime": "2024-09-18T20:02:47Z",
+      "dateTimePub": "2024-09-18T12:39:29Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://theminnesotasun.com/mn-news/commentary-doj-gets-political-before-2024-election/realclearwire/2024/09/18/",
+      "title": "Commentary: DOJ Gets Political Before 2024 Election",
+      "body": "Attorney General Merrick Garland broke precedent just weeks before the November election, delivering politically charged remarks at the U.S. Attorneys' National Conference in Washington - pointedly ...",
+      "source": {
+        "uri": "theminnesotasun.com",
+        "dataType": "news",
+        "title": "The Minnesota Sun"
+      },
+      "authors": [],
+      "image": {},
+      "eventUri": {},
+      "sentiment": -0.0118,
+      "wgt": 464385767,
+      "relevance": 1
+    },
+    {
+      "uri": "2024-09-489355704",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "20:02:45",
+      "dateTime": "2024-09-18T20:02:45Z",
+      "dateTimePub": "2024-09-18T13:30:55Z",
+      "dataType": "news",
+      "sim": 0.5294,
+      "url": "https://theminnesotasun.com/mn-news/federal-reserve-cuts-interest-rates-by-half-point-stocks-surge/jtnews/2024/09/18/",
+      "title": "Federal Reserve Cuts Interest Rates by Half-Point, Stocks Surge",
+      "body": "The Federal Reserve cut interest rates on Wednesday for the first time since the COVID-19 pandemic.\n\nMany observers of Fed activity had predicted a quarter-point reduction but the central bank wound ...",
+      "source": {
+        "uri": "theminnesotasun.com",
+        "dataType": "news",
+        "title": "The Minnesota Sun"
+      },
+      "authors": [],
+      "image": {},
+      "eventUri": "eng-9911714",
+      "sentiment": 0.1843,
+      "wgt": 464385765,
+      "relevance": 1
+    },
+    {
+      "uri": "8327092616",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "20:02:11",
+      "dateTime": "2024-09-18T20:02:11Z",
+      "dateTimePub": "2024-09-18T20:01:59Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://abc7amarillo.com/news/nation-world/teamsters-declines-to-endorse-either-harris-or-trump-international-brotherhood-of-teamsters-sean-obrien-donald-trump-kamala-harris-union-politics-2024-election",
+      "title": "Teamsters declines to endorse either Harris or Trump for president",
+      "body": "WASHINGTON (TND) -- The International Brotherhood of Teamsters announced Wednesday it will not issue its highly coveted endorsement to either major candidate in the 2024 presidential election.\n\nThe ...",
+      "source": {
+        "uri": "abc7amarillo.com",
+        "dataType": "news",
+        "title": "KVII"
+      },
+      "authors": [
+        {
+          "uri": "kristina_watrobski@abc7amarillo.com",
+          "name": "Kristina Watrobski",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://abc7amarillo.com/resources/media2/16x9/2844/986/0x25/90/97bbe10f-1c35-424e-8303-26bfa163e484-AP24230582322522.jpg",
+      "eventUri": {},
+      "sentiment": 0.2549,
+      "wgt": 464385731,
+      "relevance": 1
+    },
+    {
+      "uri": "2024-09-489354814",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "20:00:53",
+      "dateTime": "2024-09-18T20:00:53Z",
+      "dateTimePub": "2024-09-18T19:23:38Z",
+      "dataType": "news",
+      "sim": 0.8549,
+      "url": "https://www.newsmax.com/finance/streettalk/teamsters-kamala-harris-donald-trump/2024/09/18/id/1180844/",
+      "title": "Teamsters Decline to Make Presidential Endorsement",
+      "body": "The Teamsters union announced it will not offer an endorsement in the 2024 presidential election, though its members overwhelmingly support former President Donald Trump.\n\nThe union said in a release ...",
+      "source": {
+        "uri": "newsmax.com",
+        "dataType": "news",
+        "title": "NewsMax"
+      },
+      "authors": [
+        {
+          "uri": "sam_barron@newsmax.com",
+          "name": "Sam Barron",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://www.newsmax.com/CMSPages/GetFile.aspx?guid=f57f6fd8-2f2c-4890-b846-0e81aa47f131&SiteName=Newsmax&maxsidesize=280",
+      "eventUri": "eng-9909141",
+      "sentiment": 0.2784,
+      "wgt": 464385653,
+      "relevance": 1
+    },
+    {
+      "uri": "2024-09-489354681",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "20:00:31",
+      "dateTime": "2024-09-18T20:00:31Z",
+      "dateTimePub": "2024-09-18T19:38:21Z",
+      "dataType": "news",
+      "sim": 0.6824,
+      "url": "https://eu.citizen-times.com/story/news/local/elections/2024/09/18/when-is-early-voting-in-nc-what-to-know-before-election-day-2024/75277585007/",
+      "title": "When is early voting in NC? Absentee voting? What to know ahead of Election Day 2024",
+      "body": "Vice presidential candidate and Minnesota Governor Tim Walz speaks about the Second Amendment, gun violence in schools at Asheville rally.\n\nElection Day in the United States falls on Tuesday, Nov. 5. ...",
+      "source": {
+        "uri": "citizen-times.com",
+        "dataType": "news",
+        "title": "The Asheville Citizen Times"
+      },
+      "authors": [],
+      "image": "https://www.gannett-cdn.com/presto/2020/03/03/PASH/0a62babc-2d28-4838-8c62-df06b538514d-Primary_voting_2020_003.JPG?auto=webp&crop=3561,2004,x0,y0&format=pjpg&width=1200",
+      "eventUri": "eng-9917017",
+      "sentiment": -0.051,
+      "wgt": 464385631,
+      "relevance": 1
+    },
+    {
+      "uri": "8327089139",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "19:58:44",
+      "dateTime": "2024-09-18T19:58:44Z",
+      "dateTimePub": "2024-09-18T19:58:29Z",
+      "dataType": "news",
+      "sim": 0.8275,
+      "url": "https://dailycaller.com/2024/09/18/teamsters-union-endorse-president-rank-and-file-members-overwhelmingly-back-trump/",
+      "title": "Union Bigwigs Decline To Endorse Anyone For President Despite Rank-And-File Members Overwhelmingly Backing Trump",
+      "body": "The International Brotherhood of Teamsters on Wednesday declined to make an endorsement in the 2024 presidential election just hours after releasing internal polling data showing that the workers it ...",
+      "source": {
+        "uri": "dailycaller.com",
+        "dataType": "news",
+        "title": "The Daily Caller"
+      },
+      "authors": [],
+      "image": "https://cdn01.dailycaller.com/wp-content/uploads/2024/09/GettyImages-1975710204-scaled-e1726686260231.jpg",
+      "eventUri": "eng-9909141",
+      "sentiment": 0.4353,
+      "wgt": 464385524,
+      "relevance": 1
+    },
+    {
+      "uri": "8327088295",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "19:57:57",
+      "dateTime": "2024-09-18T19:57:57Z",
+      "dateTimePub": "2024-09-18T19:57:35Z",
+      "dataType": "news",
+      "sim": 0.8157,
+      "url": "https://www.yahoo.com/news/liz-cheney-joins-rep-allred-164705354.html",
+      "title": "Liz Cheney joins Rep Allred for interview: 'You can't trust Ted Cruz'",
+      "body": "Former Rep. Liz Cheney (R-Wyo.) joined Rep. Colin Allred (D-Texas) for a sit-down interview during which she went after his Texas Senate race opponent, deeming Sen. Ted Cruz (R-Texas) ...",
+      "source": {
+        "uri": "yahoo.com",
+        "dataType": "news",
+        "title": "Yahoo"
+      },
+      "authors": [],
+      "image": "https://media.zenfs.com/en/the_hill_articles_341/6a87a191528a6b7122a66dc32e0309d2",
+      "eventUri": "eng-9909419",
+      "sentiment": -0.0902,
+      "wgt": 464385477,
+      "relevance": 1
+    },
+    {
+      "uri": "8327085047",
+      "lang": "eng",
+      "isDuplicate": false,
+      "date": "2024-09-18",
+      "time": "19:54:36",
+      "dateTime": "2024-09-18T19:54:36Z",
+      "dateTimePub": "2024-09-18T19:54:22Z",
+      "dataType": "news",
+      "sim": 0.8392,
+      "url": "https://wsbt.com/news/nation-world/teamsters-declines-to-endorse-either-harris-or-trump-international-brotherhood-of-teamsters-sean-obrien-donald-trump-kamala-harris-union-politics-2024-election",
+      "title": "Teamsters declines to endorse either Harris or Trump for president",
+      "body": "WASHINGTON (TND) -- The International Brotherhood of Teamsters announced Wednesday it will not issue its highly coveted endorsement to either major candidate in the 2024 presidential election.\n\nThe ...",
+      "source": {
+        "uri": "wsbt.com",
+        "dataType": "news",
+        "title": "WSBT"
+      },
+      "authors": [
+        {
+          "uri": "kristina_watrobski@wsbt.com",
+          "name": "Kristina Watrobski",
+          "type": "author",
+          "isAgency": false
+        }
+      ],
+      "image": "https://wsbt.com/resources/media2/16x9/2844/986/0x25/90/97bbe10f-1c35-424e-8303-26bfa163e484-AP24230582322522.jpg",
+      "eventUri": "eng-9909141",
+      "sentiment": 0.2157,
+      "wgt": 464385276,
+      "relevance": 1
+    },
+    {
+      "uri": "2024-09-489347840",
+      "lang": "eng",
+      "isDuplicate": true,
+      "date": "2024-09-18",
+      "time": "19:54:04",
+      "dateTime": "2024-09-18T19:54:04Z",
+      "dateTimePub": "2024-09-18T19:53:04Z",
+      "dataType": "news",
+      "sim": 0,
+      "url": "https://www.kboi.com/news/teamsters-decline-to-make-presidential-endorsement/",
+      "title": "Teamsters Decline to Make Presidential Endorsement",
+      "body": "The Teamsters union announced it will not offer an endorsement in the 2024 presidential election, though its members overwhelmingly support former President Donald Trump.\n\nThe union said in a release ...",
+      "source": {
+        "uri": "kboi.com",
+        "dataType": "news",
+        "title": "KBOI-AM"
+      },
+      "authors": [],
+      "image": "https://www.newsmax.com/Newsmax/files/f5/f57f6fd8-2f2c-4890-b846-0e81aa47f131.jpg",
+      "eventUri": {},
+      "sentiment": 0.2235,
+      "wgt": 464385244,
+      "relevance": 1
+    }
+  ],
+  "totalResults": 9026,
+  "page": 1,
+  "count": 100,
+  "pages": 91
+}
